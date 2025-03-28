@@ -3,6 +3,16 @@
 
 Découvrez mes derniers projets et réalisations !
 
+## messe-saint-gregoire
+
+
+
+Patrimoine Numérique : La Messe Saint Grégoire Présentation du Projet Un projet de valorisation du patrimoine culturel associant photographie, rédaction de contenus historiques et conception d'expériences interactives pour rendre accessibles des trés...
+
+[En savoir plus](#)
+
+---
+
 ## voyages
 
 
@@ -23,6 +33,16 @@ Trésor d'Eauze : Patrimoine Numérique Interactif Présentation du Projet Un pr
 
 ---
 
+## principes-fondamentaux
+
+
+
+Principes Fondamentaux Les Piliers de ma Démarche Créative et Analytique 1. Clarté : Rendre l'Impossible Compréhensible Essence Transformer le complexe en accessible Démystifier les concepts techniques Créer des ponts de compréhension Stratégies Déco...
+
+[En savoir plus](#)
+
+---
+
 ## suivi-pedagogique
 
 
@@ -33,32 +53,11 @@ Prototype de Suivi Pédagogique Présentation du Projet Un prototype d'applicati
 
 ---
 
-## vision-portfolio
+## sources-inspiration-voyages
 
 
 
-Vision Professionnelle Philosophie Fondamentale Croire en la Force des Données Les Données comme Récits Les données ne sont pas de simples chiffres ou statistiques, mais des histoires attendant d'être racontées. Chaque ensemble de données contient :
-...
-
-[En savoir plus](#)
-
----
-
-## suivi-documentaire
-
-
-
-Prototype de Suivi Documentaire Présentation du Projet Une application proposant une approche innovante de gestion documentaire, développée en Python avec une architecture flexible et évolutive. Fonctionnalités Principales Génération automatique de t...
-
-[En savoir plus](#)
-
----
-
-## data-visualisation
-
-
-
-Data & Visualisation Exploration et Analyse de Données Image de Référence Approche Analytique Une méthodologie qui va au-delà de la simple manipulation de chiffres, transformant les données brutes en récits intelligibles et stratégiques. Méthodologie...
+Sources d'Inspiration : Les Voyages Image Représentative Philosophie des Voyages Les voyages comme source intarissable de découvertes, de compréhension et de transformation personnelle. Dimensions de l'Exploration Approche Sensorielle Éveil de tous l...
 
 [En savoir plus](#)
 
