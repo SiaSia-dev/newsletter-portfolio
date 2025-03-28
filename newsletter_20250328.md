@@ -3,16 +3,6 @@
 
 Découvrez mes derniers projets et réalisations !
 
-## messe-saint-gregoire
-
-
-
-Patrimoine Numérique : La Messe Saint Grégoire Présentation du Projet Un projet de valorisation du patrimoine culturel associant photographie, rédaction de contenus historiques et conception d'expériences interactives pour rendre accessibles des trés...
-
-[En savoir plus](#)
-
----
-
 ## voyages
 
 
@@ -58,6 +48,16 @@ Prototype de Suivi Pédagogique Présentation du Projet Un prototype d'applicati
 
 
 Sources d'Inspiration : Les Voyages Image Représentative Philosophie des Voyages Les voyages comme source intarissable de découvertes, de compréhension et de transformation personnelle. Dimensions de l'Exploration Approche Sensorielle Éveil de tous l...
+
+[En savoir plus](#)
+
+---
+
+## photographie
+
+
+
+Photographie Exploration Visuelle et Patrimoniale Image de Référence Blog Scientifique : ARCHAEDYN Projet de Recherche Archéologique Analyse des dynamiques territoriales sur 7 millénaires Du Néolithique au Moyen Âge Techniques de pointe en analyse sp...
 
 [En savoir plus](#)
 
