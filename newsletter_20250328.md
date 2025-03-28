@@ -33,16 +33,6 @@ Trésor d'Eauze : Patrimoine Numérique Interactif Présentation du Projet Un pr
 
 ---
 
-## fleurs-documentation-narrative
-
-
-
-Les Fleurs : Étoiles de la Terre Capture d'Écran Prélude Botanique Dans le vaste théâtre de la nature, les fleurs émergent comme des constellations terrestres, points lumineux parsemant les prairies, les jardins et les sous-bois. Chacune raconte une ...
-
-[En savoir plus](#)
-
----
-
 ## principes-fondamentaux
 
 
@@ -58,6 +48,16 @@ Principes Fondamentaux Les Piliers de ma Démarche Créative et Analytique 1. Cl
 
 
 Prototype de Suivi Pédagogique Présentation du Projet Un prototype d'application conçu pour aider au suivi et à l'analyse de la progression des apprenants. Fonctionnalités Principales Suivi de la progression des apprenants Génération de rapports d'an...
+
+[En savoir plus](#)
+
+---
+
+## sources-inspiration-voyages
+
+
+
+Sources d'Inspiration : Les Voyages Image Représentative Philosophie des Voyages Les voyages comme source intarissable de découvertes, de compréhension et de transformation personnelle. Dimensions de l'Exploration Approche Sensorielle Éveil de tous l...
 
 [En savoir plus](#)
 
