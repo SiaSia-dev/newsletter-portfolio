@@ -3,16 +3,6 @@
 
 Découvrez mes derniers projets et réalisations !
 
-## messe-saint-gregoire
-
-
-
-Patrimoine Numérique : La Messe Saint Grégoire Présentation du Projet Un projet de valorisation du patrimoine culturel associant photographie, rédaction de contenus historiques et conception d'expériences interactives pour rendre accessibles des trés...
-
-[En savoir plus](#)
-
----
-
 ## voyages
 
 
@@ -58,6 +48,16 @@ Prototype de Suivi Pédagogique Présentation du Projet Un prototype d'applicati
 
 
 Sources d'Inspiration : Les Voyages Image Représentative Philosophie des Voyages Les voyages comme source intarissable de découvertes, de compréhension et de transformation personnelle. Dimensions de l'Exploration Approche Sensorielle Éveil de tous l...
+
+[En savoir plus](#)
+
+---
+
+## quiz-numpy
+
+
+
+Quiz Interactif NumPy : Apprentissage Dynamique en Data Science Présentation du Projet Un quiz interactif conçu pour tester et approfondir les connaissances en manipulation de données avec NumPy, illustrant une approche innovante d'apprentissage tech...
 
 [En savoir plus](#)
 
