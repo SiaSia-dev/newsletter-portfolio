@@ -3,6 +3,30 @@
 
 Découvrez mes derniers projets et réalisations !
 
+## Architecture Modulaire à Base de Contenu
+
+L'**Architecture Modulaire à Base de Contenu** (ou "Content-Driven Modular Architecture")
+
+Architecture Modulaire à Base de Contenu L' Architecture Modulaire à Base de Contenu (ou "Content-Driven Modular Architecture") représente une approche moderne et flexible pour concevoir des sites web et des applications. Cette méthodologie place le ...
+
+[En savoir plus](#)
+
+---
+
+## cope-process-documentation
+
+
+
+title: Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
+description: author: Alexia Fontaine
+date: 2025-03-28
+type: summary
+image: /img/Process_COPE.png Processus de Publication Cross-Platform (COPE - Create Once, Publ...
+
+[En savoir plus](#)
+
+---
+
 ## voyages
 
 
@@ -38,26 +62,6 @@ Principes Fondamentaux Les Piliers de ma Démarche Créative et Analytique 1. Cl
 
 
 Prototype de Suivi Pédagogique Présentation du Projet Un prototype d'application conçu pour aider au suivi et à l'analyse de la progression des apprenants. Fonctionnalités Principales Suivi de la progression des apprenants Génération de rapports d'an...
-
-[En savoir plus](#)
-
----
-
-## sources-inspiration-voyages
-
-
-
-Sources d'Inspiration : Les Voyages Image Représentative Philosophie des Voyages Les voyages comme source intarissable de découvertes, de compréhension et de transformation personnelle. Dimensions de l'Exploration Approche Sensorielle Éveil de tous l...
-
-[En savoir plus](#)
-
----
-
-## quiz-numpy
-
-
-
-Quiz Interactif NumPy : Apprentissage Dynamique en Data Science Présentation du Projet Un quiz interactif conçu pour tester et approfondir les connaissances en manipulation de données avec NumPy, illustrant une approche innovante d'apprentissage tech...
 
 [En savoir plus](#)
 
