@@ -6,6 +6,17 @@ on:
   #  types:
   #    - completed
   workflow_dispatch:  # Permet de lancer manuellement
+    inputs:
+      force_publish:
+        description: 'Forcer la publication même si déjà publié aujourd'hui'
+        required: false
+        default: 'false'
+        type: boolean
+      skip_cache:
+        description: 'Ignorer la vérification du cache pour les doublons'
+        required: false
+        default: 'false'
+        type: boolean
 
 # Ajout des permissions pour permettre l'écriture dans le dépôt
 permissions:
@@ -43,7 +54,7 @@ jobs:
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
         run: |
-          # Simple token validation
+          # Token validation
           echo "Vérification de la validité du token LinkedIn..."
           HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
              -H "Authorization: Bearer $LINKEDIN_ACCESS_TOKEN" \
@@ -65,16 +76,25 @@ jobs:
         run: |
           mkdir -p .linkedin_cache
           
-      - name: Publish to LinkedIn (Single attempt)
+      - name: Clean up existing lock file
+        if: ${{ inputs.force_publish }}
+        run: |
+          rm -f .linkedin_cache/daily_lock
+          echo "🔄 Nettoyage du verrou quotidien pour permettre une nouvelle publication"
+          
+      - name: Publish to LinkedIn
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
           NEWSLETTERS_DIR: ${{ github.workspace }}/newsletter-portfolio
           GITHUB_USERNAME: SiaSia-dev
           GITHUB_REPO: newsletter-portfolio
+          FORCE_LINKEDIN_PUBLISH: ${{ inputs.force_publish }}
+          SKIP_LINKEDIN_CACHE: ${{ inputs.skip_cache }}
         run: |
-          # Exécuter le script de publication LinkedIn une seule fois
+          # Exécuter le script
           python scripts/linkedin_publisher.py
+          
           if [ $? -ne 0 ]; then
             echo "❌ Échec de la publication LinkedIn"
             exit 1

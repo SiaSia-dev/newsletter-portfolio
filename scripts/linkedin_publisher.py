@@ -147,30 +147,83 @@ class LinkedInPublisher:
         content_hash = self._generate_content_hash(text)
         return content_hash in self.published_hashes
 
-    def make_unique(self, text):
+    def _generate_variant_message(self, title, date, project_titles, variant=0, include_random=True):
         """
-        Rend le contenu unique en ajoutant un horodatage et un identifiant aléatoire.
+        Génère une variante du message selon un modèle spécifique.
         
         Args:
-            text (str): Contenu original de la publication
-        
+            title (str): Titre de la newsletter
+            date (str): Date de la newsletter
+            project_titles (list): Liste des titres de projets
+            variant (int): Numéro de variante (0-3)
+            include_random (bool): Inclure un identifiant aléatoire
+            
         Returns:
-            str: Contenu modifié avec un horodatage et un identifiant unique
+            str: Texte de la publication formaté selon le modèle
         """
-        timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        # Générer un identifiant aléatoire de 8 caractères
-        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
-        return f"{text}\n\nPublié le {timestamp} [ID:{random_id}]"
+        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)) if include_random else ""
+        
+        # Plusieurs variantes de texte pour la même information
+        variants = [
+            # Variante 0 - Standard
+            lambda: f"""🚀 {title} - {date} 🚀
 
-    def publish_text_post(self, text, public_url, force_unique=False):
+Découvrez mes derniers projets et réalisations dans cette nouvelle édition de ma newsletter portfolio !
+
+📌 Au sommaire:
+{chr(10).join([f"- {t}" for t in project_titles])}
+
+👉 Consultez la version complète pour plus de détails sur chaque projet.
+
+#portfolio #developpeur #tech #projets #newsletter {random_id}""",
+            
+            # Variante 1 - Réorganisée
+            lambda: f"""📰 Newsletter Portfolio ({date}) : {title} 📰
+
+{chr(10).join([f"✅ {t}" for t in project_titles])}
+
+Nouvelle édition disponible ! Cliquez sur le lien pour découvrir en détail tous ces projets passionnants.
+
+#developpeur #portfolio #coding #tech {random_id}""",
+            
+            # Variante 2 - Plus personnelle
+            lambda: f"""Bonjour à tous ! Je viens de publier ma dernière newsletter ({date}) :
+
+"{title}"
+
+Elle présente mes projets récents :
+{chr(10).join([f"• {t}" for t in project_titles])}
+
+N'hésitez pas à consulter la version complète ! #tech #dev #portfolio {random_id}""",
+            
+            # Variante 3 - Direct et concis
+            lambda: f"""NOUVELLE NEWSLETTER 📱💻 - {date}
+
+{title}
+
+Projets inclus :
+{chr(10).join([f">> {t}" for t in project_titles])}
+
+Lien vers la version complète ci-dessous 👇
+#developpement #portfolio {random_id}"""
+        ]
+        
+        # Utiliser la variante demandée ou une variante aléatoire si hors limites
+        variant_index = variant if 0 <= variant < len(variants) else random.randint(0, len(variants) - 1)
+        return variants[variant_index]()
+
+    def publish_text_post(self, title, date, project_titles, public_url, force_unique=False, skip_cache=False):
         """
         Publie un post texte sur LinkedIn sur plusieurs cibles.
         
         Args:
-            text (str): Le texte à publier
+            title (str): Titre de la newsletter
+            date (str): Date de la newsletter
+            project_titles (list): Liste des titres de projets
             public_url (str): URL publique de la newsletter
-            force_unique (bool): Force l'ajout d'un horodatage pour rendre le contenu unique
-        
+            force_unique (bool): Force l'utilisation d'un texte unique
+            skip_cache (bool): Ignore la vérification du cache
+            
         Returns:
             dict: Réponse de l'API LinkedIn ou None en cas d'échec
         """
@@ -181,14 +234,8 @@ class LinkedInPublisher:
         if self.org_id:
             authors['organization'] = self.org_id
 
-        # Gestion du contenu dupliqué
-        original_text = text
-        
-        if force_unique:
-            text = self.make_unique(text)
-        elif self.is_duplicate(text):
-            logger.warning("Contenu en double détecté, ajout d'un horodatage")
-            text = self.make_unique(text)
+        # Génération du texte initial
+        base_text = self._generate_variant_message(title, date, project_titles, variant=0)
         
         # Configuration de l'API
         headers = {
@@ -202,45 +249,55 @@ class LinkedInPublisher:
         
         # Publier pour chaque auteur
         for author_type, author_id in authors.items():
-            # Préparer le corps de la requête
-            post_data = {
-                "author": f"urn:li:{author_type}:{author_id}",
-                "lifecycleState": "PUBLISHED",
-                "specificContent": {
-                    "com.linkedin.ugc.ShareContent": {
-                        "shareCommentary": {
-                            "text": text
-                        },
-                        "shareMediaCategory": "ARTICLE",
-                        "media": [
-                            {
-                                "status": "READY",
-                                "originalUrl": public_url,
-                                "title": {
-                                    "text": "Newsletter Portfolio"
-                                },
-                                "description": {
-                                    "text": "Découvrez mes derniers projets et réalisations"
-                                }
-                            }
-                        ]
-                    }
-                },
-                "visibility": {
-                    "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
-                }
-            }
-            
+            current_variant = 0
             # Tentatives de publication avec gestion des erreurs
-            max_retries = 3
+            max_retries = 5  # Augmentation du nombre de tentatives
             retry_count = 0
             
             while retry_count < max_retries:
                 try:
+                    # Générer une variante différente à chaque tentative
+                    text = self._generate_variant_message(
+                        title, 
+                        date, 
+                        project_titles, 
+                        variant=current_variant,
+                        include_random=True
+                    )
+                    
+                    # Préparer le corps de la requête
+                    post_data = {
+                        "author": f"urn:li:{author_type}:{author_id}",
+                        "lifecycleState": "PUBLISHED",
+                        "specificContent": {
+                            "com.linkedin.ugc.ShareContent": {
+                                "shareCommentary": {
+                                    "text": text
+                                },
+                                "shareMediaCategory": "ARTICLE",
+                                "media": [
+                                    {
+                                        "status": "READY",
+                                        "originalUrl": public_url,
+                                        "title": {
+                                            "text": f"Newsletter Portfolio - {date}"
+                                        },
+                                        "description": {
+                                            "text": f"Découvrez mes derniers projets et réalisations - {random.randint(1000, 9999)}"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        "visibility": {
+                            "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+                        }
+                    }
+                    
                     post_url = "https://api.linkedin.com/v2/ugcPosts"
                     
                     # Journalisation de la requête
-                    logger.info(f"Envoi de la requête POST à {post_url} pour {author_type} {author_id}")
+                    logger.info(f"Envoi de la requête POST à {post_url} pour {author_type} {author_id} (variante {current_variant})")
                     
                     # Envoi de la requête
                     response = requests.post(post_url, headers=headers, json=post_data)
@@ -250,8 +307,9 @@ class LinkedInPublisher:
                         logger.info(f"Publication réussie sur LinkedIn pour {author_type} {author_id}")
                         
                         # Sauvegarder le hachage du contenu
-                        content_hash = self._generate_content_hash(original_text)
-                        self._save_published_hash(content_hash)
+                        if not skip_cache:
+                            content_hash = self._generate_content_hash(base_text)
+                            self._save_published_hash(content_hash)
                         
                         publication_results[author_type] = response.json()
                         break
@@ -263,17 +321,23 @@ class LinkedInPublisher:
                         time.sleep(wait_time)
                     
                     elif response.status_code == 422:  # Duplicate content
-                        # Rendre le contenu unique avec un ID aléatoire et réessayer
-                        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
-                        text = f"{original_text}\n\nPublié le {datetime.now().strftime('%d/%m/%Y %H:%M:%S')} [ID:{random_id}]"
-                        post_data['specificContent']['com.linkedin.ugc.ShareContent']['shareCommentary']['text'] = text
+                        # Passer à la variante suivante
+                        current_variant = (current_variant + 1) % 4
                         retry_count += 1
-                        logger.warning(f"Contenu en double détecté pour {author_type}, nouvelle tentative avec un texte modifié...")
+                        logger.warning(f"Contenu en double détecté pour {author_type}, nouvelle tentative avec la variante {current_variant}...")
+                        time.sleep(1)  # Petite pause entre les tentatives
                     
                     else:
                         logger.error(f"Échec de la publication LinkedIn pour {author_type}: {response.status_code} - {response.text}")
-                        publication_results[author_type] = None
-                        break
+                        # Si on a d'autres variantes à essayer, on continue
+                        if retry_count < max_retries - 1:
+                            current_variant = (current_variant + 1) % 4
+                            retry_count += 1
+                            logger.info(f"Nouvelle tentative avec la variante {current_variant}...")
+                            time.sleep(2)
+                        else:
+                            publication_results[author_type] = None
+                            break
                         
                 except Exception as e:
                     logger.error(f"Erreur lors de la publication sur LinkedIn pour {author_type}: {e}")
@@ -300,16 +364,20 @@ def main():
         bool: True si la publication est réussie, False sinon
     """
     try:
-        # Vérifier si c'est déjà publié aujour(d'hui
+        # Vérifier si c'est déjà publié aujourd'hui
         lock_file = Path('./.linkedin_cache/daily_lock')
         lock_file.parent.mkdir(exist_ok=True)
         
-        # Si le fichier existe et a été créé aujourd'hui, on arrête
-        if lock_file.exists():
+        # Vérifier si l'option de forçage est activée
+        force_publish = os.environ.get('FORCE_LINKEDIN_PUBLISH', '').lower() in ('true', '1', 'yes')
+        skip_cache = os.environ.get('SKIP_LINKEDIN_CACHE', '').lower() in ('true', '1', 'yes')
+        
+        # Si le fichier existe et a été créé aujourd'hui, on arrête (sauf si force_publish)
+        if lock_file.exists() and not force_publish:
             file_date = datetime.fromtimestamp(lock_file.stat().st_mtime)
             today = datetime.now()
             if file_date.date() == today.date():
-                logger.info("Une publication a déjà été effectuée aujourd'hui. Publication ignorée.")
+                logger.info("Une publication a déjà été effectuée aujourd'hui. Publication ignorée. Utilisez FORCE_LINKEDIN_PUBLISH=true pour forcer.")
                 return True
         
         # Récupérer le répertoire des newsletters
@@ -378,29 +446,16 @@ def main():
             [h2.text.strip() for h2 in soup.find_all('h2')][:5]  # Limiter aux 5 premiers
         )
         
-        # Créer le contenu de la publication LinkedIn
-        post_text = f"""🚀 {title} - {date_text} 🚀
-
-Découvrez mes derniers projets et réalisations dans cette nouvelle édition de ma newsletter portfolio !
-
-📌 Au sommaire:
-"""
-        # Ajouter les titres des projets
-        for proj_title in project_titles:
-            post_text += f"- {proj_title}\n"
-
-        post_text += f"""
-👉 Consultez la version complète pour plus de détails sur chaque projet.
-
-#portfolio #developpeur #tech #projets #newsletter"""
-        
-        # Ajouter un ID unique à chaque publication
-        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
-        post_text += f" {random_id}"
-        
         # Créer l'instance LinkedIn Publisher et publier
         publisher = LinkedInPublisher()
-        result = publisher.publish_text_post(post_text, public_url, force_unique=True)
+        result = publisher.publish_text_post(
+            title=title, 
+            date=date_text, 
+            project_titles=project_titles, 
+            public_url=public_url, 
+            force_unique=True,
+            skip_cache=skip_cache
+        )
         
         if result:
             logger.info("Newsletter publiée avec succès sur LinkedIn")
