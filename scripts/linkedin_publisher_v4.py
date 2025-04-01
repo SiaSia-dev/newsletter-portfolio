@@ -427,25 +427,26 @@ def main():
         all_files = os.listdir(newsletters_dir)
         logger.info(f"Fichiers trouvés: {all_files}")
         
-        # Chercher les fichiers newsletter_*.html
-        newsletter_files = [f for f in all_files if f.startswith('newsletter_') and f.endswith('.html')]
-        
-        if not newsletter_files:
-            # Si aucun fichier newsletter_*.html, alors seulement chercher latest.html
-            if 'latest.html' in all_files:
-                latest_html = 'latest.html'
-                logger.info("Utilisation de latest.html car aucun fichier newsletter_*.html trouvé")
-            else:
+        # Recherche du fichier HTML le plus récent (priorité à latest.html)
+        if 'latest.html' in all_files:
+            latest_html = 'latest.html'
+            logger.info("Utilisation de latest.html pour la publication")
+        else:
+            # Chercher les fichiers newsletter_*.html
+            newsletter_files = [f for f in all_files if f.startswith('newsletter_') and f.endswith('.html')]
+            
+            if not newsletter_files:
                 logger.error("Aucun fichier HTML de newsletter trouvé")
                 return False
-        else:
+            
             # Trier par date de modification (le plus récent en premier)
             latest_html = sorted(
                 newsletter_files, 
                 key=lambda f: os.path.getmtime(os.path.join(newsletters_dir, f)), 
                 reverse=True
             )[0]
-            logger.info(f"Dernier fichier de newsletter trouvé: {latest_html}")
+        
+        logger.info(f"Dernier fichier de newsletter trouvé: {latest_html}")
         
         # URL publique de la newsletter
         username = os.environ.get('GB_USERNAME')
