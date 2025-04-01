@@ -54,10 +54,6 @@ class LinkedInPublisher:
             logger.error("Aucun ID de publication LinkedIn trouvé")
             raise ValueError("ID de personne ou d'organisation LinkedIn requis")
         
-        # S'assurer que person_id existe même s'il est None
-        self.person_id = self.person_id
-        self.org_id = self.org_id
-        
         # Gestion du cache des publications
         self.cache_dir = Path('./.linkedin_cache')
         self.cache_dir.mkdir(exist_ok=True)
@@ -66,22 +62,91 @@ class LinkedInPublisher:
         # Charger les hachages des publications précédentes
         self.published_hashes = self._load_published_hashes()
 
-    def publish_text_post(self, title, date, project_titles, public_url, force_unique=False, skip_cache=False):
+    def _validate_token(self):
         """
-        Publie un post texte sur LinkedIn sur plusieurs cibles.
+        Vérifie si le token d'accès est valide.
+        
+        Returns:
+            bool: True si le token est valide, False sinon
         """
-        # Préparer les auteurs
-        authors = {}
-        if self.person_id:  # Vérification que person_id n'est pas None avant de l'utiliser
-            authors['person'] = self.person_id
-        if self.org_id:  # Vérification que org_id n'est pas None avant de l'utiliser
-            authors['organization'] = self.org_id
+        headers = {
+            'Authorization': f'Bearer {self.access_token}',
+            'X-Restli-Protocol-Version': '2.0.0'
+        }
+        
+        try:
+            # Utiliser une API simple pour vérifier le token
+            response = requests.get('https://api.linkedin.com/v2/me', headers=headers)
             
-        # Vérifier qu'il y a au moins un auteur valide
-        if not authors:
-            logger.error("Aucun ID d'auteur LinkedIn valide trouvé (person_id ou org_id)")
-            return None
+            if response.status_code == 200:
+                logger.info("Token LinkedIn valide")
+                return True
+            elif response.status_code == 401:
+                logger.error(f"Token LinkedIn non autorisé: {response.text}")
+                return False
+            else:
+                logger.warning(f"Vérification du token LinkedIn: statut {response.status_code} - {response.text}")
+                # En cas de doute, on continue (peut-être un problème temporaire)
+                return True
+                
+        except Exception as e:
+            logger.error(f"Erreur lors de la vérification du token LinkedIn: {e}")
+            return False
 
+    def _load_published_hashes(self):
+        """
+        Charge les hachages des publications précédentes depuis le fichier de cache.
+        
+        Returns:
+            set: Ensemble des hachages de publications précédentes
+        """
+        if self.cache_file.exists():
+            try:
+                with open(self.cache_file, 'rb') as f:
+                    return pickle.load(f)
+            except Exception as e:
+                logger.warning(f"Erreur lors du chargement du cache: {e}")
+                return set()
+        return set()
+
+    def _save_published_hash(self, content_hash):
+        """
+        Sauvegarde le hachage d'une publication dans le fichier de cache.
+        
+        Args:
+            content_hash (str): Hachage du contenu de la publication
+        """
+        self.published_hashes.add(content_hash)
+        try:
+            with open(self.cache_file, 'wb') as f:
+                pickle.dump(self.published_hashes, f)
+        except Exception as e:
+            logger.warning(f"Erreur lors de la sauvegarde du cache: {e}")
+
+    def _generate_content_hash(self, text):
+        """
+        Génère un hachage unique pour le contenu de la publication.
+        
+        Args:
+            text (str): Contenu textuel de la publication
+        
+        Returns:
+            str: Hachage MD5 du contenu
+        """
+        return hashlib.md5(text.encode('utf-8')).hexdigest()
+
+    def is_duplicate(self, text):
+        """
+        Vérifie si une publication est un doublon.
+        
+        Args:
+            text (str): Contenu textuel de la publication
+        
+        Returns:
+            bool: True si le contenu est un doublon, False sinon
+        """
+        content_hash = self._generate_content_hash(text)
+        return content_hash in self.published_hashes
     
     def _generate_variant_message(self, title, date, project_titles, variant=0, include_random=True):
         """
@@ -177,6 +242,11 @@ Lien vers la version complète ci-dessous 👇
             authors['person'] = self.person_id
         if self.org_id:
             authors['organization'] = self.org_id
+            
+        # Vérifier qu'il y a au moins un auteur valide
+        if not authors:
+            logger.error("Aucun ID d'auteur LinkedIn valide trouvé (person_id ou org_id)")
+            return None
 
         # Génération du texte initial
         base_text = self._generate_variant_message(title, date, project_titles, variant=0)
@@ -342,9 +412,6 @@ def main():
                 return True
             else:
                 logger.info("La dernière publication date d'une semaine précédente. Poursuite de la publication...")
-        
-        # Le reste du code main() reste identique
-        # ...
 
         # Récupérer le répertoire des newsletters
         newsletters_dir = os.environ.get('NEWSLETTERS_DIR', '.')
@@ -382,11 +449,11 @@ def main():
         logger.info(f"Dernier fichier de newsletter trouvé: {latest_html}")
         
         # URL publique de la newsletter
-        username = os.environ.get('GB_USERNAME')
-        repo_name = os.environ.get('GB_REPO')
+        username = os.environ.get('GITHUB_USERNAME')
+        repo_name = os.environ.get('GITHUB_REPO')
 
         if not username or not repo_name:
-            logger.error("Variables d'environnement GB_USERNAME et/ou GB_REPO non définies")
+            logger.error("Variables d'environnement GITHUB_USERNAME et/ou GITHUB_REPO non définies")
             logger.error("Veuillez définir ces variables dans votre environnement ou dans GitHub Actions")
             return False
 
