@@ -36,4 +36,5 @@ scripts/old/
 scripts/backups/
 
 scripts/linkedin_publisher_v2.py
+scripts/linkedin_publisher_v3.py
 .github/workflows/publish_linkedin_v1.yml
