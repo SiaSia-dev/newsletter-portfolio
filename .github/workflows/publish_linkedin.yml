@@ -1,14 +1,17 @@
-name: Publication sur LinkedIn
+name: Publication Hebdomadaire sur LinkedIn
 
 on:
-  #workflow_run:
-  # workflows: ["Génération et Déploiement de Newsletter"]
-  #  types:
-  #    - completed
+  schedule:
+    # Exécution tous les lundis à 9h00
+    - cron: '0 9 * * 1'
+  workflow_run:
+    workflows: ["Génération et Déploiement de Newsletter"]
+    types:
+      - completed
   workflow_dispatch:  # Permet de lancer manuellement
     inputs:
       force_publish:
-        description: 'Forcer la publication même si déjà publié aujourd'hui'
+        description: 'Forcer la publication même si déjà publié cette semaine'
         required: false
         default: 'false'
         type: boolean
@@ -25,7 +28,7 @@ permissions:
 jobs:
   publish-linkedin:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -79,8 +82,8 @@ jobs:
       - name: Clean up existing lock file
         if: ${{ inputs.force_publish }}
         run: |
-          rm -f .linkedin_cache/daily_lock
-          echo "🔄 Nettoyage du verrou quotidien pour permettre une nouvelle publication"
+          rm -f .linkedin_cache/weekly_lock
+          echo "🔄 Nettoyage du verrou hebdomadaire pour permettre une nouvelle publication"
           
       - name: Publish to LinkedIn
         env:
