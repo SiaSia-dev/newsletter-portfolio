@@ -8,6 +8,8 @@ import re
 from datetime import datetime
 from pathlib import Path
 import time
+import random
+import string
 from bs4 import BeautifulSoup
 
 # Configuration du logging
@@ -36,6 +38,11 @@ class LinkedInPublisher:
         if not self.access_token:
             logger.error("Token d'accès LinkedIn non trouvé")
             raise ValueError("Token d'accès LinkedIn requis")
+            
+        # Vérifier que le token n'est pas expiré ou invalide
+        if not self._validate_token():
+            logger.error("Token d'accès LinkedIn invalide ou expiré")
+            raise ValueError("Token d'accès LinkedIn invalide ou expiré")
         
         # Récupérer les ID de publication
         self.person_id = os.environ.get('LINKEDIN_PERSON_ID')
@@ -53,6 +60,37 @@ class LinkedInPublisher:
         
         # Charger les hachages des publications précédentes
         self.published_hashes = self._load_published_hashes()
+
+    def _validate_token(self):
+        """
+        Vérifie si le token d'accès est valide.
+        
+        Returns:
+            bool: True si le token est valide, False sinon
+        """
+        headers = {
+            'Authorization': f'Bearer {self.access_token}',
+            'X-Restli-Protocol-Version': '2.0.0'
+        }
+        
+        try:
+            # Utiliser une API simple pour vérifier le token
+            response = requests.get('https://api.linkedin.com/v2/me', headers=headers)
+            
+            if response.status_code == 200:
+                logger.info("Token LinkedIn valide")
+                return True
+            elif response.status_code == 401:
+                logger.error(f"Token LinkedIn non autorisé: {response.text}")
+                return False
+            else:
+                logger.warning(f"Vérification du token LinkedIn: statut {response.status_code} - {response.text}")
+                # En cas de doute, on continue (peut-être un problème temporaire)
+                return True
+                
+        except Exception as e:
+            logger.error(f"Erreur lors de la vérification du token LinkedIn: {e}")
+            return False
 
     def _load_published_hashes(self):
         """
@@ -111,16 +149,18 @@ class LinkedInPublisher:
 
     def make_unique(self, text):
         """
-        Rend le contenu unique en ajoutant un horodatage.
+        Rend le contenu unique en ajoutant un horodatage et un identifiant aléatoire.
         
         Args:
             text (str): Contenu original de la publication
         
         Returns:
-            str: Contenu modifié avec un horodatage
+            str: Contenu modifié avec un horodatage et un identifiant unique
         """
         timestamp = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-        return f"{text}\n\nPublié le {timestamp}"
+        # Générer un identifiant aléatoire de 8 caractères
+        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+        return f"{text}\n\nPublié le {timestamp} [ID:{random_id}]"
 
     def publish_text_post(self, text, public_url, force_unique=False):
         """
@@ -223,8 +263,9 @@ class LinkedInPublisher:
                         time.sleep(wait_time)
                     
                     elif response.status_code == 422:  # Duplicate content
-                        # Rendre le contenu unique et réessayer
-                        text = self.make_unique(text + f" [{retry_count}]")
+                        # Rendre le contenu unique avec un ID aléatoire et réessayer
+                        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+                        text = f"{original_text}\n\nPublié le {datetime.now().strftime('%d/%m/%Y %H:%M:%S')} [ID:{random_id}]"
                         post_data['specificContent']['com.linkedin.ugc.ShareContent']['shareCommentary']['text'] = text
                         retry_count += 1
                         logger.warning(f"Contenu en double détecté pour {author_type}, nouvelle tentative avec un texte modifié...")
@@ -259,6 +300,18 @@ def main():
         bool: True si la publication est réussie, False sinon
     """
     try:
+        # Vérifier si c'est déjà publié aujour(d'hui
+        lock_file = Path('./.linkedin_cache/daily_lock')
+        lock_file.parent.mkdir(exist_ok=True)
+        
+        # Si le fichier existe et a été créé aujourd'hui, on arrête
+        if lock_file.exists():
+            file_date = datetime.fromtimestamp(lock_file.stat().st_mtime)
+            today = datetime.now()
+            if file_date.date() == today.date():
+                logger.info("Une publication a déjà été effectuée aujourd'hui. Publication ignorée.")
+                return True
+        
         # Récupérer le répertoire des newsletters
         newsletters_dir = os.environ.get('NEWSLETTERS_DIR', '.')
         
@@ -341,12 +394,19 @@ Découvrez mes derniers projets et réalisations dans cette nouvelle édition de
 
 #portfolio #developpeur #tech #projets #newsletter"""
         
+        # Ajouter un ID unique à chaque publication
+        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+        post_text += f" {random_id}"
+        
         # Créer l'instance LinkedIn Publisher et publier
         publisher = LinkedInPublisher()
         result = publisher.publish_text_post(post_text, public_url, force_unique=True)
         
         if result:
             logger.info("Newsletter publiée avec succès sur LinkedIn")
+            # Créer le fichier de verrou quotidien pour éviter les publications multiples
+            with open(lock_file, 'w') as f:
+                f.write(f"Publication effectuée le {datetime.now()}")
             return True
         else:
             logger.error("Échec de la publication sur LinkedIn")

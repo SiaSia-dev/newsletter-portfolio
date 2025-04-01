@@ -39,7 +39,33 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests beautifulsoup4
       
-      - name: Publish to LinkedIn
+      - name: Verify LinkedIn token
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        run: |
+          # Simple token validation
+          echo "Vérification de la validité du token LinkedIn..."
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+             -H "Authorization: Bearer $LINKEDIN_ACCESS_TOKEN" \
+             -H "X-Restli-Protocol-Version: 2.0.0" \
+             "https://api.linkedin.com/v2/me")
+          
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            echo "✅ Token LinkedIn valide"
+          elif [ "$HTTP_STATUS" -eq 401 ]; then
+            echo "❌ Token LinkedIn invalide ou expiré (HTTP 401)"
+            echo "Veuillez régénérer votre token LinkedIn et mettre à jour le secret LINKEDIN_ACCESS_TOKEN"
+            exit 1
+          else
+            echo "⚠️ Statut de vérification du token LinkedIn: $HTTP_STATUS"
+            echo "Poursuite du workflow, mais soyez attentif aux erreurs potentielles"
+          fi
+      
+      - name: Create LinkedIn cache directory
+        run: |
+          mkdir -p .linkedin_cache
+          
+      - name: Publish to LinkedIn (Single attempt)
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
@@ -47,21 +73,14 @@ jobs:
           GITHUB_USERNAME: SiaSia-dev
           GITHUB_REPO: newsletter-portfolio
         run: |
-          # Ajoutez la vérification du token
-          echo "Vérification de la validité du token LinkedIn..."
-
-          # Le script lui-même doit être modifié pour gérer cette erreur plus gracieusement
-          python scripts/linkedin_publisher.py || echo "Publication LinkedIn échouée mais le workflow continue"
-          
-          # S'assurer que le répertoire newsletters existe
-          mkdir -p ${{ github.workspace }}/newsletter-portfolio
-          
-          # Vérification du contenu du répertoire
-          echo "Fichiers disponibles pour publication LinkedIn:"
-          ls -la ${{ github.workspace }}/newsletter-portfolio
-          
-          # Exécuter le script de publication LinkedIn
+          # Exécuter le script de publication LinkedIn une seule fois
           python scripts/linkedin_publisher.py
+          if [ $? -ne 0 ]; then
+            echo "❌ Échec de la publication LinkedIn"
+            exit 1
+          else
+            echo "✅ Publication LinkedIn réussie"
+          fi
 
       - name: Enregistrer la publication
         if: success()
