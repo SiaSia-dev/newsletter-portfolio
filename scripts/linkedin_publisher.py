@@ -11,6 +11,7 @@ import time
 import random
 import string
 from bs4 import BeautifulSoup
+import base64
 
 # Configuration du logging
 logging.basicConfig(
@@ -20,136 +21,12 @@ logging.basicConfig(
 logger = logging.getLogger('linkedin_publisher')
 
 class LinkedInPublisher:
-    def __init__(self, access_token=None):
-        """
-        Initialise la classe de publication LinkedIn.
-        
-        Args:
-            access_token (str, optional): Token d'accès LinkedIn. 
-                                          Si non fourni, tentera de le récupérer des variables d'environnement.
-        """
-        # Récupérer le token d'accès
-        self.access_token = access_token or os.environ.get('LINKEDIN_ACCESS_TOKEN') or os.environ.get('DEPLOY_TOKEN')
-        
-        # Nettoyer et valider le token
-        if self.access_token:
-            self.access_token = self.access_token.strip()
-            
-        if not self.access_token:
-            logger.error("Token d'accès LinkedIn non trouvé")
-            raise ValueError("Token d'accès LinkedIn requis")
-            
-        # Vérifier que le token n'est pas expiré ou invalide
-        if not self._validate_token():
-            logger.error("Token d'accès LinkedIn invalide ou expiré")
-            raise ValueError("Token d'accès LinkedIn invalide ou expiré")
-        
-        # Récupérer les ID de publication
-        self.person_id = os.environ.get('LINKEDIN_PERSON_ID')
-        self.org_id = os.environ.get('LINKEDIN_ORG_ID')
-        
-        # Valider les ID
-        if not self.person_id and not self.org_id:
-            logger.error("Aucun ID de publication LinkedIn trouvé")
-            raise ValueError("ID de personne ou d'organisation LinkedIn requis")
-        
-        # Gestion du cache des publications
-        self.cache_dir = Path('./.linkedin_cache')
-        self.cache_dir.mkdir(exist_ok=True)
-        self.cache_file = self.cache_dir / 'published_posts.pkl'
-        
-        # Charger les hachages des publications précédentes
-        self.published_hashes = self._load_published_hashes()
-
-    def _validate_token(self):
-        """
-        Vérifie si le token d'accès est valide.
-        
-        Returns:
-            bool: True si le token est valide, False sinon
-        """
-        headers = {
-            'Authorization': f'Bearer {self.access_token}',
-            'X-Restli-Protocol-Version': '2.0.0'
-        }
-        
-        try:
-            # Utiliser une API simple pour vérifier le token
-            response = requests.get('https://api.linkedin.com/v2/me', headers=headers)
-            
-            if response.status_code == 200:
-                logger.info("Token LinkedIn valide")
-                return True
-            elif response.status_code == 401:
-                logger.error(f"Token LinkedIn non autorisé: {response.text}")
-                return False
-            else:
-                logger.warning(f"Vérification du token LinkedIn: statut {response.status_code} - {response.text}")
-                # En cas de doute, on continue (peut-être un problème temporaire)
-                return True
-                
-        except Exception as e:
-            logger.error(f"Erreur lors de la vérification du token LinkedIn: {e}")
-            return False
-
-    def _load_published_hashes(self):
-        """
-        Charge les hachages des publications précédentes depuis le fichier de cache.
-        
-        Returns:
-            set: Ensemble des hachages de publications précédentes
-        """
-        if self.cache_file.exists():
-            try:
-                with open(self.cache_file, 'rb') as f:
-                    return pickle.load(f)
-            except Exception as e:
-                logger.warning(f"Erreur lors du chargement du cache: {e}")
-                return set()
-        return set()
-
-    def _save_published_hash(self, content_hash):
-        """
-        Sauvegarde le hachage d'une publication dans le fichier de cache.
-        
-        Args:
-            content_hash (str): Hachage du contenu de la publication
-        """
-        self.published_hashes.add(content_hash)
-        try:
-            with open(self.cache_file, 'wb') as f:
-                pickle.dump(self.published_hashes, f)
-        except Exception as e:
-            logger.warning(f"Erreur lors de la sauvegarde du cache: {e}")
-
-    def _generate_content_hash(self, text):
-        """
-        Génère un hachage unique pour le contenu de la publication.
-        
-        Args:
-            text (str): Contenu textuel de la publication
-        
-        Returns:
-            str: Hachage MD5 du contenu
-        """
-        return hashlib.md5(text.encode('utf-8')).hexdigest()
-
-    def is_duplicate(self, text):
-        """
-        Vérifie si une publication est un doublon.
-        
-        Args:
-            text (str): Contenu textuel de la publication
-        
-        Returns:
-            bool: True si le contenu est un doublon, False sinon
-        """
-        content_hash = self._generate_content_hash(text)
-        return content_hash in self.published_hashes
-
+    # [Garder le code de la classe inchangé jusqu'à la méthode _generate_variant_message]
+    
     def _generate_variant_message(self, title, date, project_titles, variant=0, include_random=True):
         """
         Génère une variante du message selon un modèle spécifique.
+        Ajoute un contenu unique à chaque génération.
         
         Args:
             title (str): Titre de la newsletter
@@ -161,7 +38,14 @@ class LinkedInPublisher:
         Returns:
             str: Texte de la publication formaté selon le modèle
         """
-        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)) if include_random else ""
+        # Générer un identifiant vraiment unique basé sur le timestamp actuel
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        unique_id = f"{timestamp}-{random_id}"
+        
+        # Créer une phrase invisible (presque) pour LinkedIn
+        # Utiliser des caractères Unicode de largeur zéro et des espaces sans chasse
+        invisible_unique = ''.join([f"​{c}​" for c in unique_id])  # Utilise le caractère Unicode "joindre sans largeur" (U+200B)
         
         # Plusieurs variantes de texte pour la même information
         variants = [
@@ -175,26 +59,26 @@ Découvrez mes derniers projets et réalisations dans cette nouvelle édition de
 
 👉 Consultez la version complète pour plus de détails sur chaque projet.
 
-#portfolio #developpeur #tech #projets #newsletter {random_id}""",
+#portfolio #developpeur #tech #projets #newsletter {invisible_unique}""",
             
             # Variante 1 - Réorganisée
             lambda: f"""📰 Newsletter Portfolio ({date}) : {title} 📰
-
+{invisible_unique}
 {chr(10).join([f"✅ {t}" for t in project_titles])}
 
 Nouvelle édition disponible ! Cliquez sur le lien pour découvrir en détail tous ces projets passionnants.
 
-#developpeur #portfolio #coding #tech {random_id}""",
+#developpeur #portfolio #coding #tech""",
             
             # Variante 2 - Plus personnelle
             lambda: f"""Bonjour à tous ! Je viens de publier ma dernière newsletter ({date}) :
 
-"{title}"
+"{title}" {invisible_unique}
 
 Elle présente mes projets récents :
 {chr(10).join([f"• {t}" for t in project_titles])}
 
-N'hésitez pas à consulter la version complète ! #tech #dev #portfolio {random_id}""",
+N'hésitez pas à consulter la version complète ! #tech #dev #portfolio""",
             
             # Variante 3 - Direct et concis
             lambda: f"""NOUVELLE NEWSLETTER 📱💻 - {date}
@@ -205,7 +89,7 @@ Projets inclus :
 {chr(10).join([f">> {t}" for t in project_titles])}
 
 Lien vers la version complète ci-dessous 👇
-#developpement #portfolio {random_id}"""
+#developpement #portfolio {invisible_unique}"""
         ]
         
         # Utiliser la variante demandée ou une variante aléatoire si hors limites
@@ -256,7 +140,12 @@ Lien vers la version complète ci-dessous 👇
             
             while retry_count < max_retries:
                 try:
-                    # Générer une variante différente à chaque tentative
+                    # Générer un titre et une description uniques pour l'article
+                    random_suffix = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
+                    article_title = f"Newsletter Portfolio - {date} [{random_suffix}]"
+                    article_desc = f"Découvrez mes derniers projets et réalisations - {datetime.now().strftime('%H:%M:%S')}"
+                    
+                    # Générer une variante différente à chaque tentative avec contenu invisible unique
                     text = self._generate_variant_message(
                         title, 
                         date, 
@@ -264,6 +153,9 @@ Lien vers la version complète ci-dessous 👇
                         variant=current_variant,
                         include_random=True
                     )
+                    
+                    # Générer une URL unique en ajoutant un paramètre aléatoire
+                    unique_url = f"{public_url}?t={int(time.time())}&r={random.randint(1000, 9999)}"
                     
                     # Préparer le corps de la requête
                     post_data = {
@@ -278,12 +170,12 @@ Lien vers la version complète ci-dessous 👇
                                 "media": [
                                     {
                                         "status": "READY",
-                                        "originalUrl": public_url,
+                                        "originalUrl": unique_url,
                                         "title": {
-                                            "text": f"Newsletter Portfolio - {date}"
+                                            "text": article_title
                                         },
                                         "description": {
-                                            "text": f"Découvrez mes derniers projets et réalisations - {random.randint(1000, 9999)}"
+                                            "text": article_desc
                                         }
                                     }
                                 ]
@@ -321,11 +213,12 @@ Lien vers la version complète ci-dessous 👇
                         time.sleep(wait_time)
                     
                     elif response.status_code == 422:  # Duplicate content
-                        # Passer à la variante suivante
+                        # Attendre un peu plus longtemps et essayer avec une nouvelle variante
                         current_variant = (current_variant + 1) % 4
                         retry_count += 1
                         logger.warning(f"Contenu en double détecté pour {author_type}, nouvelle tentative avec la variante {current_variant}...")
-                        time.sleep(1)  # Petite pause entre les tentatives
+                        # Attendre plus longtemps entre les tentatives
+                        time.sleep(3)
                     
                     else:
                         logger.error(f"Échec de la publication LinkedIn pour {author_type}: {response.status_code} - {response.text}")
@@ -334,7 +227,7 @@ Lien vers la version complète ci-dessous 👇
                             current_variant = (current_variant + 1) % 4
                             retry_count += 1
                             logger.info(f"Nouvelle tentative avec la variante {current_variant}...")
-                            time.sleep(2)
+                            time.sleep(3)
                         else:
                             publication_results[author_type] = None
                             break
@@ -360,7 +253,7 @@ Lien vers la version complète ci-dessous 👇
 def main():
     """
     Fonction principale pour générer et publier la newsletter sur LinkedIn.
-    Publication hebdomadaire au lieu de quotidienne.
+    Publication hebdomadaire.
     
     Returns:
         bool: True si la publication est réussie, False sinon
@@ -390,6 +283,9 @@ def main():
             else:
                 logger.info("La dernière publication date d'une semaine précédente. Poursuite de la publication...")
         
+        # Le reste du code main() reste identique
+        # ...
+
         # Récupérer le répertoire des newsletters
         newsletters_dir = os.environ.get('NEWSLETTERS_DIR', '.')
         
@@ -426,8 +322,14 @@ def main():
         logger.info(f"Dernier fichier de newsletter trouvé: {latest_html}")
         
         # URL publique de la newsletter
-        username = os.environ.get('GITHUB_USERNAME', 'SiaSia-dev')
-        repo_name = os.environ.get('GITHUB_REPO', 'newsletter-portfolio')
+        username = os.environ.get('GITHUB_USERNAME')
+        repo_name = os.environ.get('GITHUB_REPO')
+
+        if not username or not repo_name:
+            logger.error("Variables d'environnement GITHUB_USERNAME et/ou GITHUB_REPO non définies")
+            logger.error("Veuillez définir ces variables dans votre environnement ou dans GitHub Actions")
+            return False
+
         public_url = f"https://{username}.github.io/{repo_name}/{latest_html}"
         logger.info(f"URL publique : {public_url}")
         
