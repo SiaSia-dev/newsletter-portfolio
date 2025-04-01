@@ -109,20 +109,24 @@ class LinkedInPublisher:
                 return []
         return []
 
-    def _save_published_hash(self, content_hash):
+    def _save_published_hash(self, content_hash, author_type):
         """
         Sauvegarde le hachage d'une publication dans le fichier de cache.
+        
+        Args:
+            content_hash (str): Hachage du contenu
+            author_type (str): Type d'auteur (person ou organization)
         """
         # Nettoyer les hachages anciens de plus d'une semaine
         current_time = datetime.now()
         self.published_hashes = [
-            (hash_val, timestamp) 
-            for hash_val, timestamp in self.published_hashes 
+            (hash_val, timestamp, author) 
+            for hash_val, timestamp, author in self.published_hashes 
             if current_time - timestamp < timedelta(days=7)
         ]
-    
-        # Ajouter le nouveau hachage
-        self.published_hashes.append((content_hash, current_time))
+        
+        # Ajouter le nouveau hachage avec le type d'auteur
+        self.published_hashes.append((content_hash, current_time, author_type))
         
         try:
             with open(self.cache_file, 'wb') as f:
@@ -142,18 +146,32 @@ class LinkedInPublisher:
         """
         return hashlib.md5(text.encode('utf-8')).hexdigest()
 
-    def is_duplicate(self, text):
+    def is_duplicate(self, text, author_type=None):
         """
-        Vérifie si une publication est un doublon avec une tolérance temporelle.
+        Vérifie si une publication est un doublon avec une tolérance temporelle et par type d'auteur.
+        
+        Args:
+            text (str): Contenu textuel de la publication
+            author_type (str, optional): Type d'auteur (person ou organization)
+        
+        Returns:
+            bool: True si un doublon existe, False sinon
         """
         content_hash = self._generate_content_hash(text)
+        current_time = datetime.now()
         
-        # Vérifier si le hachage existe et sa date
-        for existing_hash, timestamp in self.published_hashes:
+        # Filtrer les hachages par type d'auteur si spécifié
+        filtered_hashes = [
+            (hash_val, timestamp, author) 
+            for hash_val, timestamp, author in self.published_hashes 
+            if current_time - timestamp < timedelta(days=7) 
+            and (author_type is None or author == author_type)
+        ]
+        
+        # Vérifier si un hachage identique existe pour ce type d'auteur
+        for existing_hash, _, _ in filtered_hashes:
             if existing_hash == content_hash:
-                # Vérifier si le hachage est récent (moins d'une semaine)
-                if datetime.now() - timestamp < timedelta(days=7):
-                    return True
+                return True
         
         return False
     
@@ -340,7 +358,7 @@ Lien vers la version complète ci-dessous 👇
                         # Sauvegarder le hachage du contenu
                         if not skip_cache:
                             content_hash = self._generate_content_hash(base_text)
-                            self._save_published_hash(content_hash)
+                            self._save_published_hash(content_hash, author_type)
                         
                         publication_results[author_type] = response.json()
                         break
