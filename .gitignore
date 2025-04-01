@@ -34,3 +34,6 @@ scripts/temp/
 scripts/tmp/
 scripts/old/
 scripts/backups/
+
+scripts/linkedin_publisher_v2.py
+.github/workflows/publish_linkedin_v1.yml
