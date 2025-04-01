@@ -21,7 +21,67 @@ logging.basicConfig(
 logger = logging.getLogger('linkedin_publisher')
 
 class LinkedInPublisher:
-    # [Garder le code de la classe inchangé jusqu'à la méthode _generate_variant_message]
+    def __init__(self, access_token=None):
+        """
+        Initialise la classe de publication LinkedIn.
+        
+        Args:
+            access_token (str, optional): Token d'accès LinkedIn. 
+                                          Si non fourni, tentera de le récupérer des variables d'environnement.
+        """
+        # Récupérer le token d'accès
+        self.access_token = access_token or os.environ.get('LINKEDIN_ACCESS_TOKEN') or os.environ.get('DEPLOY_TOKEN')
+        
+        # Nettoyer et valider le token
+        if self.access_token:
+            self.access_token = self.access_token.strip()
+            
+        if not self.access_token:
+            logger.error("Token d'accès LinkedIn non trouvé")
+            raise ValueError("Token d'accès LinkedIn requis")
+            
+        # Vérifier que le token n'est pas expiré ou invalide
+        if not self._validate_token():
+            logger.error("Token d'accès LinkedIn invalide ou expiré")
+            raise ValueError("Token d'accès LinkedIn invalide ou expiré")
+        
+        # Récupérer les ID de publication
+        self.person_id = os.environ.get('LINKEDIN_PERSON_ID')
+        self.org_id = os.environ.get('LINKEDIN_ORG_ID')
+        
+        # Validation des ID (assurer qu'ils ne sont pas None)
+        if not self.person_id and not self.org_id:
+            logger.error("Aucun ID de publication LinkedIn trouvé")
+            raise ValueError("ID de personne ou d'organisation LinkedIn requis")
+        
+        # S'assurer que person_id existe même s'il est None
+        self.person_id = self.person_id
+        self.org_id = self.org_id
+        
+        # Gestion du cache des publications
+        self.cache_dir = Path('./.linkedin_cache')
+        self.cache_dir.mkdir(exist_ok=True)
+        self.cache_file = self.cache_dir / 'published_posts.pkl'
+        
+        # Charger les hachages des publications précédentes
+        self.published_hashes = self._load_published_hashes()
+
+    def publish_text_post(self, title, date, project_titles, public_url, force_unique=False, skip_cache=False):
+        """
+        Publie un post texte sur LinkedIn sur plusieurs cibles.
+        """
+        # Préparer les auteurs
+        authors = {}
+        if self.person_id:  # Vérification que person_id n'est pas None avant de l'utiliser
+            authors['person'] = self.person_id
+        if self.org_id:  # Vérification que org_id n'est pas None avant de l'utiliser
+            authors['organization'] = self.org_id
+            
+        # Vérifier qu'il y a au moins un auteur valide
+        if not authors:
+            logger.error("Aucun ID d'auteur LinkedIn valide trouvé (person_id ou org_id)")
+            return None
+
     
     def _generate_variant_message(self, title, date, project_titles, variant=0, include_random=True):
         """

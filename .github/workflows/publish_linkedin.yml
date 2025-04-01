@@ -78,7 +78,14 @@ jobs:
       - name: Create LinkedIn cache directory
         run: |
           mkdir -p .linkedin_cache
-          
+      
+      - name: Debug environment variables
+        env:
+          LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
+        run: |
+          echo "LINKEDIN_PERSON_ID defined: $([[ -n "$LINKEDIN_PERSON_ID" ]] && echo 'Yes' || echo 'No')"
+          # Ne pas afficher la valeur réelle pour des raisons de sécurité
+
       - name: Clean up existing lock file
         if: ${{ inputs.force_publish }}
         run: |
