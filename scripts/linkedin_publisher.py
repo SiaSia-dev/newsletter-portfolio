@@ -98,7 +98,7 @@ class LinkedInPublisher:
         Charge les hachages des publications précédentes depuis le fichier de cache.
         
         Returns:
-            set: Ensemble des hachages de publications précédentes
+            list: Liste des hachages de publications précédentes avec leurs timestamps
         """
         if self.cache_file.exists():
             try:
@@ -106,17 +106,24 @@ class LinkedInPublisher:
                     return pickle.load(f)
             except Exception as e:
                 logger.warning(f"Erreur lors du chargement du cache: {e}")
-                return set()
-        return set()
+                return []
+        return []
 
     def _save_published_hash(self, content_hash):
         """
         Sauvegarde le hachage d'une publication dans le fichier de cache.
-        
-        Args:
-            content_hash (str): Hachage du contenu de la publication
         """
-        self.published_hashes.add(content_hash)
+        # Nettoyer les hachages anciens de plus d'une semaine
+        current_time = datetime.now()
+        self.published_hashes = [
+            (hash_val, timestamp) 
+            for hash_val, timestamp in self.published_hashes 
+            if current_time - timestamp < timedelta(days=7)
+        ]
+    
+        # Ajouter le nouveau hachage
+        self.published_hashes.append((content_hash, current_time))
+        
         try:
             with open(self.cache_file, 'wb') as f:
                 pickle.dump(self.published_hashes, f)
@@ -137,16 +144,18 @@ class LinkedInPublisher:
 
     def is_duplicate(self, text):
         """
-        Vérifie si une publication est un doublon.
-        
-        Args:
-            text (str): Contenu textuel de la publication
-        
-        Returns:
-            bool: True si le contenu est un doublon, False sinon
+        Vérifie si une publication est un doublon avec une tolérance temporelle.
         """
         content_hash = self._generate_content_hash(text)
-        return content_hash in self.published_hashes
+        
+        # Vérifier si le hachage existe et sa date
+        for existing_hash, timestamp in self.published_hashes:
+            if existing_hash == content_hash:
+                # Vérifier si le hachage est récent (moins d'une semaine)
+                if datetime.now() - timestamp < timedelta(days=7):
+                    return True
+        
+        return False
     
     def _generate_variant_message(self, title, date, project_titles, variant=0, include_random=True):
         """
@@ -442,7 +451,7 @@ def main():
             # Trier par date de modification (le plus récent en premier)
             latest_html = sorted(
                 newsletter_files, 
-                key=lambda f: os.path.getmtime(os.path.join(newsletters_dir, f)), 
+                key=lambda f: f.replace('newsletter_', '').replace('.html', ''), 
                 reverse=True
             )[0]
             logger.info(f"Dernier fichier de newsletter trouvé: {latest_html}")
