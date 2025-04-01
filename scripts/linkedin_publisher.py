@@ -322,11 +322,11 @@ def main():
         logger.info(f"Dernier fichier de newsletter trouvé: {latest_html}")
         
         # URL publique de la newsletter
-        username = os.environ.get('GITHUB_USERNAME')
-        repo_name = os.environ.get('GITHUB_REPO')
+        username = os.environ.get('GB_USERNAME')
+        repo_name = os.environ.get('GB_REPO')
 
         if not username or not repo_name:
-            logger.error("Variables d'environnement GITHUB_USERNAME et/ou GITHUB_REPO non définies")
+            logger.error("Variables d'environnement GB_USERNAME et/ou GB_REPO non définies")
             logger.error("Veuillez définir ces variables dans votre environnement ou dans GitHub Actions")
             return False
 

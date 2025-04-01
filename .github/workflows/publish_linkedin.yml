@@ -90,8 +90,8 @@ jobs:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
           NEWSLETTERS_DIR: ${{ github.workspace }}/newsletter-portfolio
-          GITHUB_USERNAME: ${{ secrets.CUSTOM_GITHUB_USERNAME }}
-          GITHUB_REPO: ${{ secrets.CUSTOM_GITHUB_REPO }}
+          GB_USERNAME: ${{ secrets.CUSTOM_GB_USERNAME }}
+          GB_REPO: ${{ secrets.CUSTOM_GB_REPO }}
           FORCE_LINKEDIN_PUBLISH: ${{ inputs.force_publish }}
           SKIP_LINKEDIN_CACHE: ${{ inputs.skip_cache }}
         run: |
