@@ -178,7 +178,7 @@ class LinkedInPublisher:
     def _generate_variant_message(self, title, date, project_titles, variant=0, include_random=True):
         """
         Génère une variante du message selon un modèle spécifique.
-        Ajoute un contenu unique à chaque génération.
+        Ajoute un contenu unique à chaque génération pour éviter les doublons.
         
         Args:
             title (str): Titre de la newsletter
@@ -195,53 +195,100 @@ class LinkedInPublisher:
         random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
         unique_id = f"{timestamp}-{random_id}"
         
-        # Créer une phrase invisible (presque) pour LinkedIn
-        # Utiliser des caractères Unicode de largeur zéro et des espaces sans chasse
-        invisible_unique = ''.join([f"​{c}​" for c in unique_id])  # Utilise le caractère Unicode "joindre sans largeur" (U+200B)
+        # Ajouter un caractère d'espace de largeur nulle entre chaque caractère
+        invisible_unique = ''.join([f"​{c}​" for c in unique_id])
         
-        # Plusieurs variantes de texte pour la même information
+        # Ajouter des emojis aléatoires pour rendre le contenu unique
+        emojis = ['🚀', '📊', '💡', '✨', '🔍', '📱', '💻', '🌟', '📈', '🎯', '🔔', '📣']
+        random_emojis = ' '.join(random.sample(emojis, 3))
+        
+        # Ajouter une phrase professionnelle aléatoire pour rendre le contenu plus unique
+        random_phrases = [
+            f"Newsletter du {date} – Mise à jour professionnelle",
+            f"Portfolio {date} – Édition {random.randint(1, 12)}",
+            f"Actualités techniques et projets du mois",
+            f"Sélection de projets et réalisations récentes",
+            f"Revue de portfolio – {date}",
+            f"Synthèse mensuelle de mes travaux et projets",
+            f"Une rétrospective de mes dernières réalisations",
+            f"Les innovations et développements de ce mois",
+            f"Mes dernières contributions techniques",
+            f"Projets et développements – {date}"
+        ]
+        random_phrase = random.choice(random_phrases)
+        
+        # Changer l'ordre des projets pour chaque variante
+        shuffled_projects = project_titles.copy()
+        if variant % 2 == 1:  # Pour les variantes impaires, mélanger l'ordre
+            random.shuffle(shuffled_projects)
+        
+        # Varier le nombre de projets affichés
+        if len(shuffled_projects) > 2:
+            if variant == 0:
+                selected_projects = shuffled_projects
+            elif variant == 1:
+                selected_projects = shuffled_projects[:len(shuffled_projects)-1]  # Tous sauf le dernier
+            elif variant == 2:
+                selected_projects = [shuffled_projects[0]] + shuffled_projects[2:]  # Sauter le deuxième
+            else:
+                selected_projects = shuffled_projects[1:]  # Sauter le premier
+        else:
+            selected_projects = shuffled_projects
+        
+        # Plusieurs variantes de texte professionnelles pour la même information
         variants = [
-            # Variante 0 - Standard
-            lambda: f"""🚀 {title} - {date} 🚀
+            # Variante 0 - Format standard professionnel
+            lambda: f"""{random_emojis} {title} - {date}
 
-Découvrez mes derniers projets et réalisations dans cette nouvelle édition de ma newsletter portfolio !
+{random_phrase}
+
+Découvrez mes derniers projets et réalisations dans cette nouvelle édition de ma newsletter portfolio.
 
 📌 Au sommaire:
-{chr(10).join([f"- {t}" for t in project_titles])}
+{chr(10).join([f"- {t}" for t in selected_projects])}
 
 👉 Consultez la version complète pour plus de détails sur chaque projet.
 
-#portfolio #developpeur #tech #projets #newsletter {invisible_unique}""",
+#portfolio #developpeur #tech #projets {invisible_unique}""",
             
-            # Variante 1 - Réorganisée
-            lambda: f"""📰 Newsletter Portfolio ({date}) : {title} 📰
-{invisible_unique}
-{chr(10).join([f"✅ {t}" for t in project_titles])}
+            # Variante 1 - Format structuré avec introduction
+            lambda: f"""📰 Newsletter Portfolio ({date})
 
-Nouvelle édition disponible ! Cliquez sur le lien pour découvrir en détail tous ces projets passionnants.
+{random_phrase}
 
-#developpeur #portfolio #coding #tech""",
+{chr(10).join([f"✅ {t}" for t in selected_projects])}
+
+Nouvelle édition disponible ! Suivez le lien pour découvrir ces projets en détail.
+
+#developpement #portfolio #tech {invisible_unique}""",
             
-            # Variante 2 - Plus personnelle
-            lambda: f"""Bonjour à tous ! Je viens de publier ma dernière newsletter ({date}) :
+            # Variante 2 - Format personnel et engageant
+            lambda: f"""Bonjour à mon réseau professionnel,
+
+{random_phrase} - {date}
 
 "{title}" {invisible_unique}
 
-Elle présente mes projets récents :
-{chr(10).join([f"• {t}" for t in project_titles])}
+Dans cette édition, je partage mes projets récents :
+{chr(10).join([f"• {t}" for t in selected_projects])}
 
-N'hésitez pas à consulter la version complète ! #tech #dev #portfolio""",
+Je vous invite à consulter la version complète pour plus d'informations.
+
+#developpement #portfolio #technologie""",
             
-            # Variante 3 - Direct et concis
-            lambda: f"""NOUVELLE NEWSLETTER 📱💻 - {date}
+            # Variante 3 - Format concis et direct
+            lambda: f"""🔔 Mise à jour de portfolio - {date}
 
 {title}
 
-Projets inclus :
-{chr(10).join([f">> {t}" for t in project_titles])}
+{random_phrase}
 
-Lien vers la version complète ci-dessous 👇
-#developpement #portfolio {invisible_unique}"""
+Projets présentés :
+{chr(10).join([f"→ {t}" for t in selected_projects])}
+
+Plus de détails disponibles dans la version complète.
+
+#developpeur #portfolio #projets {invisible_unique}"""
         ]
         
         # Utiliser la variante demandée ou une variante aléatoire si hors limites
@@ -269,15 +316,12 @@ Lien vers la version complète ci-dessous 👇
             authors['person'] = self.person_id
         if self.org_id:
             authors['organization'] = self.org_id
-            
+        
         # Vérifier qu'il y a au moins un auteur valide
         if not authors:
             logger.error("Aucun ID d'auteur LinkedIn valide trouvé (person_id ou org_id)")
             return None
 
-        # Génération du texte initial
-        base_text = self._generate_variant_message(title, date, project_titles, variant=0)
-        
         # Configuration de l'API
         headers = {
             'Authorization': f'Bearer {self.access_token}',
@@ -292,15 +336,16 @@ Lien vers la version complète ci-dessous 👇
         for author_type, author_id in authors.items():
             current_variant = 0
             # Tentatives de publication avec gestion des erreurs
-            max_retries = 5  # Augmentation du nombre de tentatives
+            max_retries = 10  # Augmentation du nombre de tentatives
             retry_count = 0
             
             while retry_count < max_retries:
                 try:
                     # Générer un titre et une description uniques pour l'article
-                    random_suffix = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
-                    article_title = f"Newsletter Portfolio - {date} [{random_suffix}]"
-                    article_desc = f"Découvrez mes derniers projets et réalisations - {datetime.now().strftime('%H:%M:%S')}"
+                    timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+                    random_id = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
+                    article_title = f"Newsletter Portfolio - {date} [{random_id}]"
+                    article_desc = f"Découvrez mes derniers projets et réalisations - {timestamp}"
                     
                     # Générer une variante différente à chaque tentative avec contenu invisible unique
                     text = self._generate_variant_message(
@@ -311,8 +356,8 @@ Lien vers la version complète ci-dessous 👇
                         include_random=True
                     )
                     
-                    # Générer une URL unique en ajoutant un paramètre aléatoire
-                    unique_url = f"{public_url}?t={int(time.time())}&r={random.randint(1000, 9999)}"
+                    # Rendre l'URL unique en ajoutant des paramètres aléatoires différents à chaque tentative
+                    unique_url = f"{public_url}?t={timestamp}&r={random_id}"
                     
                     # Préparer le corps de la requête
                     post_data = {
@@ -346,7 +391,12 @@ Lien vers la version complète ci-dessous 👇
                     post_url = "https://api.linkedin.com/v2/ugcPosts"
                     
                     # Journalisation de la requête
-                    logger.info(f"Envoi de la requête POST à {post_url} pour {author_type} {author_id} (variante {current_variant})")
+                    logger.info(f"Envoi de la requête POST à {post_url} pour {author_type} {author_id} (variante {current_variant}, tentative {retry_count+1})")
+                    
+                    # Attendre un délai aléatoire avant chaque tentative pour réduire les risques de détection de doublon
+                    wait_time = random.uniform(3, 7)
+                    logger.info(f"Attente de {wait_time:.2f} secondes avant envoi...")
+                    time.sleep(wait_time)
                     
                     # Envoi de la requête
                     response = requests.post(post_url, headers=headers, json=post_data)
@@ -357,7 +407,7 @@ Lien vers la version complète ci-dessous 👇
                         
                         # Sauvegarder le hachage du contenu
                         if not skip_cache:
-                            content_hash = self._generate_content_hash(base_text)
+                            content_hash = self._generate_content_hash(text)  # Utiliser le texte réel, pas le texte de base
                             self._save_published_hash(content_hash, author_type)
                         
                         publication_results[author_type] = response.json()
@@ -370,21 +420,32 @@ Lien vers la version complète ci-dessous 👇
                         time.sleep(wait_time)
                     
                     elif response.status_code == 422:  # Duplicate content
-                        # Attendre un peu plus longtemps et essayer avec une nouvelle variante
-                        current_variant = (current_variant + 1) % 4
+                        # Attendre plus longtemps et essayer avec une nouvelle variante
                         retry_count += 1
-                        logger.warning(f"Contenu en double détecté pour {author_type}, nouvelle tentative avec la variante {current_variant}...")
-                        # Attendre plus longtemps entre les tentatives
-                        time.sleep(3)
+                        # Générer une variante vraiment différente
+                        current_variant = (current_variant + retry_count) % 4
+                        wait_time = random.uniform(5, 10)  # Attente aléatoire plus longue
+                        logger.warning(f"Contenu en double détecté pour {author_type}, nouvelle tentative avec la variante {current_variant} dans {wait_time:.2f} secondes...")
+                        time.sleep(wait_time)
                     
                     else:
-                        logger.error(f"Échec de la publication LinkedIn pour {author_type}: {response.status_code} - {response.text}")
+                        error_message = f"Échec de la publication LinkedIn pour {author_type}: {response.status_code} - {response.text}"
+                        logger.error(error_message)
+                        
+                        # Si erreur 401 (non autorisé), le token est peut-être expiré
+                        if response.status_code == 401:
+                            logger.error("Token LinkedIn non valide ou expiré")
+                            publication_results[author_type] = None
+                            break
+                        
                         # Si on a d'autres variantes à essayer, on continue
                         if retry_count < max_retries - 1:
-                            current_variant = (current_variant + 1) % 4
+                            # Générer une variante très différente en utilisant un modèle aléatoire
+                            current_variant = random.randint(0, 3)
                             retry_count += 1
-                            logger.info(f"Nouvelle tentative avec la variante {current_variant}...")
-                            time.sleep(3)
+                            wait_time = random.uniform(5, 15)  # Attente plus longue entre les tentatives
+                            logger.info(f"Nouvelle tentative avec la variante {current_variant} dans {wait_time:.2f} secondes...")
+                            time.sleep(wait_time)
                         else:
                             publication_results[author_type] = None
                             break
@@ -393,8 +454,9 @@ Lien vers la version complète ci-dessous 👇
                     logger.error(f"Erreur lors de la publication sur LinkedIn pour {author_type}: {e}")
                     retry_count += 1
                     if retry_count < max_retries:
-                        logger.info(f"Nouvelle tentative {retry_count}/{max_retries} pour {author_type}...")
-                        time.sleep(5)
+                        wait_time = random.uniform(5, 10)
+                        logger.info(f"Nouvelle tentative {retry_count}/{max_retries} pour {author_type} dans {wait_time:.2f} secondes...")
+                        time.sleep(wait_time)
                     else:
                         publication_results[author_type] = None
                         break
@@ -404,13 +466,141 @@ Lien vers la version complète ci-dessous 👇
             return publication_results
         else:
             logger.error("Échec de toutes les publications LinkedIn")
+            # Essayer la méthode de repli avec du texte uniquement
+            logger.info("Tentative de publication avec méthode alternative (texte uniquement)...")
+            fallback_result = self.publish_text_only_post(title, date, project_titles, public_url)
+            return fallback_result
+
+    def publish_text_only_post(self, title, date, project_titles, public_url):
+        """
+        Publie un post texte simple (sans article) sur LinkedIn.
+        À utiliser comme solution de secours si la publication avec article échoue.
+        
+        Args:
+            title (str): Titre de la newsletter
+            date (str): Date de la newsletter
+            project_titles (list): Liste des titres de projets
+            public_url (str): URL publique de la newsletter
+            
+        Returns:
+            dict: Réponse de l'API LinkedIn ou None en cas d'échec
+        """
+        # Préparer les auteurs
+        authors = {}
+        if self.person_id:
+            authors['person'] = self.person_id
+        if self.org_id:
+            authors['organization'] = self.org_id
+            
+        # Vérifier qu'il y a au moins un auteur valide
+        if not authors:
+            logger.error("Aucun ID d'auteur LinkedIn valide trouvé (person_id ou org_id)")
+            return None
+
+        # Générer un message unique avec l'URL
+        timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
+        random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        
+        # Emojis aléatoires
+        emojis = ['🚀', '📊', '💡', '✨', '🔍', '📱', '💻', '🌟', '📈', '🎯', '🔔', '📣']
+        random_emojis = ' '.join(random.sample(emojis, 2))
+        
+        # Générer une phrase professionnelle aléatoire
+        professional_phrases = [
+            "Nouvelle mise à jour de mon portfolio professionnel",
+            "Édition de ma newsletter",
+            "Récapitulatif de mes derniers projets et réalisations",
+            "Portfolio professionnel - Actualités du mois",
+            "Dernières contributions et développements",
+            "Mise à jour de mes projets récents",
+            "Découvrez mes dernières réalisations",
+            "Projets et innovations du mois",
+            "Sélection de mes travaux récents",
+            "Mes dernières avancées professionnelles",
+            "Actualités de mon portfolio",
+            "Nouveautés de mon portfolio",
+            "Mise à jour de mes projets"
+        ]
+        prof_phrase = random.choice(professional_phrases)
+        
+        # Créer un message professionnel
+        message = f"""{random_emojis} {prof_phrase} {random_emojis}
+
+{title} - {date}
+
+Découvrez mes derniers projets :
+{chr(10).join([f"• {t}" for t in project_titles[:3]])}
+... et plus encore dans cette édition.
+
+Consultez la version complète ici : {public_url}?t={timestamp}
+
+#portfolio #developpement #technologie"""
+
+        # Configuration de l'API
+        headers = {
+            'Authorization': f'Bearer {self.access_token}',
+            'Content-Type': 'application/json',
+            'X-Restli-Protocol-Version': '2.0.0'
+        }
+        
+        # Stocker les résultats des publications
+        publication_results = {}
+        
+        # Publier pour chaque auteur
+        for author_type, author_id in authors.items():
+            try:
+                # Petite variation pour chaque auteur
+                current_message = message.replace(random_id, f"{random_id}-{author_type[:3]}")
+                
+                # Préparer le corps de la requête (texte uniquement, pas d'article)
+                post_data = {
+                    "author": f"urn:li:{author_type}:{author_id}",
+                    "lifecycleState": "PUBLISHED",
+                    "specificContent": {
+                        "com.linkedin.ugc.ShareContent": {
+                            "shareCommentary": {
+                                "text": current_message
+                            },
+                            "shareMediaCategory": "NONE"  # Texte uniquement
+                        }
+                    },
+                    "visibility": {
+                        "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+                    }
+                }
+                
+                post_url = "https://api.linkedin.com/v2/ugcPosts"
+                
+                # Attendre un délai aléatoire
+                time.sleep(random.uniform(2, 5))
+                
+                # Envoi de la requête
+                logger.info(f"Envoi d'un post texte uniquement pour {author_type} {author_id}")
+                response = requests.post(post_url, headers=headers, json=post_data)
+                
+                if response.status_code == 201:
+                    logger.info(f"Publication texte uniquement réussie pour {author_type}")
+                    publication_results[author_type] = response.json()
+                else:
+                    logger.error(f"Échec de la publication texte uniquement pour {author_type}: {response.status_code} - {response.text}")
+                    publication_results[author_type] = None
+                    
+            except Exception as e:
+                logger.error(f"Erreur lors de la publication texte uniquement pour {author_type}: {e}")
+                publication_results[author_type] = None
+        
+        # Vérifier si au moins une publication a réussi
+        if any(publication_results.values()):
+            return publication_results
+        else:
+            logger.error("Échec de toutes les publications texte uniquement sur LinkedIn")
             return None
 
 
 def main():
     """
     Fonction principale pour générer et publier la newsletter sur LinkedIn.
-    Publication hebdomadaire.
+    Publication hebdomadaire avec mécanisme de repli en cas d'échec.
     
     Returns:
         bool: True si la publication est réussie, False sinon
