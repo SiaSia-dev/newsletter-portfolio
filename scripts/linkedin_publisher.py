@@ -45,14 +45,14 @@ class LinkedInPublisher:
             logger.error("Token d'accès LinkedIn invalide ou expiré")
             raise ValueError("Token d'accès LinkedIn invalide ou expiré")
         
-        # Récupérer les ID de publication
-        self.person_id = os.environ.get('LINKEDIN_PERSON_ID')
-        self.org_id = os.environ.get('LINKEDIN_ORG_ID')
+        # Récupérer les ID de publication (avec rétrocompatibilité)
+        self.member_id = os.environ.get('LINKEDIN_MEMBER_ID') or os.environ.get('LINKEDIN_PERSON_ID')
+        self.company_id = os.environ.get('LINKEDIN_COMPANY_ID') or os.environ.get('LINKEDIN_ORG_ID')
         
         # Validation des ID (assurer qu'ils ne sont pas None)
-        if not self.person_id and not self.org_id:
+        if not self.member_id and not self.company_id:
             logger.error("Aucun ID de publication LinkedIn trouvé")
-            raise ValueError("ID de personne ou d'organisation LinkedIn requis")
+            raise ValueError("ID de membre ou d'entreprise LinkedIn requis")
         
         # Gestion du cache des publications
         self.cache_dir = Path('./.linkedin_cache')
@@ -115,7 +115,7 @@ class LinkedInPublisher:
         
         Args:
             content_hash (str): Hachage du contenu
-            author_type (str): Type d'auteur (person ou organization)
+            author_type (str): Type d'auteur (member ou company)
         """
         # Nettoyer les hachages anciens de plus d'une semaine
         current_time = datetime.now()
@@ -152,7 +152,7 @@ class LinkedInPublisher:
         
         Args:
             text (str): Contenu textuel de la publication
-            author_type (str, optional): Type d'auteur (person ou organization)
+            author_type (str, optional): Type d'auteur (member ou company)
         
         Returns:
             bool: True si un doublon existe, False sinon
@@ -310,16 +310,16 @@ Plus de détails disponibles dans la version complète.
         Returns:
             dict: Réponse de l'API LinkedIn ou None en cas d'échec
         """
-        # Préparer les auteurs
+        # Préparer les auteurs avec les URN corrects
         authors = {}
-        if self.person_id:
-            authors['person'] = self.person_id
-        if self.org_id:
-            authors['organization'] = self.org_id
+        if self.member_id:
+            authors['member'] = self.member_id
+        if self.company_id:
+            authors['company'] = self.company_id
         
         # Vérifier qu'il y a au moins un auteur valide
         if not authors:
-            logger.error("Aucun ID d'auteur LinkedIn valide trouvé (person_id ou org_id)")
+            logger.error("Aucun ID d'auteur LinkedIn valide trouvé")
             return None
 
         # Configuration de l'API
@@ -485,16 +485,16 @@ Plus de détails disponibles dans la version complète.
         Returns:
             dict: Réponse de l'API LinkedIn ou None en cas d'échec
         """
-        # Préparer les auteurs
+        # Préparer les auteurs avec les URN corrects
         authors = {}
-        if self.person_id:
-            authors['person'] = self.person_id
-        if self.org_id:
-            authors['organization'] = self.org_id
+        if self.member_id:
+            authors['member'] = self.member_id
+        if self.company_id:
+            authors['company'] = self.company_id
             
         # Vérifier qu'il y a au moins un auteur valide
         if not authors:
-            logger.error("Aucun ID d'auteur LinkedIn valide trouvé (person_id ou org_id)")
+            logger.error("Aucun ID d'auteur LinkedIn valide trouvé")
             return None
 
         # Générer un message unique avec l'URL
@@ -508,18 +508,10 @@ Plus de détails disponibles dans la version complète.
         # Générer une phrase professionnelle aléatoire
         professional_phrases = [
             "Nouvelle mise à jour de mon portfolio professionnel",
-            "Édition de ma newsletter",
+            "Édition mensuelle de ma newsletter technique",
             "Récapitulatif de mes derniers projets et réalisations",
             "Portfolio professionnel - Actualités du mois",
-            "Dernières contributions et développements",
-            "Mise à jour de mes projets récents",
-            "Découvrez mes dernières réalisations",
-            "Projets et innovations du mois",
-            "Sélection de mes travaux récents",
-            "Mes dernières avancées professionnelles",
-            "Actualités de mon portfolio",
-            "Nouveautés de mon portfolio",
-            "Mise à jour de mes projets"
+            "Dernières contributions et développements"
         ]
         prof_phrase = random.choice(professional_phrases)
         
