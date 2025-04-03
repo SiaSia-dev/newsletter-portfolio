@@ -20,6 +20,30 @@ Une Approche Intégrée de Création de Contenus Image Représentative Concept F
 
 En savoir plus
 
+![avatar-lartet](img/Photo-dAvatar-2.jpg)
+
+## avatar-lartet
+
+Avatar Edouard Lartet : Agent Conversationnel Historique Présentation du Projet Un agent conversationnel basé sur un personnage historique, démontrant l'application des techniques de traitement du langage naturel (NLP) pour créer des expériences inte...
+
+En savoir plus
+
+![blog-scientifique](img/1ere-couv_1.jpg)
+
+## blog-scientifique
+
+Blog Scientifique : ARCHAEDYN Image Représentative Contexte du Projet Un projet de recherche archéologique innovant explorant les dynamiques territoriales sur 7 millénaires. Objectifs de Recherche Analyser l'occupation humaine Étudier les transformat...
+
+En savoir plus
+
+![creation-contenus](img/logo-v2.png)
+
+## creation-contenus
+
+Création de Contenus Une Approche Multidisciplinaire Image de Référence Approche Intégrée Une démarche qui combine différentes disciplines et médias pour créer des expériences narratives riches et engageantes. Services Principaux 1. Narration Multimé...
+
+En savoir plus
+
 ![archeologie-numerique](img/TsptTls.png)
 
 ## archeologie-numerique
@@ -28,35 +52,11 @@ Archéologie Numérique : Dynamiques Territoriales Présentation du Projet Un pr
 
 En savoir plus
 
-![archaedyn-article-md](img/Slowsia.jpg)
+![cope-process-documentation](img/Process_COPE.png)
 
-## archaedyn-article-md
+## cope-process-documentation
 
-ARCHAEDYN : 7 millénaires de dynamiques territoriales Contexte du Projet Le projet ARCHAEDYN s'inscrit dans une recherche ambitieuse visant à comprendre les dynamiques territoriales sur une période de 7 millénaires, du Néolithique au Moyen Âge. Cette...
-
-En savoir plus
-
-![approche-analyse-donnees](img/data-analyst-subcultures-map.png)
-
-## approche-analyse-donnees
-
-Une Approche de l'Analyse de Données Transformation des Données Brutes en Récits Intelligibles Image Représentative Philosophie Fondamentale Transformer les données brutes en récits stratégiques, révélant les insights cachés derrière les chiffres. Mé...
-
-En savoir plus
-
-![data-visualisation](img/data-analyst-subcultures-map.png)
-
-## data-visualisation
-
-Data & Visualisation Exploration et Analyse de Données Image de Référence Approche Analytique Une méthodologie qui va au-delà de la simple manipulation de chiffres, transformant les données brutes en récits intelligibles et stratégiques. Méthodologie...
-
-En savoir plus
-
-![messe-saint-gregoire](img/MSG.png)
-
-## messe-saint-gregoire
-
-Patrimoine Numérique : La Messe Saint Grégoire Présentation du Projet Un projet de valorisation du patrimoine culturel associant photographie, rédaction de contenus historiques et conception d'expériences interactives pour rendre accessibles des trés...
+title: Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere) description: author: Alexia Fontaine date: 2025-03-28 type: summary image: /img/Process_COPE.png Processus de Publication Cross-Platform (COPE - Create Once, Publ...
 
 En savoir plus
 
@@ -182,6 +182,266 @@ Une approche qui transforme la création de contenus en un écosystème dynamiqu
 
 Retour en haut
 
+## avatar-lartet
+
+![avatar-lartet](img/Photo-dAvatar-2.jpg)
+
+# Avatar Edouard Lartet : Agent Conversationnel Historique
+
+## Présentation du Projet
+
+Un agent conversationnel basé sur un personnage historique, démontrant l'application des techniques de traitement du langage naturel (NLP) pour créer des expériences interactives et éducatives.
+
+## Objectifs
+
+  * Créer une expérience de médiation culturelle innovante
+  * Utiliser l'IA pour rendre l'histoire accessible
+  * Permettre des interactions immersives avec un personnage historique
+
+
+
+## Technologies Utilisées
+
+  * Intelligence Artificielle
+  * NLP (Traitement du Langage Naturel)
+  * Personnalisation
+  * Python
+
+
+
+## Capture d'Écran
+
+![Avatar Edouard Lartet](/img/Photo-dAvatar-2.jpg)
+
+## Lien du Projet
+
+[Interagir avec l'Avatar Edouard Lartet](https://avatar-lartet.streamlit.app/)
+
+## Concept
+
+Exploration des possibilités de l'IA générative dans : \- La médiation culturelle \- L'apprentissage personnalisé \- La transmission de connaissances historiques
+
+## Fonctionnalités Principales
+
+  * Conversation contextuelle basée sur l'histoire de Edouard Lartet
+  * Réponses adaptatives et personnalisées
+  * Capacité à partager des informations historiques détaillées
+
+
+
+## Compétences Mises en Œuvre
+
+  * Développement d'agents conversationnels
+  * Modélisation de personnalités historiques
+  * Techniques avancées de NLP
+  * Conception d'expériences interactives éducatives
+
+Retour en haut
+
+## blog-scientifique
+
+![blog-scientifique](img/1ere-couv_1.jpg)
+
+# Blog Scientifique : ARCHAEDYN
+
+## Image Représentative
+
+![Couverture ARCHAEDYN](/img/1ere-couv_1.jpg)
+
+## Contexte du Projet
+
+Un projet de recherche archéologique innovant explorant les dynamiques territoriales sur 7 millénaires.
+
+## Objectifs de Recherche
+
+  * Analyser l'occupation humaine
+  * Étudier les transformations territoriales
+  * Comprendre l'évolution historique des espaces
+
+
+
+## Méthodologie de Recherche
+
+### Approche Interdisciplinaire
+
+  * Archéologie
+  * Cartographie historique
+  * Analyse spatiale
+  * Systèmes d'Information Géographique (SIG)
+
+
+
+### Techniques d'Analyse
+
+  1. **Analyse cartographique détaillée**
+  2. Reconstruction des territoires historiques
+  3. Étude des mutations spatiales
+  4. Cartographie comparative
+
+  5. **Études archéologiques comparatives**
+
+  6. Analyse des vestiges
+  7. Comparaison inter-sites
+  8. Reconstruction des dynamiques d'occupation
+
+  9. **Modélisation des Données Spatiales**
+
+  10. Utilisation d'outils SIG avancés
+  11. Création de modèles spatiaux
+  12. Analyse des transformations territoriales
+
+
+
+## Compétences Mises en Œuvre
+
+  * Recherche archéologique
+  * Analyse géospatiale
+  * Traitement de données historiques
+  * Modélisation cartographique
+  * Systèmes d'Information Géographique
+
+
+
+## Périodes Étudiées
+
+  * Néolithique
+  * Périodes intermédiaires
+  * Moyen Âge
+
+
+
+## Impact Scientifique
+
+  * Compréhension approfondie des dynamiques territoriales
+  * Nouvelle perspective sur l'occupation humaine
+  * Méthodologie innovante d'analyse historique
+
+
+
+## Lien vers la Publication
+
+[Article complet sur ArchNum](https://archnum.hypotheses.org/175)
+
+## Philosophie de Recherche
+
+> "Chaque trace, chaque vestige est un fragment d'un récit territorial plus large."
+
+## Conclusion
+
+Un projet qui transcende la simple étude archéologique pour proposer une vision dynamique et vivante de l'histoire territoriale.
+
+Retour en haut
+
+## creation-contenus
+
+![creation-contenus](img/logo-v2.png)
+
+# Création de Contenus
+
+## Une Approche Multidisciplinaire
+
+### Image de Référence
+
+![Création de Contenu](/img/logo-v2.png)
+
+### Approche Intégrée
+
+Une démarche qui combine différentes disciplines et médias pour créer des expériences narratives riches et engageantes.
+
+### Services Principaux
+
+#### 1\. Narration Multimédia
+
+  * Création d'expériences combinant :
+  * Texte
+  * Image
+  * Modèles 3D
+  * Design
+  * Objectif : Raconter des histoires immersives
+
+
+
+#### 2\. Documentation Créative
+
+  * Dépassement du simple archivage
+  * Proposition d'une interprétation :
+  * Sensible
+  * Esthétique
+  * Contextuelle
+
+
+
+#### 3\. Identité et Branding
+
+  * Développement d'identités visuelles complètes
+  * Du logo à la charte éditoriale
+  * Exemple de projet : wolSia
+
+
+
+### Projet Phare : wolSia
+
+#### Exploration Technologique
+
+  * IA Générative
+  * NLP (Traitement du Langage Naturel)
+  * Agents Conversationnels
+  * Data Science
+
+
+
+#### Composantes Principales
+
+  1. Agent Conversationnel Intelligent
+  2. Interaction contextuelle
+  3. Modèles de traitement du langage naturel
+
+  4. Simulateur de Personnalité
+
+  5. Techniques d'apprentissage automatique
+  6. Génération de profils dynamiques
+
+  7. Quiz Interactif
+
+  8. Systèmes de questions-réponses adaptatifs
+  9. Ajustement en fonction des réponses
+
+
+
+### Technologies Clés
+
+  * Python
+  * Streamlit
+  * Machine Learning
+  * NLP
+  * Traitement de Données
+
+
+
+### Applications
+
+  * FAQ interactive intelligente
+  * Avatar Edouard Lartet
+  * Prototype de suivi documentaire
+  * Prototype de suivi pédagogique
+  * Quiz NumPy
+
+
+
+### Philosophie de Création
+
+Transformer des technologies complexes en expériences utilisateur innovantes, personnalisées et engageantes.
+
+### Liens des Projets
+
+  * [FAQ Interactive](https://faq-desinfection.onrender.com/)
+  * [Avatar Lartet](https://avatar-lartet.streamlit.app/)
+  * [Suivi Documentaire](https://suividoc.streamlit.app/)
+  * [Suivi Pédagogique](https://suivi-pedago.streamlit.app/)
+  * [Quiz NumPy](https://quiz-numpy.streamlit.app/)
+
+Retour en haut
+
 ## archeologie-numerique
 
 ![archeologie-numerique](img/TsptTls.png)
@@ -229,354 +489,78 @@ Ce projet démontre comment les données historiques peuvent être transformées
 
 Retour en haut
 
-## archaedyn-article-md
+## cope-process-documentation
 
-![archaedyn-article-md](img/Slowsia.jpg)
-
-# ARCHAEDYN : 7 millénaires de dynamiques territoriales
-
-## Contexte du Projet
-
-Le projet ARCHAEDYN s'inscrit dans une recherche ambitieuse visant à comprendre les dynamiques territoriales sur une période de 7 millénaires, du Néolithique au Moyen Âge. Cette étude innovante propose une analyse approfondie des modèles d'établissement, de production et d'échanges commerciaux.
-
-## Objectifs Scientifiques
-
-Les principaux objectifs du projet étaient de :
-
-  * Cartographier l'évolution des implantations humaines
-  * Analyser les systèmes de production
-  * Comprendre les réseaux d'échanges commerciaux
-  * Étudier les dynamiques territoriales sur le long terme
-
-
-
-## Méthodologie
-
-La recherche a combiné plusieurs approches méthodologiques :
-
-  * Analyse cartographique détaillée
-  * Études archéologiques comparatives
-  * Modélisation des données spatiales
-  * Utilisation de systèmes d'information géographique (SIG)
-
-
-
-## Résultats Principaux
-
-Les résultats ont mis en lumière :
-
-  * L'évolution complexe des établissements humains
-  * Les transformations des systèmes de production
-  * Les réseaux d'échanges et leurs mutations
-  * Les dynamiques territoriales sur 7 millénaires
-
-
-
-## Signification
-
-ARCHAEDYN représente une avancée significative dans la compréhension des dynamiques territoriales, offrant une perspective unique sur l'évolution des sociétés humaines à travers une période historique longue.
+![cope-process-documentation](img/Process_COPE.png)
 
 * * *
 
-_Source originale :[Hypothèses - ARCHAEDYN](https://archnum.hypotheses.org/175)_
+title: Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere) description: ![Infographie du Processus COPE](/img/Process_COPE.png) author: Alexia Fontaine date: 2025-03-28 type: summary image: /img/Process_COPE.png
 
-_Conférence finale : Dijon, 23-25 juin 2008_
+* * *
 
-Retour en haut
+# Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
 
-## approche-analyse-donnees
+![Processus de Publication Cross-Platform \(COPE - Create Once, Publish Everywhere\)](/img/Process_COPE.png)
 
-![approche-analyse-donnees](img/data-analyst-subcultures-map.png)
+## 1\. Création du Contenu (Source Unique)
 
-# Une Approche de l'Analyse de Données
+  * **Rédaction de documents Markdown dans le portfolio**
+  * Création/mise à jour des fichiers .md dans le dossier "docs" du dépôt portfolio - Utilisation du format frontmatter YAML pour les métadonnées (titre, description, tags) - Inclusion d'images et autres médias dans le dossier "img"
 
-## Transformation des Données Brutes en Récits Intelligibles
 
-### Image Représentative
 
-![Data Science Analysis](/img/data-analyst-subcultures-map.png)
+## 2\. Génération Automatique de la Newsletter
 
-## Philosophie Fondamentale
+  * **Détection des contenus récents**
+  * Scan des fichiers Markdown modifiés récemment - Filtrage en fonction de la date de modification (7 derniers jours) - Sélection des projets les plus récents (limité à 6)
+  * **Extraction et traitement du contenu**
+  * Analyse du frontmatter YAML pour extraire les métadonnées - Conversion du Markdown en HTML - Génération de résumés pour chaque projet (limités à 250 caractères) - Récupération des images associées aux projets
+  * **Compilation en format standardisé**
+  * Création d'un document Markdown unifié avec tous les projets - Génération d'un document HTML avec mise en page responsive - Structuration avec cartes de projets, sections détaillées et table des matières - Application d'un design cohérent (CSS personnalisé)
 
-Transformer les données brutes en récits stratégiques, révélant les insights cachés derrière les chiffres.
 
-## Méthodologie Intégrée
 
-### 1\. Collecte & Préparation
+## 3\. Publication sur GitHub Pages
 
-#### Étapes Cruciales
+  * **Préparation des fichiers**
+  * Génération des fichiers HTML/Markdown dans le dossier de sortie - Copie des ressources requises (images) - Création de liens symboliques vers la dernière newsletter
+  * **Organisation du site**
+  * Création d'une page d'index redirigeant vers la dernière newsletter - Génération d'une page d'archives listant toutes les newsletters - Ajout de fichiers de configuration (.nojekyll)
+  * **Déploiement**
+  * Création d'un commit avec les nouveaux fichiers - Déploiement vers la branche gh-pages - Configuration pour l'accès public
 
-  * Nettoyage méticuleux des données
-  * Structuration des jeux de données
-  * Préparation pour l'analyse approfondie
 
 
+## 4\. Publication sur LinkedIn
 
-##### Techniques
+  * **Préparation du contenu pour LinkedIn**
+  * Extraction du titre et de la date de la newsletter - Récupération des titres des projets pour créer un sommaire - Formatage du contenu selon les bonnes pratiques LinkedIn (emojis, mise en forme) - Ajout de hashtags pertinents
+  * **Gestion des doublons et limitations**
+  * Génération d'un hash pour identifier les contenus uniques - Vérification pour éviter les publications en double - Ajout d'horodatage pour rendre le contenu unique si nécessaire - Gestion des limites de taux d'API (rate limits) avec backoff exponentiel
+  * **Interaction avec l'API LinkedIn**
+  * Authentification via token d'accès - Construction de la requête API avec le texte et l'URL - Gestion des erreurs et tentatives multiples - Traitement des différents codes de réponse
 
-  * Gestion des valeurs manquantes
-  * Normalisation
-  * Prétraitement avancé
 
 
+## 5\. Suivi et Maintenance
 
-### 2\. Analyse Statistique
+  * **Enregistrement des activités**
+  * Journalisation détaillée des actions (logging) - Création d'un fichier de suivi des publications - Commits automatiques pour tracer l'historique des publications
+  * **Mécanismes de déclenchement**
+  * Exécution planifiée hebdomadaire (tous les lundis) - Possibilité de déclenchement manuel - Chaînage des workflows (le second s'exécute après le premier)
+  * **Gestion des erreurs**
+  * Détection et rapport des problèmes - Mécanismes de reprise sur erreur - Statuts d'achèvement conditionnels
 
-#### Approche Comprehensive
 
-  * Méthodes statistiques avancées
-  * Extraction de tendances significatives
-  * Analyse multidimensionnelle
 
+Cette architecture COPE permet de : 1. Maintenir une source unique de vérité (fichiers Markdown) 2.
 
+**Mots-clés:** architecture, publications, complètement, automatiser, publication
 
-##### Outils et Technologies
+Le système est également extensible pour intégrer d'autres plateformes de publication (Twitter, Medium, etc.) en suivant le même modèle modulaire.
 
-  * Python (Pandas, NumPy)
-  * R (Tidyverse)
-  * Techniques de machine learning
-  * Analyses prédictives
-
-
-
-### 3\. Visualisation
-
-#### Art de la Représentation
-
-  * Création de représentations visuelles éloquentes
-  * Transformation des données complexes
-  * Design d'information intuitif
-
-
-
-##### Compétences
-
-  * Datavisualisation
-  * Design UX
-  * Narration visuelle
-  * Communication graphique
-
-
-
-### 4\. Narration Stratégique
-
-#### Contextualisation des Insights
-
-  * Transformation des données en récits
-  * Mise en perspective stratégique
-  * Création de sens
-
-
-
-##### Dimensions
-
-  * Contexte organisationnel
-  * Dynamiques culturelles
-  * Implications stratégiques
-
-
-
-## Processus d'Analyse Approfondie
-
-### Lecture des Contextes
-
-  * Écouter les récits des données
-  * Comprendre les nuances
-  * Identifier les implications cachées
-
-
-
-### Tissage des Narratifs
-
-  * Au-delà des chiffres
-  * Connexion avec les expériences humaines
-  * Exploration des dynamiques organisationnelles
-
-
-
-### Interprétation Contextuelle
-
-  * Situation des données dans leur écosystème
-  * Perspective professionnelle
-  * Dimension culturelle
-  * Contexte historique
-
-
-
-## Compétences Clés
-
-  * Analyse statistique avancée
-  * Programmation
-  * Visualisation de données
-  * Communication stratégique
-  * Pensée critique
-
-
-
-## Impact et Résultats
-
-  * Insights stratégiques
-  * Aide à la décision
-  * Compréhension approfondie
-  * Transformation organisationnelle
-
-
-
-## Citation Inspirante
-
-> "Les données sont des miroirs qui reflètent les histoires invisibles de nos organisations et sociétés."
-
-## Conclusion
-
-Une approche qui fait plus que analyser : elle raconte, révèle et inspire.
-
-Retour en haut
-
-## data-visualisation
-
-![data-visualisation](img/data-analyst-subcultures-map.png)
-
-# Data & Visualisation
-
-## Exploration et Analyse de Données
-
-### Image de Référence
-
-![Data Science Analysis](/img/data-analyst-subcultures-map.png)
-
-### Approche Analytique
-
-Une méthodologie qui va au-delà de la simple manipulation de chiffres, transformant les données brutes en récits intelligibles et stratégiques.
-
-### Méthodologie Intégrée
-
-  1. **Collecte & Préparation**
-  2. Nettoyage des données
-  3. Structuration des jeux de données
-  4. Exploration approfondie
-
-  5. **Analyse Statistique**
-
-  6. Utilisation de méthodes avancées
-  7. Extraction de tendances significatives
-  8. Analyse contextuelle
-
-  9. **Visualisation**
-
-  10. Création de représentations visuelles éloquentes
-  11. Conception de dashboards intuitifs
-  12. Traduction des insights complexes
-
-  13. **Narration**
-
-  14. Contextualisation des données
-  15. Création de récits compréhensibles
-  16. Mise en perspective stratégique
-
-
-
-### Processus d'Analyse
-
-#### 1\. Lecture des Contextes
-
-Chaque ensemble de données raconte une histoire. L'approche consiste à : \- Écouter les récits sous-jacents \- Comprendre les nuances \- Identifier les implications culturelles
-
-#### 2\. Tissage des Narratifs
-
-Au-delà des chiffres, recherche des connexions entre : \- Données \- Expériences humaines \- Dynamiques organisationnelles \- Évolutions sociétales
-
-#### 3\. Interprétation Contextuelle
-
-Chaque donnée est située dans son écosystème : \- Professionnel \- Culturel \- Historique
-
-### Compétences Techniques
-
-  * Python (Pandas, NumPy, Scikit-learn)
-  * R (Tidyverse, ggplot2)
-  * SQL & Bases de données
-  * Machine Learning
-  * NLP
-  * Visualisation de données complexes
-  * Power BI & Tableau
-
-
-
-### Outils et Frameworks
-
-  * Analyse statistique avancée
-  * Algorithmes de machine learning
-  * Traitement du langage naturel
-  * Création de dashboards interactifs
-  * Visualisation de données complexes
-
-
-
-### Applications Pratiques
-
-  * Optimisation des réseaux de transport
-  * Suivi pédagogique
-  * Analyse de systèmes documentaires
-  * Exploration de données historiques
-
-
-
-### Philosophie de la Data Science
-
-Transformer des données brutes en insights stratégiques, racontant des histoires cachées derrière les chiffres.
-
-Retour en haut
-
-## messe-saint-gregoire
-
-![messe-saint-gregoire](img/MSG.png)
-
-# Patrimoine Numérique : La Messe Saint Grégoire
-
-## Présentation du Projet
-
-Un projet de valorisation du patrimoine culturel associant photographie, rédaction de contenus historiques et conception d'expériences interactives pour rendre accessibles des trésors culturels.
-
-## Objectifs
-
-  * Préservation et médiation culturelle
-  * Création de ponts entre tradition et innovation
-  * Exploration numérique du patrimoine historique
-
-
-
-## Technologies Utilisées
-
-  * Recherche Historique
-  * Médiation Culturelle
-
-
-
-## Capture d'Écran
-
-![Messe Saint Grégoire](/img/MSG.png)
-
-## Lien du Projet
-
-[Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
-
-## Description Détaillée
-
-Cette initiative démontre comment les technologies numériques peuvent servir la préservation et la médiation culturelle, en transformant un élément patrimonial en une expérience interactive et accessible.
-
-## Approche
-
-  * Documentation visuelle approfondie
-  * Contextualisation historique
-  * Création d'une expérience numérique immersive
-
-
-
-## Compétences Mises en Œuvre
-
-  * Photographie documentaire
-  * Recherche historique
-  * Conception d'expériences interactives
-  * Médiation culturelle numérique
+**Mots-clés:** publication, plateformes, extensible, modulaire, également
 
 Retour en haut
 
