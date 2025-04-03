@@ -546,7 +546,6 @@ Un projet de valorisation du patrimoine culturel associant photographie, rédact
 
 ## Technologies Utilisées
 
-  * Modélisation 3D
   * Recherche Historique
   * Médiation Culturelle
 
