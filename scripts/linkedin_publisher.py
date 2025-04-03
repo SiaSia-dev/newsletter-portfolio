@@ -45,9 +45,9 @@ class LinkedInPublisher:
             logger.error("Token d'accès LinkedIn invalide ou expiré")
             raise ValueError("Token d'accès LinkedIn invalide ou expiré")
         
-        # Récupérer les ID de publication
-        self.person_id = os.environ.get('LINKEDIN_PERSON_ID')
-        self.org_id = os.environ.get('LINKEDIN_ORG_ID')
+        # Récupérer les ID de publication (avec rétrocompatibilité)
+        self.member_id = os.environ.get('LINKEDIN_MEMBER_ID') or os.environ.get('LINKEDIN_PERSON_ID')
+        self.company_id = os.environ.get('LINKEDIN_COMPANY_ID') or os.environ.get('LINKEDIN_ORG_ID')
         
         # Validation des ID (assurer qu'ils ne sont pas None)
         if not self.person_id and not self.org_id:
