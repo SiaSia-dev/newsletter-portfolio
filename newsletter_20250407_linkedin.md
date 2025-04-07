@@ -92,194 +92,138 @@ Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier M
 
 ---
 
-### 📌 photographie-photogrammetrie
+### 📌 optimisation-transport
 
-![photographie-photogrammetrie](img/Slowsia.jpg)
+![optimisation-transport](img/TsptGraphe.png)
 
-#### photographie-photogrammetrie
-
-
-#### Photographie et Photogrammétrie : Deux Approches de l'Image
-
-La photographie et la photogrammétrie sont deux techniques différentes liées à l'image :
-
-- La photographie est l'art et la technique de capturer des images fixes à l'aide d'un appareil photographique. Elle vise principalement à représenter visuellement des scènes, des personnes, des objets.
-- La photogrammétrie est une technique scientifique qui consiste à effectuer des mesures et des relevés précis à partir de photographies. Elle est souvent utilisée dans des domaines comme la cartographie, l'architecture, l'archéologie et la topographie pour créer des modèles 3D ou des plans détaillés.
-La <strong>photographie</strong> est l'art et la technique de capturer des images fixes à l'aide d'un appareil photographique. Elle vise principalement à représenter visuellement des scènes, des personnes, des objets.
-
-La <strong>photogrammétrie</strong> est une technique scientifique qui consiste à effectuer des mesures et des relevés précis à partir de photographies. Elle est souvent utilisée dans des domaines comme la cartographie, l'architecture, l'archéologie et la topographie pour créer des modèles 3D ou des plans détaillés.
+#### optimisation-transport
 
 
-#### Points Communs et Différences
-
-Bien que ces deux techniques utilisent la photographie comme base, leurs objectifs et approches diffèrent fondamentalement :
-
-- Photographie : Expression artistique et documentaire
-- Photogrammétrie : Précision scientifique et technique de mesure
-Chaque approche répond à des besoins distincts mais complémentaires dans la capture et l'interprétation visuelle du monde.
-
-[Retour en haut](#)
-
-
----
-
-### 📌 messe-saint-gregoire
-
-![messe-saint-gregoire](img/MSG.png)
-
-#### messe-saint-gregoire
-
-
-#### Patrimoine Numérique : La Messe Saint Grégoire
+#### Optimisation des Réseaux de Transport
 
 
 #### Présentation du Projet
 
-Un projet de valorisation du patrimoine culturel associant photographie, rédaction de contenus historiques et conception d'expériences interactives pour rendre accessibles des trésors culturels.
+Une application interactive explorant les algorithmes de sectorisation et d'optimisation des réseaux de transport, démontrant comment l'analyse de données peut résoudre des problèmes complexes de logistique.
 
 
 #### Objectifs
 
-- Préservation et médiation culturelle
-- Création de ponts entre tradition et innovation
-- Exploration numérique du patrimoine historique
+- Modélisation des réseaux de transport
+- Optimisation des parcours et de la distribution
+- Application des techniques avancées de traitement de graphes
 
 #### Technologies Utilisées
 
-- Modélisation 3D
-- Recherche Historique
-- Médiation Culturelle
+- Algorithmes d'optimisation
+- Théorie des graphes
+- Analyse de données spatiales
+- Python
 
 #### Capture d'Écran
 
-<img alt="Messe Saint Grégoire" src="/img/MSG.png"/>
+<img alt="Optimisation des Réseaux de Transport" src="/img/TsptGraphe.png"/>
 
 
 #### Lien du Projet
 
-[Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
+[Explorer l'Application d'Optimisation des Réseaux](https://sectorisation-reseaux.streamlit.app/)
 
-[Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
-
-
-#### Description Détaillée
-
-Cette initiative démontre comment les technologies numériques peuvent servir la préservation et la médiation culturelle, en transformant un élément patrimonial en une expérience interactive et accessible.
+[Explorer l'Application d'Optimisation des Réseaux](https://sectorisation-reseaux.streamlit.app/)
 
 
-#### Approche
+#### Approche Technique
 
-- Documentation visuelle approfondie
-- Contextualisation historique
-- Création d'une expérience numérique immersive
+Utilisation de techniques avancées de traitement de graphes pour:
+- Analyser les flux de transport
+- Optimiser les itinéraires
+- Minimiser les coûts et maximiser l'efficacité
+
+
+#### Fonctionnalités Principales
+
+- Visualisation des réseaux de transport
+- Simulation de différents scénarios de sectorisation
+- Analyse comparative des performances
 
 #### Compétences Mises en Œuvre
 
-- Photographie documentaire
-- Recherche historique
-- Conception d'expériences interactives
-- Médiation culturelle numérique
+- Algorithmes complexes
+- Modélisation mathématique
+- Analyse spatiale
+- Développement d'outils d'aide à la décision
 [Retour en haut](#)
 
 
 ---
 
-### 📊 parcours-data-communication
+### 📝 cope-process-documentation
 
-![parcours-data-communication](img/Gouverance.png)
+![cope-process-documentation](img/Process_COPE.png)
 
-#### parcours-data-communication
+#### cope-process-documentation
 
-
-#### Parcours Data & Communication Digitale
-
-
-#### Image Représentative
-
-<img alt="Gouvernance et Parcours" src="/img/Gouverance.png"/>
-
-
-#### Évolution Professionnelle
-
-Un parcours caractérisé par une convergence constante entre compétences analytiques et créatives.
+title: Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
+description: <img alt="Infographie du Processus COPE" src="/img/Process_COPE.png">
+author: Alexia Fontaine
+date: 2025-03-28
+type: summary
+image: /img/Process_COPE.png</img>
 
 
-#### Dimensions Professionnelles
+#### Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
+
+<img alt="Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)" src="/img/Process_COPE.png"/>
 
 
-#### Formation et Expertise
+#### 1. Création du Contenu (Source Unique)
 
-- Systèmes d'Information
-- Gestion de Données
-- Communication Digitale
+- Rédaction de documents Markdown dans le portfolio
+- Création/mise à jour des fichiers .md dans le dossier "docs" du dépôt portfolio   - Utilisation du format frontmatter YAML pour les métadonnées (titre, description, tags)   - Inclusion d'images et autres médias dans le dossier "img"
 
-#### Compétences Clés
+#### 2. Génération Automatique de la Newsletter
 
+- Détection des contenus récents
+- Scan des fichiers Markdown modifiés récemment   - Filtrage en fonction de la date de modification (7 derniers jours)   - Sélection des projets les plus récents (limité à 6)
+- Extraction et traitement du contenu
+- Analyse du frontmatter YAML pour extraire les métadonnées   - Conversion du Markdown en HTML   - Génération de résumés pour chaque projet (limités à 250 caractères)   - Récupération des images associées aux projets
+- Compilation en format standardisé
+- Création d'un document Markdown unifié avec tous les projets   - Génération d'un document HTML avec mise en page responsive   - Structuration avec cartes de projets, sections détaillées et table des matières   - Application d'un design cohérent (CSS personnalisé)
 
-#### Data Visualization
+#### 3. Publication sur GitHub Pages
 
-- Conversion de données brutes en visualisations éloquentes
-- Création de représentations intuitives
-- Narration visuelle complexe
+- Préparation des fichiers
+- Génération des fichiers HTML/Markdown dans le dossier de sortie   - Copie des ressources requises (images)   - Création de liens symboliques vers la dernière newsletter
+- Organisation du site
+- Création d'une page d'index redirigeant vers la dernière newsletter   - Génération d'une page d'archives listant toutes les newsletters   - Ajout de fichiers de configuration (.nojekyll)
+- Déploiement
+- Création d'un commit avec les nouveaux fichiers   - Déploiement vers la branche gh-pages   - Configuration pour l'accès public
 
-#### Gestion de Systèmes d'Information
+#### 4. Publication sur LinkedIn
 
-- Structuration des flux de données
-- Analyse des systèmes complexes
-- Amélioration des processus informationnels
+- Préparation du contenu pour LinkedIn
+- Extraction du titre et de la date de la newsletter   - Récupération des titres des projets pour créer un sommaire   - Formatage du contenu selon les bonnes pratiques LinkedIn (emojis, mise en forme)   - Ajout de hashtags pertinents
+- Gestion des doublons et limitations
+- Génération d'un hash pour identifier les contenus uniques   - Vérification pour éviter les publications en double   - Ajout d'horodatage pour rendre le contenu unique si nécessaire   - Gestion des limites de taux d'API (rate limits) avec backoff exponentiel
+- Interaction avec l'API LinkedIn
+- Authentification via token d'accès   - Construction de la requête API avec le texte et l'URL   - Gestion des erreurs et tentatives multiples   - Traitement des différents codes de réponse
 
-#### Vulgarisation Technique
+#### 5. Suivi et Maintenance
 
-- Transformation de concepts complexes
-- Rendre l'technique accessible
-- Médiation technologique
+- Enregistrement des activités
+- Journalisation détaillée des actions (logging)   - Création d'un fichier de suivi des publications   - Commits automatiques pour tracer l'historique des publications
+- Mécanismes de déclenchement
+- Exécution planifiée hebdomadaire (tous les lundis)   - Possibilité de déclenchement manuel   - Chaînage des workflows (le second s'exécute après le premier)
+- Gestion des erreurs
+- Détection et rapport des problèmes   - Mécanismes de reprise sur erreur   - Statuts d'achèvement conditionnels
+Cette architecture COPE permet de : 1. Maintenir une source unique de vérité (fichiers Markdown) 2.
 
-#### Intelligence Collective
+<strong>Mots-clés:</strong> architecture, publications, complètement, automatiser, publication
 
-- Approche collaborative
-- Insight-Driven
-- Coordination interdisciplinaire
+Le système est également extensible pour intégrer d'autres plateformes de publication (Twitter, Medium, etc.) en suivant le même modèle modulaire.
 
-#### Approche Professionnelle
+<strong>Mots-clés:</strong> publication, plateformes, extensible, modulaire, également
 
-
-#### Convergence Créative et Analytique
-
-- Combinaison de rigueur technique
-- Créativité narrative
-- Perspective holistique
-
-#### Outils et Méthodes
-
-- Analyse de données avancée
-- Visualisation interactive
-- Communication stratégique
-- Design thinking
-
-#### Philosophie Professionnelle
-
-"La communication digitale efficace est l'art de transformer la complexité en clarté."
-
-
-#### Compétences Transversales
-
-- Analyse stratégique
-- Communication multicanale
-- Design de l'information
-- Gestion de projets innovants
-
-#### Lien Professionnel
-
-[Profil LinkedIn](https://www.linkedin.com/in/alexiafontaine)
-
-[Profil LinkedIn](https://www.linkedin.com/in/alexiafontaine)
-
-
-#### Impact et Vision
-
-- Démystifier les technologies
-- Rendre l'information accessible
-- Créer des ponts entre technique et humain
 [Retour en haut](#)
 
 
@@ -401,105 +345,127 @@ Une approche qui transforme la création de contenus en un écosystème dynamiqu
 
 ---
 
-### 📌 photogrammetrie
+### 📌 faq-desinfection
 
-![photogrammetrie](img/Slowsia.jpg)
+![faq-desinfection](img/FAQ DM.png)
 
-#### photogrammetrie
-
-
-#### Photogrammétrie : Art de la Modélisation 3D
+#### faq-desinfection
 
 
-#### Essence de la Technique
-
-Une méthode de création de modèles 3D précis à partir de photographies, préservant la géométrie et les textures des objets.
+#### FAQ Interactive Intelligente sur la Désinfection des Dispositifs Médicaux
 
 
-#### Processus Détaillé
+#### Présentation du Projet
+
+Une base de connaissances intelligente et interrogeable dans le domaine spécifique de la désinfection des dispositifs médicaux.
 
 
-#### 1. Acquisition des Images
+#### Caractéristiques Principales
 
-- Prises de vue multi-angles
-- Attention méticuleuse à l'éclairage
-- Couverture complète de l'objet
-- Techniques de superposition
-- Résolution des images
-- Uniformité de l'éclairage
-- Recouvrement des prises de vue
-- Qualité optique
+- Référence instantanée sans connexion Internet
+- Base de connaissances contrôlée et validée
+- Facilité d'extension et de maintenance
 
-#### 2. Traitement Informatique
+#### Technologies Utilisées
 
-1. Alignement précis des photos
-1. Détection des points communs
-1. Génération d'un nuage de points dense
-1. Création du maillage 3D
-1. Application des textures
-- Logiciels spécialisés
-- Algorithmes de reconstruction
-- Traitement d'image avancé
-- Intelligence artificielle
+- UX Design
+- NLP (Traitement du Langage Naturel)
+- E-learning
 
-#### 3. Optimisation et Partage
+#### Capture d'Écran
 
-- Nettoyage du modèle
-- Simplification du maillage
-- Optimisation des textures
-- Export dans différents formats
-
-#### Applications
+<img alt="FAQ Désinfection" src="/img/FAQ DM.png"/>
 
 
-#### Domaines de Valorisation
+#### Lien du Projet
 
-- Patrimoine culturel
-- Archéologie
-- Conservation de collections
-- Médiation culturelle
-- Recherche scientifique
+[Accéder à l'Application FAQ](https://faq-desinfection.onrender.com/)
 
-#### Exemples de Réalisations
-
-- Slit Gong (objet ethnologique)
-- Bague à sceau
-- Bague aux camées
-- Objets archéologiques du Trésor d'Eauze
-
-#### Outils et Logiciels
-
-- Agisoft Metashape
-- Reality Capture
-- Blender
-- Capture photogrammétrique avancée
-
-#### Philosophie de la Préservation
-
-"Chaque objet a une histoire. La photogrammétrie permet de la capturer avec précision et sensibilité."
+[Accéder à l'Application FAQ](https://faq-desinfection.onrender.com/)
 
 
-#### Compétences Techniques
+#### Contexte
 
-- Photographie documentaire
-- Traitement d'image
-- Modélisation 3D
-- Conservation numérique
-- Médiation culturelle
+Ce projet vise à simplifier l'accès à l'information technique sur la désinfection des dispositifs médicaux, en proposant une solution interactive et facile à utiliser.
 
-#### Impact
+[Retour en haut](#)
 
-- Préservation numérique
-- Documentation détaillée
-- Accessibilité du patrimoine
-- Recherche interdisciplinaire
 
-#### Défis et Innovation
+---
 
-- Précision technique
-- Capture de la complexité
-- Respect de l'intégrité de l'objet
-- Innovation constante
+### 📌 principes-fondamentaux
+
+![principes-fondamentaux](img/Slowsia.jpg)
+
+#### principes-fondamentaux
+
+
+#### Principes Fondamentaux
+
+
+#### Les Piliers de ma Démarche Créative et Analytique
+
+
+#### 1. Clarté : Rendre l'Impossible Compréhensible
+
+- Transformer le complexe en accessible
+- Démystifier les concepts techniques
+- Créer des ponts de compréhension
+- Déconstruction des idées complexes
+- Utilisation de métaphores éclairantes
+- Approche pédagogique et inclusive
+
+#### 2. Engagement : Créer une Connexion Émotionnelle
+
+- Les données ne sont pas froides
+- Chaque chiffre raconte une histoire
+- L'information doit toucher et inspirer
+- Contextualisation narrative
+- Personnification des données
+- Création de récits immersifs
+
+#### 3. Impact : Faciliter la Prise de Décision
+
+- Au-delà de l'information
+- Vers la transformation
+- Générer des insights actionnables
+- Analyse stratégique
+- Recommandations concrètes
+- Mise en perspective systémique
+
+#### Mise en Pratique
+
+
+#### Dimensions d'Application
+
+- Projets de data storytelling
+- Analyses stratégiques
+- Médiations culturelles
+- Documentations créatives
+
+#### Outils et Techniques
+
+- Visualisation de données
+- Narration interdisciplinaire
+- Design thinking
+- Analyse contextuelle
+
+#### Philosophie Intégrative
+
+"La vraie compréhension naît là où la rigueur analytique rencontre la sensibilité narrative."
+
+
+#### Impacts Recherchés
+
+- Éclairage des zones d'ombre
+- Transformation des perspectives
+- Inspiration et action
+- Compréhension holistique
+
+#### Conclusion
+
+Des principes qui transcendent les disciplines, créant une approche unique de création et de communication de connaissances.
+
 [Retour en haut](#)
 
 
