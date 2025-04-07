@@ -263,7 +263,6 @@ Un projet de valorisation du patrimoine culturel associant photographie, rédact
 
 [Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
 
-[Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
 
 
 #### Description Détaillée
@@ -322,8 +321,6 @@ Un agent conversationnel basé sur un personnage historique, démontrant l'appli
 
 
 #### Lien du Projet
-
-[Interagir avec l'Avatar Edouard Lartet](https://avatar-lartet.streamlit.app/)
 
 [Interagir avec l'Avatar Edouard Lartet](https://avatar-lartet.streamlit.app/)
 
