@@ -73,7 +73,7 @@ Le passage des techniques basées sur les comptages statistiques simples (BoW, T
 
 ### 📌 système-suivi-classement-documentaire
 
-![système-suivi-classement-documentaire](img/Slowsia.jpg)
+![système-suivi-classement-documentaire](img/suivi_doc.png)
 
 #### système-suivi-classement-documentaire
 
@@ -153,32 +153,11 @@ Un document "Rapport financier 2023" pourrait générer des tags comme :
 
 Ce projet illustre une approche moderne de gestion documentaire, combinant intelligence artificielle légère, visualisation de données et flexibilité architecturale.
 
+#### Lien du projet
 
-#### Installation
-
-```bash
-
-
-#### Cloner le dépôt
-
-git clone [url-du-depot]
+[Découvrir le prototype](https://suividoc.streamlit.app/)
 
 
-#### Créer un environnement virtuel
-
-python -m venv venv
-source venv/bin/activate  # Sur Windows: venv\Scripts\activate
-
-
-#### Installer les dépendances
-
-pip install -r requirements.txt
-
-
-#### Lancer l'application
-
-streamlit run app.py
-```
 
 [Retour en haut](#)
 
@@ -358,7 +337,7 @@ Projet développé par Alexia Fontaine - 2025
 
 ### 📌 Architecture Modulaire à Base de Contenu
 
-![Architecture Modulaire à Base de Contenu](img/Slowsia.jpg)
+![Architecture Modulaire à Base de Contenu](img/archi-modulaire.png)
 
 #### Architecture Modulaire à Base de Contenu
 
