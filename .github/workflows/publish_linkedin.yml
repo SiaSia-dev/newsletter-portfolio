@@ -1,9 +1,9 @@
 name: Publication Hebdomadaire sur LinkedIn
 
 on:
-  schedule:
+  #schedule:
     # Exécution tous les lundis à 9h00
-    - cron: '0 9 * * 1'
+  #  - cron: '0 9 * * 1'
   workflow_run:
     workflows: ["Génération et Déploiement de Newsletter"]
     types:
