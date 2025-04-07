@@ -4,113 +4,6 @@
 
 ---
 
-### 📊 data-visualisation
-
-![data-visualisation](img/data-analyst-subcultures-map.png)
-
-#### data-visualisation
-
-
-#### Data & Visualisation
-
-
-#### Exploration et Analyse de Données
-
-
-#### Image de Référence
-
-<img alt="Data Science Analysis" src="/img/data-analyst-subcultures-map.png"/>
-
-
-#### Approche Analytique
-
-Une méthodologie qui va au-delà de la simple manipulation de chiffres, transformant les données brutes en récits intelligibles et stratégiques.
-
-
-#### Méthodologie Intégrée
-
-1. Collecte & Préparation
-1. Nettoyage des données
-1. Structuration des jeux de données
-1. Exploration approfondie
-1. Analyse Statistique
-1. Utilisation de méthodes avancées
-1. Extraction de tendances significatives
-1. Analyse contextuelle
-1. Visualisation
-1. Création de représentations visuelles éloquentes
-1. Conception de dashboards intuitifs
-1. Traduction des insights complexes
-1. Narration
-1. Contextualisation des données
-1. Création de récits compréhensibles
-1. Mise en perspective stratégique
-Exploration approfondie
-
-<strong>Analyse Statistique</strong>
-
-Analyse contextuelle
-
-<strong>Visualisation</strong>
-
-Traduction des insights complexes
-
-<strong>Narration</strong>
-
-
-#### Processus d'Analyse
-
-Chaque ensemble de données raconte une histoire. L'approche consiste à :
-- Écouter les récits sous-jacents
-- Comprendre les nuances
-- Identifier les implications culturelles
-
-Au-delà des chiffres, recherche des connexions entre :
-- Données
-- Expériences humaines
-- Dynamiques organisationnelles
-- Évolutions sociétales
-
-Chaque donnée est située dans son écosystème :
-- Professionnel
-- Culturel
-- Historique
-
-
-#### Compétences Techniques
-
-- Python (Pandas, NumPy, Scikit-learn)
-- R (Tidyverse, ggplot2)
-- SQL & Bases de données
-- Machine Learning
-- NLP
-- Visualisation de données complexes
-- Power BI & Tableau
-
-#### Outils et Frameworks
-
-- Analyse statistique avancée
-- Algorithmes de machine learning
-- Traitement du langage naturel
-- Création de dashboards interactifs
-- Visualisation de données complexes
-
-#### Applications Pratiques
-
-- Optimisation des réseaux de transport
-- Suivi pédagogique
-- Analyse de systèmes documentaires
-- Exploration de données historiques
-
-#### Philosophie de la Data Science
-
-Transformer des données brutes en insights stratégiques, racontant des histoires cachées derrière les chiffres.
-
-[Retour en haut](#)
-
-
----
-
 ### 🎨 approche-integree-creation
 
 ![approche-integree-creation](img/logo-v2.png)
@@ -227,6 +120,285 @@ Une approche qui transforme la création de contenus en un écosystème dynamiqu
 
 ---
 
+### 📌 archaedyn-article-md
+
+![archaedyn-article-md](img/Slowsia.jpg)
+
+#### archaedyn-article-md
+
+
+#### ARCHAEDYN : 7 millénaires de dynamiques territoriales
+
+
+#### Contexte du Projet
+
+Le projet ARCHAEDYN s'inscrit dans une recherche ambitieuse visant à comprendre les dynamiques territoriales sur une période de 7 millénaires, du Néolithique au Moyen Âge. Cette étude innovante propose une analyse approfondie des modèles d'établissement, de production et d'échanges commerciaux.
+
+
+#### Objectifs Scientifiques
+
+Les principaux objectifs du projet étaient de :
+
+- Cartographier l'évolution des implantations humaines
+- Analyser les systèmes de production
+- Comprendre les réseaux d'échanges commerciaux
+- Étudier les dynamiques territoriales sur le long terme
+
+#### Méthodologie
+
+La recherche a combiné plusieurs approches méthodologiques :
+
+- Analyse cartographique détaillée
+- Études archéologiques comparatives
+- Modélisation des données spatiales
+- Utilisation de systèmes d'information géographique (SIG)
+
+#### Résultats Principaux
+
+Les résultats ont mis en lumière :
+
+- L'évolution complexe des établissements humains
+- Les transformations des systèmes de production
+- Les réseaux d'échanges et leurs mutations
+- Les dynamiques territoriales sur 7 millénaires
+
+#### Signification
+
+ARCHAEDYN représente une avancée significative dans la compréhension des dynamiques territoriales, offrant une perspective unique sur l'évolution des sociétés humaines à travers une période historique longue.
+
+<em>Source originale : [Hypothèses - ARCHAEDYN](https://archnum.hypotheses.org/175)</em>
+
+[Hypothèses - ARCHAEDYN](https://archnum.hypotheses.org/175)
+
+<em>Conférence finale : Dijon, 23-25 juin 2008</em>
+
+[Retour en haut](#)
+
+
+---
+
+### 🎨 approche-analyse-donnees
+
+![approche-analyse-donnees](img/data-analyst-subcultures-map.png)
+
+#### approche-analyse-donnees
+
+
+#### Une Approche de l'Analyse de Données
+
+
+#### Transformation des Données Brutes en Récits Intelligibles
+
+
+#### Image Représentative
+
+<img alt="Data Science Analysis" src="/img/data-analyst-subcultures-map.png"/>
+
+
+#### Philosophie Fondamentale
+
+Transformer les données brutes en récits stratégiques, révélant les insights cachés derrière les chiffres.
+
+
+#### Méthodologie Intégrée
+
+
+#### 1. Collecte & Préparation
+
+- Nettoyage méticuleux des données
+- Structuration des jeux de données
+- Préparation pour l'analyse approfondie
+- Gestion des valeurs manquantes
+- Normalisation
+- Prétraitement avancé
+
+#### 2. Analyse Statistique
+
+- Méthodes statistiques avancées
+- Extraction de tendances significatives
+- Analyse multidimensionnelle
+- Python (Pandas, NumPy)
+- R (Tidyverse)
+- Techniques de machine learning
+- Analyses prédictives
+
+#### 3. Visualisation
+
+- Création de représentations visuelles éloquentes
+- Transformation des données complexes
+- Design d'information intuitif
+- Datavisualisation
+- Design UX
+- Narration visuelle
+- Communication graphique
+
+#### 4. Narration Stratégique
+
+- Transformation des données en récits
+- Mise en perspective stratégique
+- Création de sens
+- Contexte organisationnel
+- Dynamiques culturelles
+- Implications stratégiques
+
+#### Processus d'Analyse Approfondie
+
+
+#### Lecture des Contextes
+
+- Écouter les récits des données
+- Comprendre les nuances
+- Identifier les implications cachées
+
+#### Tissage des Narratifs
+
+- Au-delà des chiffres
+- Connexion avec les expériences humaines
+- Exploration des dynamiques organisationnelles
+
+#### Interprétation Contextuelle
+
+- Situation des données dans leur écosystème
+- Perspective professionnelle
+- Dimension culturelle
+- Contexte historique
+
+#### Compétences Clés
+
+- Analyse statistique avancée
+- Programmation
+- Visualisation de données
+- Communication stratégique
+- Pensée critique
+
+#### Impact et Résultats
+
+- Insights stratégiques
+- Aide à la décision
+- Compréhension approfondie
+- Transformation organisationnelle
+
+#### Citation Inspirante
+
+"Les données sont des miroirs qui reflètent les histoires invisibles de nos organisations et sociétés."
+
+
+#### Conclusion
+
+Une approche qui fait plus que analyser : elle raconte, révèle et inspire.
+
+[Retour en haut](#)
+
+
+---
+
+### 📊 data-visualisation
+
+![data-visualisation](img/data-analyst-subcultures-map.png)
+
+#### data-visualisation
+
+
+#### Data & Visualisation
+
+
+#### Exploration et Analyse de Données
+
+
+#### Image de Référence
+
+<img alt="Data Science Analysis" src="/img/data-analyst-subcultures-map.png"/>
+
+
+#### Approche Analytique
+
+Une méthodologie qui va au-delà de la simple manipulation de chiffres, transformant les données brutes en récits intelligibles et stratégiques.
+
+
+#### Méthodologie Intégrée
+
+1. Collecte & Préparation
+1. Nettoyage des données
+1. Structuration des jeux de données
+1. Exploration approfondie
+1. Analyse Statistique
+1. Utilisation de méthodes avancées
+1. Extraction de tendances significatives
+1. Analyse contextuelle
+1. Visualisation
+1. Création de représentations visuelles éloquentes
+1. Conception de dashboards intuitifs
+1. Traduction des insights complexes
+1. Narration
+1. Contextualisation des données
+1. Création de récits compréhensibles
+1. Mise en perspective stratégique
+Exploration approfondie
+
+<strong>Analyse Statistique</strong>
+
+Analyse contextuelle
+
+<strong>Visualisation</strong>
+
+Traduction des insights complexes
+
+<strong>Narration</strong>
+
+
+#### Processus d'Analyse
+
+Chaque ensemble de données raconte une histoire. L'approche consiste à :
+- Écouter les récits sous-jacents
+- Comprendre les nuances
+- Identifier les implications culturelles
+
+Au-delà des chiffres, recherche des connexions entre :
+- Données
+- Expériences humaines
+- Dynamiques organisationnelles
+- Évolutions sociétales
+
+Chaque donnée est située dans son écosystème :
+- Professionnel
+- Culturel
+- Historique
+
+
+#### Compétences Techniques
+
+- Python (Pandas, NumPy, Scikit-learn)
+- R (Tidyverse, ggplot2)
+- SQL & Bases de données
+- Machine Learning
+- NLP
+- Visualisation de données complexes
+- Power BI & Tableau
+
+#### Outils et Frameworks
+
+- Analyse statistique avancée
+- Algorithmes de machine learning
+- Traitement du langage naturel
+- Création de dashboards interactifs
+- Visualisation de données complexes
+
+#### Applications Pratiques
+
+- Optimisation des réseaux de transport
+- Suivi pédagogique
+- Analyse de systèmes documentaires
+- Exploration de données historiques
+
+#### Philosophie de la Data Science
+
+Transformer des données brutes en insights stratégiques, racontant des histoires cachées derrière les chiffres.
+
+[Retour en haut](#)
+
+
+---
+
 ### 📌 messe-saint-gregoire
 
 ![messe-saint-gregoire](img/MSG.png)
@@ -263,6 +435,7 @@ Un projet de valorisation du patrimoine culturel associant photographie, rédact
 
 [Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
 
+[Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
 
 
 #### Description Détaillée
@@ -324,6 +497,8 @@ Un agent conversationnel basé sur un personnage historique, démontrant l'appli
 
 [Interagir avec l'Avatar Edouard Lartet](https://avatar-lartet.streamlit.app/)
 
+[Interagir avec l'Avatar Edouard Lartet](https://avatar-lartet.streamlit.app/)
+
 
 #### Concept
 
@@ -345,149 +520,6 @@ Exploration des possibilités de l'IA générative dans :
 - Modélisation de personnalités historiques
 - Techniques avancées de NLP
 - Conception d'expériences interactives éducatives
-[Retour en haut](#)
-
-
----
-
-### 📊 ecriture-datastorytelling
-
-![ecriture-datastorytelling](img/CulturalAnalysis-subcultures.png)
-
-#### ecriture-datastorytelling
-
-
-#### Écriture et Data Storytelling
-
-
-#### Analyse Culturelle et Narration de Données
-
-
-#### Vue d'Ensemble
-
-L'écriture est un outil de transformation des données complexes en récits captivants, révélant les insights cachés derrière les chiffres et les tendances.
-
-
-#### Image de Référence
-
-<img alt="Analyse Culturelle" src="/img/CulturalAnalysis-subcultures.png"/>
-
-
-#### Approche Méthodologique
-
-- Transformation de données complexes en récits accessibles
-- Révélation des dynamiques culturelles sous-jacentes
-- Contextualisation approfondie des données
-
-#### Principes Fondamentaux
-
-1. Clarté : Rendre l'information complexe immédiatement compréhensible
-1. Engagement : Créer une connexion émotionnelle avec les données
-1. Impact : Faciliter la prise de décision et la compréhension stratégique
-
-#### Dimensions Clés
-
-- Analyse rigoureuse statistique
-- Contextualisation narrative
-- Visualisation éloquente
-- Communication stratégique
-
-#### Citation Inspirante
-
-« Les données sont des récits en attente d'être déchiffrés, des fragments d'une histoire plus large qui ne demandent qu'à être racontée. »
-
-
-#### Compétences Principales
-
-- Rédaction de contenus analytiques
-- Data Storytelling
-- Analyse de données
-- Vulgarisation technique
-- Communication visuelle
-
-#### Approche de l'Analyse Culturelle
-
-L'analyse culturelle dans le data storytelling va au-delà de l'interprétation statistique traditionnelle. Elle cherche à comprendre comment les données reflètent :
-- Les interactions humaines
-- Les sous-cultures professionnelles
-- Les transformations sociétales
-
-
-#### Méthodologie Intégrée
-
-1. Décorticage statistique précis des jeux de données
-1. Ancrage des données dans un récit humain
-1. Traduction des insights en représentations visuelles
-1. Adaptation du récit aux différents publics
-
-#### Domaines d'Expertise
-
-- Articles de fond
-- Contenus web
-- Optimisation SEO
-- Narration de marque
-- Récits immersifs
-- Data Visualization
-[Retour en haut](#)
-
-
----
-
-### 🌸 fleurs-documentation-narrative
-
-![fleurs-documentation-narrative](img/FleurEtoile.jpg)
-
-#### fleurs-documentation-narrative
-
-
-#### Les Fleurs : Étoiles de la Terre
-
-
-#### Capture d'Écran
-
-<img alt="FleurEtoile" src="/img/FleurEtoile.jpg"/>
-
-
-#### Prélude Botanique
-
-Dans le vaste théâtre de la nature, les fleurs émergent comme des constellations terrestres, points lumineux parsemant les prairies, les jardins et les sous-bois. Chacune raconte une histoire unique, un fragment de poésie végétale suspendu entre le sol et le ciel.
-
-
-#### Anatomie d'une Constellation Florale
-
-Comme les étoiles qui ponctuent le firmament nocturne, les fleurs possèdent leur propre géométrie complexe :
-
-- Pétales : Analogues aux rayonnements stellaires, irradiant couleurs et formes
-- Étamines : Structures centrales, tels les noyaux des systèmes planétaires
-- Pistil : Cœur générateur, source de vie et de reproduction
-
-#### Symphonie Chromatique
-
-Chaque fleur devient un astre unique :
-- L'orchidée mauve, mystérieuse comme une nébuleuse lointaine
-- Le pavot écarlate, explosion de lumière intense
-- L'alstroemeria aux tons pastels, constellation délicate
-
-
-#### Cycles et Métamorphoses
-
-À l'image des étoiles qui naissent, brillent et s'éteignent, les fleurs suivent un cycle cosmique :
-1. <strong>Germination</strong> : Émergence timide, comme une étoile naissante
-2. <strong>Floraison</strong> : Apogée lumineuse, zénith de l'expression
-3. <strong>Déclin</strong> : Dispersion, retour à la terre, promesse de renaissance
-
-
-#### Écologie et Interconnexion
-
-Les fleurs ne sont pas simplement des objets statiques, mais des systèmes dynamiques en interaction constante :
-- <strong>Pollinisateurs</strong> : Tels des vaisseaux spatiaux, transportant la vie
-- <strong>Réseau écologique</strong> : Trame complexe, comparable aux connexions galactiques
-
-
-#### Métaphore Cosmique
-
-"Les fleurs sont les étoiles de la Terre" transcende la simple comparaison poétique. C'est une vérité scientifique et philosophique : elles sont des systèmes complexes de communication, d'adaptation et de vie, miniatures de l'univers dans leur capacité à transformer l'énergie, à rayonner et à maintenir des écosystèmes entiers. Chaque fleur est un microcosme de la complexité cosmique, un point de rencontre entre la matière et la vie, entre l'invisible et le visible, entre l'infiniment petit et l'infiniment grand.
-
 [Retour en haut](#)
 
 
