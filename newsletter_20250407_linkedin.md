@@ -120,63 +120,6 @@ Une approche qui transforme la création de contenus en un écosystème dynamiqu
 
 ---
 
-### 📌 archaedyn-article-md
-
-![archaedyn-article-md](img/Slowsia.jpg)
-
-#### archaedyn-article-md
-
-
-#### ARCHAEDYN : 7 millénaires de dynamiques territoriales
-
-
-#### Contexte du Projet
-
-Le projet ARCHAEDYN s'inscrit dans une recherche ambitieuse visant à comprendre les dynamiques territoriales sur une période de 7 millénaires, du Néolithique au Moyen Âge. Cette étude innovante propose une analyse approfondie des modèles d'établissement, de production et d'échanges commerciaux.
-
-
-#### Objectifs Scientifiques
-
-Les principaux objectifs du projet étaient de :
-
-- Cartographier l'évolution des implantations humaines
-- Analyser les systèmes de production
-- Comprendre les réseaux d'échanges commerciaux
-- Étudier les dynamiques territoriales sur le long terme
-
-#### Méthodologie
-
-La recherche a combiné plusieurs approches méthodologiques :
-
-- Analyse cartographique détaillée
-- Études archéologiques comparatives
-- Modélisation des données spatiales
-- Utilisation de systèmes d'information géographique (SIG)
-
-#### Résultats Principaux
-
-Les résultats ont mis en lumière :
-
-- L'évolution complexe des établissements humains
-- Les transformations des systèmes de production
-- Les réseaux d'échanges et leurs mutations
-- Les dynamiques territoriales sur 7 millénaires
-
-#### Signification
-
-ARCHAEDYN représente une avancée significative dans la compréhension des dynamiques territoriales, offrant une perspective unique sur l'évolution des sociétés humaines à travers une période historique longue.
-
-<em>Source originale : [Hypothèses - ARCHAEDYN](https://archnum.hypotheses.org/175)</em>
-
-[Hypothèses - ARCHAEDYN](https://archnum.hypotheses.org/175)
-
-<em>Conférence finale : Dijon, 23-25 juin 2008</em>
-
-[Retour en haut](#)
-
-
----
-
 ### 🎨 approche-analyse-donnees
 
 ![approche-analyse-donnees](img/data-analyst-subcultures-map.png)
@@ -520,6 +463,89 @@ Exploration des possibilités de l'IA générative dans :
 - Modélisation de personnalités historiques
 - Techniques avancées de NLP
 - Conception d'expériences interactives éducatives
+[Retour en haut](#)
+
+
+---
+
+### 📊 ecriture-datastorytelling
+
+![ecriture-datastorytelling](img/CulturalAnalysis-subcultures.png)
+
+#### ecriture-datastorytelling
+
+
+#### Écriture et Data Storytelling
+
+
+#### Analyse Culturelle et Narration de Données
+
+
+#### Vue d'Ensemble
+
+L'écriture est un outil de transformation des données complexes en récits captivants, révélant les insights cachés derrière les chiffres et les tendances.
+
+
+#### Image de Référence
+
+<img alt="Analyse Culturelle" src="/img/CulturalAnalysis-subcultures.png"/>
+
+
+#### Approche Méthodologique
+
+- Transformation de données complexes en récits accessibles
+- Révélation des dynamiques culturelles sous-jacentes
+- Contextualisation approfondie des données
+
+#### Principes Fondamentaux
+
+1. Clarté : Rendre l'information complexe immédiatement compréhensible
+1. Engagement : Créer une connexion émotionnelle avec les données
+1. Impact : Faciliter la prise de décision et la compréhension stratégique
+
+#### Dimensions Clés
+
+- Analyse rigoureuse statistique
+- Contextualisation narrative
+- Visualisation éloquente
+- Communication stratégique
+
+#### Citation Inspirante
+
+« Les données sont des récits en attente d'être déchiffrés, des fragments d'une histoire plus large qui ne demandent qu'à être racontée. »
+
+
+#### Compétences Principales
+
+- Rédaction de contenus analytiques
+- Data Storytelling
+- Analyse de données
+- Vulgarisation technique
+- Communication visuelle
+
+#### Approche de l'Analyse Culturelle
+
+L'analyse culturelle dans le data storytelling va au-delà de l'interprétation statistique traditionnelle. Elle cherche à comprendre comment les données reflètent :
+- Les interactions humaines
+- Les sous-cultures professionnelles
+- Les transformations sociétales
+
+
+#### Méthodologie Intégrée
+
+1. Décorticage statistique précis des jeux de données
+1. Ancrage des données dans un récit humain
+1. Traduction des insights en représentations visuelles
+1. Adaptation du récit aux différents publics
+
+#### Domaines d'Expertise
+
+- Articles de fond
+- Contenus web
+- Optimisation SEO
+- Narration de marque
+- Récits immersifs
+- Data Visualization
 [Retour en haut](#)
 
 
