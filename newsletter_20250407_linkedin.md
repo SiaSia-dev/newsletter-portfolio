@@ -92,379 +92,437 @@ Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier M
 
 ---
 
-### 📌 optimisation-transport
+### 📌 sources-inspiration-voyages
 
-![optimisation-transport](img/TsptGraphe.png)
+![sources-inspiration-voyages](img/Explorez_gif.gif)
 
-#### optimisation-transport
-
-
-#### Optimisation des Réseaux de Transport
+#### sources-inspiration-voyages
 
 
-#### Présentation du Projet
-
-Une application interactive explorant les algorithmes de sectorisation et d'optimisation des réseaux de transport, démontrant comment l'analyse de données peut résoudre des problèmes complexes de logistique.
-
-
-#### Objectifs
-
-- Modélisation des réseaux de transport
-- Optimisation des parcours et de la distribution
-- Application des techniques avancées de traitement de graphes
-
-#### Technologies Utilisées
-
-- Algorithmes d'optimisation
-- Théorie des graphes
-- Analyse de données spatiales
-- Python
-
-#### Capture d'Écran
-
-<img alt="Optimisation des Réseaux de Transport" src="/img/TsptGraphe.png"/>
-
-
-#### Lien du Projet
-
-[Explorer l'Application d'Optimisation des Réseaux](https://sectorisation-reseaux.streamlit.app/)
-
-[Explorer l'Application d'Optimisation des Réseaux](https://sectorisation-reseaux.streamlit.app/)
-
-
-#### Approche Technique
-
-Utilisation de techniques avancées de traitement de graphes pour:
-- Analyser les flux de transport
-- Optimiser les itinéraires
-- Minimiser les coûts et maximiser l'efficacité
-
-
-#### Fonctionnalités Principales
-
-- Visualisation des réseaux de transport
-- Simulation de différents scénarios de sectorisation
-- Analyse comparative des performances
-
-#### Compétences Mises en Œuvre
-
-- Algorithmes complexes
-- Modélisation mathématique
-- Analyse spatiale
-- Développement d'outils d'aide à la décision
-[Retour en haut](#)
-
-
----
-
-### 📝 cope-process-documentation
-
-![cope-process-documentation](img/Process_COPE.png)
-
-#### cope-process-documentation
-
-title: Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
-description: <img alt="Infographie du Processus COPE" src="/img/Process_COPE.png">
-author: Alexia Fontaine
-date: 2025-03-28
-type: summary
-image: /img/Process_COPE.png</img>
-
-
-#### Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
-
-<img alt="Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)" src="/img/Process_COPE.png"/>
-
-
-#### 1. Création du Contenu (Source Unique)
-
-- Rédaction de documents Markdown dans le portfolio
-- Création/mise à jour des fichiers .md dans le dossier "docs" du dépôt portfolio   - Utilisation du format frontmatter YAML pour les métadonnées (titre, description, tags)   - Inclusion d'images et autres médias dans le dossier "img"
-
-#### 2. Génération Automatique de la Newsletter
-
-- Détection des contenus récents
-- Scan des fichiers Markdown modifiés récemment   - Filtrage en fonction de la date de modification (7 derniers jours)   - Sélection des projets les plus récents (limité à 6)
-- Extraction et traitement du contenu
-- Analyse du frontmatter YAML pour extraire les métadonnées   - Conversion du Markdown en HTML   - Génération de résumés pour chaque projet (limités à 250 caractères)   - Récupération des images associées aux projets
-- Compilation en format standardisé
-- Création d'un document Markdown unifié avec tous les projets   - Génération d'un document HTML avec mise en page responsive   - Structuration avec cartes de projets, sections détaillées et table des matières   - Application d'un design cohérent (CSS personnalisé)
-
-#### 3. Publication sur GitHub Pages
-
-- Préparation des fichiers
-- Génération des fichiers HTML/Markdown dans le dossier de sortie   - Copie des ressources requises (images)   - Création de liens symboliques vers la dernière newsletter
-- Organisation du site
-- Création d'une page d'index redirigeant vers la dernière newsletter   - Génération d'une page d'archives listant toutes les newsletters   - Ajout de fichiers de configuration (.nojekyll)
-- Déploiement
-- Création d'un commit avec les nouveaux fichiers   - Déploiement vers la branche gh-pages   - Configuration pour l'accès public
-
-#### 4. Publication sur LinkedIn
-
-- Préparation du contenu pour LinkedIn
-- Extraction du titre et de la date de la newsletter   - Récupération des titres des projets pour créer un sommaire   - Formatage du contenu selon les bonnes pratiques LinkedIn (emojis, mise en forme)   - Ajout de hashtags pertinents
-- Gestion des doublons et limitations
-- Génération d'un hash pour identifier les contenus uniques   - Vérification pour éviter les publications en double   - Ajout d'horodatage pour rendre le contenu unique si nécessaire   - Gestion des limites de taux d'API (rate limits) avec backoff exponentiel
-- Interaction avec l'API LinkedIn
-- Authentification via token d'accès   - Construction de la requête API avec le texte et l'URL   - Gestion des erreurs et tentatives multiples   - Traitement des différents codes de réponse
-
-#### 5. Suivi et Maintenance
-
-- Enregistrement des activités
-- Journalisation détaillée des actions (logging)   - Création d'un fichier de suivi des publications   - Commits automatiques pour tracer l'historique des publications
-- Mécanismes de déclenchement
-- Exécution planifiée hebdomadaire (tous les lundis)   - Possibilité de déclenchement manuel   - Chaînage des workflows (le second s'exécute après le premier)
-- Gestion des erreurs
-- Détection et rapport des problèmes   - Mécanismes de reprise sur erreur   - Statuts d'achèvement conditionnels
-Cette architecture COPE permet de : 1. Maintenir une source unique de vérité (fichiers Markdown) 2.
-
-<strong>Mots-clés:</strong> architecture, publications, complètement, automatiser, publication
-
-Le système est également extensible pour intégrer d'autres plateformes de publication (Twitter, Medium, etc.) en suivant le même modèle modulaire.
-
-<strong>Mots-clés:</strong> publication, plateformes, extensible, modulaire, également
-
-[Retour en haut](#)
-
-
----
-
-### 🎨 approche-integree-creation
-
-![approche-integree-creation](img/logo-v2.png)
-
-#### approche-integree-creation
-
-
-#### Une Approche Intégrée de Création de Contenus
+#### Sources d'Inspiration : Les Voyages
 
 
 #### Image Représentative
 
-<img alt="Création de Contenu" src="/img/logo-v2.png"/>
+<img alt="Exploration et Voyages" src="/img/Explorez_gif.gif"/>
 
 
-#### Concept Fondamental
+#### Philosophie des Voyages
 
-Une démarche de création qui transcende les frontières traditionnelles entre différents médias et disciplines.
+Les voyages comme source intarissable de découvertes, de compréhension et de transformation personnelle.
+
+
+#### Dimensions de l'Exploration
+
+
+#### Approche Sensorielle
+
+- Éveil de tous les sens
+- Immersion totale
+- Perception multidimensionnelle
+
+#### Processus de Découverte
+
+1. Observation Attentive
+1. Détails culturels
+1. Nuances locales
+1. Pratiques quotidiennes
+1. Interaction Profonde
+1. Échanges humains
+1. Compréhension des traditions
+1. Dialogue interculturel
+Pratiques quotidiennes
+
+<strong>Interaction Profonde</strong>
+
+
+#### Transformation Personnelle
+
+
+#### Développement de la Sensibilité
+
+- Élargissement de la perspective
+- Remise en question des préjugés
+- Développement de l'empathie culturelle
+
+#### Enrichissement Intellectuel
+
+- Accumulation de connaissances
+- Compréhension des systèmes culturels
+- Déconstruction des narratifs simplistes
+
+#### Méthodes de Documentation
+
+
+#### Carnets de Voyage
+
+- Croquis
+- Notes manuscrites
+- Photographies
+- Collecte d'objets
+- Annotations sensorielles
+
+#### Techniques de Capture
+
+- Photographie documentaire
+- Illustration
+- Écriture réflexive
+- Enregistrements sonores
+
+#### Régions et Inspirations
+
+
+#### Asie du Sud-Est
+
+- Bali
+- Traditions artisanales
+- Philosophies spirituelles
+- Motifs culturels
+
+#### Traditions Européennes
+
+- Pratiques locales
+- Patrimoine culturel
+- Dynamiques sociales
+
+#### Impact Créatif
+
+
+#### Transformation des Expériences
+
+- Inspiration pour projets artistiques
+- Intégration dans les créations
+- Réinterprétation culturelle
+
+#### Projets Développés
+
+- Série "Bali Inspirations"
+- "Voyage Sensoriel"
+- Carnets de voyage multimédias
+
+#### Philosophie
+
+"Voyager, c'est observer le monde comme un livre ouvert, où chaque expérience est une page à comprendre et à interpréter."
+
+
+#### Compétences Développées
+
+- Observation interculturelle
+- Adaptation
+- Communication non-verbale
+- Pensée comparative
+- Créativité contextuelle
+
+#### Conclusion
+
+Les voyages comme processus continu d'apprentissage, de découverte et de transformation personnelle et créative.
+
+[Retour en haut](#)
+
+
+---
+
+### 📌 evolution-nlp-llm-article
+
+![evolution-nlp-llm-article](img/NLP-LLM.jpg)
+
+#### evolution-nlp-llm-article
+
+
+#### Visualisation de l'évolution des techniques NLP et LLM
+
+
+#### Introduction
+
+Nous avons travaillé sur la visualisation de l'évolution des techniques de Traitement du Langage Naturel (NLP) et des Grands Modèles de Langage (LLM) à travers le temps. À partir d'un fichier DOT initial décrivant la relation entre différentes technologies, nous avons créé plusieurs visualisations pour représenter cette évolution de manière claire et informative.
+
+
+#### Étapes du processus
+
+1. Conversion initiale du fichier DOT en diagramme Mermaid
+   Nous avons d'abord transformé la structure DOT en un diagramme Mermaid qui préservait l'organisation horizontale des éléments.
+1. Création d'une version SVG horizontale
+   Ensuite, nous avons développé une version SVG du diagramme qui offrait plus de contrôle sur le style et la présentation des éléments.
+1. Adaptation à un format vertical
+   À la demande d'une orientation verticale, nous avons réorganisé le diagramme SVG pour qu'il se développe de haut en bas.
+1. Création d'un dendrogramme chronologique
+   Finalement, nous avons conçu un dendrogramme qui intègre une chronologie, permettant de visualiser l'évolution temporelle des différentes techniques.
+<strong>Conversion initiale du fichier DOT en diagramme Mermaid</strong><br/>
+   Nous avons d'abord transformé la structure DOT en un diagramme Mermaid qui préservait l'organisation horizontale des éléments.
+
+<strong>Création d'une version SVG horizontale</strong><br/>
+   Ensuite, nous avons développé une version SVG du diagramme qui offrait plus de contrôle sur le style et la présentation des éléments.
+
+<strong>Adaptation à un format vertical</strong><br/>
+   À la demande d'une orientation verticale, nous avons réorganisé le diagramme SVG pour qu'il se développe de haut en bas.
+
+<strong>Création d'un dendrogramme chronologique</strong><br/>
+   Finalement, nous avons conçu un dendrogramme qui intègre une chronologie, permettant de visualiser l'évolution temporelle des différentes techniques.
+
+
+#### Visualisation finale
+
+Notre visualisation finale prend la forme d'un dendrogramme chronologique qui:
+
+- Représente le temps sur un axe vertical, de 1950 à 2020
+- Organise les techniques par catégories fonctionnelles
+- Différencie par couleur les technologies spécifiques au NLP, aux LLM, ou communes aux deux
+- Montre clairement la progression et l'évolution des techniques au fil du temps
+Cette chronologie met en évidence plusieurs tendances importantes:
+
+- Les premières techniques (années 1950-1990) étaient principalement axées sur le NLP fondamental
+- Les années 2000 ont vu l'émergence de techniques plus sophistiquées de modélisation et d'analyse
+- L'arrivée des Transformers en 2017 marque un tournant majeur vers les LLM
+- La période récente (2019-2020) est dominée par les modèles dérivés des Transformers
+- Les dernières avancées incluent des techniques d'augmentation comme RAG et RLHF
+<img alt="Chronologie des techniques NLP et LLM" src="/img/NLP-LLM.jpg"/>
+
+
+#### Conclusion
+
+Cette visualisation permet de mieux comprendre l'évolution des technologies du langage et offre une perspective claire sur la progression des techniques NLP vers les modèles LLM modernes. Elle illustre comment les avancées successives ont construit les fondations sur lesquelles reposent les capacités impressionnantes des systèmes d'IA linguistique actuels.
+
+Le passage des techniques basées sur les comptages statistiques simples (BoW, TF-IDF) vers des représentations vectorielles (Word2Vec, GloVe), puis vers des architectures neuronales complexes (RNN, LSTM) et finalement aux Transformers, montre une progression fascinante qui a révolutionné notre capacité à traiter et générer du langage naturel.
+
+[Retour en haut](#)
+
+
+---
+
+### 📌 blog-scientifique
+
+![blog-scientifique](img/1ere-couv_1.jpg)
+
+#### blog-scientifique
+
+
+#### Blog Scientifique : ARCHAEDYN
+
+
+#### Image Représentative
+
+<img alt="Couverture ARCHAEDYN" src="/img/1ere-couv_1.jpg"/>
+
+
+#### Contexte du Projet
+
+Un projet de recherche archéologique innovant explorant les dynamiques territoriales sur 7 millénaires.
+
+
+#### Objectifs de Recherche
+
+- Analyser l'occupation humaine
+- Étudier les transformations territoriales
+- Comprendre l'évolution historique des espaces
+
+#### Méthodologie de Recherche
+
+
+#### Approche Interdisciplinaire
+
+- Archéologie
+- Cartographie historique
+- Analyse spatiale
+- Systèmes d'Information Géographique (SIG)
+
+#### Techniques d'Analyse
+
+1. Analyse cartographique détaillée
+1. Reconstruction des territoires historiques
+1. Étude des mutations spatiales
+1. Cartographie comparative
+1. Études archéologiques comparatives
+1. Analyse des vestiges
+1. Comparaison inter-sites
+1. Reconstruction des dynamiques d'occupation
+1. Modélisation des Données Spatiales
+1. Utilisation d'outils SIG avancés
+1. Création de modèles spatiaux
+1. Analyse des transformations territoriales
+Cartographie comparative
+
+<strong>Études archéologiques comparatives</strong>
+
+Reconstruction des dynamiques d'occupation
+
+<strong>Modélisation des Données Spatiales</strong>
+
+
+#### Compétences Mises en Œuvre
+
+- Recherche archéologique
+- Analyse géospatiale
+- Traitement de données historiques
+- Modélisation cartographique
+- Systèmes d'Information Géographique
+
+#### Périodes Étudiées
+
+- Néolithique
+- Périodes intermédiaires
+- Moyen Âge
+
+#### Impact Scientifique
+
+- Compréhension approfondie des dynamiques territoriales
+- Nouvelle perspective sur l'occupation humaine
+- Méthodologie innovante d'analyse historique
+
+#### Lien vers la Publication
+
+[Article complet sur ArchNum](https://archnum.hypotheses.org/175)
+
+[Article complet sur ArchNum](https://archnum.hypotheses.org/175)
+
+
+#### Philosophie de Recherche
+
+"Chaque trace, chaque vestige est un fragment d'un récit territorial plus large."
+
+
+#### Conclusion
+
+Un projet qui transcende la simple étude archéologique pour proposer une vision dynamique et vivante de l'histoire territoriale.
+
+[Retour en haut](#)
+
+
+---
+
+### 📌 archeologie-numerique
+
+![archeologie-numerique](img/TsptTls.png)
+
+#### archeologie-numerique
+
+
+#### Archéologie Numérique : Dynamiques Territoriales
+
+
+#### Présentation du Projet
+
+Un projet innovant qui transforme des données archéologiques en récit dynamique, illustrant comment le data storytelling peut révéler des insights historiques complexes.
+
+
+#### Méthodologie
+
+- Analyse de données géospatiales historiques
+- Cartographie interactive des dynamiques territoriales
+- Narration contextuelle basée sur des données
+
+#### Technologies Utilisées
+
+- Data Storytelling
+- Recherche Historique
+- Visualisation de Données
+
+#### Capture d'Écran
+
+<img alt="Projet Archéologie Numérique" src="/img/TsptTls.png"/>
+
+
+#### Lien du Projet
+
+[Découvrir le Projet Archéologie Numérique](https://slowsia.shinyapps.io/tramTls/)
+
+[Découvrir le Projet Archéologie Numérique](https://slowsia.shinyapps.io/tramTls/)
+
+
+#### Description Détaillée
+
+Ce projet démontre comment les données historiques peuvent être transformées en récits visuels et interactifs, offrant une nouvelle perspective sur l'évolution des territoires à travers les siècles.
+
+
+#### Compétences Mises en Œuvre
+
+- Analyse de données spatiales
+- Cartographie historique
+- Storytelling data-driven
+- Visualisation de données complexes
+[Retour en haut](#)
+
+
+---
+
+### 📌 vision-portfolio
+
+![vision-portfolio](img/Slowsia.jpg)
+
+#### vision-portfolio
+
+
+#### Vision Professionnelle
+
+
+#### Philosophie Fondamentale
+
+
+#### Croire en la Force des Données
+
+Les données ne sont pas de simples chiffres ou statistiques, mais des histoires attendant d'être racontées. Chaque ensemble de données contient :
+- Des insights cachés
+- Des dynamiques complexes
+- Des narrations humaines
+
+
+#### Technologie comme Pont
+
+La technologie n'est pas une fin en soi, mais un moyen de :
+- Créer des connexions
+- Briser les barrières de compréhension
+- Rendre l'information accessible
+
+
+#### Créativité et Inspiration
+
+La créativité permet de transformer l'information de :
+- Brute à compréhensible
+- Technique à inspirante
+- Complexe à engageante
 
 
 #### Principes Directeurs
 
 
-#### Synergie Multidisciplinaire
+#### 1. Transparence
 
-- Fusion de différentes disciplines
-- Création de contenus riches et cohérents
-- Décloisonnement des approches créatives
+- Rendre les données claires
+- Démystifier les processus complexes
+- Créer de la confiance par la compréhension
 
-#### Dimensions de l'Intégration
+#### 2. Innovation
 
+- Repousser les limites traditionnelles
+- Mixer des disciplines
+- Créer des approches uniques
 
-#### 1. Convergence des Médias
+#### 3. Impact Humain
 
-- Combinaison de :
-- Texte
-- Image
-- Vidéo
-- Modèles 3D
-- Design interactif
+- Toujours garder l'humain au centre
+- Comprendre le contexte derrière les données
+- Raconter des histoires qui touchent et inspirent
 
-#### 2. Approche Holistique
+#### Métaphore Fondatrice
 
-- Chaque média enrichit les autres
-- Création d'expériences immersives
-- Narration transmédia
+"Les données sont des étoiles : brillantes quand on les comprend, mystérieuses quand on les ignore."
 
-#### Stratégies de Création
 
+#### Applications Concrètes
 
-#### Interdisciplinarité
 
-- Croisement des compétences
-- Dialogue entre différents domaines
-- Innovation par la diversité
-
-#### Processus Créatif
-
-1. Conceptualisation
-1. Exploration multisensorielle
-1. Intégration des perspectives
-1. Raffinement itératif
-
-#### Compétences Mobilisées
-
-
-#### Techniques
-
-- Design graphique
-- Développement web
-- Photographie
-- Modélisation 3D
-- Traitement multimédia
-
-#### Créatives
-
-- Storytelling
-- Narration visuelle
-- Design thinking
-- Communication transmedia
-
-#### Exemples de Projets
-
-- wolSia (projet IA et data-driven)
-- Trésor d'Eauze (patrimoine numérique)
-- Séries photographiques
-- Projets de médiation culturelle
-
-#### Philosophie de Création
-
-"La créativité naît à l'intersection des disciplines, là où les frontières deviennent floues et les possibilités infinies."
-
-
-#### Impact et Vision
-
-- Création de contenus innovants
-- Expériences utilisateur immersives
-- Narration riche et multidimensionnelle
-- Dépassement des approches traditionnelles
-
-#### Outils et Technologies
-
-- Suite Adobe
-- Outils de modélisation 3D
-- Plateformes de développement web
-- Logiciels de traitement multimédia
-
-#### Conclusion
-
-Une approche qui transforme la création de contenus en un écosystème dynamique et interconnecté.
-
-[Retour en haut](#)
-
-
----
-
-### 📌 faq-desinfection
-
-![faq-desinfection](img/FAQ DM.png)
-
-#### faq-desinfection
-
-
-#### FAQ Interactive Intelligente sur la Désinfection des Dispositifs Médicaux
-
-
-#### Présentation du Projet
-
-Une base de connaissances intelligente et interrogeable dans le domaine spécifique de la désinfection des dispositifs médicaux.
-
-
-#### Caractéristiques Principales
-
-- Référence instantanée sans connexion Internet
-- Base de connaissances contrôlée et validée
-- Facilité d'extension et de maintenance
-
-#### Technologies Utilisées
-
-- UX Design
-- NLP (Traitement du Langage Naturel)
-- E-learning
-
-#### Capture d'Écran
-
-<img alt="FAQ Désinfection" src="/img/FAQ DM.png"/>
-
-
-#### Lien du Projet
-
-[Accéder à l'Application FAQ](https://faq-desinfection.onrender.com/)
-
-[Accéder à l'Application FAQ](https://faq-desinfection.onrender.com/)
-
-
-#### Contexte
-
-Ce projet vise à simplifier l'accès à l'information technique sur la désinfection des dispositifs médicaux, en proposant une solution interactive et facile à utiliser.
-
-[Retour en haut](#)
-
-
----
-
-### 📌 principes-fondamentaux
-
-![principes-fondamentaux](img/Slowsia.jpg)
-
-#### principes-fondamentaux
-
-
-#### Principes Fondamentaux
-
-
-#### Les Piliers de ma Démarche Créative et Analytique
-
-
-#### 1. Clarté : Rendre l'Impossible Compréhensible
-
-- Transformer le complexe en accessible
-- Démystifier les concepts techniques
-- Créer des ponts de compréhension
-- Déconstruction des idées complexes
-- Utilisation de métaphores éclairantes
-- Approche pédagogique et inclusive
-
-#### 2. Engagement : Créer une Connexion Émotionnelle
-
-- Les données ne sont pas froides
-- Chaque chiffre raconte une histoire
-- L'information doit toucher et inspirer
-- Contextualisation narrative
-- Personnification des données
-- Création de récits immersifs
-
-#### 3. Impact : Faciliter la Prise de Décision
-
-- Au-delà de l'information
-- Vers la transformation
-- Générer des insights actionnables
-- Analyse stratégique
-- Recommandations concrètes
-- Mise en perspective systémique
-
-#### Mise en Pratique
-
-
-#### Dimensions d'Application
+#### Dans la Pratique
 
 - Projets de data storytelling
-- Analyses stratégiques
+- Visualisations interactives
 - Médiations culturelles
 - Documentations créatives
 
-#### Outils et Techniques
-
-- Visualisation de données
-- Narration interdisciplinaire
-- Design thinking
-- Analyse contextuelle
-
-#### Philosophie Intégrative
-
-"La vraie compréhension naît là où la rigueur analytique rencontre la sensibilité narrative."
-
-
-#### Impacts Recherchés
-
-- Éclairage des zones d'ombre
-- Transformation des perspectives
-- Inspiration et action
-- Compréhension holistique
-
 #### Conclusion
 
-Des principes qui transcendent les disciplines, créant une approche unique de création et de communication de connaissances.
+Une vision qui fait converger :
+- Rigueur analytique
+- Créativité narrative
+- Empathie technologique
 
 [Retour en haut](#)
 
