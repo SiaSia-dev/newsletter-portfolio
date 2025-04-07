@@ -92,437 +92,409 @@ Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier M
 
 ---
 
-### 📌 sources-inspiration-voyages
+### 📌 restiction-contenus
 
-![sources-inspiration-voyages](img/Explorez_gif.gif)
+![restiction-contenus](img/1742724497786?e=1749686400&v=beta&t=Q3U9D81RrGWmYlM-cmITQVq2_ClkcTO3YmZ2BWdobR0)
 
-#### sources-inspiration-voyages
+#### restiction-contenus
 
+[ ](/company/www-linkedin-com-in-alexiafontaine/)
 
-#### Sources d'Inspiration : Les Voyages
-
-
-#### Image Représentative
-
-<img alt="Exploration et Voyages" src="/img/Explorez_gif.gif"/>
+[ ](/company/www-linkedin-com-in-alexiafontaine/)
 
 
-#### Philosophie des Voyages
+#### NEWSLETTER d'Alexia Fontaine
 
-Les voyages comme source intarissable de découvertes, de compréhension et de transformation personnelle.
+[NEWSLETTER d'Alexia Fontaine](/company/www-linkedin-com-in-alexiafontaine/)
 
+3 avril 2025
 
-#### Dimensions de l'Exploration
+<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQHw0fMEeyRcJw/article-inline_image-shrink_1500_2232/B56ZX6u4QuGQAc-/0/1743668350517?e=1749686400&amp;v=beta&amp;t=1T_n4HW9aTq58gk1HmAE6aPYIj-D1J97At_ywhgoLhw"/>
 
+une image générée par ChatGPT pour évoquer la fleur au fusil
 
-#### Approche Sensorielle
+Je me suis récemment lancée dans cette idée de maintenir ma présence sur les réseaux sociaux en générant une newsletter hébergée sur GitHub avec comme "source" de contenus mon portfolio : l'objectif d'une <em>réutilisation optimisée,</em> selon le principe COPE.
 
-- Éveil de tous les sens
-- Immersion totale
-- Perception multidimensionnelle
+<img alt="" src="https://media.licdn.com/dms/image/v2/D4E12AQEo33g-hGqD5Q/article-inline_image-shrink_1500_2232/B4EZX7Txv8HUAo-/0/1743678021400?e=1749686400&amp;v=beta&amp;t=M0QA9SkX_4k7pnBXcuKXkfpbf2vThrLFfB9zovCaZWc"/>
 
-#### Processus de Découverte
+Processus d'éditorialisation de contenus
 
-1. Observation Attentive
-1. Détails culturels
-1. Nuances locales
-1. Pratiques quotidiennes
-1. Interaction Profonde
-1. Échanges humains
-1. Compréhension des traditions
-1. Dialogue interculturel
-Pratiques quotidiennes
+Une manière de <strong>recycler ce que l'on produit sur le web</strong> , et plus particulièrement les réseaux sociaux, ces questions me semblent assez pertinentes <em>(un contenu a une durée de vue d'1 heure environ...)</em>, alors voyez votre intérêt : <strong>vous y passerez moins de temps ! </strong><em>(...peut-être pas au début </em>🥲 <em>)</em>
 
-<strong>Interaction Profonde</strong>
+<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQFldAJ8GTOoIA/article-inline_image-shrink_1000_1488/B56ZX63.cmGcAQ-/0/1743670733081?e=1749686400&amp;v=beta&amp;t=I39-KjRS6yW8IOD__mcK_q9ETx9-cv-DsDNPla_tqZc"/>
 
+Workflow de ce processus d'éditorialisation
 
-#### Transformation Personnelle
+Le dispositif est opérationnel de bout en bout : pour GitHub tant que c'est public, il valide, et les plateformes LinkedIn - GitHub sont parfaitement interopérables. Par contre, les restrictions des API, c'est une autre danse : on ne lutte pas face à la restriction des doublons !!
 
+Disons plus simplement que leur politique de contenus considère mon action comme du SPAM... Me voilà bien...
 
-#### Développement de la Sensibilité
+- Au début, je me suis dit (magnifique photo au passage) :
+<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQGjo9byHXnfjw/article-inline_image-shrink_1000_1488/B56ZX6yMY.GQAQ-/0/1743669217270?e=1749686400&amp;v=beta&amp;t=udXYbuOL4uM0K4LC1nLzn9we9h8S18KJ3bmkkcpAe9E"/>
 
-- Élargissement de la perspective
-- Remise en question des préjugés
-- Développement de l'empathie culturelle
+La Jeune Fille à la Fleur (1967) de Marc RIBOUD
 
-#### Enrichissement Intellectuel
+- Et puis après :
+<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQFw23bjgwcf9g/article-inline_image-shrink_1000_1488/B56ZX6ymFkHEAQ-/0/1743669331220?e=1749686400&amp;v=beta&amp;t=F3_3wWxZop5X08yHcz9MieHNV3Ct8aHSjikrYHv3yJY"/>
 
-- Accumulation de connaissances
-- Compréhension des systèmes culturels
-- Déconstruction des narratifs simplistes
+Game over World 😜
 
-#### Méthodes de Documentation
+Que ce soit en changeant le fichier d'appel html, les contenus ou en re-re-changeant le Token (et il semblerait que le problème vienne à présent plutôt de là!) : mon processus d'éditorialisation reste partiellement automatisé à ce stade... <em>"Et 'Michalak en attendant ..."</em>
 
+[  ](https://kroki.io/mermaid/svg/eNqFVs1u4zYQvvcpCCwW3QBMkQ3gQ12gRbBJmgDONtgmuQg50NLI5pomXf7YCeJ9gLxFj_W9b6AX6_BHohQnWwO2KXK-mfnmj6qF2pRzpi25Of2B4MdYfPhw2uymzpLKkY3SixqFDsjh4a_Eaj6bgX7C81KALOewBGm_BWT4ef-eXOEZk9wswZAKSDUQDUJJi9e4PXFWLZnlfzkYkxvlDBGIE05W3JDmb_LzfEtKrWRxLVBpzUuUVZLMYVohrmJcw_33lZ6sdPOPIbNmJ5udjnAJGyPAWtBbsoHpXKlF0TyvUSR4SX7n9sJN9xVfMelAbMkS_5kohmEIuyDuczS84yFuKFEulIv0k8H9g6h1f7-NbPNs2SpGFTntViyyiaYSoPiUFihlfPBXzb_W3AelFaxMcSkxxULEOLQyICsmSzDRdy8XAGsmeMUs3KgFyOIuPgWcI9bvkQmXC6guZQQO5DOPiSoXxR0GP-cPFaxBa-VeyWRLd6JmPoOebpTl6PYMBojM3RsJJrnxS6h8kX7FClq5qeDNjpQ-38TAknEJv8WabWVDcv9wfEtqpUsIMXw690ty7eFmTlhpORbIa8DPSiKQy-qcCyi-APqj8etJIuE5x-JBDrnmIs1sKVvHamIyhOszSqpHT7cLVUxia-c1HcERYFo8nj1wW5xI6VKiD32ae9EYRvq6V03eVcGiXJnrqzUbfEClYOxT_PtpbpeCwAM3tg1rPMi0nIFJ2CpuLcdo9gx1Gu5fIruoYkCxu16PKzq0Ejg0kIAX6tHKyFiIGlD1rRbFJ5TNDvx4-2USyWKpRXjn7RDYb-u0FQQwcAYukEFx9mC1L5O2sZTEiYOLi5urSVTdyQYkRPlTZtkAi83FrQZKfC9R7HX1Fax5kbKcn64Jw1lPaXQv1m_RBxinX3RukkpD_vGOac6kNcWZMYyHMc7rGjsYw4mE1vE4jiKc8wbrtB2WHTY145-uxMFinvr2MQPOGN6WS-qoJNnrhhDn0A69pH1ncgx1YAFRUir0UzqErXyKm92WaMheJoLMYbw7WlFZXyzoGxHUZNGLNRJfsodttvcWjeACixeQxaEM8XrLerDCGRehW5tnP8f222-Y93MuWdtBvWLspp9Qs-RAcSY1zLArdbyd3lCcAQFv4voD2hkTf4CuH2QPuuEShRd85R-i9OVMKkzT3qyJ8JZnHGL44DREXCR-MJz9zW6GlxIQsPhK8pjGXSmYMadQt15ikwsxflce10flMUWmeO-M3x3Vo7Q-3PDKzsfHq4dfhvhkP-E9uoevR_-Lx5Yc2K8-1kcdfjSqh_iPe_gKSm58NScHRgMCNTt6Q0HW0oaA5vzTXirTac9sy5l2iUgbfZn2LYL6VwA6uM5pewPQbojR3qyhaYLQ3gSg3XVGu5lK81ym3Rylg15Lwe37ld7BaHvt0nzx0Xhl0Nx4bXC9gv8Ags3IqQ) Diagramme du processus d'éditorialisation de contenus
 
-#### Carnets de Voyage
+[  ](https://kroki.io/mermaid/svg/eNqFVs1u4zYQvvcpCCwW3QBMkQ3gQ12gRbBJmgDONtgmuQg50NLI5pomXf7YCeJ9gLxFj_W9b6AX6_BHohQnWwO2KXK-mfnmj6qF2pRzpi25Of2B4MdYfPhw2uymzpLKkY3SixqFDsjh4a_Eaj6bgX7C81KALOewBGm_BWT4ef-eXOEZk9wswZAKSDUQDUJJi9e4PXFWLZnlfzkYkxvlDBGIE05W3JDmb_LzfEtKrWRxLVBpzUuUVZLMYVohrmJcw_33lZ6sdPOPIbNmJ5udjnAJGyPAWtBbsoHpXKlF0TyvUSR4SX7n9sJN9xVfMelAbMkS_5kohmEIuyDuczS84yFuKFEulIv0k8H9g6h1f7-NbPNs2SpGFTntViyyiaYSoPiUFihlfPBXzb_W3AelFaxMcSkxxULEOLQyICsmSzDRdy8XAGsmeMUs3KgFyOIuPgWcI9bvkQmXC6guZQQO5DOPiSoXxR0GP-cPFaxBa-VeyWRLd6JmPoOebpTl6PYMBojM3RsJJrnxS6h8kX7FClq5qeDNjpQ-38TAknEJv8WabWVDcv9wfEtqpUsIMXw690ty7eFmTlhpORbIa8DPSiKQy-qcCyi-APqj8etJIuE5x-JBDrnmIs1sKVvHamIyhOszSqpHT7cLVUxia-c1HcERYFo8nj1wW5xI6VKiD32ae9EYRvq6V03eVcGiXJnrqzUbfEClYOxT_PtpbpeCwAM3tg1rPMi0nIFJ2CpuLcdo9gx1Gu5fIruoYkCxu16PKzq0Ejg0kIAX6tHKyFiIGlD1rRbFJ5TNDvx4-2USyWKpRXjn7RDYb-u0FQQwcAYukEFx9mC1L5O2sZTEiYOLi5urSVTdyQYkRPlTZtkAi83FrQZKfC9R7HX1Fax5kbKcn64Jw1lPaXQv1m_RBxinX3RukkpD_vGOac6kNcWZMYyHMc7rGjsYw4mE1vE4jiKc8wbrtB2WHTY145-uxMFinvr2MQPOGN6WS-qoJNnrhhDn0A69pH1ncgx1YAFRUir0UzqErXyKm92WaMheJoLMYbw7WlFZXyzoGxHUZNGLNRJfsodttvcWjeACixeQxaEM8XrLerDCGRehW5tnP8f222-Y93MuWdtBvWLspp9Qs-RAcSY1zLArdbyd3lCcAQFv4voD2hkTf4CuH2QPuuEShRd85R-i9OVMKkzT3qyJ8JZnHGL44DREXCR-MJz9zW6GlxIQsPhK8pjGXSmYMadQt15ikwsxflce10flMUWmeO-M3x3Vo7Q-3PDKzsfHq4dfhvhkP-E9uoevR_-Lx5Yc2K8-1kcdfjSqh_iPe_gKSm58NScHRgMCNTt6Q0HW0oaA5vzTXirTac9sy5l2iUgbfZn2LYL6VwA6uM5pewPQbojR3qyhaYLQ3gSg3XVGu5lK81ym3Rylg15Lwe37ld7BaHvt0nzx0Xhl0Nx4bXC9gv8Ags3IqQ)
 
-- Croquis
-- Notes manuscrites
-- Photographies
-- Collecte d'objets
-- Annotations sensorielles
+...Rétropédalage certes, mais le fait d'avoir <strong>modularisé le projet</strong> rend les modifications beaucoup plus aisées et donne une flexibilité à laquelle je n'avais pas pensé : séparer la génération de la newsletter et son stockage en deux dépôts distincts, finalement en extrapolant la séparation entre le fond et la forme à l'échelle des plateformes.
 
-#### Techniques de Capture
-
-- Photographie documentaire
-- Illustration
-- Écriture réflexive
-- Enregistrements sonores
-
-#### Régions et Inspirations
+Deux formats de sortie pour répondre aux exigences de la plateforme de publication, LinkedIn aura de toute façon toujours le dernier mot, puisque j'utilise sa plateforme.
 
 
-#### Asie du Sud-Est
+#### 📰 Newsletter Portfolio
 
-- Bali
-- Traditions artisanales
-- Philosophies spirituelles
-- Motifs culturels
-
-#### Traditions Européennes
-
-- Pratiques locales
-- Patrimoine culturel
-- Dynamiques sociales
-
-#### Impact Créatif
-
-
-#### Transformation des Expériences
-
-- Inspiration pour projets artistiques
-- Intégration dans les créations
-- Réinterprétation culturelle
-
-#### Projets Développés
-
-- Série "Bali Inspirations"
-- "Voyage Sensoriel"
-- Carnets de voyage multimédias
-
-#### Philosophie
-
-"Voyager, c'est observer le monde comme un livre ouvert, où chaque expérience est une page à comprendre et à interpréter."
-
-
-#### Compétences Développées
-
-- Observation interculturelle
-- Adaptation
-- Communication non-verbale
-- Pensée comparative
-- Créativité contextuelle
-
-#### Conclusion
-
-Les voyages comme processus continu d'apprentissage, de découverte et de transformation personnelle et créative.
+[📰 Newsletter Portfolio](/https://siasia-dev.github.io/newsletter-portfolio/latest.html)
 
 [Retour en haut](#)
 
 
 ---
 
-### 📌 evolution-nlp-llm-article
+### 🤖 avatar-lartet
 
-![evolution-nlp-llm-article](img/NLP-LLM.jpg)
+![avatar-lartet](img/Photo-dAvatar-2.jpg)
 
-#### evolution-nlp-llm-article
+#### avatar-lartet
 
 
-#### Visualisation de l'évolution des techniques NLP et LLM
-
-
-#### Introduction
-
-Nous avons travaillé sur la visualisation de l'évolution des techniques de Traitement du Langage Naturel (NLP) et des Grands Modèles de Langage (LLM) à travers le temps. À partir d'un fichier DOT initial décrivant la relation entre différentes technologies, nous avons créé plusieurs visualisations pour représenter cette évolution de manière claire et informative.
-
-
-#### Étapes du processus
-
-1. Conversion initiale du fichier DOT en diagramme Mermaid
-   Nous avons d'abord transformé la structure DOT en un diagramme Mermaid qui préservait l'organisation horizontale des éléments.
-1. Création d'une version SVG horizontale
-   Ensuite, nous avons développé une version SVG du diagramme qui offrait plus de contrôle sur le style et la présentation des éléments.
-1. Adaptation à un format vertical
-   À la demande d'une orientation verticale, nous avons réorganisé le diagramme SVG pour qu'il se développe de haut en bas.
-1. Création d'un dendrogramme chronologique
-   Finalement, nous avons conçu un dendrogramme qui intègre une chronologie, permettant de visualiser l'évolution temporelle des différentes techniques.
-<strong>Conversion initiale du fichier DOT en diagramme Mermaid</strong><br/>
-   Nous avons d'abord transformé la structure DOT en un diagramme Mermaid qui préservait l'organisation horizontale des éléments.
-
-<strong>Création d'une version SVG horizontale</strong><br/>
-   Ensuite, nous avons développé une version SVG du diagramme qui offrait plus de contrôle sur le style et la présentation des éléments.
-
-<strong>Adaptation à un format vertical</strong><br/>
-   À la demande d'une orientation verticale, nous avons réorganisé le diagramme SVG pour qu'il se développe de haut en bas.
-
-<strong>Création d'un dendrogramme chronologique</strong><br/>
-   Finalement, nous avons conçu un dendrogramme qui intègre une chronologie, permettant de visualiser l'évolution temporelle des différentes techniques.
-
-
-#### Visualisation finale
-
-Notre visualisation finale prend la forme d'un dendrogramme chronologique qui:
-
-- Représente le temps sur un axe vertical, de 1950 à 2020
-- Organise les techniques par catégories fonctionnelles
-- Différencie par couleur les technologies spécifiques au NLP, aux LLM, ou communes aux deux
-- Montre clairement la progression et l'évolution des techniques au fil du temps
-Cette chronologie met en évidence plusieurs tendances importantes:
-
-- Les premières techniques (années 1950-1990) étaient principalement axées sur le NLP fondamental
-- Les années 2000 ont vu l'émergence de techniques plus sophistiquées de modélisation et d'analyse
-- L'arrivée des Transformers en 2017 marque un tournant majeur vers les LLM
-- La période récente (2019-2020) est dominée par les modèles dérivés des Transformers
-- Les dernières avancées incluent des techniques d'augmentation comme RAG et RLHF
-<img alt="Chronologie des techniques NLP et LLM" src="/img/NLP-LLM.jpg"/>
-
-
-#### Conclusion
-
-Cette visualisation permet de mieux comprendre l'évolution des technologies du langage et offre une perspective claire sur la progression des techniques NLP vers les modèles LLM modernes. Elle illustre comment les avancées successives ont construit les fondations sur lesquelles reposent les capacités impressionnantes des systèmes d'IA linguistique actuels.
-
-Le passage des techniques basées sur les comptages statistiques simples (BoW, TF-IDF) vers des représentations vectorielles (Word2Vec, GloVe), puis vers des architectures neuronales complexes (RNN, LSTM) et finalement aux Transformers, montre une progression fascinante qui a révolutionné notre capacité à traiter et générer du langage naturel.
-
-[Retour en haut](#)
-
-
----
-
-### 📌 blog-scientifique
-
-![blog-scientifique](img/1ere-couv_1.jpg)
-
-#### blog-scientifique
-
-
-#### Blog Scientifique : ARCHAEDYN
-
-
-#### Image Représentative
-
-<img alt="Couverture ARCHAEDYN" src="/img/1ere-couv_1.jpg"/>
-
-
-#### Contexte du Projet
-
-Un projet de recherche archéologique innovant explorant les dynamiques territoriales sur 7 millénaires.
-
-
-#### Objectifs de Recherche
-
-- Analyser l'occupation humaine
-- Étudier les transformations territoriales
-- Comprendre l'évolution historique des espaces
-
-#### Méthodologie de Recherche
-
-
-#### Approche Interdisciplinaire
-
-- Archéologie
-- Cartographie historique
-- Analyse spatiale
-- Systèmes d'Information Géographique (SIG)
-
-#### Techniques d'Analyse
-
-1. Analyse cartographique détaillée
-1. Reconstruction des territoires historiques
-1. Étude des mutations spatiales
-1. Cartographie comparative
-1. Études archéologiques comparatives
-1. Analyse des vestiges
-1. Comparaison inter-sites
-1. Reconstruction des dynamiques d'occupation
-1. Modélisation des Données Spatiales
-1. Utilisation d'outils SIG avancés
-1. Création de modèles spatiaux
-1. Analyse des transformations territoriales
-Cartographie comparative
-
-<strong>Études archéologiques comparatives</strong>
-
-Reconstruction des dynamiques d'occupation
-
-<strong>Modélisation des Données Spatiales</strong>
-
-
-#### Compétences Mises en Œuvre
-
-- Recherche archéologique
-- Analyse géospatiale
-- Traitement de données historiques
-- Modélisation cartographique
-- Systèmes d'Information Géographique
-
-#### Périodes Étudiées
-
-- Néolithique
-- Périodes intermédiaires
-- Moyen Âge
-
-#### Impact Scientifique
-
-- Compréhension approfondie des dynamiques territoriales
-- Nouvelle perspective sur l'occupation humaine
-- Méthodologie innovante d'analyse historique
-
-#### Lien vers la Publication
-
-[Article complet sur ArchNum](https://archnum.hypotheses.org/175)
-
-[Article complet sur ArchNum](https://archnum.hypotheses.org/175)
-
-
-#### Philosophie de Recherche
-
-"Chaque trace, chaque vestige est un fragment d'un récit territorial plus large."
-
-
-#### Conclusion
-
-Un projet qui transcende la simple étude archéologique pour proposer une vision dynamique et vivante de l'histoire territoriale.
-
-[Retour en haut](#)
-
-
----
-
-### 📌 archeologie-numerique
-
-![archeologie-numerique](img/TsptTls.png)
-
-#### archeologie-numerique
-
-
-#### Archéologie Numérique : Dynamiques Territoriales
+#### Avatar Edouard Lartet : Agent Conversationnel Historique
 
 
 #### Présentation du Projet
 
-Un projet innovant qui transforme des données archéologiques en récit dynamique, illustrant comment le data storytelling peut révéler des insights historiques complexes.
+Un agent conversationnel basé sur un personnage historique, démontrant l'application des techniques de traitement du langage naturel (NLP) pour créer des expériences interactives et éducatives.
 
 
-#### Méthodologie
+#### Objectifs
 
-- Analyse de données géospatiales historiques
-- Cartographie interactive des dynamiques territoriales
-- Narration contextuelle basée sur des données
+- Créer une expérience de médiation culturelle innovante
+- Utiliser l'IA pour rendre l'histoire accessible
+- Permettre des interactions immersives avec un personnage historique
 
 #### Technologies Utilisées
 
-- Data Storytelling
-- Recherche Historique
-- Visualisation de Données
+- Intelligence Artificielle
+- NLP (Traitement du Langage Naturel)
+- Personnalisation
+- Python
 
 #### Capture d'Écran
 
-<img alt="Projet Archéologie Numérique" src="/img/TsptTls.png"/>
+<img alt="Avatar Edouard Lartet" src="/img/Photo-dAvatar-2.jpg"/>
 
 
 #### Lien du Projet
 
-[Découvrir le Projet Archéologie Numérique](https://slowsia.shinyapps.io/tramTls/)
+[Interagir avec l'Avatar Edouard Lartet](https://avatar-lartet.streamlit.app/)
 
-[Découvrir le Projet Archéologie Numérique](https://slowsia.shinyapps.io/tramTls/)
+[Interagir avec l'Avatar Edouard Lartet](https://avatar-lartet.streamlit.app/)
 
 
-#### Description Détaillée
+#### Concept
 
-Ce projet démontre comment les données historiques peuvent être transformées en récits visuels et interactifs, offrant une nouvelle perspective sur l'évolution des territoires à travers les siècles.
+Exploration des possibilités de l'IA générative dans :
+- La médiation culturelle
+- L'apprentissage personnalisé
+- La transmission de connaissances historiques
 
+
+#### Fonctionnalités Principales
+
+- Conversation contextuelle basée sur l'histoire de Edouard Lartet
+- Réponses adaptatives et personnalisées
+- Capacité à partager des informations historiques détaillées
 
 #### Compétences Mises en Œuvre
 
-- Analyse de données spatiales
-- Cartographie historique
-- Storytelling data-driven
-- Visualisation de données complexes
+- Développement d'agents conversationnels
+- Modélisation de personnalités historiques
+- Techniques avancées de NLP
+- Conception d'expériences interactives éducatives
 [Retour en haut](#)
 
 
 ---
 
-### 📌 vision-portfolio
+### 📌 photogrammetrie
 
-![vision-portfolio](img/Slowsia.jpg)
+![photogrammetrie](img/Slowsia.jpg)
 
-#### vision-portfolio
-
-
-#### Vision Professionnelle
+#### photogrammetrie
 
 
-#### Philosophie Fondamentale
+#### Photogrammétrie : Art de la Modélisation 3D
 
 
-#### Croire en la Force des Données
+#### Essence de la Technique
 
-Les données ne sont pas de simples chiffres ou statistiques, mais des histoires attendant d'être racontées. Chaque ensemble de données contient :
-- Des insights cachés
-- Des dynamiques complexes
-- Des narrations humaines
+Une méthode de création de modèles 3D précis à partir de photographies, préservant la géométrie et les textures des objets.
 
 
-#### Technologie comme Pont
-
-La technologie n'est pas une fin en soi, mais un moyen de :
-- Créer des connexions
-- Briser les barrières de compréhension
-- Rendre l'information accessible
+#### Processus Détaillé
 
 
-#### Créativité et Inspiration
+#### 1. Acquisition des Images
 
-La créativité permet de transformer l'information de :
-- Brute à compréhensible
-- Technique à inspirante
-- Complexe à engageante
+- Prises de vue multi-angles
+- Attention méticuleuse à l'éclairage
+- Couverture complète de l'objet
+- Techniques de superposition
+- Résolution des images
+- Uniformité de l'éclairage
+- Recouvrement des prises de vue
+- Qualité optique
 
+#### 2. Traitement Informatique
 
-#### Principes Directeurs
+1. Alignement précis des photos
+1. Détection des points communs
+1. Génération d'un nuage de points dense
+1. Création du maillage 3D
+1. Application des textures
+- Logiciels spécialisés
+- Algorithmes de reconstruction
+- Traitement d'image avancé
+- Intelligence artificielle
 
+#### 3. Optimisation et Partage
 
-#### 1. Transparence
+- Nettoyage du modèle
+- Simplification du maillage
+- Optimisation des textures
+- Export dans différents formats
 
-- Rendre les données claires
-- Démystifier les processus complexes
-- Créer de la confiance par la compréhension
-
-#### 2. Innovation
-
-- Repousser les limites traditionnelles
-- Mixer des disciplines
-- Créer des approches uniques
-
-#### 3. Impact Humain
-
-- Toujours garder l'humain au centre
-- Comprendre le contexte derrière les données
-- Raconter des histoires qui touchent et inspirent
-
-#### Métaphore Fondatrice
-
-"Les données sont des étoiles : brillantes quand on les comprend, mystérieuses quand on les ignore."
-
-
-#### Applications Concrètes
+#### Applications
 
 
-#### Dans la Pratique
+#### Domaines de Valorisation
 
-- Projets de data storytelling
-- Visualisations interactives
-- Médiations culturelles
-- Documentations créatives
+- Patrimoine culturel
+- Archéologie
+- Conservation de collections
+- Médiation culturelle
+- Recherche scientifique
 
-#### Conclusion
+#### Exemples de Réalisations
 
-Une vision qui fait converger :
-- Rigueur analytique
+- Slit Gong (objet ethnologique)
+- Bague à sceau
+- Bague aux camées
+- Objets archéologiques du Trésor d'Eauze
+
+#### Outils et Logiciels
+
+- Agisoft Metashape
+- Reality Capture
+- Blender
+- Capture photogrammétrique avancée
+
+#### Philosophie de la Préservation
+
+"Chaque objet a une histoire. La photogrammétrie permet de la capturer avec précision et sensibilité."
+
+
+#### Compétences Techniques
+
+- Photographie documentaire
+- Traitement d'image
+- Modélisation 3D
+- Conservation numérique
+- Médiation culturelle
+
+#### Impact
+
+- Préservation numérique
+- Documentation détaillée
+- Accessibilité du patrimoine
+- Recherche interdisciplinaire
+
+#### Défis et Innovation
+
+- Précision technique
+- Capture de la complexité
+- Respect de l'intégrité de l'objet
+- Innovation constante
+[Retour en haut](#)
+
+
+---
+
+### 📊 parcours-data-communication
+
+![parcours-data-communication](img/Gouverance.png)
+
+#### parcours-data-communication
+
+
+#### Parcours Data & Communication Digitale
+
+
+#### Image Représentative
+
+<img alt="Gouvernance et Parcours" src="/img/Gouverance.png"/>
+
+
+#### Évolution Professionnelle
+
+Un parcours caractérisé par une convergence constante entre compétences analytiques et créatives.
+
+
+#### Dimensions Professionnelles
+
+
+#### Formation et Expertise
+
+- Systèmes d'Information
+- Gestion de Données
+- Communication Digitale
+
+#### Compétences Clés
+
+
+#### Data Visualization
+
+- Conversion de données brutes en visualisations éloquentes
+- Création de représentations intuitives
+- Narration visuelle complexe
+
+#### Gestion de Systèmes d'Information
+
+- Structuration des flux de données
+- Analyse des systèmes complexes
+- Amélioration des processus informationnels
+
+#### Vulgarisation Technique
+
+- Transformation de concepts complexes
+- Rendre l'technique accessible
+- Médiation technologique
+
+#### Intelligence Collective
+
+- Approche collaborative
+- Insight-Driven
+- Coordination interdisciplinaire
+
+#### Approche Professionnelle
+
+
+#### Convergence Créative et Analytique
+
+- Combinaison de rigueur technique
 - Créativité narrative
-- Empathie technologique
+- Perspective holistique
+
+#### Outils et Méthodes
+
+- Analyse de données avancée
+- Visualisation interactive
+- Communication stratégique
+- Design thinking
+
+#### Philosophie Professionnelle
+
+"La communication digitale efficace est l'art de transformer la complexité en clarté."
+
+
+#### Compétences Transversales
+
+- Analyse stratégique
+- Communication multicanale
+- Design de l'information
+- Gestion de projets innovants
+
+#### Lien Professionnel
+
+[Profil LinkedIn](https://www.linkedin.com/in/alexiafontaine)
+
+[Profil LinkedIn](https://www.linkedin.com/in/alexiafontaine)
+
+
+#### Impact et Vision
+
+- Démystifier les technologies
+- Rendre l'information accessible
+- Créer des ponts entre technique et humain
+[Retour en haut](#)
+
+
+---
+
+### 📝 cope-process-documentation
+
+![cope-process-documentation](img/Process_COPE.png)
+
+#### cope-process-documentation
+
+title: Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
+description: <img alt="Infographie du Processus COPE" src="/img/Process_COPE.png">
+author: Alexia Fontaine
+date: 2025-03-28
+type: summary
+image: /img/Process_COPE.png</img>
+
+
+#### Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
+
+<img alt="Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)" src="/img/Process_COPE.png"/>
+
+
+#### 1. Création du Contenu (Source Unique)
+
+- Rédaction de documents Markdown dans le portfolio
+- Création/mise à jour des fichiers .md dans le dossier "docs" du dépôt portfolio   - Utilisation du format frontmatter YAML pour les métadonnées (titre, description, tags)   - Inclusion d'images et autres médias dans le dossier "img"
+
+#### 2. Génération Automatique de la Newsletter
+
+- Détection des contenus récents
+- Scan des fichiers Markdown modifiés récemment   - Filtrage en fonction de la date de modification (7 derniers jours)   - Sélection des projets les plus récents (limité à 6)
+- Extraction et traitement du contenu
+- Analyse du frontmatter YAML pour extraire les métadonnées   - Conversion du Markdown en HTML   - Génération de résumés pour chaque projet (limités à 250 caractères)   - Récupération des images associées aux projets
+- Compilation en format standardisé
+- Création d'un document Markdown unifié avec tous les projets   - Génération d'un document HTML avec mise en page responsive   - Structuration avec cartes de projets, sections détaillées et table des matières   - Application d'un design cohérent (CSS personnalisé)
+
+#### 3. Publication sur GitHub Pages
+
+- Préparation des fichiers
+- Génération des fichiers HTML/Markdown dans le dossier de sortie   - Copie des ressources requises (images)   - Création de liens symboliques vers la dernière newsletter
+- Organisation du site
+- Création d'une page d'index redirigeant vers la dernière newsletter   - Génération d'une page d'archives listant toutes les newsletters   - Ajout de fichiers de configuration (.nojekyll)
+- Déploiement
+- Création d'un commit avec les nouveaux fichiers   - Déploiement vers la branche gh-pages   - Configuration pour l'accès public
+
+#### 4. Publication sur LinkedIn
+
+- Préparation du contenu pour LinkedIn
+- Extraction du titre et de la date de la newsletter   - Récupération des titres des projets pour créer un sommaire   - Formatage du contenu selon les bonnes pratiques LinkedIn (emojis, mise en forme)   - Ajout de hashtags pertinents
+- Gestion des doublons et limitations
+- Génération d'un hash pour identifier les contenus uniques   - Vérification pour éviter les publications en double   - Ajout d'horodatage pour rendre le contenu unique si nécessaire   - Gestion des limites de taux d'API (rate limits) avec backoff exponentiel
+- Interaction avec l'API LinkedIn
+- Authentification via token d'accès   - Construction de la requête API avec le texte et l'URL   - Gestion des erreurs et tentatives multiples   - Traitement des différents codes de réponse
+
+#### 5. Suivi et Maintenance
+
+- Enregistrement des activités
+- Journalisation détaillée des actions (logging)   - Création d'un fichier de suivi des publications   - Commits automatiques pour tracer l'historique des publications
+- Mécanismes de déclenchement
+- Exécution planifiée hebdomadaire (tous les lundis)   - Possibilité de déclenchement manuel   - Chaînage des workflows (le second s'exécute après le premier)
+- Gestion des erreurs
+- Détection et rapport des problèmes   - Mécanismes de reprise sur erreur   - Statuts d'achèvement conditionnels
+Cette architecture COPE permet de : 1. Maintenir une source unique de vérité (fichiers Markdown) 2.
+
+<strong>Mots-clés:</strong> architecture, publications, complètement, automatiser, publication
+
+Le système est également extensible pour intégrer d'autres plateformes de publication (Twitter, Medium, etc.) en suivant le même modèle modulaire.
+
+<strong>Mots-clés:</strong> publication, plateformes, extensible, modulaire, également
 
 [Retour en haut](#)
 
