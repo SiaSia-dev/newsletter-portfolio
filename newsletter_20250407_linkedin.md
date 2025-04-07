@@ -92,371 +92,93 @@ Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier M
 
 ---
 
-### 🎨 approche-analyse-donnees
+### 📌 photographie-photogrammetrie
 
-![approche-analyse-donnees](img/data-analyst-subcultures-map.png)
+![photographie-photogrammetrie](img/Slowsia.jpg)
 
-#### approche-analyse-donnees
-
-
-#### Une Approche de l'Analyse de Données
+#### photographie-photogrammetrie
 
 
-#### Transformation des Données Brutes en Récits Intelligibles
+#### Photographie et Photogrammétrie : Deux Approches de l'Image
+
+La photographie et la photogrammétrie sont deux techniques différentes liées à l'image :
+
+- La photographie est l'art et la technique de capturer des images fixes à l'aide d'un appareil photographique. Elle vise principalement à représenter visuellement des scènes, des personnes, des objets.
+- La photogrammétrie est une technique scientifique qui consiste à effectuer des mesures et des relevés précis à partir de photographies. Elle est souvent utilisée dans des domaines comme la cartographie, l'architecture, l'archéologie et la topographie pour créer des modèles 3D ou des plans détaillés.
+La <strong>photographie</strong> est l'art et la technique de capturer des images fixes à l'aide d'un appareil photographique. Elle vise principalement à représenter visuellement des scènes, des personnes, des objets.
+
+La <strong>photogrammétrie</strong> est une technique scientifique qui consiste à effectuer des mesures et des relevés précis à partir de photographies. Elle est souvent utilisée dans des domaines comme la cartographie, l'architecture, l'archéologie et la topographie pour créer des modèles 3D ou des plans détaillés.
 
 
-#### Image Représentative
+#### Points Communs et Différences
 
-<img alt="Data Science Analysis" src="/img/data-analyst-subcultures-map.png"/>
+Bien que ces deux techniques utilisent la photographie comme base, leurs objectifs et approches diffèrent fondamentalement :
 
-
-#### Philosophie Fondamentale
-
-Transformer les données brutes en récits stratégiques, révélant les insights cachés derrière les chiffres.
-
-
-#### Méthodologie Intégrée
-
-
-#### 1. Collecte & Préparation
-
-- Nettoyage méticuleux des données
-- Structuration des jeux de données
-- Préparation pour l'analyse approfondie
-- Gestion des valeurs manquantes
-- Normalisation
-- Prétraitement avancé
-
-#### 2. Analyse Statistique
-
-- Méthodes statistiques avancées
-- Extraction de tendances significatives
-- Analyse multidimensionnelle
-- Python (Pandas, NumPy)
-- R (Tidyverse)
-- Techniques de machine learning
-- Analyses prédictives
-
-#### 3. Visualisation
-
-- Création de représentations visuelles éloquentes
-- Transformation des données complexes
-- Design d'information intuitif
-- Datavisualisation
-- Design UX
-- Narration visuelle
-- Communication graphique
-
-#### 4. Narration Stratégique
-
-- Transformation des données en récits
-- Mise en perspective stratégique
-- Création de sens
-- Contexte organisationnel
-- Dynamiques culturelles
-- Implications stratégiques
-
-#### Processus d'Analyse Approfondie
-
-
-#### Lecture des Contextes
-
-- Écouter les récits des données
-- Comprendre les nuances
-- Identifier les implications cachées
-
-#### Tissage des Narratifs
-
-- Au-delà des chiffres
-- Connexion avec les expériences humaines
-- Exploration des dynamiques organisationnelles
-
-#### Interprétation Contextuelle
-
-- Situation des données dans leur écosystème
-- Perspective professionnelle
-- Dimension culturelle
-- Contexte historique
-
-#### Compétences Clés
-
-- Analyse statistique avancée
-- Programmation
-- Visualisation de données
-- Communication stratégique
-- Pensée critique
-
-#### Impact et Résultats
-
-- Insights stratégiques
-- Aide à la décision
-- Compréhension approfondie
-- Transformation organisationnelle
-
-#### Citation Inspirante
-
-"Les données sont des miroirs qui reflètent les histoires invisibles de nos organisations et sociétés."
-
-
-#### Conclusion
-
-Une approche qui fait plus que analyser : elle raconte, révèle et inspire.
+- Photographie : Expression artistique et documentaire
+- Photogrammétrie : Précision scientifique et technique de mesure
+Chaque approche répond à des besoins distincts mais complémentaires dans la capture et l'interprétation visuelle du monde.
 
 [Retour en haut](#)
 
 
 ---
 
-### 📊 data-storytelling-culturel
+### 📌 messe-saint-gregoire
 
-![data-storytelling-culturel](img/Slowsia.jpg)
+![messe-saint-gregoire](img/MSG.png)
 
-#### data-storytelling-culturel
-
-
-#### Data Storytelling : Exploration Narrative et Culturelle
+#### messe-saint-gregoire
 
 
-#### Transformation des Données en Récits Vivants
-
-
-#### Essence de l'Approche
-
-Le data storytelling dépasse la simple présentation de chiffres pour devenir un art de révélation et de compréhension.
-
-
-#### Dimensions de l'Exploration
-
-
-#### 1. Au-delà des Statistiques
-
-- Révéler les dynamiques cachées
-- Donner vie aux données
-- Transformer l'abstrait en concret
-
-#### 2. Analyse Culturelle Approfondie
-
-- Décoder les systèmes de valeurs
-- Comprendre les interactions humaines
-- Révéler les dynamiques organisationnelles
-
-#### 3. Contextualisation Narrative
-
-- Ancrer les données dans des récits humains
-- Explorer les sous-textes culturels
-- Comprendre les évolutions sociétales
-
-#### Méthodologie
-
-
-#### Approche Interdisciplinaire
-
-- Croisement des disciplines
-- Dialogue entre quantitatif et qualitatif
-- Intégration des perspectives multiples
-
-#### Techniques d'Analyse
-
-- Analyse statistique avancée
-- Ethnographie des données
-- Interprétation contextuelle
-- Narration scientifique
-
-#### Compétences Mobilisées
-
-
-#### Analytiques
-
-- Traitement de données complexes
-- Identification de tendances
-- Analyse systémique
-- Rigueur scientifique
-
-#### Narratives
-
-- Storytelling
-- Écriture créative
-- Communication stratégique
-- Vulgarisation
-
-#### Culturelles
-
-- Sensibilité interculturelle
-- Compréhension des dynamiques sociales
-- Exploration des systèmes de signification
-- Empathie analytique
-
-#### Principes Fondamentaux
-
-
-#### 1. Clarté
-
-- Rendre l'information accessible
-- Simplifier sans appauvrir
-- Traduire la complexité
-
-#### 2. Engagement
-
-- Créer une connexion émotionnelle
-- Susciter la curiosité
-- Impliquer le lecteur
-
-#### 3. Impact
-
-- Faciliter la compréhension
-- Éclairer les prises de décision
-- Transformer la perception
-
-#### Philosophie
-
-"Chaque donnée est un fragment d'histoire, chaque récit est un assemblage de données."
-
-
-#### Applications Concrètes
-
-- Rapports d'entreprise
-- Études sociologiques
-- Projets de recherche
-- Communications stratégiques
-- Médiations culturelles
-
-#### Résultats Attendus
-
-- Compréhension approfondie
-- Insights novateurs
-- Connexion humaine
-- Perspective enrichie
-[Retour en haut](#)
-
-
----
-
-### 📌 faq-desinfection
-
-![faq-desinfection](img/FAQ DM.png)
-
-#### faq-desinfection
-
-
-#### FAQ Interactive Intelligente sur la Désinfection des Dispositifs Médicaux
+#### Patrimoine Numérique : La Messe Saint Grégoire
 
 
 #### Présentation du Projet
 
-Une base de connaissances intelligente et interrogeable dans le domaine spécifique de la désinfection des dispositifs médicaux.
+Un projet de valorisation du patrimoine culturel associant photographie, rédaction de contenus historiques et conception d'expériences interactives pour rendre accessibles des trésors culturels.
 
 
-#### Caractéristiques Principales
+#### Objectifs
 
-- Référence instantanée sans connexion Internet
-- Base de connaissances contrôlée et validée
-- Facilité d'extension et de maintenance
+- Préservation et médiation culturelle
+- Création de ponts entre tradition et innovation
+- Exploration numérique du patrimoine historique
 
 #### Technologies Utilisées
 
-- UX Design
-- NLP (Traitement du Langage Naturel)
-- E-learning
+- Modélisation 3D
+- Recherche Historique
+- Médiation Culturelle
 
 #### Capture d'Écran
 
-<img alt="FAQ Désinfection" src="/img/FAQ DM.png"/>
+<img alt="Messe Saint Grégoire" src="/img/MSG.png"/>
 
 
 #### Lien du Projet
 
-[Accéder à l'Application FAQ](https://faq-desinfection.onrender.com/)
+[Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
 
-[Accéder à l'Application FAQ](https://faq-desinfection.onrender.com/)
-
-
-#### Contexte
-
-Ce projet vise à simplifier l'accès à l'information technique sur la désinfection des dispositifs médicaux, en proposant une solution interactive et facile à utiliser.
-
-[Retour en haut](#)
+[Consulter La Messe Saint Grégoire](https://messe-st-gregoire.netlify.app/)
 
 
----
+#### Description Détaillée
 
-### 📊 ecriture-datastorytelling
-
-![ecriture-datastorytelling](img/CulturalAnalysis-subcultures.png)
-
-#### ecriture-datastorytelling
+Cette initiative démontre comment les technologies numériques peuvent servir la préservation et la médiation culturelle, en transformant un élément patrimonial en une expérience interactive et accessible.
 
 
-#### Écriture et Data Storytelling
+#### Approche
 
+- Documentation visuelle approfondie
+- Contextualisation historique
+- Création d'une expérience numérique immersive
 
-#### Analyse Culturelle et Narration de Données
+#### Compétences Mises en Œuvre
 
-
-#### Vue d'Ensemble
-
-L'écriture est un outil de transformation des données complexes en récits captivants, révélant les insights cachés derrière les chiffres et les tendances.
-
-
-#### Image de Référence
-
-<img alt="Analyse Culturelle" src="/img/CulturalAnalysis-subcultures.png"/>
-
-
-#### Approche Méthodologique
-
-- Transformation de données complexes en récits accessibles
-- Révélation des dynamiques culturelles sous-jacentes
-- Contextualisation approfondie des données
-
-#### Principes Fondamentaux
-
-1. Clarté : Rendre l'information complexe immédiatement compréhensible
-1. Engagement : Créer une connexion émotionnelle avec les données
-1. Impact : Faciliter la prise de décision et la compréhension stratégique
-
-#### Dimensions Clés
-
-- Analyse rigoureuse statistique
-- Contextualisation narrative
-- Visualisation éloquente
-- Communication stratégique
-
-#### Citation Inspirante
-
-« Les données sont des récits en attente d'être déchiffrés, des fragments d'une histoire plus large qui ne demandent qu'à être racontée. »
-
-
-#### Compétences Principales
-
-- Rédaction de contenus analytiques
-- Data Storytelling
-- Analyse de données
-- Vulgarisation technique
-- Communication visuelle
-
-#### Approche de l'Analyse Culturelle
-
-L'analyse culturelle dans le data storytelling va au-delà de l'interprétation statistique traditionnelle. Elle cherche à comprendre comment les données reflètent :
-- Les interactions humaines
-- Les sous-cultures professionnelles
-- Les transformations sociétales
-
-
-#### Méthodologie Intégrée
-
-1. Décorticage statistique précis des jeux de données
-1. Ancrage des données dans un récit humain
-1. Traduction des insights en représentations visuelles
-1. Adaptation du récit aux différents publics
-
-#### Domaines d'Expertise
-
-- Articles de fond
-- Contenus web
-- Optimisation SEO
-- Narration de marque
-- Récits immersifs
-- Data Visualization
+- Photographie documentaire
+- Recherche historique
+- Conception d'expériences interactives
+- Médiation culturelle numérique
 [Retour en haut](#)
 
 
@@ -558,6 +280,226 @@ Un parcours caractérisé par une convergence constante entre compétences analy
 - Démystifier les technologies
 - Rendre l'information accessible
 - Créer des ponts entre technique et humain
+[Retour en haut](#)
+
+
+---
+
+### 🎨 approche-integree-creation
+
+![approche-integree-creation](img/logo-v2.png)
+
+#### approche-integree-creation
+
+
+#### Une Approche Intégrée de Création de Contenus
+
+
+#### Image Représentative
+
+<img alt="Création de Contenu" src="/img/logo-v2.png"/>
+
+
+#### Concept Fondamental
+
+Une démarche de création qui transcende les frontières traditionnelles entre différents médias et disciplines.
+
+
+#### Principes Directeurs
+
+
+#### Synergie Multidisciplinaire
+
+- Fusion de différentes disciplines
+- Création de contenus riches et cohérents
+- Décloisonnement des approches créatives
+
+#### Dimensions de l'Intégration
+
+
+#### 1. Convergence des Médias
+
+- Combinaison de :
+- Texte
+- Image
+- Vidéo
+- Modèles 3D
+- Design interactif
+
+#### 2. Approche Holistique
+
+- Chaque média enrichit les autres
+- Création d'expériences immersives
+- Narration transmédia
+
+#### Stratégies de Création
+
+
+#### Interdisciplinarité
+
+- Croisement des compétences
+- Dialogue entre différents domaines
+- Innovation par la diversité
+
+#### Processus Créatif
+
+1. Conceptualisation
+1. Exploration multisensorielle
+1. Intégration des perspectives
+1. Raffinement itératif
+
+#### Compétences Mobilisées
+
+
+#### Techniques
+
+- Design graphique
+- Développement web
+- Photographie
+- Modélisation 3D
+- Traitement multimédia
+
+#### Créatives
+
+- Storytelling
+- Narration visuelle
+- Design thinking
+- Communication transmedia
+
+#### Exemples de Projets
+
+- wolSia (projet IA et data-driven)
+- Trésor d'Eauze (patrimoine numérique)
+- Séries photographiques
+- Projets de médiation culturelle
+
+#### Philosophie de Création
+
+"La créativité naît à l'intersection des disciplines, là où les frontières deviennent floues et les possibilités infinies."
+
+
+#### Impact et Vision
+
+- Création de contenus innovants
+- Expériences utilisateur immersives
+- Narration riche et multidimensionnelle
+- Dépassement des approches traditionnelles
+
+#### Outils et Technologies
+
+- Suite Adobe
+- Outils de modélisation 3D
+- Plateformes de développement web
+- Logiciels de traitement multimédia
+
+#### Conclusion
+
+Une approche qui transforme la création de contenus en un écosystème dynamique et interconnecté.
+
+[Retour en haut](#)
+
+
+---
+
+### 📌 photogrammetrie
+
+![photogrammetrie](img/Slowsia.jpg)
+
+#### photogrammetrie
+
+
+#### Photogrammétrie : Art de la Modélisation 3D
+
+
+#### Essence de la Technique
+
+Une méthode de création de modèles 3D précis à partir de photographies, préservant la géométrie et les textures des objets.
+
+
+#### Processus Détaillé
+
+
+#### 1. Acquisition des Images
+
+- Prises de vue multi-angles
+- Attention méticuleuse à l'éclairage
+- Couverture complète de l'objet
+- Techniques de superposition
+- Résolution des images
+- Uniformité de l'éclairage
+- Recouvrement des prises de vue
+- Qualité optique
+
+#### 2. Traitement Informatique
+
+1. Alignement précis des photos
+1. Détection des points communs
+1. Génération d'un nuage de points dense
+1. Création du maillage 3D
+1. Application des textures
+- Logiciels spécialisés
+- Algorithmes de reconstruction
+- Traitement d'image avancé
+- Intelligence artificielle
+
+#### 3. Optimisation et Partage
+
+- Nettoyage du modèle
+- Simplification du maillage
+- Optimisation des textures
+- Export dans différents formats
+
+#### Applications
+
+
+#### Domaines de Valorisation
+
+- Patrimoine culturel
+- Archéologie
+- Conservation de collections
+- Médiation culturelle
+- Recherche scientifique
+
+#### Exemples de Réalisations
+
+- Slit Gong (objet ethnologique)
+- Bague à sceau
+- Bague aux camées
+- Objets archéologiques du Trésor d'Eauze
+
+#### Outils et Logiciels
+
+- Agisoft Metashape
+- Reality Capture
+- Blender
+- Capture photogrammétrique avancée
+
+#### Philosophie de la Préservation
+
+"Chaque objet a une histoire. La photogrammétrie permet de la capturer avec précision et sensibilité."
+
+
+#### Compétences Techniques
+
+- Photographie documentaire
+- Traitement d'image
+- Modélisation 3D
+- Conservation numérique
+- Médiation culturelle
+
+#### Impact
+
+- Préservation numérique
+- Documentation détaillée
+- Accessibilité du patrimoine
+- Recherche interdisciplinaire
+
+#### Défis et Innovation
+
+- Précision technique
+- Capture de la complexité
+- Respect de l'intégrité de l'objet
+- Innovation constante
 [Retour en haut](#)
 
 
