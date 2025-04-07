@@ -256,7 +256,7 @@ Un parcours caractérisé par une convergence constante entre compétences analy
 
 #### Data Visualization
 
-- Conversion de données brutes en visualisations éloquentes
+- Conversion de données brutes en visualisations
 - Création de représentations intuitives
 - Narration visuelle complexe
 
