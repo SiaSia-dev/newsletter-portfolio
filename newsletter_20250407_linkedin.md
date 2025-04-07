@@ -6,11 +6,9 @@
 
 ### 📌 restiction-contenus
 
-![restiction-contenus](img/1742724497786?e=1749686400&v=beta&t=Q3U9D81RrGWmYlM-cmITQVq2_ClkcTO3YmZ2BWdobR0)
+![restiction-contenus](img/IA_Fleur_au_fusil.png)
 
 #### restiction-contenus
-
-[ ](/company/www-linkedin-com-in-alexiafontaine/)
 
 [ ](/company/www-linkedin-com-in-alexiafontaine/)
 
@@ -64,7 +62,7 @@ Deux formats de sortie pour répondre aux exigences de la plateforme de publicat
 
 #### 📰 Newsletter Portfolio
 
-[📰 Newsletter Portfolio](/https://siasia-dev.github.io/newsletter-portfolio/latest.html)
+[📰 Newsletter Portfolio](https://siasia-dev.github.io/newsletter-portfolio/latest.html)
 
 [Retour en haut](#)
 
