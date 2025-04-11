@@ -25,8 +25,6 @@ Chaque donnée est située dans son écosystème : professionnel, culturel, hist
 
 ![architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown](img/abeille.jpg)
 
-#### architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown
-
 
 #### Introduction
 
@@ -107,10 +105,6 @@ Le fichier HTML devient un simple template qui charge dynamiquement le contenu :
 
 
 
-
-#### 
-
-
 #### Script de chargement JavaScript
 
 Un script JavaScript charge dynamiquement le contenu Markdown, le convertit en HTML et l'insère dans la page :
@@ -175,7 +169,7 @@ Cette méthode s'inscrit parfaitement dans la philosophie "Create Once, Publish 
 
 ### 🤖 Optimisation d'un avatar conversationnel pour l'archéologie préhistorique
 
-![Optimisation d'un avatar conversationnel pour l'archéologie préhistorique](img/Slowsia.jpg)
+![Optimisation d'un avatar conversationnel pour l'archéologie préhistorique](img/Photo-dAvatar-2.jpg)
 
 #### Optimisation d'un avatar conversationnel pour l'archéologie préhistorique
 
@@ -292,17 +286,11 @@ L'amélioration de ce système démontre comment les techniques d'IA contemporai
 
 ### 🎭 Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
 
-![Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*](img/Slowsia.jpg)
-
-#### Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
-
-
-#### Résumé // Lev MANOVTICH, The Science of Culture ? in Cultural Analysis
+![Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*](img/CulturalAnalytics.jpg)
 
 L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'analyse de vastes ensembles de données culturelles.
 [Lien vers l'ouvrage en ligne : Cultural Analysis](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
 
-[Lien vers l'ouvrage en ligne : Cultural Analysis](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
 
 <strong>#analyse_quantitative #big_data #medias</strong>
 
@@ -317,7 +305,10 @@ L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'
 
 Nos structures cognitives sont celles de nos structures sociales (La distinction, 1979)
 
+
 Pour reprendre R.MOURIEUX, <em>"Entre réalisme populaire et l'idéalisme bourgeois se situe le goût moyen des couches moyennes, fait de refus des extrêmes et de mimétisme de l'immédiat supérieur"</em> 1.https://www.persee.fr/doc/sotra_0038-0296_1980_num_22_4_1655_t1_0475_0000_2
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sf5ZGiqW7NI?si=FHGqM68HN5XPgqk6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 #### Les séries de Claude Monet (1840-1926)
