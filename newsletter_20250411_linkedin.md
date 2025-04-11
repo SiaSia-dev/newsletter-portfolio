@@ -276,6 +276,9 @@ Ce processus d'optimisation illustre les défis spécifiques de la création d'a
 
 L'amélioration de ce système démontre comment les techniques d'IA contemporaines peuvent être adaptées pour préserver et transmettre le patrimoine scientifique historique de manière interactive et engageante.
 
+Lien du Projet
+[Interagir avec l'Avatar Edouard Lartet](https://share.streamlit.io/app/avatar-lartet/)
+
 [Retour en haut](#)
 
 
