@@ -34,7 +34,7 @@ La gestion d'un portfolio digital peut rapidement devenir complexe lorsque le co
 
 #### Le problème du contenu monolithique
 
-Imaginez un portfolio comme celui-ci :
+Imaginez un portfolio comme celui-ci (oui c'est bien le mien... et juste une partie!):
 
 ![architecture monlithique](img/portfolio-monolithique.png)
 
