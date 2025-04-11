@@ -6,7 +6,9 @@
 
 ### 📌 Méthodologie Narrative de Traitement de Données
 
-![Méthodologie Narrative de Traitement de Données](img/Slowsia.jpg)
+![Méthodologie Narrative de Traitement de Données](img/abeille.jpg)
+
+*Résumé de la section du PORTFOLIO : Une Approche de l'Analyse de Données*
 
 #### Méthodologie Narrative de Traitement de Données
 
@@ -18,12 +20,11 @@ Chaque donnée est située dans son écosystème : professionnel, culturel, hist
 
 [Retour en haut](#)
 
-
 ---
 
 ### 🎨 architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown
 
-![architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown](img/abeille.jpg)
+![architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown](img/archimono.png)
 
 
 #### Introduction
@@ -35,23 +36,13 @@ La gestion d'un portfolio digital peut rapidement devenir complexe lorsque le co
 
 Imaginez un portfolio comme celui-ci :
 
-```html
+![architecture monlithique](img/portfolio-monolithique.png)
 
-Présentation
-
-
-#### À Propos
-
-
-#### Mon Univers Créatif et Analytique
-
-Bienvenue dans mon portfolio multidisciplinaire où convergent la créativité, la technologie et l'analyse de données. Mon approche combine des compétences en data science, storytelling, design et documentation créative pour créer des expériences narratives riches et significatives.
-
+Ce fichier HTML devient rapidement surchargé, mélangeant structure, présentation et contenu. Chaque modification nécessite d'intervenir dans le code HTML, rendant la maintenance fastidieuse et source d'erreurs.
 
 #### Solution : Architecture Modulaire à Base de Contenu
 
 L'architecture modulaire à base de contenu propose de séparer le contenu (texte, images, liens) de sa présentation (HTML, CSS), en utilisant Markdown comme format de contenu.
-
 
 #### Principe fondamental
 
@@ -63,7 +54,7 @@ La séparation contenu/présentation s'articule autour de trois composants :
 
 #### Structure de fichiers
 
-<code>portfolio/
+portfolio/
 ├── index.html            # Template principal avec la structure
 ├── css/
 │   └── styles.css        # Styles CSS 
@@ -78,11 +69,9 @@ La séparation contenu/présentation s'articule autour de trois composants :
 │   └── ...
 └── img/                  # Images</code>
 
-
 #### Les fichiers Markdown avec frontmatter
 
 Voici un exemple de fichier Markdown pour la section "À propos" :
-
 
 #### ```markdown
 
@@ -90,19 +79,27 @@ title: "À Propos"
 subtitle: "Présentation"
 image: "/img/abeille.jpg"
 
-
-#### Une Approche Intégrée
-
-Ma démarche s'articule autour d'une vision transversale où chaque discipline enrichit les autres...
-```
-
-
-#### HTML modularisé
+#### Une Approche Intégrée : HTML modularisé
 
 Le fichier HTML devient un simple template qui charge dynamiquement le contenu :
 
 ```html
-
+<section class="section about" id="about">
+    <div class="container">
+        <div class="section-title-container">
+            <p class="section-subtitle" id="about-subtitle"></p>
+            <h2 class="section-title" id="about-title"></h2>
+        </div>
+        <div class="about-content">
+            <div class="about-image">
+                <img id="about-image" alt="Portrait" src="" />
+            </div>
+            <div class="about-text" id="about-content">
+                <!-- Le contenu Markdown sera inséré ici -->
+            </div>
+        </div>
+    </div>
+</section>
 
 
 #### Script de chargement JavaScript
@@ -326,7 +323,7 @@ Pour reprendre R.MOURIEUX, <em>"Entre réalisme populaire et l'idéalisme bourge
 
 ### 📌 apprentissage automatique
 
-![apprentissage automatique](img/Slowsia.jpg)
+![apprentissage automatique](img/NLP-LLM.jpg)
 
 #### apprentissage automatique
 
@@ -361,7 +358,7 @@ Les systèmes d'apprentissage automatique sont en constante évolution et trouve
 
 ### 📌 Architecture Modulaire à Base de Contenu
 
-![Architecture Modulaire à Base de Contenu](img/Slowsia.jpg)
+![Architecture Modulaire à Base de Contenu](img/archi-modulaire.png)
 
 #### Architecture Modulaire à Base de Contenu
 

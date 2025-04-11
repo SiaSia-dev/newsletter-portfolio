@@ -630,37 +630,34 @@
 │   └── ...
 └── img/                  # Images</code></p>
 <h3>Les fichiers Markdown avec frontmatter</h3>
-<p>Voici un exemple de fichier Markdown pour la section "À propos" :</p>
-<h2>```markdown</h2>
-<p>title: "À Propos"
-subtitle: "Présentation"
-image: "/img/abeille.jpg"</p>
-<hr />
-<h2>Mon Univers Créatif et Analytique</h2>
-<p>Bienvenue dans mon portfolio multidisciplinaire où convergent la créativité, la technologie et l'analyse de données. Mon approche combine des compétences en data science, storytelling, design et documentation créative pour créer des expériences narratives riches et significatives.</p>
-<h2>Une Approche Intégrée</h2>
-<p>Ma démarche s'articule autour d'une vision transversale où chaque discipline enrichit les autres...
-```</p>
-<h3>HTML modularisé</h3>
+<p>Voici un exemple de fichier Markdown pour l'article'" :</p>
+<p><code><h2>```markdown</h2>
+<p><code>
+    ---
+    title: "architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown"
+    description: "Comment structurer un portfolio digital avec une architecture modulaire basée sur le contenu, séparant clairement présentation et contenu pour une maintenance simplifiée"
+    author: "Alexia Fontaine"
+    tags:
+      - Architecture Modulaire
+      - Markdown
+      - Portfolio
+      - Content-Driven
+      - Automatisation
+      - Documentation
+    categories:
+      - Développement Web
+      - Méthodologie
+    date: 2025-04-11
+    version: 1.0
+    type: article
+    image: "/img/Process_COPE.png"
+    lang: fr
+    ---
+</code></p>
+
+<h2>HTML modularisé</h2>
 <p>Le fichier HTML devient un simple template qui charge dynamiquement le contenu :</p>
-<p>```html</p>
-<section class="section about" id="about">
-    <div class="container">
-        <div class="section-title-container">
-            <p class="section-subtitle" id="about-subtitle"></p>
-            <h2 class="section-title" id="about-title"></h2>
-        </div>
-        <div class="about-content">
-            <div class="about-image">
-                <img id="about-image" alt="Portrait" src="" />
-            </div>
-            <div class="about-text" id="about-content">
-                <!-- Le contenu Markdown sera inséré ici -->
-            </div>
-        </div>
-    </div>
-</section>
-<p>```</p>
+<img src="img/md-portofolio.png" alt="HTML Modularisé" loading="lazy">
 <h3>Script de chargement JavaScript</h3>
 <p>Un script JavaScript charge dynamiquement le contenu Markdown, le convertit en HTML et l'insère dans la page :</p>
 <p><code>``javascript
