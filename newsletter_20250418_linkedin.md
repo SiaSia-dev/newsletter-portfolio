@@ -4,66 +4,6 @@
 
 ---
 
-### 📌 Méthodologie Narrative de Traitement de Données
-
-![Méthodologie Narrative de Traitement de Données](img/Slowsia.jpg)
-
-#### Méthodologie Narrative de Traitement de Données
-
-Chaque ensemble de données raconte une histoire. Mon approche consiste à écouter ces récits, à comprendre leurs nuances et leurs implications culturelles sous-jacentes.
-
-Au-delà des chiffres, je recherche les fils conducteurs qui relient les données aux expériences humaines, aux dynamiques organisationnelles et aux évolutions sociétales.
-
-Chaque donnée est située dans son écosystème : professionnel, culturel, historique. Cette approche permet de révéler des insights qui dépassent l'analyse statistique traditionnelle.
-
-[Retour en haut](#)
-
-
----
-
-### 🎭 Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
-
-![Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*](img/Slowsia.jpg)
-
-#### Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
-
-
-#### Résumé // Lev MANOVTICH, The Science of Culture ? in Cultural Analysis
-
-L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'analyse de vastes ensembles de données culturelles.
-[Lien vers l'ouvrage en ligne : Cultural Analysis](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
-
-[Lien vers l'ouvrage en ligne : Cultural Analysis](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
-
-<strong>#analyse_quantitative #big_data #medias</strong>
-
-<em>"L'idée qu'un groupe ou une personne a des comportements et des goûts culturels cohérents avait du sens dans les sociétés anciennes et modernes. Mais avec les nombreux choix culturels disponibles aujourd'hui, nous pourrions découvrir que l'idée d'un goût stable ou d'une « personnalité culturelle » stable est une illusion."</em>
-
-➡️l'illusion du goût
-➡️la classification n'est toujours pas l'explication
-➡️Nouveau paradigme? D'où l'importance "<em>And here the concepts and methods of sampling, feature extraction, and exploratory data analysis are more important than data size"</em>
-
-
-#### Structures cognitives & structures sociales
-
-Nos structures cognitives sont celles de nos structures sociales (La distinction, 1979)
-
-Pour reprendre R.MOURIEUX, <em>"Entre réalisme populaire et l'idéalisme bourgeois se situe le goût moyen des couches moyennes, fait de refus des extrêmes et de mimétisme de l'immédiat supérieur"</em> 1.https://www.persee.fr/doc/sotra_0038-0296_1980_num_22_4_1655_t1_0475_0000_2
-
-
-#### Les séries de Claude Monet (1840-1926)
-
-<em>Du 22 septembre 2010 au 24 janvier 2011 - Paris, Galeries nationales du Grand Palais</em>
-
-➡️ Notons aussi le rapport entre <em>expérience sensible &amp; image</em> (<strong>une image est une densité de probabilités dans un espace de plus grande dimension</strong>) Remarquez que dès le potron-minet, la lumière sur la pierre d'une façade de cathédrale reste une expérience sensible comparable à l'image - les séries de MONET ça ne fait pas de mal non plus ! 🙂
-
-<em>Posté sur Linkedin du 28 mars 2025</em>
-
-[Retour en haut](#)
-
-
----
-
 ### 🎨 architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown
 
 ![architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown](img/abeille.jpg)
@@ -216,6 +156,95 @@ Cette méthode s'inscrit parfaitement dans la philosophie "Create Once, Publish 
 
 ---
 
+### 📌 OPENEDITION : carnet HYPOTHESES - Blog scientifique Archnum
+
+![OPENEDITION : carnet HYPOTHESES - Blog scientifique Archnum](img/hypotheses.jpg)
+
+#### OPENEDITION : carnet HYPOTHESES - Blog scientifique Archnum
+
+
+#### OpenEdition, le portail de la communication scientifique en SHS
+
+<em><strong>OpenEdition</strong> est un portail de ressources électroniques en sciences humaines et sociales.</em>
+[Pour en savoir plus](https://www.openedition.org/)
+
+[Pour en savoir plus](https://www.openedition.org/)
+
+Il s'agit d'une <em>vaste librairie en ligne</em>, regroupant <strong>en accès libre des ressources numériques de communication scientifique.</strong>
+<em>A une époque où la défiance systématique (et souvent justifiée) envers les médias pose de vrais problèmes d'accès à l'information et de démocratie, </em><em>ce dispositif est <u>une bouffée d'oxygène</u></em><em>.</em>
+
+<strong>Hypothèses</strong> constitue l'une de ses plateformes avec pour finalité la publication en ligne : il s'agit de mettre à disposition au plus grand nombre les recherches, les avancées, les questionnements scientifiques actuels, et gratuitement!
+
+
+#### Présentation de la plateforme de publication Hypothèses
+
+Par sa vocation de publication en ligne, [Hypothèses](https://hypotheses.org) utilise le [BLOG](https://fr.wikipedia.org/wiki/Blog) pour rendre compte d'<strong>un très grand nombre d'actualités scientifiques</strong> :
+
+[Hypothèses](https://hypotheses.org)
+
+[BLOG](https://fr.wikipedia.org/wiki/Blog)
+
+Elle est ouverte prioritairement à la recherche académique mais la recherche indépendante y a aussi sa place, ce qui en fait <strong>un espace de reflexions riches et diversifiés</strong>.
+
+Nous espérons participer à <strong>ce mouvement de partage des savoirs et des connaissances</strong> par notre petit blog <strong>ARCHNUM</strong> dont le but au départ était de rendre compte des pratiques numériques en archéologie ; et qui a évolué aujourd'hui vers la thématique Data et ses applications.
+
+[VISITER LE BLOG ARCHNUM](https://archnum.hypotheses.org/)
+
+[VISITER LE BLOG ARCHNUM](https://archnum.hypotheses.org/)
+
+[Retour en haut](#)
+
+
+---
+
+### 📌 Apprentissage automatique
+
+![Apprentissage automatique](img/Slowsia.jpg)
+
+#### Apprentissage automatique
+
+Les systèmes d'apprentissage automatique (<em>machine learning</em>) sont des technologies qui permettent aux ordinateurs d'apprendre à partir de données et d'améliorer leurs performances sur des tâches spécifiques sans être explicitement programmés.
+
+Voici un aperçu des concepts clés et des types de systèmes d'apprentissage automatique :
+
+
+#### 1. Types d'apprentissage
+
+- Apprentissage supervisé : Le modèle est entraîné sur un ensemble de données étiquetées, où chaque entrée est associée à une sortie. L'objectif est de prédire la sortie pour de nouvelles données. Exemples : classification, régression.
+- Apprentissage non supervisé : Le modèle travaille avec des données non étiquetées et cherche à identifier des structures ou des motifs. Exemples : clustering, réduction de dimensionnalité.
+- Apprentissage par renforcement : Un agent apprend à prendre des décisions en interagissant avec un environnement et en recevant des récompenses ou des pénalités en fonction de ses actions.
+
+#### 2. Algorithmes courants
+
+- Régression linéaire : Utilisé pour prédire une variable continue.
+- Arbres de décision : Utilisés pour la classification et la régression, ces modèles prennent des décisions basées sur des règles dérivées des données.
+- SVM (Support Vector Machines) : Utilisé pour la classification, il cherche à trouver l'hyperplan qui sépare les classes avec le maximum de marge.
+- Réseaux de neurones : Modèles inspirés du cerveau humain, utilisés pour des tâches complexes comme la reconnaissance d'images et le traitement du langage naturel.
+- K-means : Un algorithme de clustering qui regroupe les données en k clusters basés sur la similarité.
+
+#### 3. Exemples d'applications
+
+- Vision par ordinateur : Reconnaissance d'images, détection d'objets.
+- Traitement du langage naturel : Chatbots, traduction automatique, analyse de sentiments.
+- Systèmes de recommandation : Recommandations de produits ou de contenu.
+- Finance : Détection de fraudes, prévisions de marché.
+- Santé : Diagnostic médical, analyse d'images médicales.
+etc.
+
+#### 5. Défis
+
+- Biais et équité : Assurer que les modèles ne reproduisent pas des biais présents dans les données.
+- Interprétabilité : Comprendre comment et pourquoi un modèle prend des décisions.
+- Surapprentissage : Éviter que le modèle ne s'adapte trop aux données d'entraînement, ce qui nuit à sa performance sur de nouvelles données.
+Les systèmes d'apprentissage automatique sont en constante évolution et trouvent des applications dans de nombreux domaines, transformant la manière dont nous traitons et analysons les données.
+
+<em>contenu généré par une IA générative</em>
+
+[Retour en haut](#)
+
+
+---
+
 ### 🎭 Comment les analystes de données contribuent à décoder la culture organisationnelle ?
 
 ![Comment les analystes de données contribuent à décoder la culture organisationnelle ?](img/data-analyst-subcultures-map.png)
@@ -303,165 +332,114 @@ En exploitant des techniques d'analyse de données avancées, les entreprises pe
 
 ---
 
-### 🤖 Optimisation d'un avatar conversationnel pour l'archéologie préhistorique
+### 🎭 Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
 
-![Optimisation d'un avatar conversationnel pour l'archéologie préhistorique](img/Slowsia.jpg)
+![Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*](img/Slowsia.jpg)
 
-#### Optimisation d'un avatar conversationnel pour l'archéologie préhistorique
-
-
-#### Introduction
-
-Cet article résume un processus d'amélioration d'un système d'IA conversationnel nommé "Lartet", conçu pour simuler les interactions avec Édouard Lartet, un paléontologue et préhistorien français du 19ème siècle. Le système utilise une architecture d'apprentissage automatique pour générer des réponses informées à partir de passages de l'ouvrage "Reliquiae Aquitanicae".
+#### Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
 
 
-#### Défis identifiés
+#### Résumé // Lev MANOVTICH, The Science of Culture ? in Cultural Analysis
 
-L'analyse des logs et des réponses générées a permis d'identifier plusieurs défis:
+L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'analyse de vastes ensembles de données culturelles.
+[Lien vers l'ouvrage en ligne : Cultural Analysis](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
 
-1. Répétition de contenus: Le système intégrait le même passage dans différentes sections
-1. Problèmes de traduction: La traduction automatique anglais-français produisait des textes incohérents
-1. Hallucinations et substitutions inappropriées: Les noms propres étaient systématiquement remplacés par "mon collègue"
-1. Absence d'utilisation de l'ontologie et de la méréologie: Malgré des structures de données riches, ces éléments n'étaient pas intégrés
-1. Réponses non adaptées à certaines questions sensibles: Le système ne traitait pas correctement les questions sur Henry Christy
+[Lien vers l'ouvrage en ligne : Cultural Analysis](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
 
-#### Solutions développées
+<strong>#analyse_quantitative #big_data #medias</strong>
 
+<em>"L'idée qu'un groupe ou une personne a des comportements et des goûts culturels cohérents avait du sens dans les sociétés anciennes et modernes. Mais avec les nombreux choix culturels disponibles aujourd'hui, nous pourrions découvrir que l'idée d'un goût stable ou d'une « personnalité culturelle » stable est une illusion."</em>
 
-#### 1. Amélioration de l'extraction d'informations
-
-La fonction <code>extract_structured_info</code> a été optimisée pour éviter les doublons entre catégories:
-
-```python
+➡️l'illusion du goût
+➡️la classification n'est toujours pas l'explication
+➡️Nouveau paradigme? D'où l'importance "<em>And here the concepts and methods of sampling, feature extraction, and exploratory data analysis are more important than data size"</em>
 
 
-#### Éviter les doublons entre catégories
+#### Structures cognitives & structures sociales
 
-all_items = set()
-for category in list(info.keys()):
-    unique_items = []
-    for item in info[category]:
-        item_hash = hash(item)
-        if item_hash not in all_items:
-            all_items.add(item_hash)
-            unique_items.append(item)
-    info[category] = unique_items
-```
+Nos structures cognitives sont celles de nos structures sociales (La distinction, 1979)
+
+Pour reprendre R.MOURIEUX, <em>"Entre réalisme populaire et l'idéalisme bourgeois se situe le goût moyen des couches moyennes, fait de refus des extrêmes et de mimétisme de l'immédiat supérieur"</em> 1.https://www.persee.fr/doc/sotra_0038-0296_1980_num_22_4_1655_t1_0475_0000_2
 
 
-#### 2. Gestion des questions sensibles
+#### Les séries de Claude Monet (1840-1926)
 
-Une fonction spécifique a été implémentée pour traiter les questions sur Henry Christy:
+<em>Du 22 septembre 2010 au 24 janvier 2011 - Paris, Galeries nationales du Grand Palais</em>
 
-<code>python
-def get_christy_collaboration_response(self):
-    """Fournit une réponse prédéfinie sur la collaboration avec Christy"""
-    if self.language == "fr":
-        return """
-Je préfère ne pas m'étendre sur mes relations personnelles ou professionnelles...
-"""</code>
+➡️ Notons aussi le rapport entre <em>expérience sensible &amp; image</em> (<strong>une image est une densité de probabilités dans un espace de plus grande dimension</strong>) Remarquez que dès le potron-minet, la lumière sur la pierre d'une façade de cathédrale reste une expérience sensible comparable à l'image - les séries de MONET ça ne fait pas de mal non plus ! 🙂
 
-
-#### 3. Restructuration du générateur de questions suggérées
-
-La fonction <code>get_default_question</code> a été entièrement réécrite pour offrir des suggestions pertinentes sans mentionner Henry Christy:
-
-```python
-def get_default_question(self, user_input: str) -&gt; str:
-    """Retourne une question par défaut basée sur la requête utilisateur."""
-    query_lower = user_input.lower()
-
-```
-
-
-#### 4. Amélioration de la cohérence linguistique
-
-Le système a été modifié pour présenter clairement les extraits en anglais tout en maintenant une structure en français:
-
-```python
-
-
-#### Note explicative sur la langue
-
-response_parts.append("## Note sur la langue")
-response_parts.append("Bien que mes publications scientifiques fussent rédigées en anglais, je vous présente ici une synthèse en français de mes travaux.")
-```
-
-
-#### 5. Intégration de l'ontologie et de la méréologie
-
-Des fonctions ont été ajoutées pour exploiter les structures ontologiques et méréologiques:
-
-<code>python
-def initialize_knowledge_base(self):
-    """Charge et structure l'ontologie et la méréologie"""
-    self.structured_ontology = {}
-    self.structured_mereology = {}
-    # Traitement des données...</code>
-
-
-#### Résultats
-
-Les modifications ont permis d'obtenir:
-
-1. Des réponses plus cohérentes et sans répétitions
-1. Une meilleure présentation des extraits originaux
-1. Une gestion appropriée des questions sensibles
-1. Une exploitation plus riche des connaissances structurées
-
-#### Conclusion
-
-Ce processus d'optimisation illustre les défis spécifiques de la création d'avatars historiques utilisant le RAG. Il souligne l'importance d'une adaptation fine des mécanismes de génération et de vérification pour produire des interactions authentiques et informatives.
-
-L'amélioration de ce système démontre comment les techniques d'IA contemporaines peuvent être adaptées pour préserver et transmettre le patrimoine scientifique historique de manière interactive et engageante.
+<em>Posté sur Linkedin du 28 mars 2025</em>
 
 [Retour en haut](#)
 
 
 ---
 
-### 📌 Apprentissage automatique
+### 📊 Quiz Interactif NumPy : Apprentissage interactif en Data Science
 
-![Apprentissage automatique](img/Slowsia.jpg)
+![Quiz Interactif NumPy : Apprentissage interactif en Data Science](img/NumPy_logo_2020.svg.png)
 
-#### Apprentissage automatique
-
-Les systèmes d'apprentissage automatique (<em>machine learning</em>) sont des technologies qui permettent aux ordinateurs d'apprendre à partir de données et d'améliorer leurs performances sur des tâches spécifiques sans être explicitement programmés.
-
-Voici un aperçu des concepts clés et des types de systèmes d'apprentissage automatique :
+#### Quiz Interactif NumPy : Apprentissage interactif en Data Science
 
 
-#### 1. Types d'apprentissage
+#### Présentation du Projet "Quiz Numpy"
 
-- Apprentissage supervisé : Le modèle est entraîné sur un ensemble de données étiquetées, où chaque entrée est associée à une sortie. L'objectif est de prédire la sortie pour de nouvelles données. Exemples : classification, régression.
-- Apprentissage non supervisé : Le modèle travaille avec des données non étiquetées et cherche à identifier des structures ou des motifs. Exemples : clustering, réduction de dimensionnalité.
-- Apprentissage par renforcement : Un agent apprend à prendre des décisions en interagissant avec un environnement et en recevant des récompenses ou des pénalités en fonction de ses actions.
+<img height="100" src="/img/NumPy_logo_2020.svg.png" width="100"/>
+Un quiz interactif conçu pour tester et approfondir les connaissances en manipulation de données avec NumPy, illustrant une approche innovante d'apprentissage technologique.
 
-#### 2. Algorithmes courants
+La librairie NumPy est un incontournable des sciences de données, impossible de ne pas connaître : <strong>projet open-source</strong>, <u>cela implique que vous être libres d'utiliser cet outil comme bon vous semble</u> (<em>petit rappel sur les fondements de l'informatique, partage &amp; liberté</em>)
 
-- Régression linéaire : Utilisé pour prédire une variable continue.
-- Arbres de décision : Utilisés pour la classification et la régression, ces modèles prennent des décisions basées sur des règles dérivées des données.
-- SVM (Support Vector Machines) : Utilisé pour la classification, il cherche à trouver l'hyperplan qui sépare les classes avec le maximum de marge.
-- Réseaux de neurones : Modèles inspirés du cerveau humain, utilisés pour des tâches complexes comme la reconnaissance d'images et le traitement du langage naturel.
-- K-means : Un algorithme de clustering qui regroupe les données en k clusters basés sur la similarité.
+Notre propos se veut donc très modeste : développer une application qui génère les questions et réponses basées sur la documentation de Numpy.
 
-#### 3. Exemples d'applications
 
-- Vision par ordinateur : Reconnaissance d'images, détection d'objets.
-- Traitement du langage naturel : Chatbots, traduction automatique, analyse de sentiments.
-- Systèmes de recommandation : Recommandations de produits ou de contenu.
-- Finance : Détection de fraudes, prévisions de marché.
-- Santé : Diagnostic médical, analyse d'images médicales.
-etc.
+#### Objectifs
 
-#### 5. Défis
+- Tester les compétences en manipulation de données
+- Fournir un apprentissage ludique et interactif
+- Renforcer la compréhension des concepts NumPy
 
-- Biais et équité : Assurer que les modèles ne reproduisent pas des biais présents dans les données.
-- Interprétabilité : Comprendre comment et pourquoi un modèle prend des décisions.
-- Surapprentissage : Éviter que le modèle ne s'adapte trop aux données d'entraînement, ce qui nuit à sa performance sur de nouvelles données.
-Les systèmes d'apprentissage automatique sont en constante évolution et trouvent des applications dans de nombreux domaines, transformant la manière dont nous traitons et analysons les données.
+#### Technologies Utilisées
 
-<em>contenu généré par une IA générative</em>
+- Python
+- NumPy
+- Modèle d'apprentissage
+- E-learning
+- Interfaces interactives
+
+#### Lien du Projet
+
+[Tester Vos Compétences avec le Quiz NumPy](https://quiz-numpy.streamlit.app/)
+
+[Tester Vos Compétences avec le Quiz NumPy](https://quiz-numpy.streamlit.app/)
+
+
+#### Concept Pédagogique
+
+Combinaison de l'apprentissage ludique avec des concepts techniques avancés de manipulation de données.
+
+
+#### Fonctionnalités Principales
+
+- Questions interactives sur NumPy
+- Feedback immédiat
+- Progression adaptative
+- Couverture complète des concepts clés
+
+#### Approche Pédagogique
+
+- Apprentissage par l'interaction
+- Mise en pratique immédiate des concepts
+- Adaptation du niveau de difficulté
+- Engagement actif de l'apprenant
+
+#### Compétences Mises en Œuvre
+
+- Développement d'outils éducatifs interactifs
+- Conception d'interfaces pédagogiques
+- Maîtrise technique de NumPy
+- Conception de systèmes d'apprentissage adaptatifs
+
+#### Référence
 
 [Retour en haut](#)
 
