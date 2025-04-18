@@ -88,17 +88,93 @@ Lartet &amp; Christy 1865-1875, Lartet É., Christy H., Reliquiae Aquitanicae: b
 
 ---
 
-### 📌 Méthodologie Narrative de Traitement de Données
+### 📈 Méréologie comme cadre d'analyse
 
-![Méthodologie Narrative de Traitement de Données](img/Slowsia.jpg)
+![Méréologie comme cadre d'analyse](img/Slowsia.jpg)
 
-#### Méthodologie Narrative de Traitement de Données
+#### Méréologie comme cadre d'analyse
 
-Chaque ensemble de données raconte une histoire. Mon approche consiste à écouter ces récits, à comprendre leurs nuances et leurs implications culturelles sous-jacentes.
+Demande de prompt : définition et applications de la méréologie
 
-Au-delà des chiffres, je recherche les fils conducteurs qui relient les données aux expériences humaines, aux dynamiques organisationnelles et aux évolutions sociétales.
 
-Chaque donnée est située dans son écosystème : professionnel, culturel, historique. Cette approche permet de révéler des insights qui dépassent l'analyse statistique traditionnelle.
+#### Origines et définition
+
+La méréologie, théorie formelle des relations entre les parties et le tout, trouve ses racines dans les travaux du philosophe et logicien polonais Stanisław Leśniewski, qui développa cette approche dans les années 1910-1920. Cependant, l'étude des relations partie-tout était déjà présente dans la pensée d'Aristote et a été explorée plus tard par des philosophes comme Edmund Husserl dans ses "Recherches logiques" (1900-1901) et Alfred North Whitehead.
+
+D'autres contributions significatives incluent les travaux de Peter Simons ("Parts: A Study in Ontology", 1987) et Nelson Goodman ("The Structure of Appearance", 1951), qui ont étendu et formalisé davantage cette théorie logique.
+
+
+#### Applications dans l'analyse culturelle
+
+Dans le domaine de l'analyse culturelle, l'approche méréologique offre un cadre conceptuel permettant d'examiner comment les éléments culturels fonctionnent simultanément comme entités autonomes et comme composantes de systèmes plus larges. Cette perspective s'avère particulièrement utile pour comprendre:
+
+- Les relations entre pratiques culturelles individuelles et systèmes globaux
+- L'intégration des sous-cultures dans des cultures plus étendues
+- La manière dont les artefacts culturels acquièrent des significations différentes selon les contextes
+Ce cadre théorique permet d'analyser efficacement les processus d'hybridation culturelle en montrant comment des éléments issus de différents ensembles peuvent être recombinés pour former de nouvelles totalités culturelles.
+
+
+#### La méréologie en linguistique cognitive
+
+La linguistique cognitive utilise la méréologie pour étudier comment nous conceptualisons et exprimons les relations partie-tout dans le langage. On peut distinguer plusieurs types de relations méréologiques dans les expressions linguistiques:
+
+1. Relations partie-objet physique: "le toit de la maison", "la poignée de la porte"
+1. Relations membre-collection: "un joueur de l'équipe", "une carte du jeu"
+1. Relations portion-masse: "une tranche de pain", "une goutte d'eau"
+Ces expressions reflètent notre conceptualisation cognitive des ensembles et peuvent varier considérablement d'une langue à l'autre, certaines utilisant des classificateurs spécifiques ou des constructions grammaticales distinctes.
+
+
+#### Applications en ontologie informatique
+
+Dans le domaine de l'informatique, la méréologie est fondamentale pour la construction d'ontologies comme SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms), l'une des plus importantes ontologies médicales. Les relations méréologiques y sont utilisées pour:
+
+- Structurer hiérarchiquement les concepts médicaux
+- Faciliter le raisonnement automatique
+- Permettre des requêtes complexes dans les dossiers médicaux électroniques
+Par exemple, l'ontologie établit des relations comme "le ventricule gauche est une partie du cœur" ou "la fièvre est une partie du syndrome grippal", fournissant ainsi une base pour l'inférence automatisée.
+
+
+#### Analyse méréologique des archives visuelles
+
+L'application de la méréologie à l'analyse des archives visuelles constitue un domaine particulièrement innovant. Cette approche permet d'étudier:
+
+1. La relation entre l'image individuelle et la collection: Une image isolée possède sa propre signification, mais acquiert des dimensions supplémentaires lorsqu'elle est mise en relation avec d'autres images.
+1. Les sous-ensembles significatifs: Comment certains groupements d'images constituent des "parties" cohérentes qui transmettent un message spécifique au sein de l'ensemble plus large.
+1. Les éléments visuels récurrents: La façon dont certains motifs deviennent des unités méréologiques structurant la collection.
+<strong>La relation entre l'image individuelle et la collection</strong>: Une image isolée possède sa propre signification, mais acquiert des dimensions supplémentaires lorsqu'elle est mise en relation avec d'autres images.
+
+<strong>Les sous-ensembles significatifs</strong>: Comment certains groupements d'images constituent des "parties" cohérentes qui transmettent un message spécifique au sein de l'ensemble plus large.
+
+<strong>Les éléments visuels récurrents</strong>: La façon dont certains motifs deviennent des unités méréologiques structurant la collection.
+
+
+#### Le raisonnement métavisuel
+
+Le raisonnement métavisuel, qui consiste à analyser les relations entre les images au-delà de leur contenu individuel, s'appuie sur plusieurs opérations:
+
+- Catégorisation: Identifier les principes d'organisation des images
+- Contextualisation: Replacer chaque image dans son rapport aux autres
+- Abstraction: Dégager des motifs invisibles au niveau de l'image individuelle
+
+#### Opérations rhétoriques dans l'analyse scientifique des archives visuelles
+
+Pour produire des informations scientifiques à partir d'une collection d'images, plusieurs opérations rhétoriques sont employées:
+
+1. Juxtaposition: Révéler des similarités ou différences par la mise en parallèle
+1. Série et séquence: Organiser les images pour dégager des tendances ou ruptures
+1. Synecdoque visuelle: Utiliser certaines images comme représentatives d'ensembles plus larges
+1. Métaphore structurelle: Employer des structures conceptuelles pour représenter les relations entre images
+1. Échantillonnage représentatif: Sélectionner des sous-ensembles reflétant les propriétés de la collection entière
+Ces opérations transforment une accumulation d'images en un corpus structuré produisant des connaissances scientifiques sur les phénomènes visuels, les pratiques culturelles ou les évolutions historiques qu'elles documentent.
+
+
+#### Conclusion
+
+La méréologie, née dans le domaine de la logique formelle, s'est révélée être un cadre conceptuel exceptionnellement fertile pour diverses disciplines. Son application à l'analyse culturelle, à la linguistique cognitive, à l'ontologie informatique et particulièrement à l'étude des archives visuelles démontre sa puissance pour comprendre les relations complexes entre les parties et les ensembles dans de multiples domaines de la connaissance.
+
+En offrant une méthodologie pour analyser comment les significations émergent non seulement des éléments individuels mais aussi de leurs interactions, la méréologie constitue un outil précieux pour la recherche contemporaine dans les sciences humaines et sociales, ainsi que dans le domaine des technologies de l'information.
+
+<em>contenu généré par une IA générative</em>
 
 [Retour en haut](#)
 
@@ -222,6 +298,23 @@ L'amélioration de ce système démontre comment les techniques d'IA contemporai
 
 ---
 
+### 📌 Méthodologie Narrative de Traitement de Données
+
+![Méthodologie Narrative de Traitement de Données](img/Slowsia.jpg)
+
+#### Méthodologie Narrative de Traitement de Données
+
+Chaque ensemble de données raconte une histoire. Mon approche consiste à écouter ces récits, à comprendre leurs nuances et leurs implications culturelles sous-jacentes.
+
+Au-delà des chiffres, je recherche les fils conducteurs qui relient les données aux expériences humaines, aux dynamiques organisationnelles et aux évolutions sociétales.
+
+Chaque donnée est située dans son écosystème : professionnel, culturel, historique. Cette approche permet de révéler des insights qui dépassent l'analyse statistique traditionnelle.
+
+[Retour en haut](#)
+
+
+---
+
 ### 🎭 Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
 
 ![Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*](img/Slowsia.jpg)
@@ -259,99 +352,6 @@ Pour reprendre R.MOURIEUX, <em>"Entre réalisme populaire et l'idéalisme bourge
 ➡️ Notons aussi le rapport entre <em>expérience sensible &amp; image</em> (<strong>une image est une densité de probabilités dans un espace de plus grande dimension</strong>) Remarquez que dès le potron-minet, la lumière sur la pierre d'une façade de cathédrale reste une expérience sensible comparable à l'image - les séries de MONET ça ne fait pas de mal non plus ! 🙂
 
 <em>Posté sur Linkedin du 28 mars 2025</em>
-
-[Retour en haut](#)
-
-
----
-
-### 📈 Méréologie comme cadre d'analyse
-
-![Méréologie comme cadre d'analyse](img/Slowsia.jpg)
-
-#### Méréologie comme cadre d'analyse
-
-Demande de prompt : définition et applications de la méréologie
-
-
-#### Origines et définition
-
-La méréologie, théorie formelle des relations entre les parties et le tout, trouve ses racines dans les travaux du philosophe et logicien polonais Stanisław Leśniewski, qui développa cette approche dans les années 1910-1920. Cependant, l'étude des relations partie-tout était déjà présente dans la pensée d'Aristote et a été explorée plus tard par des philosophes comme Edmund Husserl dans ses "Recherches logiques" (1900-1901) et Alfred North Whitehead.
-
-D'autres contributions significatives incluent les travaux de Peter Simons ("Parts: A Study in Ontology", 1987) et Nelson Goodman ("The Structure of Appearance", 1951), qui ont étendu et formalisé davantage cette théorie logique.
-
-
-#### Applications dans l'analyse culturelle
-
-Dans le domaine de l'analyse culturelle, l'approche méréologique offre un cadre conceptuel permettant d'examiner comment les éléments culturels fonctionnent simultanément comme entités autonomes et comme composantes de systèmes plus larges. Cette perspective s'avère particulièrement utile pour comprendre:
-
-- Les relations entre pratiques culturelles individuelles et systèmes globaux
-- L'intégration des sous-cultures dans des cultures plus étendues
-- La manière dont les artefacts culturels acquièrent des significations différentes selon les contextes
-Ce cadre théorique permet d'analyser efficacement les processus d'hybridation culturelle en montrant comment des éléments issus de différents ensembles peuvent être recombinés pour former de nouvelles totalités culturelles.
-
-
-#### La méréologie en linguistique cognitive
-
-La linguistique cognitive utilise la méréologie pour étudier comment nous conceptualisons et exprimons les relations partie-tout dans le langage. On peut distinguer plusieurs types de relations méréologiques dans les expressions linguistiques:
-
-1. Relations partie-objet physique: "le toit de la maison", "la poignée de la porte"
-1. Relations membre-collection: "un joueur de l'équipe", "une carte du jeu"
-1. Relations portion-masse: "une tranche de pain", "une goutte d'eau"
-Ces expressions reflètent notre conceptualisation cognitive des ensembles et peuvent varier considérablement d'une langue à l'autre, certaines utilisant des classificateurs spécifiques ou des constructions grammaticales distinctes.
-
-
-#### Applications en ontologie informatique
-
-Dans le domaine de l'informatique, la méréologie est fondamentale pour la construction d'ontologies comme SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms), l'une des plus importantes ontologies médicales. Les relations méréologiques y sont utilisées pour:
-
-- Structurer hiérarchiquement les concepts médicaux
-- Faciliter le raisonnement automatique
-- Permettre des requêtes complexes dans les dossiers médicaux électroniques
-Par exemple, l'ontologie établit des relations comme "le ventricule gauche est une partie du cœur" ou "la fièvre est une partie du syndrome grippal", fournissant ainsi une base pour l'inférence automatisée.
-
-
-#### Analyse méréologique des archives visuelles
-
-L'application de la méréologie à l'analyse des archives visuelles constitue un domaine particulièrement innovant. Cette approche permet d'étudier:
-
-1. La relation entre l'image individuelle et la collection: Une image isolée possède sa propre signification, mais acquiert des dimensions supplémentaires lorsqu'elle est mise en relation avec d'autres images.
-1. Les sous-ensembles significatifs: Comment certains groupements d'images constituent des "parties" cohérentes qui transmettent un message spécifique au sein de l'ensemble plus large.
-1. Les éléments visuels récurrents: La façon dont certains motifs deviennent des unités méréologiques structurant la collection.
-<strong>La relation entre l'image individuelle et la collection</strong>: Une image isolée possède sa propre signification, mais acquiert des dimensions supplémentaires lorsqu'elle est mise en relation avec d'autres images.
-
-<strong>Les sous-ensembles significatifs</strong>: Comment certains groupements d'images constituent des "parties" cohérentes qui transmettent un message spécifique au sein de l'ensemble plus large.
-
-<strong>Les éléments visuels récurrents</strong>: La façon dont certains motifs deviennent des unités méréologiques structurant la collection.
-
-
-#### Le raisonnement métavisuel
-
-Le raisonnement métavisuel, qui consiste à analyser les relations entre les images au-delà de leur contenu individuel, s'appuie sur plusieurs opérations:
-
-- Catégorisation: Identifier les principes d'organisation des images
-- Contextualisation: Replacer chaque image dans son rapport aux autres
-- Abstraction: Dégager des motifs invisibles au niveau de l'image individuelle
-
-#### Opérations rhétoriques dans l'analyse scientifique des archives visuelles
-
-Pour produire des informations scientifiques à partir d'une collection d'images, plusieurs opérations rhétoriques sont employées:
-
-1. Juxtaposition: Révéler des similarités ou différences par la mise en parallèle
-1. Série et séquence: Organiser les images pour dégager des tendances ou ruptures
-1. Synecdoque visuelle: Utiliser certaines images comme représentatives d'ensembles plus larges
-1. Métaphore structurelle: Employer des structures conceptuelles pour représenter les relations entre images
-1. Échantillonnage représentatif: Sélectionner des sous-ensembles reflétant les propriétés de la collection entière
-Ces opérations transforment une accumulation d'images en un corpus structuré produisant des connaissances scientifiques sur les phénomènes visuels, les pratiques culturelles ou les évolutions historiques qu'elles documentent.
-
-
-#### Conclusion
-
-La méréologie, née dans le domaine de la logique formelle, s'est révélée être un cadre conceptuel exceptionnellement fertile pour diverses disciplines. Son application à l'analyse culturelle, à la linguistique cognitive, à l'ontologie informatique et particulièrement à l'étude des archives visuelles démontre sa puissance pour comprendre les relations complexes entre les parties et les ensembles dans de multiples domaines de la connaissance.
-
-En offrant une méthodologie pour analyser comment les significations émergent non seulement des éléments individuels mais aussi de leurs interactions, la méréologie constitue un outil précieux pour la recherche contemporaine dans les sciences humaines et sociales, ainsi que dans le domaine des technologies de l'information.
-
-<em>contenu généré par une IA générative</em>
 
 [Retour en haut](#)
 
