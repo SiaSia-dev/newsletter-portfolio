@@ -6,26 +6,22 @@
 
 ### 📌 Comment lire... la citrouille de Cendrillon
 
-![Comment lire... la citrouille de Cendrillon](img/CarnetBali3.png)
+![Comment lire... la citrouille de Cendrillon](img/Cinderella.jpg)
 
 #### Comment lire... la citrouille de Cendrillon
 
-
 #### L'identité du lecteur
 
-Le petit buzz autour de Cluely ([voir post "Cluely : de ton entretien d'embauche à ton rancard!"]()) renvoie à des problématiques identitaires marquées et très actuelles, à travers la promotion d'un produit IA censé "tricher sur tout" ! Et bien que cette vidéo reste dans un modèle <em>"mâle, (blanc), de culture standard"</em>, ce télescopage entre marketing &amp; litterature se tente.
-
-[voir post "Cluely : de ton entretien d'embauche à ton rancard!"]()
+Le petit buzz autour de Cluely ([voir après le post "Cluely : de ton entretien d'embauche à ton rancard!"](#cluely--de-ton-entretien-dembauche-à-ton-rancard-)) renvoie à des problématiques identitaires marquées et très actuelles, à travers la promotion d'un produit IA censé "tricher sur tout" ! Et bien que cette vidéo reste dans un modèle <em>"mâle, (blanc), de culture standard"</em>, ce télescopage entre marketing &amp; litterature se tente.
 
 Dans la critique littéraire contemporaine, la lecture impersonnelle fondée sur des critères esthétiques objectifs est rejetée au profit d'une approche qui valorise l'identité du lecteur.
 Cette lecture de William Marx du travail d'Elaine Castillo ("How to read now", 2022) met en perspective toute cette complexité identitaire américaine, mais aussi les projections associées à toutes formes de domination.
 
-Cela faisait alors écho à un échange avec une de mes élèves de 3eme qui lisait un passage des <em>Misérables</em> et transposait sur le même plan injustice sociale et colonisation en Nouvelle-Calédonie : pour elle, la farine sur le visage du boulanger était le symbole de la domination.
+*Cela faisait alors écho à un échange avec une de mes élèves de 3eme qui lisait un passage des <em>Misérables</em> et transposait sur le même plan injustice sociale et colonisation en Nouvelle-Calédonie : pour elle, la farine sur le visage du boulanger était le symbole de la domination.*
 
 Son explication était comme la citrouille d'Elaine Castillo, parfaitement cohérente avec sa réalité, et ne toujours pas tenir compte de ses réalités est très justement ce que reproche cette auteur ; même si son point de vue m'apparaît excessif, il reste très drôle (j'aurai aimé ajouté pertinent mais je ne l'ai pas encore lue)
 
 Heureusement, l'écriture permet cette liberté et reste un moteur de changements. Je vous en laisse juge.
-
 
 #### La citrouille de Cendrillon
 
@@ -34,8 +30,9 @@ Chaire Littératures comparées</em>
 
 <em>Dans le régime de lecture contemporain d’inspiration progressiste et décoloniale, jamais le lecteur ne saurait oublier qui il est et d’où il lit. On assiste à la fin de l’idée d’une lecture impersonnelle des œuvres, qui dominait la critique littéraire formaliste, à savoir une lecture fondée sur des critères esthétiques objectivables, sur des paramètres formels universalisables, généralisables à toutes les cultures. La dépersonnalisation du lecteur est désormais considérée comme l’ultime subterfuge du « suprémacisme blanc » (Castillo) pour asseoir sa domination et maintenir dans la soumission les populations racisées. Pour la critique décoloniale, en effet, le lecteur idéal prévu par les grands textes canoniques européens, le « lector in fabula » (Eco), est un lecteur blanc, mâle, hétérosexuel, de culture standard.</em>
 
-[Retour en haut](#)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EdGh7Lz02zg?si=qiE40bXaqn2bLSWK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+[Retour en haut](#)
 
 ---
 
@@ -45,11 +42,9 @@ Chaire Littératures comparées</em>
 
 #### Prototype CRM Relations Entreprises
 
-
 #### Présentation
 
 Une application de démonstration pour la gestion de la relation client (CRM), spécialement conçue pour le suivi des partenariats avec les entreprises, offrant une interface intuitive et des fonctionnalités complètes d'analyse et de reporting.
-
 
 #### Fonctionnalités Principales
 
@@ -66,31 +61,24 @@ Une application de démonstration pour la gestion de la relation client (CRM), s
 - Plotly et Matplotlib pour les visualisations
 - Stockage de données CSV (extensible à des bases de données)
 - Interface responsive avec CSS personnalisé
-<img alt="CRM Relations Entreprises" src="/img/crm.jpg"/>
-
 
 #### Lien du Projet
 
 [Explorer Démo CRM Relations Entreprises](https://crm-relations.streamlit.app/)
 
-[Explorer Démo CRM Relations Entreprises](https://crm-relations.streamlit.app/)
-
 [Retour en haut](#)
-
 
 ---
 
-### 📌 Match'Emploi - Mission Locale
+### 📌 Match'Emploi 
 
-![Match'Emploi - Mission Locale](img/hand-819279_640.jpg)
+![Match'Emploi ](img/hand-819279_640.jpg)
 
-#### Match'Emploi - Mission Locale
-
+#### Match'Emploi
 
 #### Présentation
 
 Il s'agit d'un prototype (!!) de mise en relation entre candidats et offres d'emploi, développée avec une interface intuitive et des algorithmes de matching.
-
 
 #### Fonctionnalités Principales
 
@@ -107,17 +95,12 @@ Il s'agit d'un prototype (!!) de mise en relation entre candidats et offres d'em
 - Plotly et Matplotlib pour les visualisations
 - Algorithmes de calcul de similarité (cosinus)
 - CSS personnalisé pour l'interface utilisateur
-<img alt="Match'Emploi" src="/img/hand-819279_640.jpg"/>
-
 
 #### Lien du Projet
 
 [Explorer l'Application Match'Emploi](https://app-matching-emploi.streamlit.app/)
 
-[Explorer l'Application Match'Emploi](https://app-matching-emploi.streamlit.app/)
-
 [Retour en haut](#)
-
 
 ---
 
@@ -127,15 +110,12 @@ Il s'agit d'un prototype (!!) de mise en relation entre candidats et offres d'em
 
 #### Mini-buzz avec Cluely
 
-
-#### Cluely : de ton entretien d'embauche à ton rancard !
+#### Cluely : de ton entretien d'embauche à ton rancard
 
 La vidéo présente ce jeune entrepreneur, Roy Lee, qui fait le buzz actuellement pour avoir triché sur des entretiens d'embauche, et qui se met ici en scène, se faisant mousser auprès de son <em>date</em> du moment grâce à son outil <em>Cluely</em> : un outil IA pour <em>“cheat on everything.”</em> [<em>"tricher sur tout"</em> - leur slogan (?!)]
 
-[](https://twitter.com/im_roy_lee/status/1914061483149001132)
-<em>lien dans l'image</em>
-
-[](https://twitter.com/im_roy_lee/status/1914061483149001132)
+[![img alt text](img/Cluely.jpg)](https://twitter.com/im_roy_lee/status/1914061483149001132)
+*lien dans l'image*
 
 L'histoire fait sourire... alala ces Américains (ou les hommes en général), l'autodérison dont fait preuve la nouvelle génération est plus qu'appréciable, bien que <em>sous la blague le pavé</em> : son bluff interpelle car son outil IA reste basé sur de l'apprentissage automatique, rien de révolutionnaire, mais le principe assumé de tricher pour réussir pose question ou devrait poser question.
 
@@ -151,9 +131,9 @@ Mais c'est en tombant sur l'historique de [l'association AURORE](https://www.aur
 
 Fondée en 1872 à Paris et reconnue d'utilité publique en 1875, les statuts de cette association sont ainsi définis :
 
-[ref](https://www.aurore.asso.fr/historique)
+*« La société a pour but de ramener **aux habitudes d’une vie honnête et laborieuse**...lui paraissent susceptibles de **revenir au bien** »* [ref](https://www.aurore.asso.fr/historique)
 
-Là où je veux en venir... bien que cabossée, notre consicence sociétale (notre pacte social) se fonde aussi sur ces principes d'honnêteté et de labeur, depuis au moins le 19ème siècle.
+Là où je veux en venir... bien que cabossée, notre conscience sociétale (notre pacte social) se fonde aussi sur ces principes d'honnêteté et de labeur, depuis au moins le 19ème siècle.
 
 Même si je me base d'un point de vue "vieux continent", les Etats-Unis partage aussi ces mêmes principes.
 
@@ -169,7 +149,6 @@ Conclusion : l'outil IA n'est vraiment pas un problème dans nos vies.
 
 [Retour en haut](#)
 
-
 ---
 
 ### 📌 Journal d'Apprentissage - Recherche d'Emploi
@@ -178,11 +157,9 @@ Conclusion : l'outil IA n'est vraiment pas un problème dans nos vies.
 
 #### Journal d'Apprentissage - Recherche d'Emploi
 
-
 #### Présentation
 
 Une demo pour du suivi personnalisé dans l'accompagnement des chercheurs d'emploi dans leur parcours d'apprentissage et de développement professionnel, offrant un espace structuré pour documenter leur progression et optimiser leur démarche.
-
 
 #### Fonctionnalités Principales
 
@@ -200,26 +177,18 @@ Une demo pour du suivi personnalisé dans l'accompagnement des chercheurs d'empl
 - Plotly pour les visualisations interactives
 - Stockage JSON pour les données utilisateur
 - Interface responsive avec CSS personnalisé
-<img alt="Journal d'Apprentissage" src="/img/dream-job-4453054_640.jpg"/>
-
 
 #### Lien du Projet
 
 [Explorer l'Application Journal d'Apprentissage](https://app-atelier-emploi.streamlit.app/)
 
-[Explorer l'Application Journal d'Apprentissage](https://app-atelier-emploi.streamlit.app/)
-
 [Retour en haut](#)
-
 
 ---
 
 ### 📌 Les animaux n'ont pas besoin de chef
 
 ![Les animaux n'ont pas besoin de chef](img/pas.jpg)
-
-#### Les animaux n'ont pas besoin de chef
-
 
 #### Concept d'auto-organisation
 
@@ -233,8 +202,9 @@ Dans un contexte IA, l'auto-organisation est un concept important dans l'apprent
 
 Cette vidéo est une bonne introduction indirecte au sujet.
 
-[Retour en haut](#)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PLh5zhvpXmw?si=D6QPPoBApob_0BkU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+[Retour en haut](#)
 
 ---
 
@@ -242,13 +212,13 @@ Cette vidéo est une bonne introduction indirecte au sujet.
 
 > "L'innovation naît à l'intersection des disciplines, là où la créativité rencontre la technologie."
 
-## 📱 Restons connectés !
+## 📱 Restons connectés
 
 **Envie d'explorer de nouveaux horizons numériques ?**
 
 — [Portfolio Complet](https://portfolio-af-v2.netlify.app/)  
 — [Me Contacter sur LinkedIn](https://www.linkedin.com/in/alexiafontaine)
 
-#Innovation #TechCreative #DataScience #DigitalTransformation #CreativeTech
+# Innovation #TechCreative #DataScience #DigitalTransformation #CreativeTech
 
 © 2025 Alexia Fontaine - Tous droits réservés
