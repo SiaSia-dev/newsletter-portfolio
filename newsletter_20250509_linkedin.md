@@ -1,4 +1,4 @@
-# 📰 Newsletter Portfolio - 10/05/2025
+# 📰 Newsletter Portfolio - 09/05/2025
 
 ## Récits visuels, horizons numériques : Chaque newsletter, un voyage entre données, créativité et découvertes 🚀
 
