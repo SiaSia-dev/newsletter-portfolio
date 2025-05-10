@@ -4,115 +4,127 @@
 
 ---
 
-### 📌 Model Context Protocol
+### 📌 Mini-buzz avec Cluely
 
-![Model Context Protocol](img/MCP.png)
+![Mini-buzz avec Cluely](img/Cluely.jpg)
 
-#### Model Context Protocol
-
-
-#### MCP c'est quoi ?
-
-On pourrait traduire cela par <strong>Procotole de Contexte de Modèle</strong>, et en d'autres termes, il s'agit d'un moyen standardisé permettant aux applications ou à des sources de données externes de les connecter à vos modèles IA.
-
-Vous pouvez accéder à la documentation : [Model Context Protocol Documentation]()
-
-[Model Context Protocol Documentation]()
-
-<em>L'exemple le plus parlant serait par exemple de connecter votre projet GITHUB à votre LLM habituel (ChatGPT, Claude, Mistral, etc.)</em>*
-
-...Vous voyez le potentiel en termes d'intégration ?!
-
-Cela fait en tout cas son effet dans le domaine, il s'agit ici aussi d'une architecture modulaire et cette facilité d'accès aux connaissances s'annonce prometteuse.
-
-<img alt="MCP" src="/img/MCP.png"> <em>source : Techcommunity, [article du 27/03/2025 de Sharda_Kaur](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564)</em></img>
-
-[article du 27/03/2025 de Sharda_Kaur](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564)
-
-Evidemment, les entreprises du secteur vous propose déjà tout clé en main, pratique et sécurisant, mais il faut aussi garder en tête que ces solutions sont une délégation supplémentaire par cette possibilité d'accéder à des informations en temps réel.
-
-On rentre clairement dans le domaine des DevOps... et du cloud. Il s'agit plus d'architecture, de gestion de projet, d'équipe, de moyens : l'IA oblige à restructurer l'organisation du travail pour avoir les résultats escomptés ; il est évident que tout dépendra à chaque fois des besoins, mais la montée en compétences est clairement élévée.
-
-[Retour en haut](#)
+#### Mini-buzz avec Cluely
 
 
----
+#### Cluely : de ton entretien d'embauche à ton rancard !
 
-### 📌 l'art du réseau social
+La vidéo présente ce jeune entrepreneur, Roy Lee, qui fait le buzz actuellement pour avoir triché sur des entretiens d'embauche, et qui se met ici en scène, se faisant mousser auprès de son <em>date</em> du moment grâce à son outil <em>Cluely</em> : un outil IA pour <em>“cheat on everything.”</em> [<em>"tricher sur tout"</em> - leur slogan (?!)]
 
-![l'art du réseau social](img/logos-reseau-social.avif)
+[](https://twitter.com/im_roy_lee/status/1914061483149001132)
+<em>lien dans l'image</em>
 
-#### l'art du réseau social
+[](https://twitter.com/im_roy_lee/status/1914061483149001132)
 
+L'histoire fait sourire... alala ces Américains (ou les hommes en général), l'autodérison dont fait preuve la nouvelle génération est plus qu'appréciable, bien que <em>sous la blague le pavé</em> : son bluff interpelle car son outil IA reste basé sur de l'apprentissage automatique, rien de révolutionnaire, mais le principe assumé de tricher pour réussir pose question ou devrait poser question.
 
-#### L'art du réseau social?
+Notre propos n'est pas de philosopher sur le caractère ethique de la tricherie, <strong>tout le monde triche dans la vie</strong>.
 
-<img alt="Reseau social" src="/img/logos-reseau-social.avif">{width=100px} Je suis toujours surprise par la qualité de certains posts sur les réseaux sociaux, reflet de nos sociétés etc. Et on le sait tous pourtant : <em>"...si c'est gratuit, c'est nous le produit !"</em></img>
+La <em>vraie vie</em>, c'est d'ailleurs ce que démontre magistralement Roy Lee dans sa vidéo de teasing avec son rancard : <strong>l'IA est finalement parfaitement intégrable à <em>la vie normale</em> (jolie projection pour sa promotion de produit!)</strong>
 
-Cette piqure de rappel ne remet absolument pas en cause mon usage des réseaux sociaux, je joue le jeu comme tout le monde, et dans ces flux d'informations, j'adopte comme tout à chacun <em>ma stratégie de comm'</em> !
+...Ces tours de <em>hold-up mental</em> sont fascinants.
 
-Les enjeux sont pourtant non-négligeables puisque nous fournissons, gratuitement, à notre tour, tous ces contenus.
+Mais c'est en tombant sur l'historique de [l'association AURORE](https://www.aurore.asso.fr/association) qui aide les personnes les plus fragiles, et privées de <em>vie normale</em>, que la démarche m'a semblé plus difficile, dans les deux cas.
 
-Il me semble que la réutilisation des contenus serait une solution équitable pour maintenir une présence numérique avec moins de contraintes.
+[l'association AURORE](https://www.aurore.asso.fr/association)
 
-Sachant qu'un contenu à une durée de vue d'une heure environ sur un réseau social, cet ordre de grandeur rend le sujet concret.
+Fondée en 1872 à Paris et reconnue d'utilité publique en 1875, les statuts de cette association sont ainsi définis :
 
-En me basant sur un format de portfolio, j'organise mon profil numérique.
+[ref](https://www.aurore.asso.fr/historique)
 
-Cet outil de présentation professionnelle est un moyen de documentation et de réflexion sur son parcours avec la possibilité de le mettre à jour de manière continue : compétences, expériences et projets sont ainsi mises en avant.
+Là où je veux en venir... bien que cabossée, notre consicence sociétale (notre pacte social) se fonde aussi sur ces principes d'honnêteté et de labeur, depuis au moins le 19ème siècle.
 
-Cette structuration des contenus me permet ensuite de développer une application pour <em>"mettre en vitrine"</em> mes contenus.
+Même si je me base d'un point de vue "vieux continent", les Etats-Unis partage aussi ces mêmes principes.
 
-Ainsi, en appliquant [le processus COPE - newsletter 03/04/2025](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250403.html#project-cope-process-documentation), nous avons opté pour une newsletter.
+Alors prolongeons cette lecture vers la période trouble que traverse actuellement ce pays dans sa recherche identitaire : <strong>dans un système plombé par un racisme dit systémique, finalement pourquoi être honnête et dans l'effort? Dans ce cas, on doit aussi en déduire que, dans sa logique, la fin justifie les moyens.</strong>
 
-[le processus COPE - newsletter 03/04/2025](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250403.html#project-cope-process-documentation)
+...C'est un pari à 5.3 millions de dollars et cet étudiant vient de Columbia. Et on comprend aussi pourquoi il a été suspendu par son université.
 
-De cette manière, nous répondions à cette injonction de présence sur les réseaux sociaux tout en gardant un "cadre" et éviter l'éparpillement avec les réseaux sociaux.
+Les forces idéologiques que font émerger les outils IA sont conséquents, ces crises identitaires ne sont pas propres aux Etats-Unis, nos repères peuvent sembler modifiés, on aurait tort de les voir uniquement comme de simples produits en plus dans notre panoplie.
 
-Et surtout, cela me permet de garder une copie de mes contenus et d'assurer l'historique de votre activité sur les réseaux sociaux.
+Roy Lee compare d'ailleurs son outil à la calculatrice ou au correcteur orthographique (<em>c'est déjà moins glamour!</em>) mais il a raison sur ce point : nous déléguons ces tâches cognitives à des machines et plus personne aujourd'hui n'y voit à redire (...dans une vie normale)
+
+Conclusion : l'outil IA n'est vraiment pas un problème dans nos vies.
 
 [Retour en haut](#)
 
 
 ---
 
-### 🎭 Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
+### 📌 Match'Emploi - Mission Locale
 
-![Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*](img/45342256_10156693313264757_760610679165026304_n.jpg)
+![Match'Emploi - Mission Locale](img/hand-819279_640.jpg)
 
-#### Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
-
-
-#### Résumé // Lev MANOVTICH, The Science of Culture ? in Cultural Analysis
-
-L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'analyse de vastes ensembles de données culturelles.
-[Lien vers l'ouvrage en ligne : Cultural Analysis](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
-
-[Lien vers l'ouvrage en ligne : Cultural Analysis](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
-
-<strong>#analyse_quantitative #big_data #medias</strong>
-
-<em>"L'idée qu'un groupe ou une personne a des comportements et des goûts culturels cohérents avait du sens dans les sociétés anciennes et modernes. Mais avec les nombreux choix culturels disponibles aujourd'hui, nous pourrions découvrir que l'idée d'un goût stable ou d'une « personnalité culturelle » stable est une illusion."</em>
-
-➡️l'illusion du goût
-➡️la classification n'est toujours pas l'explication
-➡️Nouveau paradigme? D'où l'importance "<em>And here the concepts and methods of sampling, feature extraction, and exploratory data analysis are more important than data size"</em>
+#### Match'Emploi - Mission Locale
 
 
-#### Structures cognitives & structures sociales
+#### Présentation
 
-Nos structures cognitives sont celles de nos structures sociales (La distinction, 1979)
-
-Pour reprendre R.MOURIEUX, <em>"Entre réalisme populaire et l'idéalisme bourgeois se situe le goût moyen des couches moyennes, fait de refus des extrêmes et de mimétisme de l'immédiat supérieur"</em> 1.https://www.persee.fr/doc/sotra_0038-0296_1980_num_22_4_1655_t1_0475_0000_2
+Il s'agit d'un prototype (!!) de mise en relation entre candidats et offres d'emploi, développée avec une interface intuitive et des algorithmes de matching.
 
 
-#### Les séries de Claude Monet (1840-1926)
+#### Fonctionnalités Principales
 
-<em>Du 22 septembre 2010 au 24 janvier 2011 - Paris, Galeries nationales du Grand Palais</em>
+- Algorithme de matching basé sur les compétences et préférences
+- Gestion complète des profils jeunes et des offres d'emploi
+- Suivi des mises en relation et des candidatures
+- Tableaux de bord statistiques et analytiques
+- Système de filtres multicritères avancés
 
-➡️ Notons aussi le rapport entre <em>expérience sensible &amp; image</em> (<strong>une image est une densité de probabilités dans un espace de plus grande dimension</strong>) Remarquez que dès le potron-minet, la lumière sur la pierre d'une façade de cathédrale reste une expérience sensible comparable à l'image - les séries de MONET ça ne fait pas de mal non plus ! 🙂
+#### Technologies Utilisées
 
-<em>Posté sur Linkedin du 28 mars 2025</em>
+- Python (Streamlit)
+- Pandas pour la gestion des données
+- Plotly et Matplotlib pour les visualisations
+- Algorithmes de calcul de similarité (cosinus)
+- CSS personnalisé pour l'interface utilisateur
+<img alt="Match'Emploi" src="/img/hand-819279_640.jpg"/>
+
+
+#### Lien du Projet
+
+[Explorer l'Application Match'Emploi](https://app-matching-emploi.streamlit.app/)
+
+[Explorer l'Application Match'Emploi](https://app-matching-emploi.streamlit.app/)
+
+[Retour en haut](#)
+
+
+---
+
+### 📌 Comment lire... la citrouille de Cendrillon
+
+![Comment lire... la citrouille de Cendrillon](img/45342256_10156693313264757_760610679165026304_n.jpg)
+
+#### Comment lire... la citrouille de Cendrillon
+
+
+#### L'identité du lecteur
+
+Le petit buzz autour de Cluely ([voir post "Cluely : de ton entretien d'embauche à ton rancard!"]()) renvoie à des problématiques identitaires marquées et très actuelles, à travers la promotion d'un produit IA censé "tricher sur tout" ! Et bien que cette vidéo reste dans un modèle <em>"mâle, (blanc), de culture standard"</em>, ce télescopage entre marketing &amp; litterature se tente.
+
+[voir post "Cluely : de ton entretien d'embauche à ton rancard!"]()
+
+Dans la critique littéraire contemporaine, la lecture impersonnelle fondée sur des critères esthétiques objectifs est rejetée au profit d'une approche qui valorise l'identité du lecteur.
+Cette lecture de William Marx du travail d'Elaine Castillo ("How to read now", 2022) met en perspective toute cette complexité identitaire américaine, mais aussi les projections associées à toutes formes de domination.
+
+Cela faisait alors écho à un échange avec une de mes élèves de 3eme qui lisait un passage des <em>Misérables</em> et transposait sur le même plan injustice sociale et colonisation en Nouvelle-Calédonie : pour elle, la farine sur le visage du boulanger était le symbole de la domination.
+
+Son explication était comme la citrouille d'Elaine Castillo, parfaitement cohérente avec sa réalité, et ne toujours pas tenir compte de ses réalités est très justement ce que reproche cette auteur ; même si son point de vue m'apparaît excessif, il reste très drôle (j'aurai aimé ajouté pertinent mais je ne l'ai pas encore lue)
+
+Heureusement, l'écriture permet cette liberté et reste un moteur de changements. Je vous en laisse juge.
+
+
+#### La citrouille de Cendrillon
+
+<em>Professeur : William Marx
+Chaire Littératures comparées</em>
+
+<em>Dans le régime de lecture contemporain d’inspiration progressiste et décoloniale, jamais le lecteur ne saurait oublier qui il est et d’où il lit. On assiste à la fin de l’idée d’une lecture impersonnelle des œuvres, qui dominait la critique littéraire formaliste, à savoir une lecture fondée sur des critères esthétiques objectivables, sur des paramètres formels universalisables, généralisables à toutes les cultures. La dépersonnalisation du lecteur est désormais considérée comme l’ultime subterfuge du « suprémacisme blanc » (Castillo) pour asseoir sa domination et maintenir dans la soumission les populations racisées. Pour la critique décoloniale, en effet, le lecteur idéal prévu par les grands textes canoniques européens, le « lector in fabula » (Eco), est un lecteur blanc, mâle, hétérosexuel, de culture standard.</em>
 
 [Retour en haut](#)
 
@@ -160,130 +172,170 @@ Nous espérons participer à <strong>ce mouvement de partage des savoirs et des 
 
 ---
 
-### 📌 Journal d'Apprentissage - Recherche d'Emploi
+### 📌 L'Art des Mots et des Données
 
-![Journal d'Apprentissage - Recherche d'Emploi](img/dream-job-4453054_640.jpg)
+![L'Art des Mots et des Données](img/CulturalAnalysis-subcultures.png)
 
-#### Journal d'Apprentissage - Recherche d'Emploi
-
-
-#### Présentation
-
-Une demo pour du suivi personnalisé dans l'accompagnement des chercheurs d'emploi dans leur parcours d'apprentissage et de développement professionnel, offrant un espace structuré pour documenter leur progression et optimiser leur démarche.
+#### L'Art des Mots et des Données
 
 
-#### Fonctionnalités Principales
+#### Transformation des Données en Récits
 
-- Journal d'apprentissage réflexif et structuré
-- Suivi détaillé des candidatures et entretiens
-- Évaluation et progression des compétences clés
-- Gestion d'objectifs et plans d'action personnalisés
-- Profil professionnel complet et évolutif
-- Accès à des ressources et conseils ciblés
-
-#### Technologies Utilisées
-
-- Python (Streamlit)
-- Pandas pour l'analyse de données
-- Plotly pour les visualisations interactives
-- Stockage JSON pour les données utilisateur
-- Interface responsive avec CSS personnalisé
-<img alt="Journal d'Apprentissage" src="/img/dream-job-4453054_640.jpg"/>
+<img alt="Analyse Culturelle" src="/img/CulturalAnalysis-subcultures.png"/>
 
 
-#### Lien du Projet
+#### Concept Fondamental
 
-[Explorer l'Application Journal d'Apprentissage](https://app-atelier-emploi.streamlit.app/)
+L'écriture comme un outil alchimique de transformation des données complexes en récits captivants et accessibles.
 
-[Explorer l'Application Journal d'Apprentissage](https://app-atelier-emploi.streamlit.app/)
 
+#### Dimensions de la Transformation
+
+
+#### 1. Décryptage
+
+- Analyser les couches cachées des données
+- Identifier les narrations sous-jacentes
+- Extraire les insights significatifs
+
+#### 2. Contextualisation
+
+- Ancrer les données dans des réalités humaines
+- Révéler les contextes sociaux et culturels
+- Donner du sens aux chiffres
+
+#### 3. Narration
+
+- Construire des récits fluides et engageants
+- Traduire le technique en accessible
+- Créer des connexions émotionnelles
+
+#### Processus Méthodologique
+
+
+#### Analyse Rigoureuse
+
+- Décorticage statistique précis
+- Identification des tendances
+- Exploration des corrélations complexes
+
+#### Contextualisation Narrative
+
+- Intégration des dimensions humaines
+- Mise en perspective historique
+- Exploration des implications culturelles
+
+#### Visualisation Éloquente
+
+- Transformation graphique des données
+- Création de représentations intuitives
+- Design d'information performant
+
+#### Communication Stratégique
+
+- Adaptation aux différents publics
+- Vulgarisation scientifique
+- Transmission claire et impactante
+
+#### Compétences Clés
+
+
+#### Techniques
+
+- Analyse de données avancée
+- Rédaction scientifique
+- Visualisation de données
+- Traitement statistique
+
+#### Créatives
+
+- Storytelling
+- Narration interdisciplinaire
+- Design de l'information
+- Communication visuelle
+
+#### Philosophie
+
+"Les données sont des mots en attente, les mots sont des données vivantes."
+
+
+#### Applications
+
+- Rapports analytiques
+- Articles de recherche
+- Présentations stratégiques
+- Contenus de médiation scientifique
+
+#### Impact
+
+- Rendre l'information accessible
+- Démocratiser la compréhension complexe
+- Inspirer par la clarté
 [Retour en haut](#)
 
 
 ---
 
-### 📌 Architecture Modulaire à Base de Contenu
+### 📌 l'art du réseau social
 
-![Architecture Modulaire à Base de Contenu](img/45342256_10156693313264757_760610679165026304_n.jpg)
+![l'art du réseau social](img/1742724497786?e=1749686400&v=beta&t=Q3U9D81RrGWmYlM-cmITQVq2_ClkcTO3YmZ2BWdobR0)
 
-#### Architecture Modulaire à Base de Contenu
+#### l'art du réseau social
 
-L'<strong>Architecture Modulaire à Base de Contenu</strong> (ou "Content-Driven Modular Architecture") représente une approche moderne et flexible pour concevoir des sites web et des applications. Cette méthodologie place le contenu au centre du processus de développement, en le séparant strictement de la présentation.
+[ ](/company/www-linkedin-com-in-alexiafontaine/)
 
-<strong>Mots-clés:</strong> développement, architecture, contentdriven, méthodologie, applications
-
-
-#### Principes fondamentaux
-
-Cette architecture repose sur plusieurs principes clés qui la rendent particulièrement efficace pour les sites riches en contenu comme les portfolios et les blogs :
-
-<strong>Mots-clés:</strong> architecture, portfolios, principes, plusieurs
-
-Le contenu est stocké dans des fichiers indépendants (souvent au format Markdown) avec des métadonnées standardisées (frontmatter), complètement séparés du code HTML, CSS et JavaScript qui définit leur présentation. Cette séparation permet à chaque aspect d'évoluer indépendamment.
-
-<strong>Mots-clés:</strong> standardisées, indépendance, présentation
-
-Les sections et composants peuvent être facilement réutilisés, réorganisés ou recombinés pour créer de nouvelles pages ou expériences. Cette flexibilité permet d'assembler rapidement différentes vues à partir des mêmes éléments de base.
-
-<strong>Mots-clés:</strong> expériences, réorganisation, flexibilité
-
-Modifier un contenu n'exige pas de toucher au code HTML principal. Les rédacteurs de contenu peuvent se concentrer uniquement sur les fichiers Markdown pertinents, sans risquer d'altérer la structure ou le fonctionnement du site.
-
-<strong>Mots-clés:</strong> fonctionnement, pertinents, concentrer, uniquement, rédacteurs
-
-Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier Markdown. Cette approche réduit considérablement la friction pour enrichir le site avec de nouveaux contenus.
-
-<strong>Mots-clés:</strong>  contenus
+[ ](/company/www-linkedin-com-in-alexiafontaine/)
 
 
-#### Implémentation pratique
+#### NEWSLETTER d'Alexia Fontaine
 
-Pour les composants simples, le Markdown pur suffit généralement. Cependant, pour les composants plus complexes comme les grilles de compétences, les cartes de services, ou les processus multi-étapes, l'HTML embarqué dans Markdown offre le meilleur compromis :
+[NEWSLETTER d'Alexia Fontaine](/company/www-linkedin-com-in-alexiafontaine/)
 
-Cette approche hybride permet de préserver le rendu visuel des composants complexes tout en profitant pleinement de la modularité du système.
+3 avril 2025
 
-<strong>Mots-clés:</strong> multiétapes, compétences, composants, markdown, modularité, composants, complexes
+<img alt="" src="/img/IA_Fleur_au_fusil.png">
+<em>une image générée par ChatGPT pour évoquer la fleur au fusil</em></img>
+
+Je me suis récemment lancée dans cette idée de maintenir ma présence sur les réseaux sociaux en générant une newsletter hébergée sur GitHub avec comme "source" de contenus mon portfolio : l'objectif d'une <em>réutilisation optimisée,</em> selon le principe COPE.
+
+<img alt="" src="https://media.licdn.com/dms/image/v2/D4E12AQEo33g-hGqD5Q/article-inline_image-shrink_1500_2232/B4EZX7Txv8HUAo-/0/1743678021400?e=1749686400&amp;v=beta&amp;t=M0QA9SkX_4k7pnBXcuKXkfpbf2vThrLFfB9zovCaZWc"/>
+
+Processus d'éditorialisation de contenus
+
+Une manière de <strong>recycler ce que l'on produit sur le web</strong> , et plus particulièrement les réseaux sociaux, ces questions me semblent assez pertinentes <em>(un contenu a une durée de vue d'1 heure environ...)</em>, alors voyez votre intérêt : <strong>vous y passerez moins de temps ! </strong><em>(...peut-être pas au début </em>🥲 <em>)</em>
+
+<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQFldAJ8GTOoIA/article-inline_image-shrink_1000_1488/B56ZX63.cmGcAQ-/0/1743670733081?e=1749686400&amp;v=beta&amp;t=I39-KjRS6yW8IOD__mcK_q9ETx9-cv-DsDNPla_tqZc"/>
+
+Workflow de ce processus d'éditorialisation
+
+Le dispositif est opérationnel de bout en bout : pour GitHub tant que c'est public, il valide, et les plateformes LinkedIn - GitHub sont parfaitement interopérables. Par contre, les restrictions des API, c'est une autre danse : on ne lutte pas face à la restriction des doublons !!
+
+Disons plus simplement que leur politique de contenus considère mon action comme du SPAM... Me voilà bien...
+
+- Au début, je me suis dit (magnifique photo au passage) :
+<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQGjo9byHXnfjw/article-inline_image-shrink_1000_1488/B56ZX6yMY.GQAQ-/0/1743669217270?e=1749686400&amp;v=beta&amp;t=udXYbuOL4uM0K4LC1nLzn9we9h8S18KJ3bmkkcpAe9E"/>
+
+La Jeune Fille à la Fleur (1967) de Marc RIBOUD
+
+- Et puis après :
+<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQFw23bjgwcf9g/article-inline_image-shrink_1000_1488/B56ZX6ymFkHEAQ-/0/1743669331220?e=1749686400&amp;v=beta&amp;t=F3_3wWxZop5X08yHcz9MieHNV3Ct8aHSjikrYHv3yJY"/>
+
+Game over World 😜
+
+Que ce soit en changeant le fichier d'appel html, les contenus ou en re-re-changeant le Token (et il semblerait que le problème vienne à présent plutôt de là!) : mon processus d'éditorialisation reste partiellement automatisé à ce stade... <em>"Et 'Michalak en attendant ..."</em>
+
+[  ](https://kroki.io/mermaid/svg/eNqFVs1u4zYQvvcpCCwW3QBMkQ3gQ12gRbBJmgDONtgmuQg50NLI5pomXf7YCeJ9gLxFj_W9b6AX6_BHohQnWwO2KXK-mfnmj6qF2pRzpi25Of2B4MdYfPhw2uymzpLKkY3SixqFDsjh4a_Eaj6bgX7C81KALOewBGm_BWT4ef-eXOEZk9wswZAKSDUQDUJJi9e4PXFWLZnlfzkYkxvlDBGIE05W3JDmb_LzfEtKrWRxLVBpzUuUVZLMYVohrmJcw_33lZ6sdPOPIbNmJ5udjnAJGyPAWtBbsoHpXKlF0TyvUSR4SX7n9sJN9xVfMelAbMkS_5kohmEIuyDuczS84yFuKFEulIv0k8H9g6h1f7-NbPNs2SpGFTntViyyiaYSoPiUFihlfPBXzb_W3AelFaxMcSkxxULEOLQyICsmSzDRdy8XAGsmeMUs3KgFyOIuPgWcI9bvkQmXC6guZQQO5DOPiSoXxR0GP-cPFaxBa-VeyWRLd6JmPoOebpTl6PYMBojM3RsJJrnxS6h8kX7FClq5qeDNjpQ-38TAknEJv8WabWVDcv9wfEtqpUsIMXw690ty7eFmTlhpORbIa8DPSiKQy-qcCyi-APqj8etJIuE5x-JBDrnmIs1sKVvHamIyhOszSqpHT7cLVUxia-c1HcERYFo8nj1wW5xI6VKiD32ae9EYRvq6V03eVcGiXJnrqzUbfEClYOxT_PtpbpeCwAM3tg1rPMi0nIFJ2CpuLcdo9gx1Gu5fIruoYkCxu16PKzq0Ejg0kIAX6tHKyFiIGlD1rRbFJ5TNDvx4-2USyWKpRXjn7RDYb-u0FQQwcAYukEFx9mC1L5O2sZTEiYOLi5urSVTdyQYkRPlTZtkAi83FrQZKfC9R7HX1Fax5kbKcn64Jw1lPaXQv1m_RBxinX3RukkpD_vGOac6kNcWZMYyHMc7rGjsYw4mE1vE4jiKc8wbrtB2WHTY145-uxMFinvr2MQPOGN6WS-qoJNnrhhDn0A69pH1ncgx1YAFRUir0UzqErXyKm92WaMheJoLMYbw7WlFZXyzoGxHUZNGLNRJfsodttvcWjeACixeQxaEM8XrLerDCGRehW5tnP8f222-Y93MuWdtBvWLspp9Qs-RAcSY1zLArdbyd3lCcAQFv4voD2hkTf4CuH2QPuuEShRd85R-i9OVMKkzT3qyJ8JZnHGL44DREXCR-MJz9zW6GlxIQsPhK8pjGXSmYMadQt15ikwsxflce10flMUWmeO-M3x3Vo7Q-3PDKzsfHq4dfhvhkP-E9uoevR_-Lx5Yc2K8-1kcdfjSqh_iPe_gKSm58NScHRgMCNTt6Q0HW0oaA5vzTXirTac9sy5l2iUgbfZn2LYL6VwA6uM5pewPQbojR3qyhaYLQ3gSg3XVGu5lK81ym3Rylg15Lwe37ld7BaHvt0nzx0Xhl0Nx4bXC9gv8Ags3IqQ) Diagramme du processus d'éditorialisation de contenus
+
+[  ](https://kroki.io/mermaid/svg/eNqFVs1u4zYQvvcpCCwW3QBMkQ3gQ12gRbBJmgDONtgmuQg50NLI5pomXf7YCeJ9gLxFj_W9b6AX6_BHohQnWwO2KXK-mfnmj6qF2pRzpi25Of2B4MdYfPhw2uymzpLKkY3SixqFDsjh4a_Eaj6bgX7C81KALOewBGm_BWT4ef-eXOEZk9wswZAKSDUQDUJJi9e4PXFWLZnlfzkYkxvlDBGIE05W3JDmb_LzfEtKrWRxLVBpzUuUVZLMYVohrmJcw_33lZ6sdPOPIbNmJ5udjnAJGyPAWtBbsoHpXKlF0TyvUSR4SX7n9sJN9xVfMelAbMkS_5kohmEIuyDuczS84yFuKFEulIv0k8H9g6h1f7-NbPNs2SpGFTntViyyiaYSoPiUFihlfPBXzb_W3AelFaxMcSkxxULEOLQyICsmSzDRdy8XAGsmeMUs3KgFyOIuPgWcI9bvkQmXC6guZQQO5DOPiSoXxR0GP-cPFaxBa-VeyWRLd6JmPoOebpTl6PYMBojM3RsJJrnxS6h8kX7FClq5qeDNjpQ-38TAknEJv8WabWVDcv9wfEtqpUsIMXw690ty7eFmTlhpORbIa8DPSiKQy-qcCyi-APqj8etJIuE5x-JBDrnmIs1sKVvHamIyhOszSqpHT7cLVUxia-c1HcERYFo8nj1wW5xI6VKiD32ae9EYRvq6V03eVcGiXJnrqzUbfEClYOxT_PtpbpeCwAM3tg1rPMi0nIFJ2CpuLcdo9gx1Gu5fIruoYkCxu16PKzq0Ejg0kIAX6tHKyFiIGlD1rRbFJ5TNDvx4-2USyWKpRXjn7RDYb-u0FQQwcAYukEFx9mC1L5O2sZTEiYOLi5urSVTdyQYkRPlTZtkAi83FrQZKfC9R7HX1Fax5kbKcn64Jw1lPaXQv1m_RBxinX3RukkpD_vGOac6kNcWZMYyHMc7rGjsYw4mE1vE4jiKc8wbrtB2WHTY145-uxMFinvr2MQPOGN6WS-qoJNnrhhDn0A69pH1ncgx1YAFRUir0UzqErXyKm92WaMheJoLMYbw7WlFZXyzoGxHUZNGLNRJfsodttvcWjeACixeQxaEM8XrLerDCGRehW5tnP8f222-Y93MuWdtBvWLspp9Qs-RAcSY1zLArdbyd3lCcAQFv4voD2hkTf4CuH2QPuuEShRd85R-i9OVMKkzT3qyJ8JZnHGL44DREXCR-MJz9zW6GlxIQsPhK8pjGXSmYMadQt15ikwsxflce10flMUWmeO-M3x3Vo7Q-3PDKzsfHq4dfhvhkP-E9uoevR_-Lx5Yc2K8-1kcdfjSqh_iPe_gKSm58NScHRgMCNTt6Q0HW0oaA5vzTXirTac9sy5l2iUgbfZn2LYL6VwA6uM5pewPQbojR3qyhaYLQ3gSg3XVGu5lK81ym3Rylg15Lwe37ld7BaHvt0nzx0Xhl0Nx4bXC9gv8Ags3IqQ)
+
+...Rétropédalage certes, mais le fait d'avoir <strong>modularisé le projet</strong> rend les modifications beaucoup plus aisées et donne une flexibilité à laquelle je n'avais pas pensé : séparer la génération de la newsletter et son stockage en deux dépôts distincts, finalement en extrapolant la séparation entre le fond et la forme à l'échelle des plateformes.
+
+Deux formats de sortie pour répondre aux exigences de la plateforme de publication, LinkedIn aura de toute façon toujours le dernier mot, puisque j'utilise sa plateforme.
 
 
-#### Avantages à long terme
+#### 📰 Newsletter Portfolio
 
-Au-delà des bénéfices immédiats, cette architecture offre des avantages substantiels sur le long terme :
-
-- Transitions technologiques facilitées - Le contenu peut être conservé même si le framework ou la technologie de présentation change
-- Versionning efficace - Les modifications de contenu sont clairement visibles dans les commits Git
-- Possibilités de migration accrues - Le contenu peut être facilement exporté vers d'autres systèmes
-- Optimisation du workflow - Les designers et développeurs peuvent travailler sur l'interface pendant que les rédacteurs créent le contenu
-Cette architecture représente une évolution naturelle des systèmes de gestion de contenu traditionnels, offrant davantage de flexibilité tout en conservant une structure claire et organisée.
-
-<strong>Mots-clés:</strong> architecture, flexibilité
-
-
-#### 1. Séparation du contenu et de la présentation
-
-Le contenu est stocké dans des fichiers indépendants (souvent au format Markdown) avec des métadonnées standardisées (frontmatter), complètement séparés du code HTML, CSS et JavaScript qui définit leur présentation. Cette séparation permet à chaque aspect d'évoluer indépendamment.
-
-<strong>Mots-clés:</strong> indépendance, standardisés, présentation
-
-
-#### 2. Composabilité
-
-Les sections et composants peuvent être facilement réutilisés, réorganisés ou recombinés pour créer de nouvelles pages ou expériences. Cette flexibilité permet d'assembler rapidement différentes vues à partir des mêmes éléments de base.
-
-<strong>Mots-clés:</strong> flexibilité
-
-
-#### 3. Maintenabilité
-
-Modifier un contenu n'exige pas de toucher au code HTML principal. Les rédacteurs de contenu peuvent se concentrer uniquement sur les fichiers Markdown pertinents, sans risquer d'altérer la structure ou le fonctionnement du site.
-
-<strong>Mots-clés:</strong> pertinents, rédacteurs
-
-
-#### 4. Évolutivité
-
-Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier Markdown. Cette approche réduit considérablement la friction pour enrichir le site avec de nouveaux contenus.
-
-<strong>Mots-clés:</strong> enrichir, contenus
+[📰 Newsletter Portfolio](https://siasia-dev.github.io/portfolio-newsletter/latest.html)
 
 [Retour en haut](#)
 
