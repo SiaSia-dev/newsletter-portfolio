@@ -17,7 +17,7 @@ def publish_simple_post():
     
     # Configuration
     access_token = os.environ.get('LINKEDIN_ACCESS_TOKEN')
-    company_id = os.environ.get('LINKEDIN_ORG_ID')
+    company_id = os.environ.get('LINKEDIN_COMPANY_ID')
     #person_id = os.environ.get('LINKEDIN_PERSON_ID')
 
     print(f"DEBUG: Access token présent: {bool(access_token)}")
