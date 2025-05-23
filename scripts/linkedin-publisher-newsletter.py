@@ -12,6 +12,50 @@ import string
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('simple_linkedin')
 
+def get_newsletter_content():
+    """Récupère le même contenu que dans l'issue"""
+    import requests
+    from bs4 import BeautifulSoup
+    
+    url = "https://siasia-dev.github.io/portfolio-newsletter/latest.html"
+    
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        
+        # Même extraction que dans le YML
+        sections = [
+            "LLM function calls don't scale; code orchestration is simpler, more effective de Jiquan Ngiam",
+            "MCP = Méta-API ?", 
+            "L'information obligée d'être créative",
+            "Implémentation de la stratégie COPE (Create Once, Publish Everywhere)",
+            "Architecture Modulaire à Base de Contenu",
+            "Méréologie comme cadre d'analyse"
+        ]
+        
+        content = ""
+        for i, section in enumerate(sections, 1):
+            if "LLM function" in section:
+                desc = "Retour d'expérience et proposition pour l'orchestration MCP"
+            elif "MCP" in section:
+                desc = "MCP est un orchestrateur d'API"
+            elif "information" in section:
+                desc = "La segmentation du web conduit à de nouvelles formes de régulation de l'information"
+            elif "COPE" in section:
+                desc = "Mise en place d'un système \"Create Once, Publish Everywhere\""
+            elif "Architecture" in section:
+                desc = "L'Architecture Modulaire à Base de Contenu"
+            else:
+                desc = "La méréologie comme cadre d'analyse"
+            
+            content += f"**{i}. {section}**\n{desc}\n\n"
+        
+        return content
+        
+    except:
+        return "Articles sur l'innovation technologique."
+
+
 def publish_simple_post():
     """Publie un post simple sur LinkedIn avec message engageant"""
     
@@ -27,43 +71,20 @@ def publish_simple_post():
     # Message simple et engageant avec identifiant unique
     date_str = datetime.now().strftime("%d/%m/%Y")
     unique_suffix = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
-    
-    # Messages variants pour éviter les doublons
-    messages = [
-        f"""📰 Newsletter SlowSia - {date_str}
+    newsletter_content = get_newsletter_content()
 
-🔍 Explorez mes derniers projets et réflexions numériques dans cette nouvelle édition.
+    message = f"""📰 Newsletter Portfolio - {date_str}
 
-Entre innovation, créativité et horizons technologiques.
+    La newsletter de cette semaine est arrivée !
 
-👀 Découvrez la newsletter complète :
-https://siasia-dev.github.io/portfolio-newsletter/latest.html
+    🔗 Liens principaux
+    - Version complète: https://siasia-dev.github.io/portfolio-newsletter/latest.html
+    - Archives: https://siasia-d ev.github.io/portfolio-newsletter/archives.html
 
-#newsletter #projets #innovation #tech #portfolio #{unique_suffix}""",
+    📋 Contenu de la newsletter
 
-        f"""🌟 Nouvelle édition SlowSia - {date_str}
-
-📚 Récits visuels, horizons numériques : un voyage entre créativité et innovation.
-
-💡 Articles variés sur l'innovation technologique et les projets créatifs.
-
-🔗 Lien : https://siasia-dev.github.io/portfolio-newsletter/latest.html
-
-#innovation #tech #creative #digital #portfolio #{unique_suffix}""",
-
-        f"""📊 SlowSia Newsletter - {date_str}
-
-🎯 Au carrefour de la technologie et de la créativité, explorez de nouveaux horizons numériques.
-
-✨ Une sélection de projets et analyses pour cette semaine.
-
-👉 https://siasia-dev.github.io/portfolio-newsletter/latest.html
-
-#tech #innovation #projets #newsletter #creation #{unique_suffix}"""
-    ]
-    
-    # Sélectionner un message aléatoire
-    message = random.choice(messages)
+    {newsletter_content}"""
+   
     
     # Données du post simple (pas d'image pour éviter les complications)
     post_data = {
