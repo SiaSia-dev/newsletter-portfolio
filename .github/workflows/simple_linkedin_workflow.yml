@@ -1,0 +1,50 @@
+name: Publier Newsletter sur LinkedIn
+
+on:
+  workflow_dispatch:
+  issues:
+    types: [labeled]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+      
+    - name: Installation des dépendances
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests bs4 python-dotenv
+      
+    - name: Publication sur LinkedIn
+      run: |
+        mkdir -p .linkedin_cache
+        python scripts/linkedin-publisher-newsletter.py
+      env:
+        LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
+        GB_USERNAME: ${{ secrets.GB_USERNAME }}
+        GB_REPO: ${{ secrets.GB_REPO }}
+        FORCE_LINKEDIN_PUBLISH: 'true'.10'
+      
+    - name: Installation des dépendances
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests bs4 python-dotenv
+      
+    - name: Publication sur LinkedIn
+      run: |
+        mkdir -p .linkedin_cache
+        python scripts/linkedin-publisher-newsletter.py
+      env:
+        LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
+        GB_USERNAME: ${{ secrets.GB_USERNAME }}
+        GB_REPO: ${{ secrets.GB_REPO }}
+        FORCE_LINKEDIN_PUBLISH: 'true'
