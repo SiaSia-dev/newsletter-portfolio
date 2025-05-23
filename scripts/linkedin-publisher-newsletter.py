@@ -61,11 +61,11 @@ def publish_simple_post():
     
     # Configuration
     access_token = os.environ.get('LINKEDIN_ACCESS_TOKEN')
-    #company_id = os.environ.get('LINKEDIN_COMPANY_ID')
-    person_id = os.environ.get('LINKEDIN_PERSON_ID')
+    company_id = os.environ.get('LINKEDIN_COMPANY_ID')
+    #person_id = os.environ.get('LINKEDIN_PERSON_ID')
 
-    if not access_token or not person_id:
-        logger.error("Token LinkedIn ou Person ID manquant")
+    if not access_token or not company_id:
+        logger.error("Token LinkedIn ou Company ID manquant")
         return False
     
     # Message simple et engageant avec identifiant unique
@@ -88,7 +88,7 @@ def publish_simple_post():
     
     # Données du post simple (pas d'image pour éviter les complications)
     post_data = {
-        "author": f"urn:li:person:{person_id}",
+        "author": f"urn:li:company:{company_id}",
         "lifecycleState": "PUBLISHED",
         "specificContent": {
             "com.linkedin.ugc.ShareContent": {
