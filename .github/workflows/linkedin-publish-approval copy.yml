@@ -11,7 +11,7 @@ on:
 
 jobs:
   check-new-newsletter:
-    if: ${{ github.event_name == 'schedule' && false}}
+    if: ${{ github.event_name == 'schedule' && false }}
     runs-on: ubuntu-latest
     steps:
       - name: Vérifier s'il y a une nouvelle newsletter
