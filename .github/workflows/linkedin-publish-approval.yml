@@ -18,7 +18,7 @@ jobs:
         id: check-newsletter
         run: |
           # Récupérer la date de la dernière newsletter publiée
-          NEWSLETTER_URL="https://siasia-dev.github.io/portfolio-newsletter/latest.html"
+          NEWSLETTER_URL="https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html"
           
           # Créer un fichier de cache pour stocker la dernière vérification
           CACHE_FILE=".newsletter_cache"
