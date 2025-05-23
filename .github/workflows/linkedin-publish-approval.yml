@@ -1,13 +1,144 @@
 name: Publication LinkedIn avec Approbation
 
 on:
-  workflow_dispatch:  # Déclenchement manuel
+  workflow_dispatch:  # Déclenchement manuel pour créer l'issue
   issues:
     types: [labeled]  # Déclenché lorsqu'un label est ajouté à une issue
 
 jobs:
+  create-issue:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Installation des dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests bs4 python-dotenv
+      
+      - name: Extraire le contenu de la newsletter pour la notification
+        run: |
+          # Créer un script temporaire pour extraire le contenu
+          cat > extract_content.py << 'EOF'
+          import sys
+          from bs4 import BeautifulSoup
+          import datetime
+
+          # Lire le HTML de la newsletter
+          with open(sys.argv[1], 'r', encoding='utf-8') as f:
+              html_content = f.read()
+
+          soup = BeautifulSoup(html_content, 'html.parser')
+          
+          # Récupérer tous les projets
+          projects = []
+          project_cards = soup.select('.project-card')
+          
+          for card in project_cards:
+              title_elem = card.select_one('.project-title a')
+              title = title_elem.get_text().strip() if title_elem else "Sans titre"
+              
+              link = title_elem.get('href') if title_elem else None
+              
+              desc_elem = card.select_one('.project-description')
+              description = desc_elem.get_text().strip() if desc_elem else ""
+              
+              if len(description) > 150:
+                  description = description[:147] + "..."
+              
+              projects.append({
+                  'title': title,
+                  'link': link,
+                  'description': description
+              })
+          
+          # Créer le résumé markdown
+          markdown = "## 📋 Contenu de la newsletter\n\n"
+          
+          for i, project in enumerate(projects, 1):
+              link = project['link'] if project['link'] else ""
+              markdown += f"### {i}. [{project['title']}](https://siasia-dev.github.io/portfolio-newsletter/latest.html{link})\n"
+              markdown += f"{project['description']}\n\n"
+          
+          print(markdown)
+          EOF
+          
+          # Exécuter le script et capturer la sortie
+          NEWSLETTER_CONTENT=$(python extract_content.py "${{ github.workspace }}/portfolio-newsletter/latest.html")
+          
+          # Créer le fichier issue template
+          mkdir -p .github/ISSUE_TEMPLATE
+          cat > .github/newsletter-notification.md << EOF
+          ---
+          title: "🔔 Newsletter Portfolio générée - À vérifier"
+          labels: notification
+          assignees: SiaSia-dev
+          ---
+
+          # 📰 Newsletter Portfolio - $(date +"%d/%m/%Y")
+
+          La newsletter de cette semaine a été générée et est prête pour votre validation.
+
+          ## 🔗 Liens principaux
+          - [Version complète de la newsletter](https://siasia-dev.github.io/portfolio-newsletter/latest.html)
+          - [Archives des newsletters](https://siasia-dev.github.io/portfolio-newsletter/archives.html)
+
+          $NEWSLETTER_CONTENT
+
+          ---
+
+          ### ✅ Actions requises
+          - Vérifier que la newsletter s'affiche correctement
+          - Confirmer que les liens entre les sections fonctionnent
+          - Valider les images des projets
+          - **Pour publier sur LinkedIn : ajoutez le label \`approved\` à cette issue**
+
+          ---
+
+          Générée automatiquement le $(date +"%d/%m/%Y à %H:%M")
+          EOF
+
+      - name: Vérification finale et rapport
+        run: |
+          echo "🎉 Issue de validation créée avec succès !"
+          echo "URL de la newsletter : https://siasia-dev.github.io/portfolio-newsletter/latest.html"
+          
+          # Vérifier que le fichier latest.html existe
+          if [ -f "${{ github.workspace }}/portfolio-newsletter/latest.html" ]; then
+            echo "✅ Fichier latest.html présent"
+            ls -l "${{ github.workspace }}/portfolio-newsletter/latest.html"
+          else
+            echo "❌ Fichier latest.html manquant"
+            exit 1
+          fi
+
+          # Vérifier le contenu du fichier
+          FILE_SIZE=$(stat -c%s "${{ github.workspace }}/portfolio-newsletter/latest.html")
+          if [ $FILE_SIZE -gt 1000 ]; then
+            echo "✅ Taille du fichier vérifiée : $FILE_SIZE octets"
+          else
+            echo "❌ Fichier trop petit, problème potentiel de génération"
+            exit 1
+          fi
+
+      - name: Créer une issue de notification
+        uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        with:
+          filename: .github/newsletter-notification.md
+          update_existing: true
+          search_existing: "Newsletter Portfolio générée - À vérifier"
+
   approval-check:
-    if: ${{ github.event.label.name == 'approved' }}
+    if: ${{ github.event_name == 'issues' && github.event.label.name == 'approved' }}
     runs-on: ubuntu-latest
     steps:
       - name: Vérifier si l'issue est une notification de newsletter
@@ -25,9 +156,10 @@ jobs:
       - name: Vérifier si l'issue est approuvée
         if: env.APPROVED == 'true'
         run: echo "L'issue de notification de newsletter a été approuvée. Préparation de la publication LinkedIn..."
-  
+
   publish-linkedin:
     needs: approval-check
+    if: ${{ github.event_name == 'issues' && github.event.label.name == 'approved' }}
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
