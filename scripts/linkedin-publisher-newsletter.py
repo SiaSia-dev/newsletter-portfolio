@@ -17,7 +17,8 @@ def publish_simple_post():
     
     # Configuration
     access_token = os.environ.get('LINKEDIN_ACCESS_TOKEN')
-    person_id = os.environ.get('LINKEDIN_PERSON_ID')
+    company_id = os.environ.get('LINKEDIN_ORG_ID')
+    #person_id = os.environ.get('LINKEDIN_PERSON_ID')
     
     if not access_token or not person_id:
         logger.error("Token LinkedIn ou Person ID manquant")
@@ -66,7 +67,7 @@ https://siasia-dev.github.io/portfolio-newsletter/latest.html
     
     # Données du post simple (pas d'image pour éviter les complications)
     post_data = {
-        "author": f"urn:li:member:{person_id}",
+        "author": f"urn:li:company:{company_id}",
         "lifecycleState": "PUBLISHED",
         "specificContent": {
             "com.linkedin.ugc.ShareContent": {
