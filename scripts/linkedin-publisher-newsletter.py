@@ -1,5 +1,5 @@
 """
-Script simple pour publier sur LinkedIn avec logo SlowSia.
+Script pour publier sur LinkedIn newsletter hebdomadaire
 """
 
 import os
