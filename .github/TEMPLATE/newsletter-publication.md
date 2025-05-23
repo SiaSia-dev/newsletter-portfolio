@@ -6,7 +6,7 @@ assignees: SiaSia-dev
 
 # 📰 Newsletter - {date}
 
-La newsletter de cette semaine est arrivée ! (...accouchée au forceps celle-ci pour la publication automatisée🥲)
+La newsletter de cette semaine est arrivée !
 
 ## 🔗 Liens principaux
 - [Version complète de la newsletter](https://siasia-dev.github.io/portfolio-newsletter/latest.html)
