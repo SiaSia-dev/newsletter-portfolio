@@ -76,18 +76,6 @@ class LinkedInPublisher:
         # Charger les hachages des publications précédentes
         self.published_hashes = self._load_published_hashes()
 
-    def extract_newsletter_tags(self, newsletter_url):
-        """
-        Extrait les tags de la newsletter (méthode placeholder).
-        
-        Args:
-            newsletter_url (str): URL de la newsletter
-            
-        Returns:
-            list: Liste de tags par défaut
-        """
-        return ["innovation", "tech", "projets", "portfolio", "newsletter"]
-
     def _validate_token(self):
         """
         Vérifie si le token d'accès est valide.
@@ -118,6 +106,21 @@ class LinkedInPublisher:
         except Exception as e:
             logger.error(f"Erreur lors de la vérification du token LinkedIn: {e}")
             return False
+        
+    def test_method(self):
+        return "test"
+
+    def extract_newsletter_tags(self, newsletter_url):
+        """
+        Extrait les tags de la newsletter (méthode placeholder).
+        
+        Args:
+            newsletter_url (str): URL de la newsletter
+            
+        Returns:
+            list: Liste de tags par défaut
+        """
+        return ["innovation", "tech", "projets", "portfolio", "newsletter"]
 
     def _load_published_hashes(self):
         """
