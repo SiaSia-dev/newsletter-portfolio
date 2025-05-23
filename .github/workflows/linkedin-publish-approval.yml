@@ -78,7 +78,7 @@ jobs:
           import datetime
 
           # Récupérer la newsletter depuis l'URL
-          url = "https://siasia-dev.github.io/portfolio-newsletter/latest.html"
+          url = "https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html
           
           try:
               response = requests.get(url, timeout=10)
@@ -113,7 +113,7 @@ jobs:
               
               for i, project in enumerate(projects, 1):
                   link = project['link'] if project['link'] else ""
-                  markdown += f"### {i}. [{project['title']}](https://siasia-dev.github.io/portfolio-newsletter/latest.html{link})\n"
+                  markdown += f"### {i}. [{project['title']}](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html{link})\n"
                   markdown += f"{project['description']}\n\n"
               
               print(markdown)
@@ -122,7 +122,7 @@ jobs:
               print("## ❌ Impossible de récupérer le contenu de la newsletter")
               print(f"Erreur: {e}")
               print("\nVeuillez vérifier manuellement la newsletter à l'adresse :")
-              print("https://siasia-dev.github.io/portfolio-newsletter/latest.html")
+              print("https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html")
           EOF
           
           # Exécuter le script et capturer la sortie
@@ -142,7 +142,7 @@ jobs:
           La newsletter de cette semaine a été générée et est prête pour votre validation.
 
           ## 🔗 Liens principaux
-          - [Version complète de la newsletter](https://siasia-dev.github.io/portfolio-newsletter/latest.html)
+          - [Version complète de la newsletter](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html)
           - [Archives des newsletters](https://siasia-dev.github.io/portfolio-newsletter/archives.html)
 
           $NEWSLETTER_CONTENT
@@ -163,7 +163,7 @@ jobs:
       - name: Vérification finale et rapport
         run: |
           echo "🎉 Issue de validation créée avec succès !"
-          echo "URL de la newsletter : https://siasia-dev.github.io/portfolio-newsletter/latest.html"
+          echo "URL de la newsletter : https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html"
 
       - name: Créer une issue de notification
         uses: JasonEtco/create-an-issue@v2
@@ -233,7 +233,7 @@ jobs:
         body: |
           ✅ Publication LinkedIn effectuée avec succès !
           
-          La newsletter a été publiée sur LinkedIn avec le lien vers https://siasia-dev.github.io/portfolio-newsletter/latest.html
+          La newsletter a été publiée sur LinkedIn avec le lien vers https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html
           
           Date de publication : ${{ format(github.event.issue.updated_at, 'DD/MM/YYYY à HH:mm') }}
     
