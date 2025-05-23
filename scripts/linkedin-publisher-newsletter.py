@@ -19,6 +19,11 @@ def publish_simple_post():
     access_token = os.environ.get('LINKEDIN_ACCESS_TOKEN')
     company_id = os.environ.get('LINKEDIN_ORG_ID')
     #person_id = os.environ.get('LINKEDIN_PERSON_ID')
+
+    print(f"DEBUG: Access token présent: {bool(access_token)}")
+    print(f"DEBUG: Company ID présent: {bool(company_id)}")
+    print(f"DEBUG: Company ID valeur: {company_id}")
+    print(f"DEBUG: Toutes les variables: {list(os.environ.keys())}")
     
     if not access_token or not company_id:
         logger.error("Token LinkedIn ou Compagny ID manquant")
@@ -107,6 +112,8 @@ https://siasia-dev.github.io/portfolio-newsletter/latest.html
     except Exception as e:
         logger.error(f"❌ Erreur: {e}")
         return False
+    
+    
 
 if __name__ == "__main__":
     success = publish_simple_post()
