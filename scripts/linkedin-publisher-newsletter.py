@@ -20,11 +20,6 @@ def publish_simple_post():
     company_id = os.environ.get('LINKEDIN_COMPANY_ID')
     #person_id = os.environ.get('LINKEDIN_PERSON_ID')
 
-    print(f"DEBUG: Access token présent: {bool(access_token)}")
-    print(f"DEBUG: Company ID présent: {bool(company_id)}")
-    print(f"DEBUG: Company ID valeur: {company_id}")
-    print(f"DEBUG: Toutes les variables: {list(os.environ.keys())}")
-    
     if not access_token or not company_id:
         logger.error("Token LinkedIn ou Compagny ID manquant")
         return False
