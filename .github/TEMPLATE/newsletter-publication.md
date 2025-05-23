@@ -4,9 +4,9 @@ labels: notification
 assignees: SiaSia-dev
 ---
 
-# 📰 Newsletter Portfolio - {date}
+# 📰 Newsletter - {date}
 
-La newsletter de cette semaine a été générée et est prête pour votre validation.
+La newsletter de cette semaine est arrivée ! (...accouchée au forceps pour la publication automatisée sur LinkedIn)
 
 ## 🔗 Liens principaux
 - [Version complète de la newsletter](https://siasia-dev.github.io/portfolio-newsletter/latest.html)

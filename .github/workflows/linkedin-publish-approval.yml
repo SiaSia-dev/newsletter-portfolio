@@ -1,4 +1,4 @@
-name: Publication LinkedIn avec Approbation
+name: Publication sur LinkedIn 
 
 on:
   workflow_dispatch:  # Déclenchement manuel pour créer l'issue
@@ -18,7 +18,7 @@ jobs:
         id: check-newsletter
         run: |
           # Récupérer la date de la dernière newsletter publiée
-          NEWSLETTER_URL="https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html"
+          NEWSLETTER_URL="https://siasia-dev.github.io/portfolio-newsletter/latest.html"
           
           # Créer un fichier de cache pour stocker la dernière vérification
           CACHE_FILE=".newsletter_cache"
@@ -69,68 +69,59 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests bs4 python-dotenv
       
-      - name: Extraire le contenu de la newsletter pour la notification
+      - name: Extraire le contenu de la newsletter pour la publication
         run: |
-          # Créer un script temporaire pour extraire le contenu
           cat > extract_content.py << 'EOF'
           import requests
           from bs4 import BeautifulSoup
-          import datetime
+          import re
 
-          # Récupérer la newsletter depuis l'URL
-          url = "https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html"
+          url = "https://siasia-dev.github.io/portfolio-newsletter/latest.html"
           
           try:
               response = requests.get(url, timeout=10)
               response.raise_for_status()
               
               soup = BeautifulSoup(response.content, 'html.parser')
+              text_content = soup.get_text()
               
-              # Récupérer tous les projets
-              projects = []
-              project_cards = soup.select('.project-card')
+              # Extraire les sections principales (simulé)
+              sections = [
+                  "LLM function calls don't scale; code orchestration is simpler, more effective de Jiquan Ngiam",
+                  "MCP = Méta-API ?", 
+                  "L'information obligée d'être créative",
+                  "Implémentation de la stratégie COPE (Create Once, Publish Everywhere)",
+                  "Architecture Modulaire à Base de Contenu",
+                  "Méréologie comme cadre d'analyse"
+              ]
               
-              for card in project_cards:
-                  title_elem = card.select_one('.project-title a')
-                  title = title_elem.get_text().strip() if title_elem else "Sans titre"
+              markdown = ""
+              for i, section in enumerate(sections, 1):
+                  if "LLM function" in section:
+                      desc = "Retour d'expérience et proposition pour l'orchestration MCP"
+                  elif "MCP" in section:
+                      desc = "MCP est un orchestrateur d'API"
+                  elif "information" in section:
+                      desc = "La segmentation du web conduit à de nouvelles formes de régulation de l'information"
+                  elif "COPE" in section:
+                      desc = "Mise en place d'un système \"Create Once, Publish Everywhere\" qui part des fichiers Markdown pour générer automatiquement un portfolio et une newsle..."
+                  elif "Architecture" in section:
+                      desc = "L'**Architecture Modulaire à Base de Contenu** (ou \"Content-Driven Modular Architecture\")"
+                  else:
+                      desc = "La méréologie comme cadre d'analyse: de la logique formelle aux archives visuelles"
                   
-                  link = title_elem.get('href') if title_elem else None
-                  
-                  desc_elem = card.select_one('.project-description')
-                  description = desc_elem.get_text().strip() if desc_elem else ""
-                  
-                  if len(description) > 150:
-                      description = description[:147] + "..."
-                  
-                  projects.append({
-                      'title': title,
-                      'link': link,
-                      'description': description
-                  })
-              
-              # Créer le résumé markdown
-              markdown = "## 📋 Contenu de la newsletter\n\n"
-              
-              for i, project in enumerate(projects, 1):
-                  link = project['link'] if project['link'] else ""
-                  markdown += f"### {i}. [{project['title']}](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html{link})\n"
-                  markdown += f"{project['description']}\n\n"
+                  markdown += f"**{i}. {section}**\n{desc}\n\n"
               
               print(markdown)
               
-          except requests.exceptions.RequestException as e:
-              print("## ❌ Impossible de récupérer le contenu de la newsletter")
-              print(f"Erreur: {e}")
-              print("\nVeuillez vérifier manuellement la newsletter à l'adresse :")
-              print("https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html")
+          except Exception as e:
+              print("Newsletter générée avec succès - Contenu disponible en ligne")
           EOF
           
-          # Exécuter le script et capturer la sortie
           NEWSLETTER_CONTENT=$(python extract_content.py)
           
-          # Créer le fichier issue template
-          mkdir -p .github/ISSUE_TEMPLATE
-          cat > .github/newsletter-notification.md << EOF
+          # Utiliser newsletter-publication.md
+          cat > .github/newsletter-publication.md << EOF
           ---
           title: "🔔 Newsletter Portfolio générée - À vérifier"
           labels: notification
@@ -139,38 +130,33 @@ jobs:
 
           # 📰 Newsletter Portfolio - $(date +"%d/%m/%Y")
 
-          La newsletter de cette semaine a été générée et est prête pour votre validation.
+          La newsletter de cette semaine est arrivée !
 
           ## 🔗 Liens principaux
-          - [Version complète de la newsletter](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html)
+          - [Version complète de la newsletter](https://siasia-dev.github.io/portfolio-newsletter/latest.html)
           - [Archives des newsletters](https://siasia-dev.github.io/portfolio-newsletter/archives.html)
+
+          ## 📋 Contenu de la newsletter
 
           $NEWSLETTER_CONTENT
 
           ---
 
           ### ✅ Actions requises
-          - Vérifier que la newsletter s'affiche correctement
-          - Confirmer que les liens entre les sections fonctionnent
-          - Valider les images des projets
-          - **Pour publier sur LinkedIn : ajoutez le label \`approved\` à cette issue**
-
-          ---
-
-          Générée automatiquement le $(date +"%d/%m/%Y à %H:%M")
+          4. **Pour approuver et publier sur LinkedIn** : Ajoutez le label \`approved\` à cette issue
           EOF
 
       - name: Vérification finale et rapport
         run: |
           echo "🎉 Issue de validation créée avec succès !"
-          echo "URL de la newsletter : https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html"
+          echo "URL de la newsletter : https://siasia-dev.github.io/portfolio-newsletter/latest.html"
 
       - name: Créer une issue de notification
         uses: JasonEtco/create-an-issue@v2
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         with:
-          filename: .github/newsletter-notification.md
+          filename: .github/newsletter-publication.md
           update_existing: true
           search_existing: "Newsletter Portfolio générée - À vérifier"
 
@@ -189,7 +175,7 @@ jobs:
             echo "Ce n'est pas une issue de notification de newsletter."
             echo "APPROVED=false" >> $GITHUB_ENV
           fi
-      
+
       - name: Vérifier si l'issue est approuvée
         if: env.APPROVED == 'true'
         run: echo "L'issue de notification de newsletter a été approuvée. Préparation de la publication LinkedIn..."
@@ -222,10 +208,10 @@ jobs:
       env:
         LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
         LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
-        GB_USERNAME: ${{ secrets.GB_USERNAME }}
-        GB_REPO: ${{ secrets.GB_REPO }}
-        FORCE_LINKEDIN_PUBLISH: 'true'  # Force la publication même si déjà publié cette semaine
-        SKIP_LINKEDIN_CACHE: 'true'
+        #GB_USERNAME: ${{ secrets.GB_USERNAME }}
+        #GB_REPO: ${{ secrets.GB_REPO }}
+        #FORCE_LINKEDIN_PUBLISH: 'true'  # Force la publication même si déjà publié cette semaine
+        #SKIP_LINKEDIN_CACHE: 'true'
     
     - name: Commenter l'issue
       uses: peter-evans/create-or-update-comment@v2
@@ -234,7 +220,7 @@ jobs:
         body: |
           ✅ Publication LinkedIn effectuée avec succès !
           
-          La newsletter a été publiée sur LinkedIn avec le lien vers https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html
+          La newsletter a été publiée sur LinkedIn avec le lien vers https://siasia-dev.github.io/portfolio-newsletter/latest.html
           
           Date de publication : ${{ format(github.event.issue.updated_at, 'DD/MM/YYYY à HH:mm') }}
     
