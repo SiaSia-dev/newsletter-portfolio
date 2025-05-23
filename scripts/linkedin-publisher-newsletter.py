@@ -66,7 +66,7 @@ https://siasia-dev.github.io/portfolio-newsletter/latest.html
     
     # Données du post simple (pas d'image pour éviter les complications)
     post_data = {
-        "author": f"urn:li:person:{person_id}",
+        "author": f"urn:li:member:{person_id}",
         "lifecycleState": "PUBLISHED",
         "specificContent": {
             "com.linkedin.ugc.ShareContent": {
