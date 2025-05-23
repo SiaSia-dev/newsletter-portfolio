@@ -225,6 +225,7 @@ jobs:
         GB_USERNAME: ${{ secrets.GB_USERNAME }}
         GB_REPO: ${{ secrets.GB_REPO }}
         FORCE_LINKEDIN_PUBLISH: 'true'  # Force la publication même si déjà publié cette semaine
+        SKIP_LINKEDIN_CACHE: 'true'
     
     - name: Commenter l'issue
       uses: peter-evans/create-or-update-comment@v2
