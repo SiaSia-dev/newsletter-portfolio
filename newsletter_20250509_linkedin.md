@@ -72,12 +72,19 @@ Et surtout, cela me permet de garder une copie de mes contenus et d'assurer l'hi
 
 ![Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*](img/CulturalAnalytics.jpg)
 
-#### Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*
-
 L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'analyse de vastes ensembles de données culturelles.
 [Lien vers l'ouvrage en ligne : *Cultural Analysis*](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
 
 **#analyse_quantitative #big_data #medias**
+
+L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'analyse de vastes ensembles de données culturelles. 
+
+[Lien vers l'ouvrage en ligne : *Cultural Analysis*](https://direct.mit.edu/books/monograph/4966/Cultural-Analytics)
+
+Une de ses conclusions qui nous a semblé intéressante par ces analyses de masse de données (Big Data) est la partie "illusoire"de nos comportements actuels :
+
+*"L'idée qu'un groupe ou une personne a des comportements et des goûts culturels cohérents avait du sens dans les sociétés anciennes et modernes. Mais avec les nombreux choix culturels disponibles aujourd'hui, nous pourrions découvrir que l'idée d'un goût stable ou d'une « personnalité culturelle » stable est une illusion."*
+
 
 *"L'idée qu'un groupe ou une personne a des comportements et des goûts culturels cohérents avait du sens dans les sociétés anciennes et modernes. Mais avec les nombreux choix culturels disponibles aujourd'hui, nous pourrions découvrir que l'idée d'un goût stable ou d'une « personnalité culturelle » stable est une illusion."*
 

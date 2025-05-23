@@ -1,0 +1,75 @@
+name: Publication LinkedIn avec Approbation
+
+on:
+  workflow_dispatch:  # Déclenchement manuel
+  issues:
+    types: [labeled]  # Déclenché lorsqu'un label est ajouté à une issue
+
+jobs:
+  approval-check:
+    if: ${{ github.event.label.name == 'approved' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérifier si l'issue est une notification de newsletter
+        id: check-issue
+        run: |
+          ISSUE_TITLE="${{ github.event.issue.title }}"
+          if [[ $ISSUE_TITLE == *"Newsletter Portfolio générée"* ]]; then
+            echo "C'est une issue de notification de newsletter."
+            echo "APPROVED=true" >> $GITHUB_ENV
+          else
+            echo "Ce n'est pas une issue de notification de newsletter."
+            echo "APPROVED=false" >> $GITHUB_ENV
+          fi
+      
+      - name: Vérifier si l'issue est approuvée
+        if: env.APPROVED == 'true'
+        run: echo "L'issue de notification de newsletter a été approuvée. Préparation de la publication LinkedIn..."
+  
+  publish-linkedin:
+    needs: approval-check
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+      
+    - name: Installation des dépendances
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests bs4 python-dotenv
+      
+    - name: Publication du lien sur LinkedIn
+      run: |
+        # Créer le dossier .linkedin_cache si nécessaire
+        mkdir -p .linkedin_cache
+        
+        # Exécuter le script de publication
+        python scripts/linkedin-publisher-newsletter.py
+      env:
+        LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+        LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
+        GB_USERNAME: ${{ secrets.GB_USERNAME }}
+        GB_REPO: ${{ secrets.GB_REPO }}
+        FORCE_LINKEDIN_PUBLISH: 'true'  # Force la publication même si déjà publié cette semaine
+    
+    - name: Commenter l'issue
+      uses: peter-evans/create-or-update-comment@v2
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        body: |
+          ✅ Publication LinkedIn effectuée avec succès !
+          
+          La newsletter a été publiée sur LinkedIn avec le lien vers https://siasia-dev.github.io/portfolio-newsletter/latest.html
+          
+          Date de publication : ${{ format(github.event.issue.updated_at, 'DD/MM/YYYY à HH:mm') }}
+    
+    - name: Fermer l'issue
+      uses: peter-evans/close-issue@v3
+      with:
+        issue-number: ${{ github.event.issue.number }}
+        comment: false  # Pas de commentaire supplémentaire, nous avons déjà commenté ci-dessus

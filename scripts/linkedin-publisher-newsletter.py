@@ -1,7 +1,11 @@
-import requests
-import json
-import logging
+"""
+Publication LinkedIn d'un lien vers la newsletter.
+Ce script publie un lien vers la newsletter HTML avec un message générique et unique.
+"""
+
 import os
+import json
+import requests
 import hashlib
 import pickle
 import re
@@ -11,7 +15,8 @@ import time
 import random
 import string
 from bs4 import BeautifulSoup
-import base64
+import logging
+from dotenv import load_dotenv
 
 # Configuration du logging
 logging.basicConfig(
@@ -29,6 +34,9 @@ class LinkedInPublisher:
             access_token (str, optional): Token d'accès LinkedIn. 
                                           Si non fourni, tentera de le récupérer des variables d'environnement.
         """
+        # Charger les variables d'environnement
+        load_dotenv()
+        
         # Récupérer le token d'accès
         self.access_token = access_token or os.environ.get('LINKEDIN_ACCESS_TOKEN') or os.environ.get('DEPLOY_TOKEN')
         
@@ -45,9 +53,15 @@ class LinkedInPublisher:
             logger.error("Token d'accès LinkedIn invalide ou expiré")
             raise ValueError("Token d'accès LinkedIn invalide ou expiré")
         
-        # Récupérer les ID de publication (avec rétrocompatibilité)
-        self.member_id = os.environ.get('LINKEDIN_MEMBER_ID') or os.environ.get('LINKEDIN_PERSON_ID')
-        self.company_id = os.environ.get('LINKEDIN_COMPANY_ID') or os.environ.get('LINKEDIN_ORG_ID')
+        # Récupérer les ID de publication
+        self.person_id = os.environ.get('LINKEDIN_PERSON_ID')
+        self.org_id = os.environ.get('LINKEDIN_ORG_ID')
+        
+        # Rétrocompatibilité avec les anciennes variables d'environnement
+        if not self.person_id:
+            self.person_id = os.environ.get('LINKEDIN_MEMBER_ID')
+        if not self.org_id:
+            self.org_id = os.environ.get('LINKEDIN_COMPANY_ID')
         
         # Validation des ID (assurer qu'ils ne sont pas None)
         if not self.person_id and not self.org_id:
@@ -174,89 +188,145 @@ class LinkedInPublisher:
                 return True
         
         return False
-    
-    def _generate_variant_message(self, title, date, project_titles, variant=0, include_random=True):
+
+    def _generate_unique_message(self, newsletter_url, variant=0):
         """
-        Génère une variante du message selon un modèle spécifique.
-        Ajoute un contenu unique à chaque génération.
+        Génère un message unique avec lien vers la newsletter.
+        Chaque variante utilise du contenu unique et des identificateurs invisibles.
         
         Args:
-            title (str): Titre de la newsletter
-            date (str): Date de la newsletter
-            project_titles (list): Liste des titres de projets
+            newsletter_url (str): URL publique de la newsletter
             variant (int): Numéro de variante (0-3)
-            include_random (bool): Inclure un identifiant aléatoire
             
         Returns:
             str: Texte de la publication formaté selon le modèle
         """
+        # Date actuelle
+        current_date = datetime.now().strftime("%d/%m/%Y")
+        
         # Générer un identifiant vraiment unique basé sur le timestamp actuel
         timestamp = datetime.now().strftime("%Y%m%d%H%M%S%f")
         random_id = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
         unique_id = f"{timestamp}-{random_id}"
         
-        # Créer une phrase invisible (presque) pour LinkedIn
-        # Utiliser des caractères Unicode de largeur zéro et des espaces sans chasse
-        invisible_unique = ''.join([f"​{c}​" for c in unique_id])  # Utilise le caractère Unicode "joindre sans largeur" (U+200B)
+        # Créer une phrase invisible pour LinkedIn
+        # Utiliser des caractères Unicode de largeur zéro
+        invisible_unique = ''.join([f"​{c}​" for c in unique_id])
         
-        # Plusieurs variantes de texte pour la même information
+        # Essayer d'extraire les tags de la newsletter
+        tags = self.extract_newsletter_tags(newsletter_url)
+        
+        # Si nous avons récupéré des tags, les utiliser pour créer des hashtags
+        custom_hashtags = ""
+        if tags:
+            # Sélectionner quelques tags aléatoires pour plus de variété
+            num_tags = min(8, len(tags))
+            selected_tags = random.sample(tags, num_tags)
+            custom_hashtags = " ".join([f"#{tag}" for tag in selected_tags])
+        
+        # Si aucun tag n'a été trouvé, utiliser des tags par défaut
+        if not custom_hashtags:
+            default_tags = [
+                "innovation", "tech", "digital", "creation", "projets", 
+                "developpement", "data", "design", "creative", "technologie",
+                "showcase", "sharing", "portfolio"
+            ]
+            selected_default_tags = random.sample(default_tags, 5)
+            custom_hashtags = " ".join([f"#{tag}" for tag in selected_default_tags])
+        
+        # Ajouter toujours les hashtags #projets et #newsletter
+        hashtags = f"{custom_hashtags} #projets #newsletter"
+        
+        # Génération aléatoire d'emoji pour varier davantage
+        emojis = ["🚀", "📰", "✨", "🔍", "💡", "📊", "🧠", "🌟", "📚", "🎯"]
+        random_emojis = random.sample(emojis, 3)
+        
+        # Adjectives et synonymes pour varier les descriptions
+        adjectives = [
+            "nouvelle", "récente", "fraîche", "dernière", "passionnante",
+            "inspirante", "créative", "innovante", "intéressante", "captivante"
+        ]
+        
+        synonyms_newsletter = [
+            "newsletter", "édition", "publication", "sélection", 
+            "compilation", "collection", "curation"
+        ]
+        
+        # Sélection aléatoire pour varier les messages
+        adj = random.choice(adjectives)
+        synonym = random.choice(synonyms_newsletter)
+        
+        # Plusieurs variantes de texte complètement différentes
         variants = [
-            # Variante 0 - Standard
-            lambda: f"""🚀 {title} - {date} 🚀
+            # Variante 0
+            lambda: f"""{random_emojis[0]} {adj.capitalize()} {synonym} - {current_date} {random_emojis[1]}
 
-Découvrez mes derniers projets et réalisations dans cette nouvelle édition de ma newsletter portfolio !
+Récits visuels, horizons numériques : Un voyage entre créativité et innovation.
 
-📌 Au sommaire:
-{chr(10).join([f"- {t}" for t in project_titles])}
+Découvrez ma {adj} {synonym} avec une sélection de projets variés. {random_emojis[2]}
 
-👉 Consultez la version complète pour plus de détails sur chaque projet.
+{newsletter_url}
 
-#portfolio #developpeur #tech #projets #newsletter {invisible_unique}""",
+{hashtags} {invisible_unique}""",
             
-            # Variante 1 - Réorganisée
-            lambda: f"""📰 Newsletter Portfolio ({date}) : {title} 📰
-{invisible_unique}
-{chr(10).join([f"✅ {t}" for t in project_titles])}
+            # Variante 1
+            lambda: f"""Bonjour à tous !
 
-Nouvelle édition disponible ! Cliquez sur le lien pour découvrir en détail tous ces projets passionnants.
+Je viens de publier ma {synonym} du {current_date}. {random_emojis[0]}
 
-#developpeur #portfolio #coding #tech""",
+Au carrefour de la technologie et de la créativité, explorez avec moi de nouveaux horizons numériques. {random_emojis[1]}
+
+Pour la consulter : {newsletter_url}
+
+{hashtags} {invisible_unique} {random_emojis[2]}""",
             
-            # Variante 2 - Plus personnelle
-            lambda: f"""Bonjour à tous ! Je viens de publier ma dernière newsletter ({date}) :
+            # Variante 2
+            lambda: f"""{random_emojis[0]} {random_emojis[1]} {random_emojis[2]}
 
-"{title}" {invisible_unique}
+Aujourd'hui, {current_date} : ma {synonym} est en ligne !
 
-Elle présente mes projets récents :
-{chr(10).join([f"• {t}" for t in project_titles])}
+Entre données, narrations visuelles et explorations numériques, découvrez mes derniers projets.
 
-N'hésitez pas à consulter la version complète ! #tech #dev #portfolio""",
+Lien ▶️ {newsletter_url}
+
+{hashtags} {invisible_unique}""",
             
-            # Variante 3 - Direct et concis
-            lambda: f"""NOUVELLE NEWSLETTER 📱💻 - {date}
+            # Variante 3
+            lambda: f"""Edition du {current_date} {random_emojis[0]}
 
-{title}
+{invisible_unique} Une nouvelle sélection de projets est disponible dans ma {synonym} !
 
-Projets inclus :
-{chr(10).join([f">> {t}" for t in project_titles])}
+Explorez différentes facettes de mes travaux récents sur :
+{newsletter_url}
 
-Lien vers la version complète ci-dessous 👇
-#developpement #portfolio {invisible_unique}"""
+N'hésitez pas à partager vos retours ! {random_emojis[1]} {random_emojis[2]}
+
+{hashtags}""",
+            
+            # Variante 4
+            lambda: f"""🔔 Nouvelle publication - {current_date}
+
+À la croisée de la technologie et de la création, je partage avec vous ma dernière {synonym}.
+
+{random_emojis[0]} {random_emojis[1]} {random_emojis[2]}
+
+Rendez-vous sur : {newsletter_url}
+
+{hashtags} {invisible_unique}"""
         ]
         
         # Utiliser la variante demandée ou une variante aléatoire si hors limites
-        variant_index = variant if 0 <= variant < len(variants) else random.randint(0, len(variants) - 1)
-        return variants[variant_index]()
+        if variant < 0 or variant >= len(variants):
+            variant = random.randint(0, len(variants) - 1)
+            
+        return variants[variant]()
 
-    def publish_text_post(self, title, date, project_titles, public_url, force_unique=False, skip_cache=False):
+    def publish_newsletter_link(self, newsletter_url, force_unique=False, skip_cache=False):
         """
-        Publie un post texte sur LinkedIn sur plusieurs cibles.
+        Publie un post texte sur LinkedIn avec un lien vers la newsletter.
         
         Args:
-            title (str): Titre de la newsletter
-            date (str): Date de la newsletter
-            project_titles (list): Liste des titres de projets
-            public_url (str): URL publique de la newsletter
+            newsletter_url (str): URL publique de la newsletter
             force_unique (bool): Force l'utilisation d'un texte unique
             skip_cache (bool): Ignore la vérification du cache
             
@@ -276,7 +346,7 @@ Lien vers la version complète ci-dessous 👇
             return None
 
         # Génération du texte initial
-        base_text = self._generate_variant_message(title, date, project_titles, variant=0)
+        base_text = self._generate_unique_message(newsletter_url, variant=0)
         
         # Configuration de l'API
         headers = {
@@ -297,24 +367,27 @@ Lien vers la version complète ci-dessous 👇
             
             while retry_count < max_retries:
                 try:
-                    # Générer un titre et une description uniques pour l'article
-                    random_suffix = ''.join(random.choices(string.ascii_letters + string.digits, k=6))
-                    article_title = f"Newsletter Portfolio - {date} [{random_suffix}]"
-                    article_desc = f"Découvrez mes derniers projets et réalisations - {datetime.now().strftime('%H:%M:%S')}"
-                    
                     # Générer une variante différente à chaque tentative avec contenu invisible unique
-                    text = self._generate_variant_message(
-                        title, 
-                        date, 
-                        project_titles, 
-                        variant=current_variant,
-                        include_random=True
+                    text = self._generate_unique_message(
+                        newsletter_url, 
+                        variant=current_variant
                     )
                     
-                    # Générer une URL unique en ajoutant un paramètre aléatoire
-                    unique_url = f"{public_url}?t={int(time.time())}&r={random.randint(1000, 9999)}"
+                    # Titre pour la carte article, simple et unique
+                    date_part = datetime.now().strftime("%d/%m/%Y")
+                    unique_suffix = ''.join(random.choices(string.ascii_lowercase, k=4))
+                    article_title = f"Newsletter - {date_part} [{unique_suffix}]"
                     
-                    # Préparer le corps de la requête
+                    # Description de la carte article avec quelques tags aléatoires pour la variété
+                    tags = self.extract_newsletter_tags(newsletter_url)
+                    tag_text = ""
+                    if tags and len(tags) >= 3:
+                        random_tags = random.sample(tags, min(3, len(tags)))
+                        tag_text = f" #{' #'.join(random_tags)}"
+                        
+                    article_description = f"Récits visuels, horizons numériques : Un voyage entre créativité et innovation.{tag_text}"
+                    
+                    # Préparer le corps de la requête - Utilisation du format "article"
                     post_data = {
                         "author": f"urn:li:{author_type}:{author_id}",
                         "lifecycleState": "PUBLISHED",
@@ -327,12 +400,12 @@ Lien vers la version complète ci-dessous 👇
                                 "media": [
                                     {
                                         "status": "READY",
-                                        "originalUrl": unique_url,
+                                        "originalUrl": newsletter_url,
                                         "title": {
                                             "text": article_title
                                         },
                                         "description": {
-                                            "text": article_desc
+                                            "text": article_description
                                         }
                                     }
                                 ]
@@ -371,7 +444,7 @@ Lien vers la version complète ci-dessous 👇
                     
                     elif response.status_code == 422:  # Duplicate content
                         # Attendre un peu plus longtemps et essayer avec une nouvelle variante
-                        current_variant = (current_variant + 1) % 4
+                        current_variant = (current_variant + 1) % 5  # Nous avons maintenant 5 variantes
                         retry_count += 1
                         logger.warning(f"Contenu en double détecté pour {author_type}, nouvelle tentative avec la variante {current_variant}...")
                         # Attendre plus longtemps entre les tentatives
@@ -381,7 +454,7 @@ Lien vers la version complète ci-dessous 👇
                         logger.error(f"Échec de la publication LinkedIn pour {author_type}: {response.status_code} - {response.text}")
                         # Si on a d'autres variantes à essayer, on continue
                         if retry_count < max_retries - 1:
-                            current_variant = (current_variant + 1) % 4
+                            current_variant = (current_variant + 1) % 5
                             retry_count += 1
                             logger.info(f"Nouvelle tentative avec la variante {current_variant}...")
                             time.sleep(3)
@@ -409,7 +482,7 @@ Lien vers la version complète ci-dessous 👇
 
 def main():
     """
-    Fonction principale pour générer et publier la newsletter sur LinkedIn.
+    Fonction principale pour publier le lien de la newsletter sur LinkedIn.
     Publication hebdomadaire.
     
     Returns:
@@ -440,96 +513,39 @@ def main():
             else:
                 logger.info("La dernière publication date d'une semaine précédente. Poursuite de la publication...")
 
-        # Récupérer le répertoire des newsletters
-        newsletters_dir = os.environ.get('NEWSLETTERS_DIR', '.')
-        
-        logger.info(f"Recherche des fichiers de newsletter dans {newsletters_dir}")
-        
-        # Vérifier l'existence du répertoire
-        if not os.path.exists(newsletters_dir):
-            logger.error(f"Le répertoire {newsletters_dir} n'existe pas")
-            return False
-            
-        # Lister le contenu du répertoire
-        all_files = os.listdir(newsletters_dir)
-        logger.info(f"Fichiers trouvés: {all_files}")
-        
-        # Chercher les fichiers newsletter_*.html
-        newsletter_files = [f for f in all_files if f.startswith('newsletter_') and f.endswith('.html')]
-        
-        if not newsletter_files:
-            # Si aucun fichier newsletter_*.html, alors seulement chercher latest.html
-            if 'latest.html' in all_files:
-                latest_html = 'latest.html'
-                logger.info("Utilisation de latest.html car aucun fichier newsletter_*.html trouvé")
-            else:
-                logger.error("Aucun fichier HTML de newsletter trouvé")
-                return False
-        else:
-            # Trier par date de modification (le plus récent en premier)
-            latest_html = sorted(
-                newsletter_files, 
-                key=lambda f: f.replace('newsletter_', '').replace('.html', ''), 
-                reverse=True
-            )[0]
-            logger.info(f"Dernier fichier de newsletter trouvé: {latest_html}")
-        
         # URL publique de la newsletter
-        username = os.environ.get('GB_USERNAME')
-        repo_name = os.environ.get('GB_REPO')
-
-        if not username or not repo_name:
-            logger.error("Variables d'environnement GB_USERNAME et/ou GB_REPO non définies")
-            logger.error("Veuillez définir ces variables dans votre environnement ou dans GitHub Actions")
-            return False
-
-        public_url = f"https://{username}.github.io/{repo_name}/{latest_html}"
-        logger.info(f"URL publique : {public_url}")
+        username = os.environ.get('GB_USERNAME', 'SiaSia-dev')
+        repo_name = os.environ.get('GB_REPO', 'portfolio-newsletter')
+        newsletter_url = f"https://{username}.github.io/{repo_name}/latest.html"
         
-        # Lire le contenu du fichier HTML
-        html_path = os.path.join(newsletters_dir, latest_html)
-        with open(html_path, 'r', encoding='utf-8') as f:
-            html_content = f.read()
+        # Vérification de l'URL via une requête HEAD pour s'assurer qu'elle est accessible
+        try:
+            response = requests.head(newsletter_url, timeout=10)
+            if response.status_code >= 400:
+                logger.warning(f"L'URL de la newsletter semble inaccessible: {response.status_code}")
+                # On continue malgré tout car parfois les requêtes HEAD échouent alors que GET fonctionne
+        except Exception as e:
+            logger.warning(f"Erreur lors de la vérification de l'URL: {e}")
+            # Continuer malgré l'erreur (peut-être un problème temporaire)
         
-        soup = BeautifulSoup(html_content, 'html.parser')
-        
-        # Extraire le titre et la date
-        title = soup.find('h1').text.strip() if soup.find('h1') else "Newsletter Portfolio"
-        
-        # Recherche de la date dans le titre ou dans un paragraphe contenant une date
-        date_in_title = re.search(r'\d{1,2}/\d{1,2}/\d{4}', title)
-        if date_in_title:
-            date_text = date_in_title.group(0)
-        else:
-            date = soup.find('p', string=lambda s: s and ('/' in s))
-            date_text = date.text.strip() if date else datetime.now().strftime("%d/%m/%Y")
-        
-        # Extraire les titres des projets
-        project_titles = (
-            [h2.text.strip() for h2 in soup.find_all('h2', class_='project-title')] or
-            [h2.text.strip() for h2 in soup.select('.project-card h2')] or
-            [h2.text.strip() for h2 in soup.find_all('h2')][:5]  # Limiter aux 5 premiers
-        )
+        logger.info(f"URL publique pour la publication : {newsletter_url}")
         
         # Créer l'instance LinkedIn Publisher et publier
         publisher = LinkedInPublisher()
-        result = publisher.publish_text_post(
-            title=title, 
-            date=date_text, 
-            project_titles=project_titles, 
-            public_url=public_url, 
+        result = publisher.publish_newsletter_link(
+            newsletter_url=newsletter_url, 
             force_unique=True,
             skip_cache=skip_cache
         )
         
         if result:
-            logger.info("Newsletter publiée avec succès sur LinkedIn")
+            logger.info("Lien vers la newsletter publié avec succès sur LinkedIn")
             # Créer le fichier de verrou hebdomadaire pour éviter les publications multiples
             with open(lock_file, 'w') as f:
                 f.write(f"Publication effectuée le {datetime.now()}")
             return True
         else:
-            logger.error("Échec de la publication sur LinkedIn")
+            logger.error("Échec de la publication du lien sur LinkedIn")
             return False
     
     except Exception as e:

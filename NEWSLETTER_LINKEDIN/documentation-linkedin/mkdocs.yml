@@ -1,0 +1,46 @@
+site_name: Documentation LinkedIn Automation
+site_description: Documentation pour l'outil d'automatisation des publications LinkedIn
+site_author: Votre Nom
+
+theme:
+  name: material
+  language: fr
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+  palette:
+    primary: indigo
+    accent: indigo
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Accueil: index.md
+  - Guide d'utilisation:
+    - Installation: guide/installation.md
+    - Utilisation de base: guide/utilisation.md
+    - Structure des fichiers: guide/structure.md
+  - Documentation technique:
+    - Architecture: technique/architecture.md
+    - API: technique/api.md
+    - Extraction de contenu: technique/extraction.md
+    - Planification: technique/planification.md
+    - Publication LinkedIn: technique/publication.md
+  - Déploiement:
+    - En local: deploiement/local.md
+    - Planificateur Windows: deploiement/windows.md
+  - Dépannage: depannage.md
+  - Améliorations futures: ameliorations.md

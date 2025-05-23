@@ -1,0 +1,56 @@
+LINKEDIN_PUBLICATION_POSTS
+venv\\Scripts\\activate
+
+*Pour la planification régulière sans date spécifique (qui trouvera automatiquement le prochain lundi) :
+
+	python linkedin_automation.py --newsletter="C:/Users/alexi/Documents/GITHUB/portfolio-newsletter/latest.html" --images="C:\Users\alexi\Documents\GITHUB\portfolio-newsletter\img" --test
+
+
+
+*Pour planifier des publications à partir d'une date spécifique :
+
+	python linkedin_automation.py --start-date="20/05/2025" --newsletter="path/to/newsletter.md" --images="path/to/images"
+
+
+
+*Pour planifier des publications à partir d'une date spécifique, le paramètre --test est optionnel - il permet de planifier les publications sans lancer le planificateur (utile si vous voulez juste configurer les publications sans les publier immédiatement).
+
+	python linkedin_automation_oneshot.py --start-date="20/05/2025" --custom-newsletter="chemin/vers/votre/newsletter.html" --images="C:/Users/alexi/Documents/GITHUB/portfolio-newsletter/img" --test
+
+
+
+*Pour lancer uniquement le planificateur qui publiera les posts déjà programmés précédemment (--test).
+
+	python linkedin_automation_oneshot.py --scheduler-only
+
+
+* Republier le post si tronqué :
+
+	python republish_post.py --title "l'art du réseau social" --csv "linkedin_posts.csv" --images="C:\Users\alexi\Documents\GITHUB\portfolio-newsletter\img" --url "https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250509.html#project-Vitrine%20LinkedIn"
+
+*Pour la question sur les différents scripts
+
+linkedin_automation.py :
+
+C'est votre script principal
+Il peut à la fois planifier de nouveaux posts ET publier les posts existants
+Quand vous l'exécutez avec --scheduler-only, il ne planifie pas de nouveaux posts mais se contente de publier ceux qui sont déjà dans le CSV
+
+
+
+linkedin_automation_oneshot.py :
+
+C'est une variante qui vous permet principalement de planifier des posts à partir d'une date spécifique
+Il stocke également ses posts dans le même fichier CSV
+Il peut aussi lancer le planificateur pour publier les posts
+
+
+
+Fonctionnement du fichier .bat :
+
+Votre fichier .bat est simplement un moyen d'exécuter l'un de ces scripts
+Il doit contenir quelque chose comme :
+batch cd C:\Users\alexi\Documents\GITHUB\portfolio-newsletter\NEWSLETTER_LINKEDIN
+python linkedin_automation.py --scheduler-only
+
+
