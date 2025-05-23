@@ -123,7 +123,7 @@ jobs:
           # Utiliser newsletter-publication.md
           cat > .github/newsletter-publication.md << EOF
           ---
-          title: "🔔 Newsletter Portfolio générée - À vérifier"
+          title: "🔔 Newsletter  $(date +"%d/%m/%Y") - À vérifier"
           labels: notification
           assignees: SiaSia-dev
           ---
