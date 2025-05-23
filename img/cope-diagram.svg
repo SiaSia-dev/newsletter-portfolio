@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 800 500"
+   version="1.1"
+   id="svg40"
+   sodipodi:docname="cope-diagram.svg"
+   inkscape:export-filename="cope-diagram.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview40"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.9840045"
+     inkscape:cx="374.49512"
+     inkscape:cy="209.92896"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg40" />
+  <!-- Styles -->
+  <style
+     id="style1">
+    .box { fill: #ffffff; stroke: #333; stroke-width: 2; }
+    .primary-box { fill: #e3f2fd; stroke: #2196f3; stroke-width: 2; }
+    .secondary-box { fill: #e8f5e9; stroke: #4caf50; stroke-width: 2; }
+    .output-box { fill: #fff3e0; stroke: #ff9800; stroke-width: 2; }
+    .arrow { fill: none; stroke: #555; stroke-width: 2; marker-end: url(#arrowhead); }
+    .data-arrow { fill: none; stroke: #2196f3; stroke-width: 2; stroke-dasharray: 5,3; marker-end: url(#dataarrow); }
+    .text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; }
+    .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 12px; fill: #555; }
+    .process { font-family: Arial, sans-serif; font-size: 12px; fill: #fff; }
+    .badge { fill: #2196f3; stroke: none; }
+    .file { fill: #f5f5f5; stroke: #ccc; }
+    .markdown { fill: #5d4037; }
+    .code { font-family: 'Courier New', monospace; font-size: 10px; fill: #333; }
+  </style>
+  <!-- Markers -->
+  <defs
+     id="defs2">
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#555"
+         id="polygon1" />
+    </marker>
+    <marker
+       id="dataarrow"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#2196f3"
+         id="polygon2" />
+    </marker>
+  </defs>
+  <!-- Background -->
+  <rect
+     width="800"
+     height="500"
+     fill="#fafafa"
+     id="rect2" />
+  <!-- Title -->
+  <text
+     x="400"
+     y="30"
+     text-anchor="middle"
+     class="title"
+     id="text2">Architecture COPE - Flux de données depuis Markdown vers LinkedIn</text>
+  <text
+     x="400"
+     y="50"
+     text-anchor="middle"
+     class="subtitle"
+     id="text3">Create Once, Publish Everywhere</text>
+  <!-- Source: Markdown Files -->
+  <g
+     transform="translate(100,100)"
+     id="g10">
+    <g
+       id="g46"
+       transform="translate(4.5362801,17.137058)">
+      <rect
+         width="140.23653"
+         height="62.091412"
+         rx="5.0084476"
+         ry="3.8807132"
+         class="primary-box"
+         id="rect3"
+         x="-0.1182665"
+         y="-0.1182665" />
+      <text
+         x="70"
+         y="25"
+         text-anchor="middle"
+         class="title"
+         id="text4">Source Unique</text>
+      <text
+         x="70"
+         y="45"
+         text-anchor="middle"
+         class="text"
+         id="text5">Fichiers Markdown</text>
+    </g>
+    <text
+       x="70"
+       y="65"
+       text-anchor="middle"
+       class="subtitle"
+       id="text6" />
+    <!-- Markdown file icons (3) -->
+    <g
+       transform="translate(231.42508,21.019555)"
+       id="g9">
+      <rect
+         x="40"
+         y="80"
+         width="30"
+         height="35"
+         class="file"
+         id="rect6" />
+      <text
+         x="55"
+         y="100"
+         text-anchor="middle"
+         class="markdown"
+         id="text7">.md</text>
+      <rect
+         x="70"
+         y="80"
+         width="30"
+         height="35"
+         class="file"
+         id="rect7" />
+      <text
+         x="85"
+         y="100"
+         text-anchor="middle"
+         class="markdown"
+         id="text8">.md</text>
+      <rect
+         x="100"
+         y="80"
+         width="30"
+         height="35"
+         class="file"
+         id="rect8" />
+      <text
+         x="115"
+         y="100"
+         text-anchor="middle"
+         class="markdown"
+         id="text9">.md</text>
+    </g>
+  </g>
+  <!-- Processing Step: Automated Generation -->
+  <g
+     transform="translate(100,250)"
+     id="g20">
+    <rect
+       width="600"
+       height="120"
+       rx="5"
+       ry="5"
+       class="box"
+       id="rect10"
+       x="0"
+       y="0" />
+    <text
+       x="300"
+       y="25"
+       text-anchor="middle"
+       class="title"
+       id="text10">Traitement Automatisé</text>
+    <!-- Portfolio Generation -->
+    <g
+       transform="translate(50,45)"
+       id="g13">
+      <rect
+         width="140"
+         height="60"
+         rx="5"
+         ry="5"
+         class="secondary-box"
+         id="rect11"
+         x="0"
+         y="0" />
+      <text
+         x="70"
+         y="25"
+         text-anchor="middle"
+         class="title"
+         id="text11">Génération du</text>
+      <text
+         x="70"
+         y="45"
+         text-anchor="middle"
+         class="title"
+         id="text12">Portfolio</text>
+    </g>
+    <!-- Newsletter Generation -->
+    <g
+       transform="translate(230,45)"
+       id="g16">
+      <rect
+         width="140"
+         height="60"
+         rx="5"
+         ry="5"
+         class="secondary-box"
+         id="rect13"
+         x="0"
+         y="0" />
+      <text
+         x="70"
+         y="25"
+         text-anchor="middle"
+         class="title"
+         id="text14">Génération de la</text>
+      <text
+         x="70"
+         y="45"
+         text-anchor="middle"
+         class="title"
+         id="text15">Newsletter</text>
+      <g
+         id="g44"
+         transform="translate(-7.0564359,39.314427)">
+        <circle
+           cx="20"
+           cy="20"
+           r="15"
+           class="badge"
+           id="circle15" />
+        <text
+           x="20"
+           y="24"
+           text-anchor="middle"
+           class="process"
+           id="text16">2</text>
+      </g>
+    </g>
+    <!-- LinkedIn Export -->
+    <g
+       transform="translate(410,45)"
+       id="g19">
+      <rect
+         width="140"
+         height="60"
+         rx="5"
+         ry="5"
+         class="secondary-box"
+         id="rect16"
+         x="0"
+         y="0" />
+      <text
+         x="70"
+         y="25"
+         text-anchor="middle"
+         class="title"
+         id="text17">Préparation pour</text>
+      <text
+         x="70"
+         y="45"
+         text-anchor="middle"
+         class="title"
+         id="text18">LinkedIn</text>
+      <g
+         id="g45"
+         transform="translate(-6.5524041,39.314427)">
+        <circle
+           cx="20"
+           cy="20"
+           r="15"
+           class="badge"
+           id="circle18" />
+        <text
+           x="20"
+           y="24"
+           text-anchor="middle"
+           class="process"
+           id="text19">3</text>
+      </g>
+    </g>
+    <rect
+       width="140"
+       height="60"
+       rx="5"
+       ry="5"
+       class="secondary-box"
+       id="rect41"
+       x="50"
+       y="45" />
+    <text
+       x="120"
+       y="70"
+       text-anchor="middle"
+       class="title"
+       id="text41">Génération du</text>
+    <text
+       x="120"
+       y="90"
+       text-anchor="middle"
+       class="title"
+       id="text42">Portfolio</text>
+    <g
+       id="g43"
+       transform="translate(42.607731,84.456662)">
+      <circle
+         cx="20"
+         cy="20"
+         r="15"
+         class="badge"
+         id="circle42" />
+      <text
+         x="20"
+         y="24"
+         text-anchor="middle"
+         class="process"
+         id="text43">1</text>
+    </g>
+  </g>
+  <!-- Output Platforms -->
+  <g
+     transform="translate(100,400)"
+     id="g21">
+    <rect
+       width="150"
+       height="60"
+       rx="5"
+       ry="5"
+       class="output-box"
+       id="rect20"
+       x="0"
+       y="0" />
+    <text
+       x="75"
+       y="25"
+       text-anchor="middle"
+       class="title"
+       id="text20">Portfolio</text>
+    <text
+       x="75"
+       y="45"
+       text-anchor="middle"
+       class="subtitle"
+       id="text21">Site statique Netlify</text>
+  </g>
+  <g
+     transform="translate(320,400)"
+     id="g23">
+    <rect
+       width="150"
+       height="60"
+       rx="5"
+       ry="5"
+       class="output-box"
+       id="rect21"
+       x="0"
+       y="0" />
+    <text
+       x="75"
+       y="25"
+       text-anchor="middle"
+       class="title"
+       id="text22">Newsletter</text>
+    <text
+       x="73.241508"
+       y="45.264545"
+       text-anchor="middle"
+       class="subtitle"
+       id="text21-0"
+       style="font-size:12px;font-family:Arial, sans-serif;fill:#555555">Site statique GitHub</text>
+  </g>
+  <g
+     transform="translate(540,400)"
+     id="g25">
+    <rect
+       width="150"
+       height="60"
+       rx="5"
+       ry="5"
+       class="output-box"
+       id="rect23"
+       x="0"
+       y="0" />
+    <text
+       x="75"
+       y="25"
+       text-anchor="middle"
+       class="title"
+       id="text24">LinkedIn</text>
+    <text
+       x="75"
+       y="45"
+       text-anchor="middle"
+       class="subtitle"
+       id="text25">Publication professionnelle</text>
+  </g>
+  <!-- Arrows -->
+  <!-- Source to Processing -->
+  <path
+     d="M170,180 L170,250"
+     class="arrow"
+     id="path25" />
+  <!-- Processing to Outputs -->
+  <path
+     d="m 170,370 v 30"
+     class="arrow"
+     id="path26" />
+  <path
+     d="m 395,370 v 30"
+     class="arrow"
+     id="path27" />
+  <path
+     d="m 620,370 v 30"
+     class="arrow"
+     id="path28" />
+  <!-- Data Flow arrows -->
+  <path
+     d="m 205.34772,361.24241 h 110"
+     class="data-arrow"
+     id="path30" />
+  <path
+     d="m 388.24605,360.40312 h 110"
+     class="data-arrow"
+     id="path31" />
+  <!-- Metrics panel -->
+  <g
+     transform="translate(580.7459,82.862942)"
+     id="g35">
+    <rect
+       width="200"
+       height="120"
+       rx="5"
+       ry="5"
+       class="box"
+       id="rect31"
+       x="0"
+       y="0" />
+    <text
+       x="100"
+       y="25"
+       text-anchor="middle"
+       class="title"
+       id="text31">Métriques(à venir)</text>
+    <text
+       x="20"
+       y="50"
+       class="text"
+       id="text32">• Temps de publication</text>
+    <text
+       x="20"
+       y="70"
+       class="text"
+       id="text33">• Cohérence</text>
+    <text
+       x="20"
+       y="90"
+       class="text"
+       id="text34">• Erreurs de copie</text>
+    <text
+       x="20"
+       y="110"
+       class="text"
+       id="text35">• Engagement</text>
+  </g>
+  <!-- Code snippet -->
+  <g
+     transform="translate(261.69364,112.17736)"
+     id="g40">
+    <rect
+       width="200"
+       height="80"
+       rx="5"
+       ry="5"
+       class="box"
+       id="rect35"
+       x="0"
+       y="0" />
+    <text
+       x="10"
+       y="12"
+       class="code"
+       id="text36">---</text>
+    <text
+       x="10"
+       y="27"
+       class="code"
+       id="text37">title: Article</text>
+    <text
+       x="10"
+       y="42"
+       class="code"
+       id="text38">date: 2025-05-12</text>
+    <text
+       x="10"
+       y="57"
+       class="code"
+       id="text39">---</text>
+    <text
+       x="10"
+       y="71.531693"
+       class="code"
+       id="text40">## Contenu Markdown</text>
+  </g>
+</svg>
