@@ -79,7 +79,7 @@ def publish_simple_post():
 
     🔗 Liens principaux
     - Version complète: https://siasia-dev.github.io/portfolio-newsletter/latest.html
-    - Archives: https://siasia-d ev.github.io/portfolio-newsletter/archives.html
+    - Archives: https://siasia-dev.github.io/portfolio-newsletter/archives.html
 
     📋 Contenu de la newsletter
 
