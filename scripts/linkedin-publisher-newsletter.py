@@ -20,7 +20,7 @@ def publish_simple_post():
     company_id = os.environ.get('LINKEDIN_ORG_ID')
     #person_id = os.environ.get('LINKEDIN_PERSON_ID')
     
-    if not access_token or not person_id:
+    if not access_token or not company_id:
         logger.error("Token LinkedIn ou Person ID manquant")
         return False
     
