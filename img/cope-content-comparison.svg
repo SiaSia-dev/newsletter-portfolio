@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Styles -->
+  <style>
+    .screen { fill: #ffffff; stroke: #333; stroke-width: 2; }
+    .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 14px; fill: #555; }
+    .header { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #333; }
+    .text { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+    .label { font-family: Arial, sans-serif; font-size: 10px; fill: #777; }
+    .arrow { fill: none; stroke: #2196f3; stroke-width: 2; marker-end: url(#arrowhead); }
+    .feature { font-family: Arial, sans-serif; font-size: 12px; fill: #333; }
+    .heading { font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; fill: #333; }
+    .portfolio-nav { fill: #e3f2fd; stroke: #2196f3; }
+    .portfolio-content { fill: #ffffff; stroke: #ccc; }
+    .newsletter { fill: #e8f5e9; stroke: #4caf50; }
+    .linkedin { fill: #fff3e0; stroke: #ff9800; }
+    .card { fill: #ffffff; stroke: #ddd; }
+    .badge { fill: #2196f3; stroke: none; }
+    .linkedin-top { fill: #0a66c2; }
+    .linkedin-logo { fill: #ffffff; }
+    .icon { fill: #555; }
+    .button { fill: #2196f3; stroke: none; }
+    .button-text { font-family: Arial, sans-serif; font-size: 12px; fill: #ffffff; }
+    .highlight { fill: rgba(255, 235, 59, 0.3); stroke: #ffc107; stroke-width: 1; stroke-dasharray: 3,2; }
+  </style>
+  
+  <!-- Markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2196f3" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="600" fill="#fafafa" />
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" class="heading">Exemple de contenu à travers trois plateformes</text>
+  <text x="450" y="55" text-anchor="middle" class="subtitle">Illustration du principe "Create Once, Publish Everywhere" (COPE)</text>
+  
+  <!-- Portfolio Screen -->
+  <g transform="translate(50,100)">
+    <rect width="250" height="400" rx="5" ry="5" class="screen" />
+    <text x="125" y="-15" text-anchor="middle" class="title">PORTFOLIO (source)</text>
+    
+    <!-- Browser Bar -->
+    <rect x="0" y="0" width="250" height="30" fill="#f5f5f5" stroke="#ddd" />
+    <circle cx="15" cy="15" r="5" fill="#ff5f57" />
+    <circle cx="35" cy="15" r="5" fill="#ffbd2e" />
+    <circle cx="55" cy="15" r="5" fill="#28ca41" />
+    <rect x="75" y="8" width="150" height="15" rx="2" ry="2" fill="#ffffff" stroke="#ddd" />
+    <text x="100" y="19" class="label">portfolio.github.io</text>
+    
+    <!-- Navigation -->
+    <rect x="0" y="30" width="250" height="40" class="portfolio-nav" />
+    <text x="20" y="55" class="subtitle">Portfolio - Méthodologies</text>
+    
+    <!-- Content Area -->
+    <rect x="10" y="80" width="230" height="310" class="portfolio-content" />
+    
+    <!-- Article Header -->
+    <text x="25" y="100" class="header">Processus COPE</text>
+    <text x="25" y="120" class="subtitle">Create Once, Publish Everywhere</text>
+    
+    <!-- Image placeholder -->
+    <rect x="25" y="130" width="200" height="100" fill="#f5f5f5" stroke="#ddd" />
+    <text x="125" y="180" text-anchor="middle" class="label">Process_COPE.png</text>
+    
+    <!-- Article content -->
+    <rect x="25" y="240" width="200" height="20" fill="#f5f5f5" />
+    <rect x="25" y="270" width="200" height="10" fill="#f5f5f5" />
+    <rect x="25" y="290" width="180" height="10" fill="#f5f5f5" />
+    <rect x="25" y="310" width="190" height="10" fill="#f5f5f5" />
+    <rect x="25" y="330" width="160" height="10" fill="#f5f5f5" />
+    <rect x="25" y="350" width="200" height="10" fill="#f5f5f5" />
+    
+    <!-- Tags -->
+    <rect x="25" y="380" width="60" height="20" rx="10" ry="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="1" />
+    <text x="55" y="393" text-anchor="middle" class="label">COPE</text>
+    
+    <rect x="95" y="380" width="80" height="20" rx="10" ry="10" fill="#e3f2fd" stroke="#2196f3" stroke-width="1" />
+    <text x="135" y="393" text-anchor="middle" class="label">Automatisation</text>
+    
+    <!-- Highlight box -->
+    <rect x="20" y="95" width="210" height="150" class="highlight" />
+  </g>
+  
+  <!-- Newsletter Screen -->
+  <g transform="translate(325,100)">
+    <rect width="250" height="400" rx="5" ry="5" class="screen" />
+    <text x="125" y="-15" text-anchor="middle" class="title">NEWSLETTER (auto-générée)</text>
+    
+    <!-- Browser Bar -->
+    <rect x="0" y="0" width="250" height="30" fill="#f5f5f5" stroke="#ddd" />
+    <circle cx="15" cy="15" r="5" fill="#ff5f57" />
+    <circle cx="35" cy="15" r="5" fill="#ffbd2e" />
+    <circle cx="55" cy="15" r="5" fill="#28ca41" />
+    <rect x="75" y="8" width="150" height="15" rx="2" ry="2" fill="#ffffff" stroke="#ddd" />
+    <text x="100" y="19" class="label">newsletter.github.io</text>
+    
+    <!-- Header -->
+    <rect x="0" y="30" width="250" height="60" fill="#e8f5e9" stroke="#4caf50" />
+    <text x="125" y="55" text-anchor="middle" class="header">Newsletter</text>
+    <text x="125" y="75" text-anchor="middle" class="subtitle">20 Mai 2025</text>
+    
+    <!-- Content Area -->
+    <rect x="10" y="100" width="230" height="290" fill="#ffffff" stroke="#ccc" />
+    
+    <!-- Articles section -->
+    <text x="25" y="120" class="subtitle">Nouveaux articles</text>
+    
+    <!-- Article card with same content -->
+    <rect x="25" y="130" width="200" height="150" rx="5" ry="5" class="card" />
+    <text x="35" y="150" class="title">Processus COPE</text>
+    <rect x="35" y="160" width="180" height="60" fill="#f5f5f5" />
+    <text x="125" y="190" text-anchor="middle" class="label">Image miniature</text>
+    <text x="35" y="235" class="text" style="font-size: 10px;">Ce système représente une implémentation</text>
+    <text x="35" y="250" class="text" style="font-size: 10px;">de la stratégie COPE pour la syndication...</text>
+    <rect x="35" y="265" width="70" height="15" rx="7.5" ry="7.5" fill="#e8f5e9" stroke="#4caf50" stroke-width="1" />
+    <text x="70" y="276" text-anchor="middle" class="label">Lire plus</text>
+    
+    <!-- Other article cards (simplified) -->
+    <rect x="25" y="290" width="200" height="40" rx="5" ry="5" class="card" />
+    <rect x="25" y="340" width="200" height="40" rx="5" ry="5" class="card" />
+    
+    <!-- Highlight box -->
+    <rect x="20" y="130" width="210" height="155" class="highlight" />
+  </g>
+  
+  <!-- LinkedIn Screen -->
+  <g transform="translate(600,100)">
+    <rect width="250" height="400" rx="5" ry="5" class="screen" />
+    <text x="125" y="-15" text-anchor="middle" class="title">LINKEDIN (publication)</text>
+    
+    <!-- Browser Bar -->
+    <rect x="0" y="0" width="250" height="30" fill="#f5f5f5" stroke="#ddd" />
+    <circle cx="15" cy="15" r="5" fill="#ff5f57" />
+    <circle cx="35" cy="15" r="5" fill="#ffbd2e" />
+    <circle cx="55" cy="15" r="5" fill="#28ca41" />
+    <rect x="75" y="8" width="150" height="15" rx="2" ry="2" fill="#ffffff" stroke="#ddd" />
+    <text x="100" y="19" class="label">linkedin.com</text>
+    
+    <!-- LinkedIn Header -->
+    <rect x="0" y="30" width="250" height="40" class="linkedin-top" />
+    <circle cx="25" cy="50" r="15" fill="#ffffff" />
+    <text x="25" y="55" text-anchor="middle" class="linkedin-logo" style="font-weight: bold;">in</text>
+    
+    <!-- Profile section -->
+    <rect x="10" y="80" width="230" height="70" fill="#ffffff" stroke="#ddd" />
+    <circle cx="40" cy="115" r="20" fill="#f5f5f5" stroke="#ddd" />
+    <text x="80" y="105" class="subtitle">Alexia Fontaine</text>
+    <text x="80" y="125" class="text" style="font-size: 11px;">Spécialiste Contenu Digital</text>
+    
+    <!-- Post -->
+    <rect x="10" y="160" width="230" height="230" fill="#ffffff" stroke="#ddd" />
+    <text x="25" y="180" class="text">🔍 Dernières actualités et projets:</text>
+    <text x="25" y="200" class="title" style="font-size: 14px;">1. Processus COPE</text>
+    <text x="25" y="220" class="text" style="font-size: 11px;">Ce système représente une</text>
+    <text x="25" y="235" class="text" style="font-size: 11px;">implémentation de la stratégie</text>
+    <text x="25" y="250" class="text" style="font-size: 11px;">COPE pour la syndication...</text>
+    
+    <!-- Hashtags -->
+    <text x="25" y="275" class="text" style="font-size: 11px; fill: #0a66c2;">#gestiondecontenu #automatisation</text>
+    <text x="25" y="290" class="text" style="font-size: 11px; fill: #0a66c2;">#stratégieéditoriale</text>
+    
+    <!-- Link to newsletter -->
+    <text x="25" y="320" class="text" style="font-size: 11px;">➡️ Pour plus de détails, consultez notre</text>
+    <text x="25" y="335" class="text" style="font-size: 11px;">newsletter complète: newsletter.github.io</text>
+    
+    <!-- Engagement -->
+    <rect x="25" y="350" width="200" height="30" fill="#ffffff" stroke="#ddd" />
+    <circle cx="40" cy="365" r="8" fill="#f5f5f5" />
+    <text x="60" y="369" class="text" style="font-size: 11px;">38 interactions</text>
+    <circle cx="120" cy="365" r="8" fill="#f5f5f5" />
+    <text x="140" y="369" class="text" style="font-size: 11px;">12 partages</text>
+    
+    <!-- Highlight box -->
+    <rect x="20" y="195" width="210" height="60" class="highlight" />
+  </g>
+  
+  <!-- Arrows between platforms -->
+  <path d="M300,200 L325,200" class="arrow" />
+  <path d="M575,200 L600,200" class="arrow" />
+  
+  <!-- Process steps -->
+  <g transform="translate(50,520)">
+    <rect width="250" height="50" rx="5" ry="5" fill="#e3f2fd" stroke="#2196f3" />
+    <text x="125" y="30" text-anchor="middle" class="title">1. Création dans Markdown</text>
+    <text x="125" y="45" text-anchor="middle" class="text">(Source unique de vérité)</text>
+  </g>
+  
+  <g transform="translate(325,520)">
+    <rect width="250" height="50" rx="5" ry="5" fill="#e8f5e9" stroke="#4caf50" />
+    <text x="125" y="30" text-anchor="middle" class="title">2. Génération automatique</text>
+    <text x="125" y="45" text-anchor="middle" class="text">(Sans intervention manuelle)</text>
+  </g>
+  
+  <g transform="translate(600,520)">
+    <rect width="250" height="50" rx="5" ry="5" fill="#fff3e0" stroke="#ff9800" />
+    <text x="125" y="30" text-anchor="middle" class="title">3. Publication multiplateforme</text>
+    <text x="125" y="45" text-anchor="middle" class="text">(Adapté au format LinkedIn)</text>
+  </g>
+  
+  <!-- Arrows between steps -->
+  <path d="M300,545 L325,545" class="arrow" />
+  <path d="M575,545 L600,545" class="arrow" />
+</svg>
