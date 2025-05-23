@@ -21,7 +21,7 @@ def publish_simple_post():
     #person_id = os.environ.get('LINKEDIN_PERSON_ID')
     
     if not access_token or not company_id:
-        logger.error("Token LinkedIn ou Person ID manquant")
+        logger.error("Token LinkedIn ou Compagny ID manquant")
         return False
     
     # Message simple et engageant avec identifiant unique
