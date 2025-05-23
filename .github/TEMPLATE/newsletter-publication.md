@@ -18,14 +18,4 @@ La newsletter de cette semaine est arrivée !
 
 ---
 
-### ✅ Actions requises
-1. Vérifier que la newsletter s'affiche correctement
-2. Confirmer que les liens entre les sections fonctionnent
-3. Valider les images des projets
-4. **Pour approuver et publier sur LinkedIn** : Ajoutez le label `approved` à cette issue
-
-> Une fois le label `approved` ajouté, le workflow de publication LinkedIn sera automatiquement déclenché.
-
----
-
 Générée automatiquement le {datetime}
