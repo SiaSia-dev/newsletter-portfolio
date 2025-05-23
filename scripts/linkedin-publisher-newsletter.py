@@ -516,7 +516,7 @@ def main():
         # URL publique de la newsletter
         username = os.environ.get('GB_USERNAME', 'SiaSia-dev')
         repo_name = os.environ.get('GB_REPO', 'portfolio-newsletter')
-        newsletter_url = f"https://{username}.github.io/{repo_name}/latest.html"
+        newsletter_url = f"https://{username}.github.io/{repo_name}/newsletter_20250523.html"
         
         # Vérification de l'URL via une requête HEAD pour s'assurer qu'elle est accessible
         try:
