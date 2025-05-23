@@ -78,7 +78,7 @@ jobs:
           import datetime
 
           # Récupérer la newsletter depuis l'URL
-          url = "https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html
+          url = "https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250523.html"
           
           try:
               response = requests.get(url, timeout=10)
