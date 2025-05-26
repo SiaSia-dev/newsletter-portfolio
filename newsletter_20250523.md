@@ -166,7 +166,7 @@ Cette architecture représente une évolution naturelle des systèmes de gestion
 
 **La méréologie comme cadre d'analyse: de la logique formelle aux archives visuelles**
 
-Demande de prompt : définition et applications de la méréologie
+Contenu généré par modèle IA - Demande de prompt : définition et applications de la méréologie en analyse cutlurelle
 
 ### Origines et définition
 
