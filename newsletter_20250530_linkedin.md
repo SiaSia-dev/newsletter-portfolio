@@ -290,156 +290,178 @@ Et puis il y a une <strong>acceptabilité</strong> sociale de la surconsommation
 
 [Retour en haut](#)
 
-
 ---
 
-### 📌 La restriction des contenus
+### 📌 La restriction des contenus sur LinkedIn ?
 
-![La restriction des contenus](img/1742724497786?e=1749686400&v=beta&t=Q3U9D81RrGWmYlM-cmITQVq2_ClkcTO3YmZ2BWdobR0)
+![La restriction des contenus](img/SlowsiaNewsletter.png)
 
-#### La restriction des contenus
+#### La restriction des contenus sur LinkedIn ?
 
-[La restriction des contenus](#)
+[La restriction des contenus sur LinkedIn ?](#)
 
-<em>Mise à jour : Article publié sur LinkedIn le 03 avril dernier, à ce moment, nous ne pouvions pas publier sur LinkedIn automatiquement le contenu de notre Newsletter et je m'en expliquais en présentant notre workflow automatisé appliquant le principe COPE.</em>
+*Mise à jour : Article publié sur LinkedIn le 03 avril dernier, à ce moment, nous ne pouvions pas publier sur LinkedIn automatiquement le contenu de notre Newsletter et je m'en expliquais en présentant notre première version du workflow automatisé appliquant le principe COPE.*
 
-Finalement, c'est plus un apprentissage de l'API Management (discipline générale de gestion des APIs) auquel nous nous sommes intéressés par cette automatisation de publication.
+Tout cela nous a servi pour mieux connaître **l'API Management** (discipline générale de gestion des APIs) en nous intéressant à cette **automatisation de publication**.
 
-Il manque cet échelon intermédiaire de pouvoir créer son service
+Ce ne sont pas des analytics marketing poussées mais cela permet **un suivi opérationnel** de nos publications professionnelles ; et nous maintenons que les gains (à notre échelle) sont probants en terme de rationnalisation de la démarche, d'audience et de structuration du contenu.
 
-[ ](/company/www-linkedin-com-in-alexiafontaine/)
+C'est **moins de stress car mieux planifié et, sur la charge mentale, on réduit sa saturation informationnelle quotidienne.**
 
-[ ](/company/www-linkedin-com-in-alexiafontaine/)
+Il est vrai que nous nous plaçons toujours plus facilement dans une approche constructiviste avec ce focus *"solutions"* plus que sur la critique d'un système.
 
+A cette échelle, c'est "jouable" mais cela ne peut pas résoudre le problème de l'infobésité ou de la surcharge informationnelle.
+
+Il manque encore cet échelon intermédiaire dans le numérique de pouvoir créer ce qui nous sert, afin de mieux nous responsabiliser aussi dans nos usages numériques : cela rejoint finalement les problématiques de **la sobriété numérique** ou encore de **l'écoconception**, sur lesquels nous sommes encore tous dans l'impasse.
+
+![Newsletter d'Alexia Fontaine](https://media.licdn.com/dms/image/v2/D4E0BAQE7ngseOrF4MA/company-logo_100_100/B4EZXCeX7qHcAQ-/0/1742724497786?e=1749686400&v=beta&t=Q3U9D81RrGWmYlM-cmITQVq2_ClkcTO3YmZ2BWdobR0)
 
 #### NEWSLETTER d'Alexia Fontaine
-
-[NEWSLETTER d'Alexia Fontaine](/company/www-linkedin-com-in-alexiafontaine/)
-
 3 avril 2025
 
-<img alt="" src="/img/IA_Fleur_au_fusil.png">
-<em>une image générée par ChatGPT pour évoquer la fleur au fusil</em></img>
+![Une image générée par ChatGPT pour évoquer la fleur au fusil](/img/IA_Fleur_au_fusil.png)
+*une image générée par ChatGPT pour évoquer la fleur au fusil*
 
-Je me suis récemment lancée dans cette idée de maintenir ma présence sur les réseaux sociaux en générant une newsletter hébergée sur GitHub avec comme "source" de contenus mon portfolio : l'objectif d'une <em>réutilisation optimisée</em>,selon le principe COPE.
+Je me suis récemment lancée dans cette idée de maintenir ma présence sur les réseaux sociaux en générant une newsletter hébergée sur GitHub avec comme "source" de contenus mon portfolio : l'objectif d'une *réutilisation optimisée*, selon le principe COPE....
 
-<img alt="" src="https://media.licdn.com/dms/image/v2/D4E12AQEo33g-hGqD5Q/article-inline_image-shrink_1500_2232/B4EZX7Txv8HUAo-/0/1743678021400?e=1749686400&amp;v=beta&amp;t=M0QA9SkX_4k7pnBXcuKXkfpbf2vThrLFfB9zovCaZWc"/>
-
-Processus d'éditorialisation de contenus
-
-Une manière de <strong>recycler ce que l'on produit sur le web</strong> , et plus particulièrement les réseaux sociaux, ces questions me semblent assez pertinentes (un contenu a une durée de vue d'une heure environ), alors voyez votre intérêt : <strong>vous y passerez moins de temps !</strong> <em>(...peut-être pas au début</em> 🥲)
-
-<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQFldAJ8GTOoIA/article-inline_image-shrink_1000_1488/B56ZX63.cmGcAQ-/0/1743670733081?e=1749686400&amp;v=beta&amp;t=I39-KjRS6yW8IOD__mcK_q9ETx9-cv-DsDNPla_tqZc"/>
-
-Workflow de ce processus d'éditorialisation
-
-Le dispositif est opérationnel de bout en bout : pour GitHub tant que c'est public, il valide, et les plateformes LinkedIn - GitHub sont parfaitement interopérables. Par contre, les restrictions des API, c'est une autre danse : on ne lutte pas face à la restriction des doublons !!
-
-Disons plus simplement que leur politique de contenus considère mon action comme du SPAM... Me voilà bien...
-
-- Au début, je me suis dit (magnifique photo au passage) :
-<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQGjo9byHXnfjw/article-inline_image-shrink_1000_1488/B56ZX6yMY.GQAQ-/0/1743669217270?e=1749686400&amp;v=beta&amp;t=udXYbuOL4uM0K4LC1nLzn9we9h8S18KJ3bmkkcpAe9E"/>
-
-La Jeune Fille à la Fleur (1967) de Marc RIBOUD
-
-- Et puis après :
-<img alt="" src="https://media.licdn.com/dms/image/v2/D5612AQFw23bjgwcf9g/article-inline_image-shrink_1000_1488/B56ZX6ymFkHEAQ-/0/1743669331220?e=1749686400&amp;v=beta&amp;t=F3_3wWxZop5X08yHcz9MieHNV3Ct8aHSjikrYHv3yJY"/>
-
-Game over World 😜
-
-Que ce soit en changeant le fichier d'appel html, les contenus ou en re-re-changeant le Token (et il semblerait que le problème vienne à présent plutôt de là!) : mon processus d'éditorialisation reste partiellement automatisé à ce stade... <em>"Et 'Michalak en attendant ..."</em>
-
-[  ](https://kroki.io/mermaid/svg/eNqFVs1u4zYQvvcpCCwW3QBMkQ3gQ12gRbBJmgDONtgmuQg50NLI5pomXf7YCeJ9gLxFj_W9b6AX6_BHohQnWwO2KXK-mfnmj6qF2pRzpi25Of2B4MdYfPhw2uymzpLKkY3SixqFDsjh4a_Eaj6bgX7C81KALOewBGm_BWT4ef-eXOEZk9wswZAKSDUQDUJJi9e4PXFWLZnlfzkYkxvlDBGIE05W3JDmb_LzfEtKrWRxLVBpzUuUVZLMYVohrmJcw_33lZ6sdPOPIbNmJ5udjnAJGyPAWtBbsoHpXKlF0TyvUSR4SX7n9sJN9xVfMelAbMkS_5kohmEIuyDuczS84yFuKFEulIv0k8H9g6h1f7-NbPNs2SpGFTntViyyiaYSoPiUFihlfPBXzb_W3AelFaxMcSkxxULEOLQyICsmSzDRdy8XAGsmeMUs3KgFyOIuPgWcI9bvkQmXC6guZQQO5DOPiSoXxR0GP-cPFaxBa-VeyWRLd6JmPoOebpTl6PYMBojM3RsJJrnxS6h8kX7FClq5qeDNjpQ-38TAknEJv8WabWVDcv9wfEtqpUsIMXw690ty7eFmTlhpORbIa8DPSiKQy-qcCyi-APqj8etJIuE5x-JBDrnmIs1sKVvHamIyhOszSqpHT7cLVUxia-c1HcERYFo8nj1wW5xI6VKiD32ae9EYRvq6V03eVcGiXJnrqzUbfEClYOxT_PtpbpeCwAM3tg1rPMi0nIFJ2CpuLcdo9gx1Gu5fIruoYkCxu16PKzq0Ejg0kIAX6tHKyFiIGlD1rRbFJ5TNDvx4-2USyWKpRXjn7RDYb-u0FQQwcAYukEFx9mC1L5O2sZTEiYOLi5urSVTdyQYkRPlTZtkAi83FrQZKfC9R7HX1Fax5kbKcn64Jw1lPaXQv1m_RBxinX3RukkpD_vGOac6kNcWZMYyHMc7rGjsYw4mE1vE4jiKc8wbrtB2WHTY145-uxMFinvr2MQPOGN6WS-qoJNnrhhDn0A69pH1ncgx1YAFRUir0UzqErXyKm92WaMheJoLMYbw7WlFZXyzoGxHUZNGLNRJfsodttvcWjeACixeQxaEM8XrLerDCGRehW5tnP8f222-Y93MuWdtBvWLspp9Qs-RAcSY1zLArdbyd3lCcAQFv4voD2hkTf4CuH2QPuuEShRd85R-i9OVMKkzT3qyJ8JZnHGL44DREXCR-MJz9zW6GlxIQsPhK8pjGXSmYMadQt15ikwsxflce10flMUWmeO-M3x3Vo7Q-3PDKzsfHq4dfhvhkP-E9uoevR_-Lx5Yc2K8-1kcdfjSqh_iPe_gKSm58NScHRgMCNTt6Q0HW0oaA5vzTXirTac9sy5l2iUgbfZn2LYL6VwA6uM5pewPQbojR3qyhaYLQ3gSg3XVGu5lK81ym3Rylg15Lwe37ld7BaHvt0nzx0Xhl0Nx4bXC9gv8Ags3IqQ) Diagramme du processus d'éditorialisation de contenus
-
-[  ](https://kroki.io/mermaid/svg/eNqFVs1u4zYQvvcpCCwW3QBMkQ3gQ12gRbBJmgDONtgmuQg50NLI5pomXf7YCeJ9gLxFj_W9b6AX6_BHohQnWwO2KXK-mfnmj6qF2pRzpi25Of2B4MdYfPhw2uymzpLKkY3SixqFDsjh4a_Eaj6bgX7C81KALOewBGm_BWT4ef-eXOEZk9wswZAKSDUQDUJJi9e4PXFWLZnlfzkYkxvlDBGIE05W3JDmb_LzfEtKrWRxLVBpzUuUVZLMYVohrmJcw_33lZ6sdPOPIbNmJ5udjnAJGyPAWtBbsoHpXKlF0TyvUSR4SX7n9sJN9xVfMelAbMkS_5kohmEIuyDuczS84yFuKFEulIv0k8H9g6h1f7-NbPNs2SpGFTntViyyiaYSoPiUFihlfPBXzb_W3AelFaxMcSkxxULEOLQyICsmSzDRdy8XAGsmeMUs3KgFyOIuPgWcI9bvkQmXC6guZQQO5DOPiSoXxR0GP-cPFaxBa-VeyWRLd6JmPoOebpTl6PYMBojM3RsJJrnxS6h8kX7FClq5qeDNjpQ-38TAknEJv8WabWVDcv9wfEtqpUsIMXw690ty7eFmTlhpORbIa8DPSiKQy-qcCyi-APqj8etJIuE5x-JBDrnmIs1sKVvHamIyhOszSqpHT7cLVUxia-c1HcERYFo8nj1wW5xI6VKiD32ae9EYRvq6V03eVcGiXJnrqzUbfEClYOxT_PtpbpeCwAM3tg1rPMi0nIFJ2CpuLcdo9gx1Gu5fIruoYkCxu16PKzq0Ejg0kIAX6tHKyFiIGlD1rRbFJ5TNDvx4-2USyWKpRXjn7RDYb-u0FQQwcAYukEFx9mC1L5O2sZTEiYOLi5urSVTdyQYkRPlTZtkAi83FrQZKfC9R7HX1Fax5kbKcn64Jw1lPaXQv1m_RBxinX3RukkpD_vGOac6kNcWZMYyHMc7rGjsYw4mE1vE4jiKc8wbrtB2WHTY145-uxMFinvr2MQPOGN6WS-qoJNnrhhDn0A69pH1ncgx1YAFRUir0UzqErXyKm92WaMheJoLMYbw7WlFZXyzoGxHUZNGLNRJfsodttvcWjeACixeQxaEM8XrLerDCGRehW5tnP8f222-Y93MuWdtBvWLspp9Qs-RAcSY1zLArdbyd3lCcAQFv4voD2hkTf4CuH2QPuuEShRd85R-i9OVMKkzT3qyJ8JZnHGL44DREXCR-MJz9zW6GlxIQsPhK8pjGXSmYMadQt15ikwsxflce10flMUWmeO-M3x3Vo7Q-3PDKzsfHq4dfhvhkP-E9uoevR_-Lx5Yc2K8-1kcdfjSqh_iPe_gKSm58NScHRgMCNTt6Q0HW0oaA5vzTXirTac9sy5l2iUgbfZn2LYL6VwA6uM5pewPQbojR3qyhaYLQ3gSg3XVGu5lK81ym3Rylg15Lwe37ld7BaHvt0nzx0Xhl0Nx4bXC9gv8Ags3IqQ)
-
-...Rétropédalage certes, mais le fait d'avoir <strong>modularisé le projet</strong> rend les modifications beaucoup plus aisées et donne une flexibilité à laquelle je n'avais pas pensé : séparer la génération de la newsletter et son stockage en deux dépôts distincts, finalement en extrapolant la séparation entre le fond et la forme à l'échelle des plateformes.
-
-Deux formats de sortie pour répondre aux exigences de la plateforme de publication, LinkedIn aura de toute façon toujours le dernier mot, puisque j'utilise sa plateforme.
-
-
-#### 📰 Newsletter Portfolio
-
-[📰 Newsletter Portfolio](https://siasia-dev.github.io/portfolio-newsletter/latest.html)
+**Suite du post :** [Lire l'article complet sur LinkedIn](https://www.linkedin.com/pulse/la-restriction-des-contenus-sur-linkedin-awqje/?trackingId=tMGE%2Fu3tTwZcACMHfHJoXA%3D%3D)
 
 [Retour en haut](#)
-
 
 ---
 
-### 📌 Comment lire... la citrouille de Cendrillon
+### 📌 Pourquoi un script d'automatisation de publication ?
 
-![Comment lire... la citrouille de Cendrillon](img/IA_Fleur_au_fusil.png)
+![Pourquoi un script d'automatisation de publication ?](img/cope-diagram.png)
 
-#### Comment lire... la citrouille de Cendrillon
+#### Pourquoi un script d'automatisation de publication ?
 
-[Comment lire... la citrouille de Cendrillon](#)
+[Pourquoi un script d'automatisation de publication ?](#)
 
+#### 1. Automatiser la diffusion de son contenu
 
-#### L'identité du lecteur
+Les bénéfices sont concrets d'**automatiser la diffusion de son contenu** : on élimine des tâches répétitives de copier-coller vers les réseaux sociaux tout en gardant un suivi, on réduit son temps à la publication sociale en maintenant une présence constante sans (trop) effort quotidien, et on investit plus sur la valeur de son contenu.
 
-Le petit buzz autour de Cluely ([voir post "Cluely : de ton entretien d'embauche à ton rancard!"]()) renvoie à des problématiques identitaires marquées et très actuelles, à travers la promotion d'un produit IA censé "tricher sur tout" ! Et bien que cette vidéo reste dans un modèle <em>"mâle, (blanc), de culture standard"</em>, ce télescopage entre marketing &amp; litterature se tente.
+Voilà à quoi ressemble notre suivi automatisé des publications LinkedIn : rien de nouveau, un simple tableur pour avoir une vue d'ensemble de notre planification :
 
-[voir post "Cluely : de ton entretien d'embauche à ton rancard!"]()
+![tableau de suivi des publications LinkedIn](/img/automatisation-posts.png)
 
-Dans la critique littéraire contemporaine, la lecture impersonnelle fondée sur des critères esthétiques objectifs est rejetée au profit d'une approche qui valorise l'identité du lecteur.
-Cette lecture de William Marx du travail d'Elaine Castillo ("How to read now", 2022) met en perspective toute cette complexité identitaire américaine, mais aussi les projections associées à toutes formes de domination.
+#### 2. ...Mais pas tout
 
-Cela faisait alors écho à un échange avec une de mes élèves de 3eme qui lisait un passage des <em>Misérables</em> et transposait sur le même plan injustice sociale et colonisation en Nouvelle-Calédonie : pour elle, la farine sur le visage du boulanger était le symbole de la domination.
+Ne pas à avoir à remplir manuellement ce genre de tableau et pouvoir juste se concentrer sur le texte à publier, c'est plutôt agréable...[🤖 *l'idée de tout automatiser m'a évidemment traversé l'esprit*🤦‍♀️]
 
-Son explication était comme la citrouille d'Elaine Castillo, parfaitement cohérente avec sa réalité, et ne toujours pas tenir compte de ses réalités est très justement ce que reproche cette auteur ; même si son point de vue m'apparaît excessif, il reste très drôle (j'aurai aimé ajouté pertinent mais je ne l'ai pas encore lue)
+Mais la validation est un processus très important dans la qualité d'une chaîne de publication, d'autant plus sur un petit projet comme le nôtre qui utilise des scripts hébergés sur GITHUB.
 
-Heureusement, l'écriture permet cette liberté et reste un moteur de changements. Je vous en laisse juge.
+#### 3. Changement de posture
 
+Ce que nous trouvons intéressant dans ce type de démarche est de ne plus être seulement utilisateur de la plateforme, mais aussi **d'être à l'inititative d'un outil pour utiliser ce réseau social.**
 
-#### La citrouille de Cendrillon
+Notre application ne prétend pas réinventer ce que d'autres commercialisent déjà depuis longtemps mais nous tentons de développer ce qu'il nous fallait : **une convergence entre plusieurs outils de communication.**
 
-<em>Professeur : William Marx
-Chaire Littératures comparées</em>
+![cope-diagramme](/img/cope-diagram.png)
 
-<em>Dans le régime de lecture contemporain d’inspiration progressiste et décoloniale, jamais le lecteur ne saurait oublier qui il est et d’où il lit. On assiste à la fin de l’idée d’une lecture impersonnelle des œuvres, qui dominait la critique littéraire formaliste, à savoir une lecture fondée sur des critères esthétiques objectivables, sur des paramètres formels universalisables, généralisables à toutes les cultures. La dépersonnalisation du lecteur est désormais considérée comme l’ultime subterfuge du « suprémacisme blanc » (Castillo) pour asseoir sa domination et maintenir dans la soumission les populations racisées. Pour la critique décoloniale, en effet, le lecteur idéal prévu par les grands textes canoniques européens, le « lector in fabula » (Eco), est un lecteur blanc, mâle, hétérosexuel, de culture standard.</em>
+#### 4. Chaîne de publication de contenus hybride
+
+Nous pensons que notre chaîne de publication illustre ces nouvelles formes de convergence entre CMS, KM et PAO et surtout, répond à notre objectif : **automatiser la diffusion de nos publications sociales avec la possibilité de réutiliser nos contenus sous différents formats.**
+
+**Aspects CMS**
+- Gestion de contenu web : Publication automatisée vers LinkedIn et sites web
+- Workflow de publication : Pipeline automatisé "Create Once, Publish Everywhere"
+- (Multi-canal : Possibilité de diffusion simultanée sur plusieurs plateformes digitales)
+
+**Aspects KM**
+- Source unique de vérité : Les fichiers Markdown centralisent la connaissance
+- Structuration des savoirs : Organisation cohérente du contenu avec métadonnées
+- Réutilisabilité : Un même contenu expert génère plusieurs formats
+- Traçabilité : Versioning et suivi des modifications
+
+**Aspects PAO**
+- Adaptation multi-format : Transformation automatique en différents layouts (portfolio, newsletter, LinkedIn)
+- Mise en forme contextuelle : Chaque sortie respecte les codes visuels de sa plateforme
+- (Production éditoriale : Possibilité de générer des supports de communication professionnels)
+
+**L'intérêt de cette approche**
+
+Cette architecture dépasse selon nous les silos traditionnels :
+- Efficacité : Élimination de la ressaisie et des erreurs de copie
+- Cohérence : Message uniforme mais adapté à chaque canal
+- Automatisation : Réduction drastique du travail manuel
+- Évolutivité : Ajout facile de nouveaux canaux de diffusion
+
+Notre projet est un simple exemple de **convergence technologique** où les frontières entre gestion documentaire, publication web et production éditoriale s'estompent au profit d'une approche intégrée et automatisée.
 
 [Retour en haut](#)
-
 
 ---
+### 📌 Architecture Modulaire à Base de Contenu
 
-### 📌 l'art du réseau social
+![Architecture Modulaire à Base de Contenu](img/archi-modulaire.png)
 
-![l'art du réseau social](img/logos-reseau-social.avif)
+#### Architecture Modulaire à Base de Contenu
 
-#### l'art du réseau social
+[Architecture Modulaire à Base de Contenu](#)
 
-[l'art du réseau social](#)
+L'**Architecture Modulaire à Base de Contenu** (ou "Content-Driven Modular Architecture") représente une approche flexible pour concevoir des sites web et des applications. Cette méthodologie place le contenu au centre du processus de développement, en le séparant strictement de la présentation.
 
+#### A. Principes fondamentaux
 
-#### L'art du réseau social?
+Cette architecture repose sur plusieurs principes clés qui la rendent particulièrement efficace pour les sites riches en contenu comme les portfolios et les blogs :
 
-<img alt="Reseau social" src="/img/logos-reseau-social.avif">{width=100px} Je suis toujours surprise par la qualité de certains posts sur les réseaux sociaux, reflet de nos sociétés etc. Et on le sait tous pourtant : <em>"...si c'est gratuit, c'est nous le produit !"</em></img>
+#### B. Séparation du contenu et de la présentation
 
-Cette piqure de rappel ne remet absolument pas en cause mon usage des réseaux sociaux, je joue le jeu comme tout le monde, et dans ces flux d'informations, j'adopte comme tout à chacun <em>ma stratégie de comm'</em> !
+Le contenu est stocké dans des fichiers indépendants (souvent au format Markdown) avec des métadonnées standardisées (frontmatter), complètement séparés du code HTML, CSS et JavaScript qui définit leur présentation. Cette séparation permet à chaque aspect d'évoluer indépendamment.
 
-Les enjeux sont pourtant non-négligeables puisque nous fournissons, gratuitement, à notre tour, tous ces contenus.
+#### C. Composabilité
 
-Il me semble que la réutilisation des contenus serait une solution équitable pour maintenir une présence numérique avec moins de contraintes.
+Les sections et composants peuvent être facilement réutilisés, réorganisés ou recombinés pour créer de nouvelles pages ou expériences. Cette flexibilité permet d'assembler rapidement différentes vues à partir des mêmes éléments de base.
 
-Sachant qu'un contenu à une durée de vue d'une heure environ sur un réseau social, cet ordre de grandeur rend le sujet concret.
+#### D. Maintenabilité
 
-En me basant sur un format de portfolio, j'organise mon profil numérique.
+Modifier un contenu n'exige pas de toucher au code HTML principal. Les rédacteurs de contenu peuvent se concentrer uniquement sur les fichiers Markdown pertinents, sans risquer d'altérer la structure ou le fonctionnement du site.
 
-Cet outil de présentation professionnelle est un moyen de documentation et de réflexion sur son parcours avec la possibilité de le mettre à jour de manière continue : compétences, expériences et projets sont ainsi mises en avant.
+#### E. Évolutivité
 
-Cette structuration des contenus me permet ensuite de développer une application pour <em>"mettre en vitrine"</em> mes contenus.
+Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier Markdown. Cette approche réduit considérablement la friction pour enrichir le site avec de nouveaux contenus.
 
-Ainsi, en appliquant [le processus COPE - newsletter 03/04/2025](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250403.html#project-cope-process-documentation), nous avons opté pour une newsletter.
+**Implémentation pratique**
 
-[le processus COPE - newsletter 03/04/2025](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250403.html#project-cope-process-documentation)
+Pour les composants simples, le Markdown pur suffit généralement. Cependant, pour les composants plus complexes comme les grilles de compétences, les cartes de services, ou les processus multi-étapes, l'HTML embarqué dans Markdown offre le meilleur compromis :
 
-De cette manière, nous répondions à cette injonction de présence sur les réseaux sociaux tout en gardant un "cadre" et éviter l'éparpillement avec les réseaux sociaux.
+```markdown
+---
+title: "Mes compétences"
+subtitle: "Expertise technique"
+---
 
-Et surtout, cela me permet de garder une copie de mes contenus et d'assurer l'historique de votre activité sur les réseaux sociaux.
+**Vue d'ensemble de mes compétences**
 
-[Retour en haut](#)
+<div class="skill-category">
+    <h3><i class="fas fa-code"></i> Développement</h3>
+    <div class="skill-item">
+        <div class="skill-name">
+            <span>JavaScript</span>
+            <span>90%</span>
+        </div>
+        <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"></div>
+        </div>
+    </div>
+</div>
+```
+
+Cette approche hybride permet de préserver le rendu visuel exact des composants complexes tout en profitant pleinement de la modularité du système.
+
+**Avantages à long terme**
+
+Au-delà des bénéfices immédiats, cette architecture offre des avantages substantiels sur le long terme :
+    - **Transitions technologiques facilitées** - Le contenu peut être conservé même si le framework ou la technologie de présentation change
+    - **Versionning efficace** - Les modifications de contenu sont visibles dans les commits Git
+    - **Possibilités de migration accrues** - Le contenu peut être facilement exporté vers d'autres systèmes
+    - **Optimisation du workflow** - Les designers et développeurs peuvent travailler sur l'interface pendant que les rédacteurs créent le contenu
+
+Cette architecture représente une évolution naturelle des systèmes de gestion de contenu, offrant davantage de flexibilité tout en conservant une structure claire et organisée.
+
+[voir aussi la NEWSLETTER du 11/04/2025 : Architecture Modulaire pour Portfolio Digital](https://siasia-dev.github.io/portfolio-newsletter/newsletter_20250411.html)
 
 
 ---
