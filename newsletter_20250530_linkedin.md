@@ -82,7 +82,7 @@ Nous avons alors traité certaines données du surendettement en France, d'aprè
 
 Notre choix s'est porté sur l'utilisation d'un <em>"Fork of Zoomable circle packing"</em> (c'est à dire une copie d'un type de projet de visualisation de données depuis ObservableHQ, qui propose d'ailleurs une gallerie gratuite de visualisations).
 
-L'intérêt ici est de pouvoir comprendre ses données en combinant tout un récit avec la visualisation, une manière moderne et élégante de parler, par exemple, d'un sujet de société totalement invisibilisé par les médias (et oui faut du glam'... et surtout pas de réalités!)
+L'intérêt ici est de pouvoir comprendre ses données en combinant tout un récit avec la visualisation, une manière moderne et élégante de parler, par exemple, d'un sujet de société totalement invisibilisé par les médias.
 
 
 #### 4. Décryptage de cette visualisation de données
