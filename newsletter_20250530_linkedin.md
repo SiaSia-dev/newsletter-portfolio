@@ -294,7 +294,7 @@ Et puis il y a une <strong>acceptabilité</strong> sociale de la surconsommation
 
 ### 📌 La restriction des contenus sur LinkedIn ?
 
-![La restriction des contenus](img/SlowsiaNewsletter.png)
+![La restriction des contenus](img/SlowsiaNewsletter2.png)
 
 #### La restriction des contenus sur LinkedIn ?
 

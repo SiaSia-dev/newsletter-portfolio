@@ -74,50 +74,36 @@ jobs:
           cat > extract_content.py << 'EOF'
           import requests
           from bs4 import BeautifulSoup
-          import re
 
           url = "https://siasia-dev.github.io/portfolio-newsletter/latest.html"
-          
+
           try:
               response = requests.get(url, timeout=10)
               response.raise_for_status()
               
               soup = BeautifulSoup(response.content, 'html.parser')
-              text_content = soup.get_text()
               
-              # Extraire les sections principales (simulé)
-              sections = [
-                  "LLM function calls don't scale; code orchestration is simpler, more effective de Jiquan Ngiam",
-                  "MCP = Méta-API ?", 
-                  "L'information obligée d'être créative",
-                  "Implémentation de la stratégie COPE (Create Once, Publish Everywhere)",
-                  "Architecture Modulaire à Base de Contenu",
-                  "Méréologie comme cadre d'analyse"
-              ]
+              # Extraction dynamique des project-cards
+              project_cards = soup.find_all('div', class_='project-card')
               
               markdown = ""
-              for i, section in enumerate(sections, 1):
-                  if "LLM function" in section:
-                      desc = "Retour d'expérience et proposition pour l'orchestration MCP"
-                  elif "MCP" in section:
-                      desc = "MCP est un orchestrateur d'API"
-                  elif "information" in section:
-                      desc = "La segmentation du web conduit à de nouvelles formes de régulation de l'information"
-                  elif "COPE" in section:
-                      desc = "Mise en place d'un système \"Create Once, Publish Everywhere\" qui part des fichiers Markdown pour générer automatiquement un portfolio et une newsle..."
-                  elif "Architecture" in section:
-                      desc = "L'**Architecture Modulaire à Base de Contenu** (ou \"Content-Driven Modular Architecture\")"
-                  else:
-                      desc = "La méréologie comme cadre d'analyse: de la logique formelle aux archives visuelles"
+              for i, card in enumerate(project_cards, 1):
+                  title_elem = card.find('h2', class_='project-title')
+                  desc_elem = card.find('div', class_='project-description')
                   
-                  markdown += f"**{i}. {section}**\n{desc}\n\n"
+                  if title_elem and desc_elem:
+                      # Nettoyer le titre (enlever les liens)
+                      title = title_elem.get_text(strip=True)
+                      desc = desc_elem.get_text(strip=True)
+                      
+                      markdown += f"**{i}. {title}**\n{desc}\n\n"
               
               print(markdown)
               
           except Exception as e:
-              print("Newsletter générée avec succès - Contenu disponible en ligne")
+              print("Articles variés sur l'innovation et la technologie")
           EOF
-          
+            
           NEWSLETTER_CONTENT=$(python extract_content.py)
           
           # Utiliser newsletter-publication.md
@@ -128,7 +114,7 @@ jobs:
           assignees: SiaSia-dev
           ---
 
-          # 📰 Newsletter Portfolio - $(date +"%d/%m/%Y")
+          # 📰 Newsletter - $(date +"%d/%m/%Y")
 
           La newsletter de cette semaine est arrivée !
 

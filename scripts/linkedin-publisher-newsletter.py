@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger('simple_linkedin')
 
 def get_newsletter_content():
-    """Récupère le même contenu que dans l'issue"""
+    """Récupère dynamiquement le contenu de la newsletter"""
     import requests
     from bs4 import BeautifulSoup
     
@@ -23,39 +23,26 @@ def get_newsletter_content():
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         
-        # Même extraction que dans le YML
-        sections = [
-            "LLM function calls don't scale; code orchestration is simpler, more effective de Jiquan Ngiam",
-            "MCP = Méta-API ?", 
-            "L'information obligée d'être créative",
-            "Implémentation de la stratégie COPE (Create Once, Publish Everywhere)",
-            "Architecture Modulaire à Base de Contenu",
-            "Méréologie comme cadre d'analyse"
-        ]
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Extraction dynamique des project-cards
+        project_cards = soup.find_all('div', class_='project-card')
         
         content = ""
-        for i, section in enumerate(sections, 1):
-            if "LLM function" in section:
-                desc = "Retour d'expérience et proposition pour l'orchestration MCP"
-            elif "MCP" in section:
-                desc = "MCP est un orchestrateur d'API"
-            elif "information" in section:
-                desc = "La segmentation du web conduit à de nouvelles formes de régulation de l'information"
-            elif "COPE" in section:
-                desc = "Mise en place d'un système \"Create Once, Publish Everywhere\""
-            elif "Architecture" in section:
-                desc = "L'Architecture Modulaire à Base de Contenu"
-            else:
-                desc = "La méréologie comme cadre d'analyse"
+        for i, card in enumerate(project_cards, 1):
+            title_elem = card.find('h2', class_='project-title')
+            desc_elem = card.find('div', class_='project-description')
             
-            content += f"**{i}. {section}**\n{desc}\n\n"
+            if title_elem and desc_elem:
+                title = title_elem.get_text(strip=True)
+                desc = desc_elem.get_text(strip=True)
+                
+                content += f"**{i}. {title}**\n{desc}\n\n"
         
-        return content
+        return content if content else "Articles sur l'innovation technologique."
         
-    except:
+    except Exception as e:
         return "Articles sur l'innovation technologique."
-
-
 def publish_simple_post():
     """Publie un post simple sur LinkedIn avec message engageant"""
     
