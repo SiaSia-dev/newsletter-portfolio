@@ -84,10 +84,9 @@ Notre choix s'est porté sur l'utilisation d'un <em>"Fork of Zoomable circle pac
 
 L'intérêt ici est de pouvoir comprendre ses données en combinant tout un récit avec la visualisation, une manière moderne et élégante de parler, par exemple, d'un sujet de société totalement invisibilisé par les médias.
 
-
 #### 4. Décryptage de cette visualisation de données
 
-Nous n'avons pas poussé très loin l'analyse car le sujet du surdentellement en France est loin de se résumer à une visualisation... mais ces graphiques ont une puissance visuelle indéniables, combinés à l'interactivité qu'offre un langage comme Js : on saisit en un seul coup d'oeil les facteurs et les échelles du phénomène observé.
+Nous n'avons pas poussé très loin l'analyse car le sujet du surdentellement en France est loin de se résumer à une visualisation... mais ces graphiques ont une puissance visuelle indéniable, combinés à l'interactivité qu'offre un langage comme Js : on saisit en un seul coup d'oeil les facteurs et les échelles du phénomène observé.
 
 Dans cette visualisation, nous avons voulu montrer les variables mesurées du surendettement et d'en saisir la répartition au sein de chacun des facteurs identifiés.
 
