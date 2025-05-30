@@ -314,7 +314,7 @@ A cette échelle, c'est "jouable" mais cela ne peut pas résoudre le problème d
 
 Il manque encore cet échelon intermédiaire dans le numérique de pouvoir créer ce qui nous sert, afin de mieux nous responsabiliser aussi dans nos usages numériques : cela rejoint finalement les problématiques de **la sobriété numérique** ou encore de **l'écoconception**, sur lesquels nous sommes encore tous dans l'impasse.
 
-![Newsletter d'Alexia Fontaine](https://media.licdn.com/dms/image/v2/D4E0BAQE7ngseOrF4MA/company-logo_100_100/B4EZXCeX7qHcAQ-/0/1742724497786?e=1749686400&v=beta&t=Q3U9D81RrGWmYlM-cmITQVq2_ClkcTO3YmZ2BWdobR0)
+![Newsletter d'Alexia Fontaine](https://www.linkedin.com/company/www-linkedin-com-in-alexiafontaine)
 
 #### NEWSLETTER d'Alexia Fontaine
 3 avril 2025
