@@ -251,7 +251,7 @@ Les effets sont assez contre-productifs et détournent l'attention des enjeux sy
 
 C'est une spirale d'optimisation comportementale et la résistance individuelle est de plus en plus difficile puisque nous confions de plus en plus de nos données à ces services.
 
-<strong>L'écoconception</strong> reste une pratique marginale, et les applications "sobres" sont moins attractives que les "mainstream" : <em>on "Big Love" le clinquant, même si on porte des chemises de bucheron ou un bonnet.</em>
+<strong>L'écoconception</strong> reste une pratique marginale, et les applications "sobres" sont moins attractives que les "mainstream" : <em>on "Big Love" le clinquant, même si on porte des chemises de bucheron ou un bonnet (...oui j'en ai)</em>
 
 Et puis il y a une <strong>acceptabilité</strong> sociale de la surconsommation numérique <em>(moi la prem's!</em>)
 <em>Même ceux dans la permaculture bio sont coupables, ils font les deux.</em>
