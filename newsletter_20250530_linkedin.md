@@ -303,7 +303,7 @@ Et puis il y a une <strong>acceptabilité</strong> sociale de la surconsommation
 
 Tout cela nous a servi pour mieux connaître **l'API Management** (discipline générale de gestion des APIs) en nous intéressant à cette **automatisation de publication**.
 
-Ce ne sont pas des analytics marketing poussées mais cela permet **un suivi opérationnel** de nos publications professionnelles ; et nous maintenons que les gains (à notre échelle) sont probants en terme de rationnalisation de la démarche, d'audience et de structuration du contenu.
+Ce ne sont pas des analytics marketing poussées mais cela permet **un suivi opérationnel** de nos publications professionnelles ; et nous maintenons que les gains (à notre échelle) sont probants en terme de rationalisation de la démarche, d'audience et de structuration du contenu.
 
 C'est **moins de stress car mieux planifié et, sur la charge mentale, on réduit sa saturation informationnelle quotidienne.**
 

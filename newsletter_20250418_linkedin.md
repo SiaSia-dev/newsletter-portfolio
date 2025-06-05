@@ -19,7 +19,6 @@ La méréologie, théorie formelle des relations entre les parties et le tout, t
 
 D'autres contributions significatives incluent les travaux de Peter Simons ("Parts: A Study in Ontology", 1987) et Nelson Goodman ("The Structure of Appearance", 1951), qui ont étendu et formalisé davantage cette théorie logique.
 
-
 #### Applications dans l'analyse culturelle
 
 Dans le domaine de l'analyse culturelle, l'approche méréologique offre un cadre conceptuel permettant d'examiner comment les éléments culturels fonctionnent simultanément comme entités autonomes et comme composantes de systèmes plus larges. Cette perspective s'avère particulièrement utile pour comprendre:
@@ -28,7 +27,6 @@ Dans le domaine de l'analyse culturelle, l'approche méréologique offre un cadr
 - L'intégration des sous-cultures dans des cultures plus étendues
 - La manière dont les artefacts culturels acquièrent des significations différentes selon les contextes
 Ce cadre théorique permet d'analyser efficacement les processus d'hybridation culturelle en montrant comment des éléments issus de différents ensembles peuvent être recombinés pour former de nouvelles totalités culturelles.
-
 
 #### La méréologie en linguistique cognitive
 
