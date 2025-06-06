@@ -6,7 +6,7 @@
 
 ### 📌 Modèles de gestion de données numériques
 
-![Modèles de gestion de données numériques](img/IA_Fleur_au_fusil.png)
+![Modèles de gestion de données numériques](img/PIMS.png)
 
 #### Modèles de gestion de données numériques
 
@@ -71,7 +71,7 @@ C'est le défi des SGIP.
 
 ### 📌 Induction vs Déduction : quand debugger devient philosophique
 
-![Induction vs Déduction : quand debugger devient philosophique](img/IA_Fleur_au_fusil.png)
+![Induction vs Déduction : quand debugger devient philosophique](img/Inductive.png)
 
 #### Induction vs Déduction : quand debugger devient philosophique
 
@@ -223,7 +223,7 @@ Développer des modèles d'apprentissage automatique spécialisés dans un domai
 
 ### 📊 Terra Data. Qu'allons-nous faire des données numériques?
 
-![Terra Data. Qu'allons-nous faire des données numériques?](img/IA_Fleur_au_fusil.png)
+![Terra Data. Qu'allons-nous faire des données numériques?](img/TerraData.jpg)
 
 #### Terra Data. Qu'allons-nous faire des données numériques?
 
@@ -250,7 +250,7 @@ Par moment, le choix de la clareté nous a semblé eclipser un peu certains aspe
 
 ### 📌 GUI pour publication Linkedin
 
-![GUI pour publication Linkedin](img/IA_Fleur_au_fusil.png)
+![GUI pour publication Linkedin](img/GUI-linkedin.png)
 
 #### GUI pour publication Linkedin
 
