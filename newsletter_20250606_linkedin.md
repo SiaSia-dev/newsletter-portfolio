@@ -233,7 +233,7 @@ Ce livre rédigé par Serge ABITEBOUL et Valérie PEUGEOT  présente <strong>les
 
 Les implications scientifiques sont présentées de manière factuelle, étayées par des exemples de projets concrets : ces questionnements sont replacés dans <strong>le processus global des données massives</strong> ce qui rend le propos tangible.
 
-Par moment, le choix de la clareté nous a semblé eclipser un peu certains aspects, peut-être considérés comme techniques. Mais on peut aborder cela comme autant de <strong>contextes d'intégration de la transformation numérique</strong>.
+Par moment, le choix de la clarté nous a semblé éclipser un peu certains aspects, peut-être considérés comme techniques. Mais on peut aborder cela comme autant de <strong>contextes d'intégration de la transformation numérique</strong>.
 
 🚀 De la vulgarisation scientifique qui s'adresse à des personnes désireuses de <strong>connaître ces nouveaux horizons numériques</strong>. Nous en sommes !
 
