@@ -60,9 +60,9 @@ def publish_simple_post():
     unique_suffix = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
     newsletter_content = get_newsletter_content()
 
-    message = f"""📰 Newsletter Portfolio - {date_str}
+    message = f"""📰 Newsletter - {date_str}
 
-    La newsletter de cette semaine est arrivée !
+    📢La newsletter de cette semaine est arrivée !
 
     🔗 Liens principaux
     - Version complète: https://siasia-dev.github.io/portfolio-newsletter/latest.html
