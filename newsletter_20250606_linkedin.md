@@ -1,6 +1,6 @@
 # 📰 Newsletter Portfolio - 06/06/2025
 
-## Décrypter le numérique sur 6 thématiques hebdomadaires: découvertes, réflexions et créations de la semaine 🚀
+## Décrypter le numérique sur 6 thématiques : découvertes, réflexions et créations de la semaine 🚀
 
 ### Récits | Horizons numériques | Visuels
 
