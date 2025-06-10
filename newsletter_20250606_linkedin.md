@@ -1,6 +1,8 @@
 # 📰 Newsletter Portfolio - 06/06/2025
 
-## Récits visuels, horizons numériques : Un voyage entre créativité et innovation 🚀
+## Décrypter le numérique sur 6 thématiques hebdomadaires: découvertes, réflexions et créations de la semaine 🚀
+
+### Récits | Horizons numériques | Visuels
 
 ---
 
