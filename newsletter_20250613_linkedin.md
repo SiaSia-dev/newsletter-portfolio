@@ -202,7 +202,7 @@ L'auteur développe le concept de **"biais de l'automatisation"** à travers tro
 
 > **↪️ Réflexion personnelle**
 > 
-> Travaillant à notre tour sur un petit projet d'automatisation éditoriale, les réflexions de Mark Andrejevic m'ont nourrie dans la distance critique nécessaire pour comprendre les impacts de l'automatisation des médias et le danger de la **standardisation algorithmique**.
+> Travaillant à notre tour sur un petit projet d'automatisation éditoriale, les réflexions de Mark Andrejevic nous ont nourrie dans la distance critique nécessaire pour comprendre les impacts de l'automatisation des médias et le danger de la **standardisation algorithmique**.
 
 #### 📊 Enjeux de l'automatisation médiatique
 
