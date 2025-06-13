@@ -84,22 +84,25 @@ Reflet des changements technologiques et culturels, ce terme devient malgré lui
 [Retour en haut](#)
 
 ---
+### **💡Automatisation éditoriale et sérendipité algorithmique**
+Cette sérendipité algorithmique – où l’IA identifie des opportunités économiques non-anticipées par le développeur – constitue un phénomène émergent qui mérite une attention particulière dans l’analyse des interactions humain-machine contemporaines.
+![automatisation-serendipite](/img/automatisation-editoriale-v0.png)
 
-### 📌 Stratégies de raisonnement en IA
+Nous parlions précédemment d'un paradoxe de l'amplification médiatique au sujet des IA (billet sur "L'interprétabilité des LLM"), créeant fascination et méfiance vis-à-visde ces outils.
 
-![Stratégies de raisonnement en IA](img/3-raisonnements-IA.png)
+...Et bien notre petite activité sur l'automatisation des publications numériques, transformant automatiquement une newsletter HTML en série de publications LinkedIn programmées, s'est avérée une expérience surprenante, avec **la suggestion d'une intelligence artificielle sur la monnétisation de notre gestionnaire de publications !** 😅
 
-#### Stratégies de raisonnement en IA
+ ✋Comment cette IA a-t-elle identifiée une dite "opportunité économique" ?
 
-[Stratégies de raisonnement en IA](#)
+Pour nous, cela relève d'interactions nouvelles entre humain et machine que nous appelons **sérendipité algorithmique**, mais aussi sur la création de contenu par ces outils automatisés : par cette étude de cas, nous voulons parler de **la question de la reproductibilité des processus éditoriaux.**
 
-La raison pour laquelle certains modèles ou applications se concentrent sur seulement 3 types de raisonnement est due à différents facteurs comme mentionnés dans l'infographie.
+Nous défendons **l'idée que le créateur se doit de garder le contrôle éditorial tout en déléguant les tâches répétitives et logistiques** : **l'automatisation porte ici sur la logistique, pas sur la création.**
 
-Les raisonnements inductifs, déductifs et abductifs sont les plus couramment utilisés pour analyser des données et faire des prédictions.
+Finalement, rien de nouveau sous le soleil : si l'IA est bien l'outil (le COMMENT), il se conforme à nos attentes et non l'inverse, et pour ce faire il faut effectivement travailler à rendre cette technologie fonctionnelle (le QUOI et POURQUOI)
 
-Les systèmes actuels intègrent de plus en plus de formes de raisonnement complexes.
+➡️ Le billet complet sur notre blog scientifique ARCHNUM : https://archnum.hypotheses.org/1726
 
-![3 Raisonnements IA](img/3-raisonnements-IA.png)
+![automatisation-serendipite](/img/automatisation-editoriale-v0.png)
 
 [Retour en haut](#)
 
