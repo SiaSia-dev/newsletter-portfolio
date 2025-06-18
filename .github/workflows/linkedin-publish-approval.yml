@@ -4,8 +4,6 @@ on:
   workflow_dispatch:  # Déclenchement manuel pour créer l'issue
   repository_dispatch:  # Déclenché depuis l'autre repository
     types: [newsletter-generated]
-  schedule:
-    - cron: '*/30 * * * *'  # Vérification toutes les 30 minutes
   issues:
     types: [labeled]  # Déclenché lorsqu'un label est ajouté à une issue
 
