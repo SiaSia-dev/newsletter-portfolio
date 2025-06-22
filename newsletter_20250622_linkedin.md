@@ -21,7 +21,6 @@ A l'image du CES de Las Vegas pour l'Amérique du Nord, ce salon a pour ambition
 
 Cette 9ème édition a battu son reccord de fréquention avec quelques 180 000 visiteurs en 4 jours, preuve de l'intérêt du sujet.
 
-
 #### Thématiques principales 2025
 
 - Intelligence artificielle (thème dominant)
