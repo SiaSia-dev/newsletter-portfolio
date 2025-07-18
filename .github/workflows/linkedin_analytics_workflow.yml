@@ -67,7 +67,8 @@ jobs:
           class LinkedInAnalyticsPublisher:
               def __init__(self):
                   self.access_token = os.getenv('LINKEDIN_ACCESS_TOKEN')
-                  self.person_id = os.getenv('LINKEDIN_PERSON_ID')  # ✅ Correction ici
+                  self.person_id = os.getenv('LINKEDIN_PERSON_ID')  # Peut être un ID de page entreprise
+                  self.is_company_page = os.getenv('LINKEDIN_IS_COMPANY', 'false').lower() == 'true'
                   self.github_token = os.getenv('GITHUB_TOKEN')
                   self.api_base = "https://api.linkedin.com/v2"
                   
@@ -99,7 +100,45 @@ jobs:
                   
                   return True
               
-              def get_person_id_from_api(self):
+              def get_organization_info(self):
+                  """Récupère les informations de l'organisation/page entreprise"""
+                  
+                  headers = {
+                      "Authorization": f"Bearer {self.access_token}",
+                      "X-Restli-Protocol-Version": "2.0.0"
+                  }
+                  
+                  try:
+                      # Récupérer les organisations accessibles
+                      response = requests.get(
+                          "https://api.linkedin.com/v2/organizationalEntityAcls?q=roleAssignee",
+                          headers=headers
+                      )
+                      
+                      if response.status_code == 200:
+                          data = response.json()
+                          elements = data.get('elements', [])
+                          
+                          if elements:
+                              print("📋 Pages entreprise accessibles:")
+                              for elem in elements:
+                                  org_urn = elem.get('organizationalTarget')
+                                  if org_urn:
+                                      org_id = org_urn.split(':')[-1]
+                                      print(f"   • ID: {org_id} (URN: {org_urn})")
+                                      
+                                      # Si pas d'ID défini, utiliser le premier trouvé
+                                      if not self.person_id:
+                                          self.person_id = org_id
+                                          self.is_company_page = True
+                                          print(f"   ✅ Utilisation de cette page par défaut")
+                              
+                              return True
+                      
+                  except Exception as e:
+                      print(f"⚠️ Impossible de récupérer les pages entreprise: {e}")
+                  
+                  return False
                   """Récupère l'ID utilisateur depuis l'API LinkedIn"""
                   
                   headers = {
@@ -329,10 +368,15 @@ jobs:
               def publish_to_linkedin(self, content):
                   """Publie le contenu sur LinkedIn"""
                   
-                  # Format URN correct pour l'API v2
-                  author_urn = f"urn:li:person:{self.person_id}"
+                  # Déterminer le type d'URN selon si c'est une page entreprise ou un profil
+                  if self.is_company_page:
+                      author_urn = f"urn:li:organization:{self.person_id}"
+                      print(f"📢 Publication sur la page entreprise")
+                  else:
+                      author_urn = f"urn:li:member:{self.person_id}"
+                      print(f"👤 Publication sur le profil personnel")
                   
-                  # Structure mise à jour pour l'API LinkedIn actuelle
+                  # Structure pour l'API LinkedIn UGC
                   post_data = {
                       "author": author_urn,
                       "lifecycleState": "PUBLISHED",
@@ -352,87 +396,53 @@ jobs:
                   headers = {
                       "Authorization": f"Bearer {self.access_token}",
                       "Content-Type": "application/json",
-                      "X-Restli-Protocol-Version": "2.0.0",
-                      "LinkedIn-Version": "202401"  # Version API récente
+                      "X-Restli-Protocol-Version": "2.0.0"
                   }
                   
                   print(f"\n📤 Tentative de publication...")
                   print(f"   URL: {self.api_base}/ugcPosts")
                   print(f"   Author URN: {author_urn}")
                   
-                  # Debug : afficher la structure complète
-                  print("\n📋 Structure du post:")
-                  print(json.dumps(post_data, indent=2))
-                  
                   try:
                       response = requests.post(
                           f"{self.api_base}/ugcPosts",
                           headers=headers,
-                          json=post_data  # Utiliser json= au lieu de data=
+                          json=post_data
                       )
                       
                       print(f"\n📡 Réponse: {response.status_code}")
-                      print(f"Headers: {dict(response.headers)}")
                       
                       if response.status_code == 201:
                           print("✅ Post LinkedIn publié avec succès !")
+                          post_id = response.headers.get('X-RestLi-Id', 'N/A')
+                          print(f"   ID du post: {post_id}")
                           return True
                       else:
                           print(f"❌ Erreur publication: {response.status_code}")
-                          print(f"Réponse complète: {response.text}")
+                          print(f"Réponse: {response.text}")
                           
-                          # Si erreur 403, essayer avec l'API Posts v2 moderne
-                          if response.status_code == 403:
-                              print("\n🔄 Tentative avec l'API Posts v2...")
-                              return self.publish_with_posts_api(content)
+                          # Si erreur avec organization, essayer avec company
+                          if response.status_code in [403, 422] and self.is_company_page:
+                              print("\n🔄 Tentative avec urn:li:company...")
+                              author_urn = f"urn:li:company:{self.person_id}"
+                              post_data["author"] = author_urn
                               
+                              response = requests.post(
+                                  f"{self.api_base}/ugcPosts",
+                                  headers=headers,
+                                  json=post_data
+                              )
+                              
+                              if response.status_code == 201:
+                                  print("✅ Post publié avec urn:li:company!")
+                                  return True
+                              else:
+                                  print(f"❌ Échec aussi avec company: {response.status_code}")
+                          
                           return False
                           
                   except Exception as e:
                       print(f"❌ Erreur lors de la publication: {e}")
-                      return False
-              
-              def publish_with_posts_api(self, content):
-                  """Utilise la nouvelle API Posts v2 de LinkedIn"""
-                  
-                  # Nouvelle structure pour l'API Posts
-                  post_data = {
-                      "author": f"urn:li:person:{self.person_id}",
-                      "commentary": content,
-                      "visibility": "PUBLIC",
-                      "distribution": {
-                          "feedDistribution": "MAIN_FEED",
-                          "targetEntities": [],
-                          "thirdPartyDistributionChannels": []
-                      },
-                      "lifecycleState": "PUBLISHED"
-                  }
-                  
-                  headers = {
-                      "Authorization": f"Bearer {self.access_token}",
-                      "Content-Type": "application/json",
-                      "X-Restli-Protocol-Version": "2.0.0",
-                      "LinkedIn-Version": "202401"
-                  }
-                  
-                  try:
-                      # Nouvelle URL pour l'API Posts v2
-                      response = requests.post(
-                          "https://api.linkedin.com/rest/posts",
-                          headers=headers,
-                          json=post_data
-                      )
-                      
-                      if response.status_code in [200, 201]:
-                          print("✅ Post publié avec succès via l'API Posts v2!")
-                          return True
-                      else:
-                          print(f"❌ Échec API Posts v2: {response.status_code}")
-                          print(f"Réponse: {response.text}")
-                          return False
-                          
-                  except Exception as e:
-                      print(f"❌ Erreur API Posts v2: {e}")
                       return False
               
               def run(self):
@@ -443,22 +453,26 @@ jobs:
                   # Vérifier les credentials
                   if not self.verify_linkedin_credentials():
                       # Tenter de récupérer l'ID depuis l'API
-                      print("\n🔍 Tentative de récupération de l'ID depuis l'API...")
-                      api_person_id = self.get_person_id_from_api()
-                      
-                      if api_person_id:
-                          self.person_id = api_person_id
-                          print(f"✅ Utilisation de l'ID récupéré: {api_person_id}")
+                      print("\n🔍 Recherche des pages entreprise disponibles...")
+                      if self.get_organization_info():
+                          print("✅ Page entreprise trouvée et configurée")
                       else:
-                          print("\n⚠️ SOLUTION:")
-                          print("1. Récupérez votre ID LinkedIn avec cette commande:")
-                          print("   curl -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\")
-                          print("        -H \"X-Restli-Protocol-Version: 2.0.0\" \\")
-                          print("        https://api.linkedin.com/v2/me")
-                          print("\n2. Ajoutez l'ID comme secret GitHub:")
-                          print("   Nom: LINKEDIN_PERSON_ID")
-                          print("   Valeur: L'ID numérique retourné (ex: 123456789)")
-                          return False
+                          print("\n🔍 Tentative de récupération de l'ID personnel...")
+                          api_person_id = self.get_person_id_from_api()
+                          
+                          if api_person_id:
+                              self.person_id = api_person_id
+                              print(f"✅ Utilisation de l'ID personnel: {api_person_id}")
+                          else:
+                              print("\n⚠️ SOLUTION:")
+                              print("Pour publier sur votre PROFIL PERSONNEL:")
+                              print("1. Créez une nouvelle app LinkedIn")
+                              print("2. NE PAS l'associer à une page entreprise")
+                              print("\nPour publier sur la PAGE ENTREPRISE:")
+                              print("1. Récupérez l'ID de votre page entreprise")
+                              print("2. Ajoutez LINKEDIN_PERSON_ID avec cet ID")
+                              print("3. Ajoutez LINKEDIN_IS_COMPANY=true")
+                              return False
                   
                   # Test optionnel de l'API
                   print("\n🔍 Test de l'accès API...")
@@ -518,6 +532,7 @@ jobs:
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
+          LINKEDIN_IS_COMPANY: ${{ secrets.LINKEDIN_ORG_ID || 'false' }}  # ✅ Nouveau paramètre
           GITHUB_TOKEN: ${{ github.token }}  # ✅ Token automatique fourni par GitHub Actions
           INPUT_INCLUDE_TRENDING: ${{ inputs.include_trending }}
           INPUT_NUMBER_OF_THEMES: ${{ inputs.number_of_themes }}
