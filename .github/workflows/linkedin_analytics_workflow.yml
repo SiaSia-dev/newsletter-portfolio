@@ -45,6 +45,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests python-dotenv
+      
+      - name: Debug Secrets (optionnel)
+        run: |
+          echo "🔍 Vérification des secrets..."
+          echo "Token présent: ${{ secrets.LINKEDIN_ACCESS_TOKEN != '' }}"
+          echo "Person ID présent: ${{ secrets.LINKEDIN_PERSON_ID != '' }}"
+          if [ -z "${{ secrets.LINKEDIN_PERSON_ID }}" ]; then
+            echo "⚠️ ATTENTION: LINKEDIN_PERSON_ID n'est pas défini!"
+          fi
 
       - name: Créer le script LinkedIn Analytics
         run: |
@@ -58,7 +67,7 @@ jobs:
           class LinkedInAnalyticsPublisher:
               def __init__(self):
                   self.access_token = os.getenv('LINKEDIN_ACCESS_TOKEN')
-                  self.person_id = os.getenv('LINKEDIN_CLIENT_ID')
+                  self.person_id = os.getenv('LINKEDIN_PERSON_ID')  
                   self.github_token = os.getenv('DEPLOY_TOKEN')
                   self.api_base = "https://api.linkedin.com/v2"
                   
@@ -66,6 +75,59 @@ jobs:
                   self.include_trending = os.getenv('INPUT_INCLUDE_TRENDING', 'true').lower() == 'true'
                   self.number_of_themes = int(os.getenv('INPUT_NUMBER_OF_THEMES', '3'))
                   self.add_viz_link = os.getenv('INPUT_ADD_VISUALIZATION_LINK', 'true').lower() == 'true'
+              
+              def verify_linkedin_credentials(self):
+                  """Vérifie les credentials LinkedIn"""
+                  
+                  if not self.access_token:
+                      print("❌ LINKEDIN_ACCESS_TOKEN n'est pas défini")
+                      return False
+                      
+                  if not self.person_id or self.person_id == "None" or self.person_id == "":
+                      print("❌ LINKEDIN_PERSON_ID n'est pas défini ou est vide")
+                      print("   Vérifiez que le secret LINKEDIN_PERSON_ID est bien configuré dans GitHub")
+                      return False
+                  
+                  # Vérifier le format de person_id (doit être numérique)
+                  if not self.person_id.isdigit():
+                      print(f"⚠️ Format person_id incorrect: '{self.person_id}'")
+                      print("   Le person_id doit être un nombre (ex: 123456789)")
+                      return False
+                  
+                  print(f"✅ Credentials présents")
+                  print(f"   Person ID: {self.person_id[:3]}...{self.person_id[-3:] if len(self.person_id) > 6 else ''}")
+                  
+                  return True
+              
+              def get_person_id_from_api(self):
+                  """Récupère l'ID utilisateur depuis l'API LinkedIn"""
+                  
+                  headers = {
+                      "Authorization": f"Bearer {self.access_token}",
+                      "X-Restli-Protocol-Version": "2.0.0"
+                  }
+                  
+                  try:
+                      response = requests.get(
+                          "https://api.linkedin.com/v2/me",
+                          headers=headers
+                      )
+                      
+                      if response.status_code == 200:
+                          data = response.json()
+                          user_id = data.get('id')
+                          if user_id:
+                              print(f"✅ ID utilisateur récupéré depuis l'API: {user_id}")
+                              return str(user_id)
+                      else:
+                          print(f"❌ Impossible de récupérer l'ID: {response.status_code}")
+                          if response.status_code == 401:
+                              print("   Token d'accès invalide ou expiré")
+                          
+                  except Exception as e:
+                      print(f"❌ Erreur récupération ID: {e}")
+                  
+                  return None
               
               def get_newsletter_data(self):
                   """Récupère les données depuis GitHub API"""
@@ -241,8 +303,11 @@ jobs:
               def publish_to_linkedin(self, content):
                   """Publie le contenu sur LinkedIn"""
                   
+                  # ✅ Utiliser urn:li:member au lieu de urn:li:person
+                  author_urn = f"urn:li:member:{self.person_id}"
+                  
                   post_data = {
-                      "author": f"urn:li:person:{self.person_id}",
+                      "author": author_urn,
                       "lifecycleState": "PUBLISHED",
                       "specificContent": {
                           "com.linkedin.ugc.ShareContent": {
@@ -263,6 +328,10 @@ jobs:
                       "X-Restli-Protocol-Version": "2.0.0"
                   }
                   
+                  print(f"\n📤 Tentative de publication...")
+                  print(f"   URL: {self.api_base}/ugcPosts")
+                  print(f"   Author URN: {author_urn}")
+                  
                   try:
                       response = requests.post(
                           f"{self.api_base}/ugcPosts",
@@ -276,6 +345,17 @@ jobs:
                       else:
                           print(f"❌ Erreur publication: {response.status_code}")
                           print(response.text)
+                          
+                          # Debug supplémentaire
+                          try:
+                              error_data = response.json()
+                              if 'message' in error_data:
+                                  print(f"   Message: {error_data['message']}")
+                              if 'serviceErrorCode' in error_data:
+                                  print(f"   Code erreur: {error_data['serviceErrorCode']}")
+                          except:
+                              pass
+                              
                           return False
                           
                   except Exception as e:
@@ -287,13 +367,54 @@ jobs:
                   
                   print("🔄 Démarrage de l'analyse thématique...")
                   
+                  # Vérifier les credentials
+                  if not self.verify_linkedin_credentials():
+                      # Tenter de récupérer l'ID depuis l'API
+                      print("\n🔍 Tentative de récupération de l'ID depuis l'API...")
+                      api_person_id = self.get_person_id_from_api()
+                      
+                      if api_person_id:
+                          self.person_id = api_person_id
+                          print(f"✅ Utilisation de l'ID récupéré: {api_person_id}")
+                      else:
+                          print("\n⚠️ SOLUTION:")
+                          print("1. Récupérez votre ID LinkedIn avec cette commande:")
+                          print("   curl -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\")
+                          print("        -H \"X-Restli-Protocol-Version: 2.0.0\" \\")
+                          print("        https://api.linkedin.com/v2/me")
+                          print("\n2. Ajoutez l'ID comme secret GitHub:")
+                          print("   Nom: LINKEDIN_PERSON_ID")
+                          print("   Valeur: L'ID numérique retourné (ex: 123456789)")
+                          return False
+                  
+                  # Test optionnel de l'API
+                  print("\n🔍 Test de l'accès API...")
+                  test_headers = {
+                      "Authorization": f"Bearer {self.access_token}",
+                      "X-Restli-Protocol-Version": "2.0.0"
+                  }
+                  
+                  try:
+                      test_response = requests.get(
+                          "https://api.linkedin.com/v2/me",
+                          headers=test_headers
+                      )
+                      
+                      if test_response.status_code == 200:
+                          print("✅ Accès API valide")
+                      else:
+                          print(f"⚠️ Accès API problématique: {test_response.status_code}")
+                          
+                  except Exception as e:
+                      print(f"⚠️ Erreur test API: {e}")
+                  
                   # Récupérer les données
                   issues = self.get_newsletter_data()
                   if not issues:
                       print("❌ Aucune donnée récupérée")
                       return False
                   
-                  print(f"📊 Analyse de {len(issues)} newsletters...")
+                  print(f"\n📊 Analyse de {len(issues)} newsletters...")
                   
                   # Analyser les thèmes
                   analysis = self.analyze_themes(issues)
@@ -301,7 +422,7 @@ jobs:
                   # Créer le post
                   content = self.create_linkedin_post(analysis)
                   
-                  print("📝 Contenu généré:")
+                  print("\n📝 Contenu généré:")
                   print("-" * 50)
                   print(content)
                   print("-" * 50)
@@ -313,7 +434,10 @@ jobs:
 
           if __name__ == "__main__":
               publisher = LinkedInAnalyticsPublisher()
-              publisher.run()
+              success = publisher.run()
+              
+              # Exit avec le bon code
+              exit(0 if success else 1)
           EOF
 
       - name: Exécuter la publication LinkedIn Analytics
