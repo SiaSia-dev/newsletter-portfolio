@@ -329,64 +329,62 @@ jobs:
               def publish_to_linkedin(self, content):
                   """Publie le contenu sur LinkedIn"""
                   
-                  # ✅ Utiliser urn:li:member au lieu de urn:li:person
-                  author_urn = f"urn:li:member:{self.person_id}"
+                  # Tester différents formats d'URN
+                  urn_formats = [
+                      f"urn:li:member:{self.person_id}",
+                      f"urn:li:person:{self.person_id}",
+                      self.person_id  # ID seul sans préfixe
+                  ]
                   
-                  post_data = {
-                      "author": author_urn,
-                      "lifecycleState": "PUBLISHED",
-                      "specificContent": {
-                          "com.linkedin.ugc.ShareContent": {
-                              "shareCommentary": {
-                                  "text": content
-                              },
-                              "shareMediaCategory": "NONE"
-                          }
-                      },
-                      "visibility": {
-                          "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
-                      }
-                  }
-                  
-                  headers = {
-                      "Authorization": f"Bearer {self.access_token}",
-                      "Content-Type": "application/json",
-                      "X-Restli-Protocol-Version": "2.0.0"
-                  }
-                  
-                  print(f"\n📤 Tentative de publication...")
-                  print(f"   URL: {self.api_base}/ugcPosts")
-                  print(f"   Author URN: {author_urn}")
-                  
-                  try:
-                      response = requests.post(
-                          f"{self.api_base}/ugcPosts",
-                          headers=headers,
-                          data=json.dumps(post_data)
-                      )
+                  for author_urn in urn_formats:
+                      print(f"\n📤 Tentative avec format: {author_urn}")
                       
-                      if response.status_code == 201:
-                          print("✅ Post LinkedIn publié avec succès !")
-                          return True
-                      else:
-                          print(f"❌ Erreur publication: {response.status_code}")
-                          print(response.text)
+                      post_data = {
+                          "author": author_urn,
+                          "lifecycleState": "PUBLISHED",
+                          "specificContent": {
+                              "com.linkedin.ugc.ShareContent": {
+                                  "shareCommentary": {
+                                      "text": content
+                                  },
+                                  "shareMediaCategory": "NONE"
+                              }
+                          },
+                          "visibility": {
+                              "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+                          }
+                      }
+                      
+                      headers = {
+                          "Authorization": f"Bearer {self.access_token}",
+                          "Content-Type": "application/json",
+                          "X-Restli-Protocol-Version": "2.0.0"
+                      }
+                      
+                      try:
+                          response = requests.post(
+                              f"{self.api_base}/ugcPosts",
+                              headers=headers,
+                              data=json.dumps(post_data)
+                          )
                           
-                          # Debug supplémentaire
-                          try:
-                              error_data = response.json()
-                              if 'message' in error_data:
-                                  print(f"   Message: {error_data['message']}")
-                              if 'serviceErrorCode' in error_data:
-                                  print(f"   Code erreur: {error_data['serviceErrorCode']}")
-                          except:
-                              pass
+                          if response.status_code == 201:
+                              print(f"✅ Post LinkedIn publié avec succès !")
+                              print(f"   Format qui fonctionne: {author_urn}")
+                              return True
+                          else:
+                              print(f"❌ Échec avec ce format: {response.status_code}")
+                              if response.text:
+                                  error_msg = response.text[:200]
+                                  print(f"   Erreur: {error_msg}...")
                               
-                          return False
-                          
-                  except Exception as e:
-                      print(f"❌ Erreur lors de la publication: {e}")
-                      return False
+                      except Exception as e:
+                          print(f"❌ Erreur: {e}")
+                  
+                  print("\n❌ Aucun format d'URN n'a fonctionné")
+                  print("   Vérifiez que votre LINKEDIN_PERSON_ID est correct")
+                  print("   et que votre token a les permissions nécessaires")
+                  return False
               
               def run(self):
                   """Exécute le processus complet"""
@@ -471,7 +469,7 @@ jobs:
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
-          GITHUB_TOKEN: ${{ github.token }}  
+          GITHUB_TOKEN: ${{ github.token }}  # ✅ Token automatique fourni par GitHub Actions
           INPUT_INCLUDE_TRENDING: ${{ inputs.include_trending }}
           INPUT_NUMBER_OF_THEMES: ${{ inputs.number_of_themes }}
           INPUT_ADD_VISUALIZATION_LINK: ${{ inputs.add_visualization_link }}
