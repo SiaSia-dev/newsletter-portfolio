@@ -58,8 +58,8 @@ jobs:
           class LinkedInAnalyticsPublisher:
               def __init__(self):
                   self.access_token = os.getenv('LINKEDIN_ACCESS_TOKEN')
-                  self.person_id = os.getenv('LINKEDIN_PERSON_ID')
-                  self.github_token = os.getenv('GITHUB_TOKEN')
+                  self.person_id = os.getenv('LINKEDIN_CLIENT_ID')
+                  self.github_token = os.getenv('DEPLOY_TOKEN')
                   self.api_base = "https://api.linkedin.com/v2"
                   
                   # Paramètres du workflow
@@ -242,7 +242,7 @@ jobs:
                   """Publie le contenu sur LinkedIn"""
                   
                   post_data = {
-                      "author": f"urn:li:member:{self.person_id}",
+                      "author": f"urn:li:person:{self.person_id}",
                       "lifecycleState": "PUBLISHED",
                       "specificContent": {
                           "com.linkedin.ugc.ShareContent": {
