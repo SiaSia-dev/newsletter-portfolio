@@ -1,0 +1,335 @@
+name: Publication LinkedIn - Analyse Thématique
+
+on:
+  workflow_dispatch:  # ✅ Déclenchement MANUEL uniquement
+    inputs:
+      include_trending:
+        description: 'Inclure les thèmes tendances'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+        - 'true'
+        - 'false'
+      number_of_themes:
+        description: 'Nombre de thèmes à afficher'
+        required: false
+        default: '3'
+        type: choice
+        options:
+        - '3'
+        - '5'
+        - '6'
+      add_visualization_link:
+        description: 'Ajouter le lien vers la visualisation'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+        - 'true'
+        - 'false'
+
+jobs:
+  publish-analytics-to-linkedin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Installation des dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests python-dotenv
+
+      - name: Créer le script LinkedIn Analytics
+        run: |
+          cat > linkedin_analytics_publisher.py << 'EOF'
+          import requests
+          import json
+          import os
+          import re
+          from datetime import datetime
+
+          class LinkedInAnalyticsPublisher:
+              def __init__(self):
+                  self.access_token = os.getenv('LINKEDIN_ACCESS_TOKEN')
+                  self.person_id = os.getenv('LINKEDIN_PERSON_ID')
+                  self.github_token = os.getenv('GITHUB_TOKEN')
+                  self.api_base = "https://api.linkedin.com/v2"
+                  
+                  # Paramètres du workflow
+                  self.include_trending = os.getenv('INPUT_INCLUDE_TRENDING', 'true').lower() == 'true'
+                  self.number_of_themes = int(os.getenv('INPUT_NUMBER_OF_THEMES', '3'))
+                  self.add_viz_link = os.getenv('INPUT_ADD_VISUALIZATION_LINK', 'true').lower() == 'true'
+              
+              def get_newsletter_data(self):
+                  """Récupère les données depuis GitHub API"""
+                  
+                  headers = {}
+                  if self.github_token:
+                      headers['Authorization'] = f'token {self.github_token}'
+                  
+                  try:
+                      # Récupérer les issues récentes
+                      url = "https://api.github.com/repos/Siasia-dev/portfolio-newsletter/issues"
+                      params = {
+                          'state': 'all',
+                          'per_page': 3,
+                          'sort': 'created',
+                          'direction': 'desc'
+                      }
+                      
+                      response = requests.get(url, headers=headers, params=params)
+                      response.raise_for_status()
+                      
+                      return response.json()
+                      
+                  except Exception as e:
+                      print(f"❌ Erreur récupération données: {e}")
+                      return []
+              
+              def analyze_themes(self, issues):
+                  """Analyse les thèmes des newsletters"""
+                  
+                  categories = {
+                      'Actualités': {'count': 0, 'themes': [], 'emoji': '📰'},
+                      'Développement web': {'count': 0, 'themes': [], 'emoji': '💻'},
+                      'Lecture': {'count': 0, 'themes': [], 'emoji': '📚'},
+                      'Pédagogie': {'count': 0, 'themes': [], 'emoji': '🎓'},
+                      'Infographie': {'count': 0, 'themes': [], 'emoji': '📊'},
+                      'Culture numérique': {'count': 0, 'themes': [], 'emoji': '🌐'}
+                  }
+                  
+                  all_themes = []
+                  
+                  for issue in issues:
+                      content = issue.get('body', '')
+                      
+                      # Parser les project cards
+                      cards = self.extract_project_cards(content)
+                      
+                      for card in cards:
+                          category = self.detect_category(card['title'], card['description'])
+                          theme = self.extract_clean_theme(card['title'])
+                          
+                          if category in categories:
+                              categories[category]['count'] += 1
+                              categories[category]['themes'].append(theme)
+                              
+                              all_themes.append({
+                                  'theme': theme,
+                                  'category': category,
+                                  'date': issue['created_at'][:10]  # YYYY-MM-DD
+                              })
+                  
+                  return {
+                      'categories': categories,
+                      'trending_themes': all_themes[:self.number_of_themes],
+                      'total_analyzed': len(issues),
+                      'analysis_date': datetime.now().strftime('%d/%m/%Y')
+                  }
+              
+              def extract_project_cards(self, content):
+                  """Extrait les project cards du markdown"""
+                  
+                  pattern = r'\*\*(\d+)\.\s+([^*]+)\*\*\n([^\n]+)'
+                  matches = re.findall(pattern, content, re.MULTILINE)
+                  
+                  cards = []
+                  for match in matches:
+                      cards.append({
+                          'number': match[0],
+                          'title': match[1].strip(),
+                          'description': match[2].strip()
+                      })
+                  
+                  return cards
+              
+              def detect_category(self, title, description):
+                  """Détection intelligente de catégorie"""
+                  
+                  text = (title + ' ' + description).lower()
+                  
+                  # Mots-clés spécifiques par catégorie
+                  if any(kw in text for kw in ['article scientifique', 'review', 'impossibility', 'fair', 'recherche']):
+                      return 'Lecture'
+                  elif any(kw in text for kw in ['actualités', 'ia va-t-elle', 'traducteur', 'économiques', 'enquête']):
+                      return 'Actualités'
+                  elif any(kw in text for kw in ['visualisation', 'données', 'audit', 'stanford', 'infographie']):
+                      return 'Infographie'
+                  elif any(kw in text for kw in ['hugging face', 'github', 'open-source', 'machine learning']):
+                      return 'Culture numérique'
+                  elif any(kw in text for kw in ['agent', 'rag', 'llm', 'développement', 'archéologique']):
+                      return 'Développement web'
+                  elif any(kw in text for kw in ['guide', 'pratique', 'pédagogie', 'lama', 'april', 'critique']):
+                      return 'Pédagogie'
+                  
+                  return 'Actualités'  # Fallback
+              
+              def extract_clean_theme(self, title):
+                  """Extrait un thème propre du titre"""
+                  
+                  # Supprimer les emojis
+                  clean = re.sub(r'[🤖⚖️📊🤗🦙⏰🧭]+', '', title)
+                  
+                  # Patterns spécifiques
+                  if 'impossibility' in title.lower():
+                      return 'Équité IA'
+                  elif 'traducteur' in title.lower():
+                      return 'IA & Traduction'
+                  elif 'visualisation' in title.lower():
+                      return 'Data Visualization'
+                  elif 'hugging face' in title.lower():
+                      return 'Hugging Face'
+                  elif 'agent' in title.lower() and 'archéo' in title.lower():
+                      return 'Agent IA'
+                  elif 'lama' in title.lower():
+                      return 'Logiciel Libre'
+                  
+                  # Extraction générique
+                  words = clean.split()
+                  significant_words = [w for w in words if len(w) > 4 and w.lower() not in 
+                                     ['avec', 'pour', 'dans', 'cette', 'guide', 'pratique']]
+                  
+                  return significant_words[0] if significant_words else 'Innovation'
+              
+              def create_linkedin_post(self, analysis):
+                  """Crée le contenu du post LinkedIn"""
+                  
+                  post = f"""🚀 Analyse thématique de ma newsletter tech !
+
+          📈 Répartition des {analysis['total_analyzed']} dernières éditions :
+
+          """
+                  
+                  # Ajouter les catégories avec contenu
+                  active_categories = [(cat, data) for cat, data in analysis['categories'].items() if data['count'] > 0]
+                  
+                  for category, data in active_categories:
+                      post += f"{data['emoji']} {category}: {data['count']} article{'s' if data['count'] > 1 else ''}\n"
+                  
+                  # Ajouter les thèmes tendances si demandé
+                  if self.include_trending and analysis['trending_themes']:
+                      post += f"\n🔥 Thèmes en focus :\n"
+                      
+                      for i, theme_data in enumerate(analysis['trending_themes'], 1):
+                          post += f"{i}. {theme_data['theme']} ({theme_data['category']})\n"
+                  
+                  post += f"""
+          📊 Cette analyse est générée automatiquement :
+          • Parsing intelligent des contenus GitHub
+          • Extraction thématique en temps réel
+          • Classification par domaines d'expertise
+
+          """
+                  
+                  # Ajouter le lien vers la visualisation si demandé
+                  if self.add_viz_link:
+                      post += "🔗 Découvrez la visualisation interactive sur mon portfolio !\n\n"
+                  
+                  post += """#DataAnalytics #Newsletter #TechTrends #DataVisualization #Innovation #PortfolioProject
+
+          Analyse du """ + analysis['analysis_date']
+                  
+                  return post
+              
+              def publish_to_linkedin(self, content):
+                  """Publie le contenu sur LinkedIn"""
+                  
+                  post_data = {
+                      "author": f"urn:li:person:{self.person_id}",
+                      "lifecycleState": "PUBLISHED",
+                      "specificContent": {
+                          "com.linkedin.ugc.ShareContent": {
+                              "shareCommentary": {
+                                  "text": content
+                              },
+                              "shareMediaCategory": "NONE"
+                          }
+                      },
+                      "visibility": {
+                          "com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"
+                      }
+                  }
+                  
+                  headers = {
+                      "Authorization": f"Bearer {self.access_token}",
+                      "Content-Type": "application/json",
+                      "X-Restli-Protocol-Version": "2.0.0"
+                  }
+                  
+                  try:
+                      response = requests.post(
+                          f"{self.api_base}/ugcPosts",
+                          headers=headers,
+                          data=json.dumps(post_data)
+                      )
+                      
+                      if response.status_code == 201:
+                          print("✅ Post LinkedIn publié avec succès !")
+                          return True
+                      else:
+                          print(f"❌ Erreur publication: {response.status_code}")
+                          print(response.text)
+                          return False
+                          
+                  except Exception as e:
+                      print(f"❌ Erreur lors de la publication: {e}")
+                      return False
+              
+              def run(self):
+                  """Exécute le processus complet"""
+                  
+                  print("🔄 Démarrage de l'analyse thématique...")
+                  
+                  # Récupérer les données
+                  issues = self.get_newsletter_data()
+                  if not issues:
+                      print("❌ Aucune donnée récupérée")
+                      return False
+                  
+                  print(f"📊 Analyse de {len(issues)} newsletters...")
+                  
+                  # Analyser les thèmes
+                  analysis = self.analyze_themes(issues)
+                  
+                  # Créer le post
+                  content = self.create_linkedin_post(analysis)
+                  
+                  print("📝 Contenu généré:")
+                  print("-" * 50)
+                  print(content)
+                  print("-" * 50)
+                  
+                  # Publier
+                  success = self.publish_to_linkedin(content)
+                  
+                  return success
+
+          if __name__ == "__main__":
+              publisher = LinkedInAnalyticsPublisher()
+              publisher.run()
+          EOF
+
+      - name: Exécuter la publication LinkedIn Analytics
+        run: python linkedin_analytics_publisher.py
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_INCLUDE_TRENDING: ${{ inputs.include_trending }}
+          INPUT_NUMBER_OF_THEMES: ${{ inputs.number_of_themes }}
+          INPUT_ADD_VISUALIZATION_LINK: ${{ inputs.add_visualization_link }}
+
+      - name: Résumé de l'exécution
+        run: |
+          echo "🎉 Publication LinkedIn Analytics terminée !"
+          echo "📊 Paramètres utilisés:"
+          echo "  - Thèmes tendances: ${{ inputs.include_trending }}"
+          echo "  - Nombre de thèmes: ${{ inputs.number_of_themes }}"
+          echo "  - Lien visualisation: ${{ inputs.add_visualization_link }}"
