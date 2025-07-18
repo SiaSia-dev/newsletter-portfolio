@@ -531,7 +531,7 @@ jobs:
         run: python linkedin_analytics_publisher.py
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
-          LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
+          LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_ORG_ID }}
           LINKEDIN_IS_COMPANY: ${{ secrets.LINKEDIN_ORG_ID || 'false' }}  # ✅ Nouveau paramètre
           GITHUB_TOKEN: ${{ github.token }}  # ✅ Token automatique fourni par GitHub Actions
           INPUT_INCLUDE_TRENDING: ${{ inputs.include_trending }}
