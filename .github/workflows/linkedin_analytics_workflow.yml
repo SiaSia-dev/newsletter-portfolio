@@ -67,8 +67,8 @@ jobs:
           class LinkedInAnalyticsPublisher:
               def __init__(self):
                   self.access_token = os.getenv('LINKEDIN_ACCESS_TOKEN')
-                  self.person_id = os.getenv('LINKEDIN_PERSON_ID')  
-                  self.github_token = os.getenv('DEPLOY_TOKEN')
+                  self.person_id = os.getenv('LINKEDIN_PERSON_ID')  # ✅ Correction ici
+                  self.github_token = os.getenv('GITHUB_TOKEN')
                   self.api_base = "https://api.linkedin.com/v2"
                   
                   # Paramètres du workflow
@@ -132,9 +132,15 @@ jobs:
               def get_newsletter_data(self):
                   """Récupère les données depuis GitHub API"""
                   
-                  headers = {}
+                  headers = {
+                      'Accept': 'application/vnd.github.v3+json'
+                  }
+                  
+                  # ✅ Utiliser le token GitHub pour éviter les rate limits
                   if self.github_token:
                       headers['Authorization'] = f'token {self.github_token}'
+                  else:
+                      print("⚠️ Pas de GitHub token, utilisation de l'API publique (limite: 60 req/h)")
                   
                   try:
                       # Récupérer les issues récentes
@@ -146,11 +152,31 @@ jobs:
                           'direction': 'desc'
                       }
                       
+                      print(f"📡 Récupération des données depuis GitHub...")
                       response = requests.get(url, headers=headers, params=params)
+                      
+                      # Vérifier les rate limits
+                      remaining = response.headers.get('X-RateLimit-Remaining', 'N/A')
+                      limit = response.headers.get('X-RateLimit-Limit', 'N/A')
+                      print(f"   Rate limit: {remaining}/{limit}")
+                      
                       response.raise_for_status()
                       
-                      return response.json()
+                      issues = response.json()
+                      print(f"✅ {len(issues)} newsletters récupérées")
                       
+                      return issues
+                      
+                  except requests.exceptions.HTTPError as e:
+                      if e.response.status_code == 403 and 'rate limit' in e.response.text.lower():
+                          print("❌ Limite de taux GitHub atteinte!")
+                          print("   Solutions:")
+                          print("   1. Assurez-vous que GITHUB_TOKEN est défini")
+                          print("   2. Utilisez le token automatique: ${{ github.token }}")
+                          print("   3. Attendez 1h si utilisation sans token")
+                      else:
+                          print(f"❌ Erreur HTTP: {e}")
+                      return []
                   except Exception as e:
                       print(f"❌ Erreur récupération données: {e}")
                       return []
@@ -445,7 +471,7 @@ jobs:
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_PERSON_ID: ${{ secrets.LINKEDIN_PERSON_ID }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}  
           INPUT_INCLUDE_TRENDING: ${{ inputs.include_trending }}
           INPUT_NUMBER_OF_THEMES: ${{ inputs.number_of_themes }}
           INPUT_ADD_VISUALIZATION_LINK: ${{ inputs.add_visualization_link }}
