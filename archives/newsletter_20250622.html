@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Portfolio - 22/06/2025</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #4a6d8c;
+            --secondary: #2a475e;
+            --accent: #90afc5;
+            --light: #f6f9fc;
+            --dark: #333333;
+            --text: #444444;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --border: 1px solid #eaeaea;
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+    
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 20px;
+            background-image: url('img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 71, 94, 0.7);
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            scroll-margin-top: 50px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            margin: 1em 0;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image-container {
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .project-summary {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .toc {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .toc-item {
+            margin-bottom: 5px;
+        }
+        
+        .toc-item a {
+            display: block;
+            padding: 8px;
+            background-color: white;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item a:hover {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: var(--border);
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        .project-full-content {
+            padding: 40px;
+            margin-bottom: 60px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-full-content img.hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 1em 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eaeaea;
+            margin: 25px 0;
+        }
+        
+        /* Styles pour les onglets */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            color: var(--secondary);
+        }
+        
+        .tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Styles responsifs */
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .project-full-content {
+                padding: 20px;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="newsletter">Newsletter</div>
+            <div class="tab" onclick="window.location.href='archives.html'">Archives</div>
+        </div>
+    
+        <!-- Contenu de la Newsletter -->
+        <div id="newsletter" class="tab-content active">
+            
+        
+        <div class="header">
+            <div class="header-content">
+                <h1>Newsletter Portfolio</h1>
+                <p>22/06/2025</p>
+                <p>Décrypter le numérique sur 6 thématiques : découvertes, réflexions et créations de la semaine.</p>
+                <h3>Récits | Horizons numériques | Visuels</h3>
+            </div>
+        </div>
+        
+        
+        <div class="grid">
+            
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/vivatech2025.png" alt="Vivatech 2025 - Souverainté IA " loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-souvertainte-IA">Vivatech 2025 - Souverainté IA </a></h2>
+                <div class="project-description">La gouvernance des données est un enjeu stratégique majeur pour les dirigeants quel qu'il soit. Le salon de Paris semble marquer un tournant, notamment avec le partenariat entre</div>
+                <div class="project-summary">Vivatech 2025 à Paris Pour rappel, le salon VivaTech est le plus grand salon européen dédié à l'innovation et aux start-ups. A l'image du CES de Las Vegas pour l'Amérique du Nord, ce salon a pour ambition de se positionner comme un lieu de référence ...</div>
+                <div class="tags"><span class="tag">souveraineté</span><span class="tag">numérique</span><span class="tag">open-source</span><span class="tag">vivatech2025</span><span class="tag">IA</span></div>
+                <a href="#project-souvertainte-IA" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/surcharge-informationnelle.png" alt="La surcharge informationnelle" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-surcharge-informationnelle-2025">La surcharge informationnelle</a></h2>
+                <div class="project-description">Qualifiée aussi d'infobésité, la surcharge informationnelle est un problème actuel des sociétés du numérique</div>
+                <div class="project-summary">Etudiée depuis les années 70, la surcharge informationnelle ou l'infobésité sont aujourd'hui des termes souvent confondus pour parler d'un état de saturation cognitive d'une personne . Pourtant, on peut apporter une nuance entre ces deux termes, même...</div>
+                <div class="tags"><span class="tag">surcharge-informationnelle</span><span class="tag">droit-numerique</span></div>
+                <a href="#project-surcharge-informationnelle-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/3-raisonnements-IA-0.png" alt="Visualisation sur 3 types d'inférence" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-viz-inférence-2025">Visualisation sur 3 types d'inférence</a></h2>
+                <div class="project-description">Nous illustrons 3 types de raisonnements courants utilisés en apprentissage automatique par des données archéologiques.</div>
+                <div class="project-summary">Sans prétention, par cette visualisation de données, nous voulions simplement illustrer trois types d'inférence couramment utilisés en apprentissage automatique. Ce sont des modèles basiques mais qui représentent trois types de raisonnement courants ...</div>
+                <div class="tags"><span class="tag">inférence</span><span class="tag">apprentissage</span><span class="tag">IA</span></div>
+                <a href="#project-viz-inférence-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/infographie_VeilleVSAlgo.png" alt="Veille et StR" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-infographie-veille_StR">Veille et StR</a></h2>
+                <div class="project-description">Deux approches pour la recherche d'informations</div>
+                <div class="project-summary">Ces deux approches mettent en avant les enjeux de l'automatisation des médias et insiste sur la nécessaire distance critique sur le sujet de l'analyse des transformations numériques contemporaines. Si ces questions de systématisation ou d'hybridation...</div>
+                <div class="tags"><span class="tag">veille stratégique</span><span class="tag">recommandation</span><span class="tag">IA</span></div>
+                <a href="#project-infographie-veille_StR" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/emoji_couch-potato.png" alt="Comment défendre la candidature d'un emoji auprès du Consortium Unicode ? " loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-emoji-couch-potato-2025">Comment défendre la candidature d'un emoji auprès du Consortium Unicode ? </a></h2>
+                <div class="project-description">Tout le monde peut déposer une idée d'Emoji</div>
+                <div class="project-summary">📢 Cela vous semble incongrue comme question et pourtant, d'où viennent tous nos emojii et autres symboles ? Au “bureau des symboles” Chaque caractère que nous utilisons sur notre clavier est issue d'une validation par le Consortium Unicode . Rien n'es...</div>
+                <div class="tags"><span class="tag">couch potato</span><span class="tag">Consortium code</span></div>
+                <a href="#project-emoji-couch-potato-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/open-source-initiative.png" alt="Et pourquoi ne pas envisager l'IA Open-source ? " loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-lecture-IA-Open-source-2025">Et pourquoi ne pas envisager l'IA Open-source ? </a></h2>
+                <div class="project-description">review : Open Source and the future of European AI sovereignty: Insights from Vivatech 2025</div>
+                <div class="project-summary">Bientôt l'ère de 'l'IA Open-source'? Un article très pertinent qui germe dans le sillon des annonces faites au salon Vivatech 2025 à Paris. Pourquoi ne pas penser l'IA en terme d'Open Source ? "For AI to be considered Open Source AI, it must offer ac...</div>
+                <div class="tags"><span class="tag">souveraineté</span><span class="tag">numérique</span><span class="tag">open-source</span><span class="tag">vivatech2025</span><span class="tag">IA</span></div>
+                <a href="#project-lecture-IA-Open-source-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        </div>
+        
+        
+    <div id="project-souvertainte-IA" class="project-full-content">
+        <h2><a href="#">Vivatech 2025 - Souverainté IA </a></h2>
+        
+        <img class="hero-image" src="img/vivatech2025.png" alt="Vivatech 2025 - Souverainté IA " loading="lazy">
+        
+        <h2>Vivatech 2025 à Paris</h2>
+<p>Pour rappel, le salon VivaTech est le plus grand salon européen dédié à l'innovation et aux start-ups.</p>
+<p>A l'image du CES de Las Vegas pour l'Amérique du Nord, ce salon a pour ambition de se positionner comme un lieu de référence de l'innovation mondiale.</p>
+<p>Cette 9ème édition a battu son record de fréquention avec quelques 180 000 visiteurs en 4 jours, preuve de l'intérêt du sujet.</p>
+<h3>Thématiques principales 2025</h3>
+<ul>
+<li>Intelligence artificielle (thème dominant)</li>
+<li>Souveraineté numérique</li>
+<li>Cybersécurité et informatique quantique</li>
+<li>Tech for Good (innovation durable et responsable)</li>
+<li>Robotique et réalité étendue</li>
+</ul>
+<h3>Gouvernance des données : leardership européen sur l'IA</h3>
+<p>Cette année, le sujet de la gouvernance des données prend un tournant historique avec cette "souveraineté numérique" : les accords entre Mistral et Nvidia permettent aussi à l'UE d'assoir leur leadership sur l'IA et de revendiquer leur souveraineté numérique en accord avec les valeurs européennes.</p>
+<p>Une très bonne nouvelle et des perspectives encourageantes sur l'intégration de cette technologie. Car <strong>s'intéresser aux infrastructures s'est s'intéresser aux datas centers</strong>.</p>
+<p>La possibilité d'avoir son propre modèle IA par organisation est bien dans <strong>le mouvement de convergence des modèles</strong>.</p>
+<h3>Microservices conteneurisés</h3>
+<p>De quoi ravir tous les habitués de Docker et autre Kubernetes... NIMs (Nvidia Inference Microservices) <strong>ne veut pas être un nouvel outil d'orchestration mais plutôt un standard de data centers.</strong></p>
+<p>L'article de l'Usine Digitale résume d'ailleurs bien le projet car les besoins de puissance de calcul sont fondamentaux dans le domaine de l'intelligence artificielle, de quoi continuer à structurer l'écosystème.</p>
+<hr />
+<h3>Références</h3>
+<p><strong>Articles en ligne :</strong></p>
+<p>L'Usine Digitale. (2025, juin 19). <em>Avec ses NIMs, Nvidia veut donner à chaque entreprise son propre modèle d’IA</em>. https://www.usine-digitale.fr/article/avec-ses-nims-nvidia-veut-donner-a-chaque-entreprise-son-propre-modele-d-ia.N2210398</p>
+<p>The Economic Times. (2025, juin 19). <em>What is Nvidia CEO Jensen Huang’s push for ‘Sovereign AI’ that has struck a chord with European leaders</em>. https://economictimes.indiatimes.com/news/international/global-trends/what-is-nvidia-ceo-jensen-huangs-push-for-sovereign-ai-that-has-struck-a-chord-with-european-leaders/articleshow/121909680.cms</p>
+<p>Reuters. (2025, juin 16). <em>Nvidia’s pitch for ‘Sovereign AI’ resonates with EU leaders</em>. https://www.reuters.com/business/media-telecom/nvidias-pitch-sovereign-ai-resonates-with-eu-leaders-2025-06-16/</p>
+<hr />
+<p><strong>Vidéo :</strong></p>
+<p>VivaTech. (2025, juin). <em>Nvidia CEO Jensen Huang Speaks at VivaTech 2025 in Paris</em> [Vidéo]. YouTube. https://www.youtube.com/watch?v=85wA4XJ6164</p>
+<hr />
+        
+        <div class="tags"><span class="tag">souveraineté</span><span class="tag">numérique</span><span class="tag">open-source</span><span class="tag">vivatech2025</span><span class="tag">IA</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-surcharge-informationnelle-2025" class="project-full-content">
+        <h2><a href="#">La surcharge informationnelle</a></h2>
+        
+        <img class="hero-image" src="img/surcharge-informationnelle.png" alt="La surcharge informationnelle" loading="lazy">
+        
+        <p>Etudiée depuis les années 70, la <strong>surcharge informationnelle</strong> ou <strong>l'infobésité</strong> sont aujourd'hui des termes souvent confondus pour parler <strong>d'un état de saturation cognitive d'une personne</strong>.</p>
+    <p><img alt="surcharge inf" src="img/surcharge-informationnelle.png" width="50%" /></p>
+
+        <p>Pourtant, on peut apporter une nuance entre ces deux termes, même s'ils décrivent une <strong>même réalité d'épuisement mental</strong>, ils ne sont pas considérés comme maladie au sens médical mais révélateurs d'un <strong>état de stress lié à nos comportements numériques</strong>.</p>
+<p><em>D'ailleurs le cas japonais des "hikikomori", qui sont des personnes qui s'extraient complètement de la vie extérieure pour une vie virtuelle, pourrait amener à plus de reconnaissance médicale de ces pathologies modernes.</em></p>
+<p>En effet, il n'y a pas de reconnaissance officielle dans aucun tableau de maladies professionnelles en France, ni dans les classifications médicales internationales (DSM-5, CIM-11) même si les conséquences pathologiques sont avérées : stress, anxiété informationnelle, surmenage, burn-out, syndrome de débordement cognitif, syndrome de saturation cognitive, cyberdépendance, désengagement, déficit d'attention, modification de la mémoire à long terme, altération du jugement.</p>
+<p>Cette <strong>zone grise</strong> interpelle puisque les symptômes sont réels (fatigue cognitive, troubles attentionnels, stress chronique) mais le statut reste <strong>flou</strong>.</p>
+<p>Les médecins traitent donc <strong>les conséquences cognitives de cet excès d'information</strong> (anxiété, troubles du sommeil, épuisement) plutôt que l'infobésité comme entité pathologique autonome.</p>
+<p>Et globalement, ce phénomène est traité de la même manière.</p>
+<h3>... mais alors c'est quoi ?</h3>
+<p>La nuance à poser entre ces deux concepts tient à leur temporalité : <strong>l'infobésité</strong> évoquera un enjeu de société, un problème à résoudre, une pathologie émergente, tandis que <strong>la surcharge informationnelle</strong> se percevra plus comme un incident technique. Les stratégies pour contrer cela dépendront donc aussi de l'angle choisi :</p>
+<h4>Surcharge informationnelle = SITUATION ponctuelle</h4>
+<ul>
+<li>État temporaire et mesurable</li>
+<li>Neutre et réversible
+➡️ "Là, maintenant, j'ai trop d'infos à traiter"
+↪️ Comme dire "j'ai faim" ou "je suis fatigué"</li>
+</ul>
+<h4>Infobésité = CONDITION chronique</h4>
+<ul>
+<li>État pathologique installé</li>
+<li>Problématique et persistante
+➡️ "Je suis dans un rapport incontrôlé à l'information"
+↪️ Comme dire "je suis obèse" ou "je suis dépressif"</li>
+</ul>
+<h3>Surcharge informationnelle = le phénomène technique</h3>
+<p><strong>🧠⚡ Surcharge informationnelle → problème technique à résoudre</strong></p>
+<p><strong>Plus neutre et descriptif :</strong> Le concept de surcharge informationnelle décrit une situation dans laquelle une personne ne dispose pas des ressources suffisantes (temps, capacité d'attention, d'analyse, de compréhension…) pour répondre aux multiples sollicitations.</p>
+<p><strong>Approche cognitive :</strong> Se concentre sur les limites du traitement de l'information par le cerveau. C'est le terme scientifique, utilisé en ergonomie, psychologie cognitive, neurosciences.</p>
+<p><strong>Vision mécanique :</strong> Votre processeur mental est surchargé, point.</p>
+<h3>Infobésité = la métaphore sociale</h3>
+<p><strong>🍔📱 Infobésité → problème de société à dénoncer</strong></p>
+<p><strong>Plus imagée et critique :</strong> L'analogie alimentaire avec le terme "infobesity" fut inventée par David Shenk en 1993 infobésité — Wiktionnaire, le dictionnaire libre. C'est un mot-valise qui dénonce.</p>
+<p><strong>Dimension pathologique :</strong> L'analogie avec l'obésité sous-entend une surconsommation malsaine, une addiction, un dysfonctionnement du "régime informationnel".</p>
+<p><strong>Charge morale :</strong> Suggère qu'on "s'empiffre" d'infos comme on s'empiffre de malbouffe.</p>
+<h3>Et que dit le droit ?</h3>
+<p>La charge mentale est un concept défini dans le <strong>droit du travail - article 4121-1</strong> et <strong>ISO 10075-2:1996 - Principes ergonomiques relatifs à la charge de travail mental</strong>, servant à définir de bonnes pratiques.</p>
+<p>Plus récemment, on peut citer <strong>la norme ISO 10075-2:2024 - Principes ergonomiques relatifs à la charge de travail mental</strong>.</p>
+<p>Dans le Code du Travail, la surcharge informationnelle se rapporte aux risques psychosociaux (RPS), d'où le rôle important de <strong>l'Observatoire de l’infobésité et de la Collaboration Numérique</strong>.</p>
+<h4>Droit à la déconnexion</h4>
+<p>Depuis 2016, la <strong>Loi pour une République numérique</strong> a défini aussi un cadre à travers le "droit à la déconnexion" (Articles L2242-17 et L2242-8) avec l'obligation des entreprises de plus de 50 salariés à négocier des accords sur l'usage des outils numériques.</p>
+<p>Cependant, <strong>cette loi reste assez limitée dans sa portée</strong>. Ce problème systémique ne se résout pas à une application juridique.</p>
+<p>Faire porter au droit la responsabilité de nos comportements est une impasse qui entretient cette souffrance.</p>
+<h3>...Et Après?</h3>
+<p>On peut s'interroger plutôt sur <strong>l'efficacité des stratégies</strong> proposées pour éviter ce phénomène psychosocial.</p>
+<p><strong>Les limites structurelles</strong> de ces stratégies individuelles sont réelles. Les plateformes numériques sont conçues pour capter l'attention avec des algorithmes sophistiqués qui exploitent nos biais cognitifs. Demander aux individus de "résister" seuls à ces mécanismes, c'est un peu comme leur conseiller de nager à contre-courant dans un fleuve en crue.</p>
+<p><strong>L'illusion du contrôle personnel</strong> est particulièrement frappante. Quand votre travail, vos relations sociales et l'accès à l'information passent par les mêmes canaux numériques, "limiter les notifications" ou "prendre des pauses" devient vite impraticable. C'est comme conseiller à quelqu'un de moins respirer dans un environnement pollué.</p>
+<p><strong>Le transfert de responsabilité</strong> est aussi problématique. Ces conseils placent la charge sur l'individu alors que le problème est systémique. Les entreprises technologiques investissent des milliards pour rendre leurs services irrésistibles, mais on attend des utilisateurs qu'ils développent une discipline monastique.</p>
+<p>On est plus à un paradoxe près... et toutes ces stratégies soulagent ponctuellement sans résoudre le problème.</p>
+<p>Mais pour une solution durable, on pourrait envisager <strong>des régulations plus strictes sur la conception des interfaces, la transparence des algorithmes, et peut-être repenser notre rapport collectif à l'information.</strong></p>
+<p>Voeu pieux... pas vraiment : les chiffres sur <strong>le coût de la surcharge</strong> sont saississants et les études "chocs" de ces dernières années ont démontré l'ampleur du problème (voir références ci-après) : on retient l'étude Basex qui estimait à <strong>près de 900 milliards de dollars</strong> ce coût (2008)</p>
+<p>74 % des managers déclarent souffrir de surinformation et d'un sentiment d'urgence généralisé et 94 % pensent que la situation ne peut que se détériorer (rapport du Sénat, 2023).</p>
+<h3>En perspective : vertigineux et inquiétant</h3>
+<p><strong>Ces montants dépassent le PIB de la plupart des pays...</strong> L'infobésité coûte plus cher que des secteurs entiers de l'économie.</p>
+<p>Plus on investit dans la "digitalisation" pour gagner en efficacité, plus on aggrave le problème. <strong>On paie deux fois : l'investissement tech ET les coûts de l'infobésité qu'elle génère!</strong></p>
+<p><strong>🎯L'enjeu des Intelligences Artificielles se place aussi là.</strong></p>
+<p>La plupart des entreprises se sont emparées du sujet et utilisent notamment différents outils pour quantifier le problème :</p>
+<ul>
+<li>Analytics des outils collaboratifs</li>
+<li>Métriques RH (burn-out, absentéisme)</li>
+<li>Outils de time-tracking pour mesurer les interruptions</li>
+</ul>
+<p>Finalement, est-ce que ces solutions, si elles sont utilisées, sont efficaces ? Le <strong>Knowledge Management</strong> prend place en France ; souvent défini comme une simple tâche supplémentaire rattachée à un ou plusieurs postes de travail, quand une stratégie s'impose. Chacun est juge de sa situation.</p>
+<p>Et justement ces situations manquent cruellement de <strong>lisibilité</strong>, même si la partie médicale rend tangible le problème, reconnaissons les tabous qui pèsent encore sur ce qui est <strong>compris comme juste un maillon faible alors qu'il s'agit d'un problème systémique où chacun est bien un maillon de cette chaîne.</strong></p>
+<h4>Notes</h4>
+<p>📈 Les métriques clés :</p>
+<ul>
+<li>Dégradation de l'attention (Microsoft, 2015)</li>
+<li>Volume d'emails (Radicati Group)</li>
+<li>Impact des interruptions (DGT, 2012)</li>
+</ul>
+<p>🔧 Les outils pratiques :</p>
+<ul>
+<li>Calculateur d'infobésité Basex (drôle d'idée : le calcul du ROI de la "diète informationnelle")</li>
+<li>Méthodologies de gouvernance de l'information</li>
+<li>Techniques de "diète informationnelle"</li>
+</ul>
+<hr />
+<h2>Bibliographie - Infobésité et surcharge informationnelle</h2>
+<p>Loin d'être exhaustive, nous constatons surtout que le sujet est largement traité et pourtant, les solutions pour contrer ces risques psychosociaux ont peu d'efficience.</p>
+<h2>Ouvrages spécialisés sur l'infobésité</h2>
+<p><strong>Carr, N.</strong> (2008). "Is Google Making Us Stupid?", <em>The Atlantic</em>. Traduction française : <em>Internet rend-il bête ?</em></p>
+<p><strong>Stolze, J.</strong> <em>L'infobésité pourrait être la prochaine épidémie</em>.</p>
+<p><strong>Papp, A.</strong> (2023) "L’infobésité, une épidémie à l’âge des nouvelles technologies de l’information et de la communication ?" Revue de la régulation. Capitalisme, institutions, pouvoirs, (n° 33).</p>
+<h2>Études et rapports récents</h2>
+<p><strong>OICN - Observatoire de l'Infobésité et de la Collaboration Numérique</strong> (2023). <em>Référentiel annuel 2023 de la surcharge informationnelle en entreprise</em>.</p>
+<p><strong>Mooncard/IFOP</strong> (2023). <em>Baromètre de la charge mentale professionnelle</em>.</p>
+<h2>Sciences cognitives et neurosciences</h2>
+<p><strong>Perrey, S.</strong> "Charge mentale : comment éviter une surchauffe du cerveau ?", <em>The Conversation</em>, Université de Montpellier.
+Consulté en ligne le 22/06/2025 : https://theconversation.com/charge-mentale-comment-eviter-une-surchauffe-du-cerveau-222843?utm_source=clipboard&amp;utm_medium=bylinecopy_url_button</p>
+<h2>Sociologie et impact social</h2>
+<h2>Ergonomie et psychologie du travail</h2>
+<p><strong>ISO 10075-2:1996</strong> - Principes ergonomiques relatifs à la charge de travail mental.</p>
+<p><strong>ISO 10075-2:2024</strong> - Principes ergonomiques relatifs à la charge de travail mental</p>
+<h2>Cadre juridique français</h2>
+<p><strong>Loi n° 2016-1321</strong> du 7 octobre 2016 pour une République numérique (Articles sur le droit à la déconnexion).</p>
+<p><strong>Code du travail</strong> - Articles L2242-17 et L2242-8 sur la négociation du droit à la déconnexion.</p>
+<p><strong>Sénat français</strong> (2023). "Explosion des données et surcharge informationnelle : l'Office invite à prévenir le risque de submersion", Communiqué de presse, 26 janvier 2023.</p>
+<h2>Articles de vulgarisation scientifique</h2>
+<p><strong>Agence France Presse</strong> (2012). Interview de Caroline Sauvajol-Rialland sur "la pathologie de la surcharge informationnelle".</p>
+<p><strong>Schneider, A.</strong> <em>Travaux sur les différences de genre dans la perception de la charge mentale</em>.</p>
+<h2>Études économiques et coûts</h2>
+<p><strong>Spira, J.</strong> (2008). "Information Overload: Now $900 Billion – What is Your Organization's Exposure?", Basex, 19 décembre 2008.</p>
+<p><strong>OICN - Observatoire de l'Infobésité et de la Collaboration Numérique</strong> (2023). <em>Étude sur 1,7 million de métadonnées de réunions et 58 millions de métadonnées d'emails auprès de 9 000 personnes</em>, France.</p>
+<p><strong>Boukef, N.</strong> (2004). <em>Étude sur la surcharge informationnelle chez les managers</em> - 74% déclarent souffrir de surinformation.</p>
+<p><strong>Trontin, C. et al.</strong> (2007). "Le coût du stress professionnel en France en 2007", INRS.</p>
+<p><strong>Microsoft</strong> (2015). <em>Étude EEG sur l'attention</em> - Dégradation de 12 à 8 secondes entre 2000 et 2015.</p>
+<p><strong>DGT - Direction Générale du Travail</strong> (2012). <em>L'Impact des Technologies de l'information et de la communication (TIC) sur les conditions de travail</em>.</p>
+<p><strong>Radicati Group</strong> <em>Statistiques sur les emails professionnels</em> - 88 emails reçus en moyenne par jour.</p>
+<p><strong>CHEQ et Université de Baltimore</strong> (2019). <em>Étude sur le coût des fake news</em> - 78 milliards de dollars de coûts directs.</p>
+<h2>Ressources méthodologiques et outils</h2>
+<p><strong>Basex</strong> - "Calculateur d'infobésité" en ligne pour évaluer les coûts organisationnels.</p>
+<p><strong>Knowledge Management</strong> - Méthodologies de gouvernance de l'information.</p>
+<p><strong>Agence européenne pour la sécurité et la santé au travail</strong> - Définitions et métriques du stress lié à l'information.</p>
+<p><strong>Techniques de "diète informationnelle"</strong> - Stratégies individuelles et organisationnelles de limitation.</p>
+<hr />
+        
+        <div class="tags"><span class="tag">surcharge-informationnelle</span><span class="tag">droit-numerique</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-viz-inférence-2025" class="project-full-content">
+        <h2><a href="#">Visualisation sur 3 types d'inférence</a></h2>
+        
+        <img class="hero-image" src="img/3-raisonnements-IA-0.png" alt="Visualisation sur 3 types d'inférence" loading="lazy">
+        <p><img alt="raisonnement" src="img/3-raisonnements-IA.png" width="80%" /></p>
+
+        <p>Sans prétention, par cette visualisation de données, nous voulions simplement illustrer trois types d'inférence couramment utilisés en apprentissage automatique.</p>
+<p>Ce sont des modèles basiques mais qui représentent trois types de raisonnement courants et l'application sur un jeu de données archéologiques réels en faisait un bon exemple pédagogique.</p>
+<p>Le code actuel est donc une implémentation (très) simpliste qui ne capture pas vraiment la notion de "surprise" archéologique ;idem pour le mode déductif qui illustre surtout la logique de recommandation.</p>
+<p>Il applique des règles arbitraires plutôt que de détecter de vraies anomalies contextuelles (cela est réalisable mais étant donné la qualité des données, les résultats deviennent trop superficiels).</p>
+<iframe src="https://app-archeo-inference.onrender.com/" 
+        title="Visualisation sur 3 types d'inférence" 
+        width="100%" 
+        height="700px" 
+        frameborder="0"
+        style="border: 1px solid #ddd; border-radius: 10px;"
+        allowfullscreen
+        loading="lazy">
+</iframe>
+        
+        <div class="tags"><span class="tag">inférence</span><span class="tag">apprentissage</span><span class="tag">IA</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-infographie-veille_StR" class="project-full-content">
+        <h2><a href="#">Veille et StR</a></h2>
+        
+        <img class="hero-image" src="img/infographie_VeilleVSAlgo.png" alt="Veille et StR" loading="lazy">
+        
+        <p>Ces deux approches mettent en avant les enjeux de l'automatisation des médias et insiste sur la nécessaire distance critique sur le sujet de <strong>l'analyse des transformations numériques contemporaines.</strong></p>
+<p>Si ces questions de systématisation ou d'hybridation productive vous intéressent :</p>
+<p>➡️ Le billet complet sur notre blog scientifique ARCHNUM : https://archnum.hypotheses.org/1726 </p>
+<p><img alt="Veille vs Recommandation" src="img/infographie_VeilleVSAlgo.png" width="60%" /></p>
+        
+        <div class="tags"><span class="tag">veille stratégique</span><span class="tag">recommandation</span><span class="tag">IA</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-emoji-couch-potato-2025" class="project-full-content">
+        <h2><a href="#">Comment défendre la candidature d'un emoji auprès du Consortium Unicode ? </a></h2>
+        
+        <img class="hero-image" src="img/emoji_couch-potato.png" alt="Comment défendre la candidature d'un emoji auprès du Consortium Unicode ? " loading="lazy">
+        
+        <p>📢 Cela vous semble incongrue comme question et pourtant, d'où viennent tous nos emojii et autres symboles ?</p>
+<h3>Au “bureau des symboles”</h3>
+<p>Chaque caractère que nous utilisons sur notre clavier est issue d'une validation par le <strong>Consortium Unicode</strong>.</p>
+<p>Rien n'est laissé au hasard.</p>
+<p>... alors qu'est ce donc que cette "organisation de l'ombre"🕵️‍♂️? 😄</p>
+<p>Cette infrastructure méconnue du web est pourtant incontournable puisqu'elle crée un standard unique pour représenter chaque caractère utilisé dans les langues du monde entier : il s'agit d'<strong>UNICODE</strong>.</p>
+<p>Cette organisation à but non lucratif a été fondée en 1991 aux Etats-Unis par des ingénieurs d'Apple et de Xerox qui réfléchissaient à <strong>un système de codage universel des caractères.</strong> Depuis de nombreux acteurs influents comme les GAFAM ou des institutions universitaires y participent.</p>
+<p>➡️ Il est parfaitement légitime de se demander pourquoi certains se lancent dans pareils questionnements ? 🥲</p>
+<h3>Unicode, gardien de l'écriture numérique</h3>
+<p>...Mais pour éviter <strong>le chaos textuel total</strong> 🌐🧠 mon bon Monsieur !!! Imaginez l'absence d'une codification stable des caractères : nos contenus numériques pris dans un vrai Tartare numérique, avec des pictogrammes en panique, implorant l’ordre syntaxique perdu !!</p>
+<p>Marrant au début, impossible au final en ont conclu aussi certainement l'Organisation internationale de normalisation (ISO) 😅</p>
+<p>Pour rappel, l'ISO est le plus grand organisme de normalisation au monde et demeure aussi une organisation non gouvernementale. Peut-être pas l'agence la plus funky vu de l'extérieur, mais pilier aussi de l'organisation de <strong>la communication numérique moderne</strong>.</p>
+<h4>Emoji, langage visuel universel</h4>
+<p>Dans ses missions, l'Unicode a intégré les emojis dans son standard, et ces pictogrammes sont une manière imagée de représenter des symboles identitaires.</p>
+<h3>Objectifs d'Unicode</h3>
+<p>Mais le Consortium Unicode a aussi des objectifs d'universalité linguistique, d'interopérabilié mondiale, d'accessiblité et d'inclusion et enfin de stabilité et de pérennité.</p>
+<p>En réalité, <strong>Unicode façonne notre quotidien connecté et dépasse les frontières du web, l'Internet entier est concerné.</strong></p>
+<p>📢 Des ressources très intéressantes sur l'UNICODE - atelier de formation à l'ENSIB
+<a href="https://unicodeenbibliotheque.wordpress.com/2010/06/17/carte-heuristique-autour-dunicode-2/">Carte heuristique autour d’Unicode</a></p>
+<h3>Candidat à l'Emoji !</h3>
+<p>Cette année, il est possible de déposer une propostion d'Emoji au Consortium Unicode jusqu'au 31 juillet 2025.</p>
+<p>Processus de soumission :</p>
+<ul>
+<li>Vérifiez d'abord <a href="https://unicode.org/emoji/emoji-proposals-status.html">la liste des demandes</a></li>
+<li>Signez l'accord juridique (licence perpétuelle obligatoire)</li>
+<li>Créez votre PDF selon le format exact</li>
+<li>Soumettez via <a href="https://forms.gle/6vKWABwKDhp4ZGEA6">le formulaire officiel</a></li>
+<li>Réponse avant le 30 novembre 2025</li>
+</ul>
+<p>...alors l'une des plus importantes agences de l'Internet gère avec un google-sheet les demandes 😂 j'apprécie déjà l'esprit !</p>
+<p>Mais ne vous meprénez pas, le dossier pour postuler ne se résume pas à une infographie : il faudra argumenter sur la <strong>validité</strong> de votre proposition selon des <strong>critères stricts</strong> (compatibilité, unicité, diversité, etc.).</p>
+<p>Une fois qu’un Emoji est <strong>intégré dans Unicode</strong>, il y reste <strong>indéfiniment</strong> ; cette phrase à elle seule résume ma fascination pour le sujet.</p>
+<p>Notre idée de proposition fait sont petit bonhomme de chemin. A suivre.</p>
+        
+        <div class="tags"><span class="tag">couch potato</span><span class="tag">Consortium code</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-lecture-IA-Open-source-2025" class="project-full-content">
+        <h2><a href="#">Et pourquoi ne pas envisager l'IA Open-source ? </a></h2>
+        
+        <img class="hero-image" src="img/open-source-initiative.png" alt="Et pourquoi ne pas envisager l'IA Open-source ? " loading="lazy">
+        
+        <h2>Bientôt l'ère de 'l'IA Open-source'?</h2>
+<p>Un article <strong>très pertinent</strong> qui germe dans le sillon des annonces faites au salon Vivatech 2025 à Paris.</p>
+<p>Pourquoi ne pas penser l'IA en terme d'Open Source ?</p>
+<p><em>"For AI to be considered Open Source AI, it must offer access not only to the model weights and parameters, but also to the training code, and the data (unless it’s not possible)."</em> </p>
+<p>[traduction : l'IA doit offrir un accès non seulement aux pondérations et paramètres du modèle, mais aussi au code d'entraînement et aux données (sauf impossibilité )]</p>
+<p>Puisqu'il s'agit de droits relatifs aux données (provenance, transparence ou réglementation) et de leur utilisation éthique (loyauté, biais), le changement est de taille et les questions relatives aux infrastructures de données ont changé forcément d'échelle : certains y voient le même type d'évolution que les infrastructures logicielles comme Linux ou Python.</p>
+<p>Soyons plus explicites, il pourrait bien s'agir d'<strong>une option plausible pour reprendre la main sur nos données</strong>, simplifiant la gestion globale de tous ces systèmes ! 😅</p>
+<p>Donc plus largement il s'agira aussi de repenser notre rapport au numérique, alors cela mérite de continuer à creuser un peu...</p>
+<p><a href="https://opensource.org/blog/open-source-and-the-future-of-european-ai-sovereignty-insights-from-vivatech-2025">Article original : Open Source and the future of European AI sovereignty: Insights from Vivatech 2025</a></p>
+<hr />
+<p><strong>Articles en ligne :</strong></p>
+<p>L'Usine Digitale. (2025, juin 19). <em>Avec ses NIMs, Nvidia veut donner à chaque entreprise son propre modèle d’IA</em>. https://www.usine-digitale.fr/article/avec-ses-nims-nvidia-veut-donner-a-chaque-entreprise-son-propre-modele-d-ia.N2210398</p>
+<p>The Economic Times. (2025, juin 19). <em>What is Nvidia CEO Jensen Huang’s push for ‘Sovereign AI’ that has struck a chord with European leaders</em>. https://economictimes.indiatimes.com/news/international/global-trends/what-is-nvidia-ceo-jensen-huangs-push-for-sovereign-ai-that-has-struck-a-chord-with-european-leaders/articleshow/121909680.cms</p>
+<p>Reuters. (2025, juin 16). <em>Nvidia’s pitch for ‘Sovereign AI’ resonates with EU leaders</em>. https://www.reuters.com/business/media-telecom/nvidias-pitch-sovereign-ai-resonates-with-eu-leaders-2025-06-16/</p>
+<hr />
+<p><strong>Vidéo :</strong></p>
+<p>VivaTech. (2025, juin). <em>Nvidia CEO Jensen Huang Speaks at VivaTech 2025 in Paris</em> [Vidéo]. YouTube. https://www.youtube.com/watch?v=85wA4XJ6164</p>
+<hr />
+        
+        <div class="tags"><span class="tag">souveraineté</span><span class="tag">numérique</span><span class="tag">open-source</span><span class="tag">vivatech2025</span><span class="tag">IA</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    
+            
+            <!-- Footer ajouté ici -->
+            <div class="footer">
+                <h2>Restons connectés !</h2>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou simplement échanger sur nos domaines d'intérêt communs.</p>
+                
+                <div class="social-links">
+                    <a href="https://portfolio-af-v2.netlify.app/" class="social-link" target="_blank" rel="noopener">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/alexiafontaine" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2025 - Newsletter générée automatiquement depuis mon portfolio GitHub - Alexia Fontaine tous drois réservés</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (!tab.hasAttribute('onclick')) {
+                tab.addEventListener('click', () => {
+                    // Désactiver tous les onglets et contenus
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Activer l'onglet et le contenu sélectionnés
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Portfolio - 11/04/2025</title>  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #4a6d8c;
+            --secondary: #2a475e;
+            --accent: #90afc5;
+            --light: #f6f9fc;
+            --dark: #333333;
+            --text: #444444;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --border: 1px solid #eaeaea;
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+    
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 20px;
+            background-image: url('img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 71, 94, 0.7);
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            scroll-margin-top: 50px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            margin: 1em 0;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image-container {
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .project-summary {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .toc {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .toc-item {
+            margin-bottom: 5px;
+        }
+        
+        .toc-item a {
+            display: block;
+            padding: 8px;
+            background-color: white;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item a:hover {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: var(--border);
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        .project-full-content {
+            padding: 40px;
+            margin-bottom: 60px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-full-content img.hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 1em 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eaeaea;
+            margin: 25px 0;
+        }
+        
+        /* Styles pour les onglets */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            color: var(--secondary);
+        }
+        
+        .tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Styles responsifs */
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .project-full-content {
+                padding: 20px;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="newsletter">Newsletter</div>
+            <div class="tab" onclick="window.location.href='archives.html'">Archives</div>
+        </div>
+    
+        <!-- Contenu de la Newsletter -->
+        <div id="newsletter" class="tab-content active">
+            
+        
+        <div class="header">
+            <div class="header-content">
+                <h1>Newsletter Portfolio</h1>
+                <p>11/04/2025</p>
+                <p>Découvrez mes derniers projets et réalisations dans cette newsletter hebdomadaire.</p>
+                <h3>Récits visuels, horizons numériques :</h3> 
+                <h3>Chaque newsletter, un voyage entre données, créativité et découvertes</h3>
+            </div>
+        </div>
+        
+        
+        <div class="grid">
+            
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/abeille.jpg" alt="Méthodologie Narrative de Traitement de Données" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">Méthodologie Narrative de Traitement de Données</h2>
+                <div class="project-description">Approche de l'analyse de données qui transcende l'analyse statistique traditionnelle</div>
+                <div class="project-summary">1 Lecture des Contextes Chaque ensemble de données raconte une histoire. Mon approche consiste à écouter ces récits, à comprendre leurs nuances et leurs implications culturelles sous-jacentes. 2 Tissage des Narratifs Au-delà des chiffres, je recherch...</div>
+                <div class="tags"><span class="tag">data science</span><span class="tag">narration</span><span class="tag">analyse contextuelle</span><span class="tag">interprétation</span></div>
+                <a href="#project-data-process" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/archimono.png" alt="architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">Architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown</h2>
+                <div class="project-description">Comment structurer un portfolio digital avec une architecture modulaire basée sur le contenu, séparant clairement présentation et contenu pour une maintenance simplifiée</div>
+                <div class="project-summary">Introduction La gestion d'un portfolio digital peut rapidement devenir complexe lorsque le contenu s'enrichit et se diversifie. L'architecture traditionnelle où le contenu est directement intégré dans le HTML pose des problèmes de maintenance et d'év...</div>
+                <div class="tags"><span class="tag">Architecture Modulaire</span><span class="tag">Markdown</span><span class="tag">Portfolio</span><span class="tag">Content-Driven</span><span class="tag">Automatisation</span><span class="tag">Documentation</span></div>
+                <a href="#project-Architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/Photo-dAvatar-2.jpg" alt="Optimisation d'un avatar conversationnel pour l'archéologie préhistorique" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">Optimisation d'un avatar conversationnel pour l'archéologie préhistorique</h2>
+                <div class="project-description">processus d'amélioration d'un système d'IA conversationnel nommé Lartet</div>
+                <div class="project-summary">Introduction Cet article résume un processus d'amélioration d'un système d'IA conversationnel nommé "Lartet", conçu pour simuler les interactions avec Édouard Lartet, un paléontologue et préhistorien français du 19ème siècle. Le système utilise une a...</div>
+                <div class="tags"><span class="tag">Archeologie</span><span class="tag">Apprentissage automatique</span><span class="tag">NLP</span><span class="tag">Documentation</span></div>
+                <a href="#project-Optimisation d'un avatar conversationnel pour l'archéologie préhistorique" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/CulturalAnalytics.jpg" alt="Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">Résumé // Lev MANOVTICH, The Science of Culture ? in Cultural Analysis</h2>
+                <div class="project-description">L'analyse culturelle sert pour l'étude vastes ensembles de données</div>
+                <div class="project-summary">Résumé // Lev MANOVTICH, The Science of Culture ? in Cultural Analysis L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'analyse de vastes ensembles de données culturelles. Lien vers l'ouvrage en ligne : Cultural Analysis #an...</div>
+                <div class="tags"><span class="tag">Big Data</span><span class="tag">analyse culturelle</span><span class="tag">apprentissage automatique</span><span class="tag">structures cognitives</span><span class="tag">structures sociales</span></div>
+                <a href="#project-Cultural Analytics" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/NLP-LLM.jpg" alt="apprentissage automatique" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">apprentissage automatique</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Apprentissage automatique Les systèmes d'apprentissage automatique (machine learning) sont des technologies qui permettent aux ordinateurs d'apprendre à partir de données et d'améliorer leurs performances sur des tâches spécifiques sans être explicit...</div>
+                
+                <a href="#project-apprentissage automatique" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/archi-modulaire.png" alt="Architecture Modulaire à Base de Contenu" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">Architecture Modulaire à Base de Contenu</h2>
+                <div class="project-description">L'Architecture Modulaire à Base de Content (ou "Content-Driven Modular Architecture")</div>
+                <div class="project-summary">Architecture Modulaire à Base de Contenu L' Architecture Modulaire à Base de Contenu (ou "Content-Driven Modular Architecture") représente une approche moderne et flexible pour concevoir des sites web et des applications. Cette méthodologie place le ...</div>
+                
+                <a href="#project-architecture-modulaire" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        </div>
+        
+        
+    <div id="project-data-process" class="project-full-content">
+        <h2>Méthodologie Narrative de Traitement de Données</h2>
+        
+        <img class="hero-image" src="img/Slowsia.jpg" alt="Méthodologie Narrative de Traitement de Données" loading="lazy">
+        
+        <div class="process-step">
+    
+    <p>Résumé de la section de mon PORTFOLIO : Une Approche de l'Analyse de Données </p>
+    <div class="step-number">1</div>
+    <div class="step-content">
+        <div class="step-title">Lecture des Contextes</div>
+        <p>Chaque ensemble de données raconte une histoire. Mon approche consiste à écouter ces récits, à comprendre leurs nuances et leurs implications culturelles sous-jacentes.</p>
+    </div>
+</div>
+
+<div class="process-step">
+    <div class="step-number">2</div>
+    <div class="step-content">
+        <div class="step-title">Tissage des Narratifs</div>
+        <p>Au-delà des chiffres, je recherche les fils conducteurs qui relient les données aux expériences humaines, aux dynamiques organisationnelles et aux évolutions sociétales.</p>
+    </div>
+</div>
+
+<div class="process-step">
+    <div class="step-number">3</div>
+    <div class="step-content">
+        <div class="step-title">Interprétation Contextuelle</div>
+        <p>Chaque donnée est située dans son écosystème : professionnel, culturel, historique. Cette approche permet de révéler des insights qui dépassent l'analyse statistique traditionnelle.</p>
+    </div>
+</div>
+        
+        <div class="tags"><span class="tag">data science</span><span class="tag">narration</span><span class="tag">analyse contextuelle</span><span class="tag">interprétation</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-Architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown" class="project-full-content">
+        <h2>architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown</h2>
+        
+        <img class="hero-image" src="img/archimono.png" alt="architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown" loading="lazy">
+        
+        <h2>Introduction</h2>
+<p>La gestion d'un portfolio digital peut rapidement devenir complexe lorsque le contenu s'enrichit et se diversifie. L'architecture traditionnelle où le contenu est directement intégré dans le HTML pose des problèmes de maintenance et d'évolutivité. Cet article présente une approche modulaire basée sur le contenu (Content-Driven Modular Architecture) qui sépare clairement la présentation du contenu, offrant ainsi une solution élégante pour les portfolios riches en contenu.</p>
+<h2>Le problème du contenu monolithique</h2>
+<p>Imaginez un portfolio comme celui-ci (oui c'est bien le mien... et juste une partie!):</p>
+<img src="img/portfolio-monolithique.png" alt="Portfolio Monolithique" loading="lazy">
+
+<p>Ce fichier HTML devient rapidement surchargé, mélangeant structure, présentation et contenu. Chaque modification nécessite d'intervenir dans le code HTML, rendant la maintenance fastidieuse et source d'erreurs.</p>
+<h2>Solution : Architecture Modulaire à Base de Contenu</h2>
+<p>L'architecture modulaire à base de contenu propose de séparer le contenu (texte, images, liens) de sa présentation (HTML, CSS), en utilisant Markdown comme format de contenu.</p>
+<h3>Principe fondamental</h3>
+<p>La séparation contenu/présentation s'articule autour de trois composants :</p>
+<ol>
+<li><strong>Fichiers Markdown (.md)</strong> : Contiennent uniquement le contenu avec métadonnées (frontmatter)</li>
+<li><strong>Template HTML unique</strong> : Définit la structure et la mise en page</li>
+<li><strong>Script de chargement</strong> : Intègre dynamiquement le contenu Markdown dans le HTML</li>
+</ol>
+<h3>Structure de fichiers</h3>
+<p><code>portfolio/
+├── index.html            # Template principal avec la structure
+├── css/
+│   └── styles.css        # Styles CSS 
+├── js/
+│   └── main.js           # Scripts JavaScript (optionnel)
+├── content/              # Dossier des contenus en Markdown
+│   ├── about.md          # Section "À propos"
+│   ├── skills.md         # Section "Compétences"
+│   ├── projects/         # Sous-dossier pour les projets
+│   │   ├── project1.md
+│   │   └── project2.md
+│   └── ...
+└── img/                  # Images</code></p>
+<h3>Les fichiers Markdown avec frontmatter</h3>
+<p>Voici un exemple de fichier Markdown pour l'article'" :</p>
+<p><code><h2>```markdown</h2>
+<p><code>
+    ---
+    title: "architecture Modulaire pour Portfolio Digital - Une Approche Basée sur le Markdown"
+    description: "Comment structurer un portfolio digital avec une architecture modulaire basée sur le contenu, séparant clairement présentation et contenu pour une maintenance simplifiée"
+    author: "Alexia Fontaine"
+    tags:
+      - Architecture Modulaire
+      - Markdown
+      - Portfolio
+      - Content-Driven
+      - Automatisation
+      - Documentation
+    categories:
+      - Développement Web
+      - Méthodologie
+    date: 2025-04-11
+    version: 1.0
+    type: article
+    image: "/img/Process_COPE.png"
+    lang: fr
+    ---
+</code></p>
+
+<h2>HTML modularisé</h2>
+<p>Le fichier HTML devient un simple template qui charge dynamiquement le contenu :</p>
+<img src="img/md-portofolio.png" alt="HTML Modularisé" loading="lazy">
+<h3>Script de chargement JavaScript</h3>
+<p>Un script JavaScript charge dynamiquement le contenu Markdown, le convertit en HTML et l'insère dans la page :</p>
+<p><code>``javascript
+async function loadMarkdownContent(filePath, targetElementId, imageId, titleId, subtitleId) {
+    // Chargement du fichier Markdown
+    const response = await fetch(</code>content/${filePath}.md`);
+    const mdContent = await response.text();</p>
+<pre><code>// Séparation du frontmatter et du contenu
+const parts = mdContent.split('---');
+const frontmatter = jsyaml.load(parts[1]);
+const content = parts.slice(2).join('---');
+
+// Insertion du contenu converti en HTML
+document.getElementById(targetElementId).innerHTML = marked.parse(content);
+
+// Mise à jour des métadonnées
+if (imageId) document.getElementById(imageId).src = frontmatter.image;
+if (titleId) document.getElementById(titleId).textContent = frontmatter.title;
+if (subtitleId) document.getElementById(subtitleId).textContent = frontmatter.subtitle;
+</code></pre>
+<p>}</p>
+<p>// Chargement des sections
+document.addEventListener('DOMContentLoaded', function() {
+    loadMarkdownContent('about', 'about-content', 'about-image', 'about-title', 'about-subtitle');
+    // Chargement des autres sections...
+});
+```</p>
+<h2>Automatisation du processus</h2>
+<p>Pour simplifier encore davantage la gestion du contenu, un script Python a été développé pour :</p>
+<ol>
+<li>Extraire la structure d'un fichier Markdown (titres, images, liens)</li>
+<li>Générer un frontmatter YAML complet avec métadonnées</li>
+<li>Créer des versions résumées des contenus</li>
+<li>Transformer des paragraphes en listes de mots-clés</li>
+</ol>
+<p>Cet outil permet de traiter les fichiers Markdown de manière cohérente et d'extraire automatiquement les métadonnées pertinentes.</p>
+<h2>Avantages de cette architecture</h2>
+<p>Cette approche présente de nombreux avantages :</p>
+<ol>
+<li><strong>Séparation du contenu et de la présentation</strong> - Le contenu est stocké indépendamment du code de l'interface</li>
+<li><strong>Composabilité</strong> - Les sections peuvent être réutilisées ou réorganisées facilement</li>
+<li><strong>Maintenabilité</strong> - Modifier un contenu n'exige pas de toucher au code HTML principal</li>
+<li><strong>Évolutivité</strong> - Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier</li>
+<li><strong>Versionning efficace</strong> - Les modifications de contenu sont clairement visibles dans les commits Git</li>
+<li><strong>Workflow optimisé</strong> - Les designers peuvent travailler sur l'interface pendant que les rédacteurs créent le contenu</li>
+</ol>
+<h2>Mise en pratique</h2>
+<p>Pour mettre en place cette architecture dans votre propre portfolio :</p>
+<ol>
+<li>Convertissez vos contenus en fichiers Markdown avec frontmatter</li>
+<li>Créez un template HTML avec des conteneurs identifiés pour chaque section</li>
+<li>Implémentez le script de chargement JavaScript</li>
+<li>Utilisez des outils d'automatisation pour faciliter la gestion du contenu</li>
+</ol>
+<h2>Conclusion</h2>
+<p>L'architecture modulaire à base de contenu représente une évolution naturelle pour les portfolios digitaux riches en contenu. En séparant clairement le contenu de la présentation, cette approche simplifie considérablement la maintenance et l'évolution de votre portfolio, tout en offrant une grande flexibilité pour personnaliser chaque aspect de votre présence en ligne.</p>
+<p>Cette méthode s'inscrit parfaitement dans la philosophie "Create Once, Publish Everywhere" (COPE), permettant de réutiliser le contenu sur différentes plateformes et dans différents formats sans duplication d'effort.</p>
+        
+        <div class="tags"><span class="tag">Architecture Modulaire</span><span class="tag">Markdown</span><span class="tag">Portfolio</span><span class="tag">Content-Driven</span><span class="tag">Automatisation</span><span class="tag">Documentation</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-Optimisation d'un avatar conversationnel pour l'archéologie préhistorique" class="project-full-content">
+        <h2>Optimisation d'un avatar conversationnel pour l'archéologie préhistorique</h2>
+        
+        <img class="hero-image" src="img/Photo-dAvatar-2.jpg" alt="Optimisation d'un avatar conversationnel pour l'archéologie préhistorique" loading="lazy">
+        
+        <h2>Introduction</h2>
+<p>Cet article résume un processus d'amélioration d'un système d'IA conversationnel nommé "Lartet", conçu pour simuler les interactions avec Édouard Lartet, un paléontologue et préhistorien français du 19ème siècle. Le système utilise une architecture d'apprentissage automatique pour générer des réponses informées à partir de passages de l'ouvrage "Reliquiae Aquitanicae".</p>
+<h2>Défis identifiés</h2>
+<p>L'analyse des logs et des réponses générées a permis d'identifier plusieurs défis:</p>
+<ol>
+<li><strong>Répétition de contenus</strong>: Le système intégrait le même passage dans différentes sections</li>
+<li><strong>Problèmes de traduction</strong>: La traduction automatique anglais-français produisait des textes incohérents</li>
+<li><strong>Hallucinations et substitutions inappropriées</strong>: Les noms propres étaient systématiquement remplacés par "mon collègue"</li>
+<li><strong>Absence d'utilisation de l'ontologie et de la méréologie</strong>: Malgré des structures de données riches, ces éléments n'étaient pas intégrés</li>
+<li><strong>Réponses non adaptées à certaines questions sensibles</strong>: Le système ne traitait pas correctement les questions sur Henry Christy</li>
+</ol>
+<h2>Solutions développées</h2>
+<h3>1. Amélioration de l'extraction d'informations</h3>
+<p>La fonction <code>extract_structured_info</code> a été optimisée pour éviter les doublons entre catégories:</p>
+<p>```python</p>
+<h1>Éviter les doublons entre catégories</h1>
+<p>all_items = set()
+for category in list(info.keys()):
+    unique_items = []
+    for item in info[category]:
+        item_hash = hash(item)
+        if item_hash not in all_items:
+            all_items.add(item_hash)
+            unique_items.append(item)
+    info[category] = unique_items
+```</p>
+<h3>2. Gestion des questions sensibles</h3>
+<p>Une fonction spécifique a été implémentée pour traiter les questions sur Henry Christy:</p>
+<p><code>python
+def get_christy_collaboration_response(self):
+    """Fournit une réponse prédéfinie sur la collaboration avec Christy"""
+    if self.language == "fr":
+        return """
+Je préfère ne pas m'étendre sur mes relations personnelles ou professionnelles...
+"""</code></p>
+<h3>3. Restructuration du générateur de questions suggérées</h3>
+<p>La fonction <code>get_default_question</code> a été entièrement réécrite pour offrir des suggestions pertinentes sans mentionner Henry Christy:</p>
+<p>```python
+def get_default_question(self, user_input: str) -&gt; str:
+    """Retourne une question par défaut basée sur la requête utilisateur."""
+    query_lower = user_input.lower()</p>
+<pre><code>if self.language == "fr":
+    default_questions = [
+        "Pouvez-vous me parler de vos principales découvertes au Périgord?",
+        # Autres questions...
+    ]
+</code></pre>
+<p>```</p>
+<h3>4. Amélioration de la cohérence linguistique</h3>
+<p>Le système a été modifié pour présenter clairement les extraits en anglais tout en maintenant une structure en français:</p>
+<p>```python</p>
+<h1>Note explicative sur la langue</h1>
+<p>response_parts.append("## Note sur la langue")
+response_parts.append("Bien que mes publications scientifiques fussent rédigées en anglais, je vous présente ici une synthèse en français de mes travaux.")
+```</p>
+<h3>5. Intégration de l'ontologie et de la méréologie</h3>
+<p>Des fonctions ont été ajoutées pour exploiter les structures ontologiques et méréologiques:</p>
+<p><code>python
+def initialize_knowledge_base(self):
+    """Charge et structure l'ontologie et la méréologie"""
+    self.structured_ontology = {}
+    self.structured_mereology = {}
+    # Traitement des données...</code></p>
+<h2>Résultats</h2>
+<p>Les modifications ont permis d'obtenir:</p>
+<ol>
+<li>Des réponses plus cohérentes et sans répétitions</li>
+<li>Une meilleure présentation des extraits originaux</li>
+<li>Une gestion appropriée des questions sensibles</li>
+<li>Une exploitation plus riche des connaissances structurées</li>
+</ol>
+<h2>Conclusion</h2>
+<p>Ce processus d'optimisation illustre les défis spécifiques de la création d'avatars historiques utilisant le RAG. Il souligne l'importance d'une adaptation fine des mécanismes de génération et de vérification pour produire des interactions authentiques et informatives.</p>
+<p>L'amélioration de ce système démontre comment les techniques d'IA contemporaines peuvent être adaptées pour préserver et transmettre le patrimoine scientifique historique de manière interactive et engageante.</p>
+        
+<h2>Lien du Projet (il faut un compte STREAMLIT)</h2>
+<a href="https://share.streamlit.io/app/avatar-lartet/" class="btn back-to-top"><Interagir avec l&apos;Avatar d&apos;Edouard Lartet</a>
+        <div class="tags"><span class="tag">Archeologie</span><span class="tag">Apprentissage automatique</span><span class="tag">NLP</span><span class="tag">Documentation</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-Cultural Analytics" class="project-full-content">
+        <h2>Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*</h2>
+        
+        <img class="hero-image" src="img/CulturalAnalytics.jpg" alt="Résumé // Lev MANOVTICH, *The Science of Culture ?* in *Cultural Analysis*" loading="lazy">
+        
+        <h3>Résumé // Lev MANOVTICH, <em>The Science of Culture ?</em> in <em>Cultural Analysis</em></h3>
+<p>L'analyse culturelle s'intéresse aux modèles qui peuvent être dérivés de l'analyse de vastes ensembles de données culturelles.
+<a href="https://direct.mit.edu/books/monograph/4966/Cultural-Analytics">Lien vers l'ouvrage en ligne : <em>Cultural Analysis</em></a></p>
+<p><strong>#analyse_quantitative #big_data #medias</strong></p>
+<p><em>"L'idée qu'un groupe ou une personne a des comportements et des goûts culturels cohérents avait du sens dans les sociétés anciennes et modernes. Mais avec les nombreux choix culturels disponibles aujourd'hui, nous pourrions découvrir que l'idée d'un goût stable ou d'une « personnalité culturelle » stable est une illusion."</em></p>
+<p>
+➡️l'illusion du goût
+➡️la classification n'est toujours pas l'explication
+➡️Nouveau paradigme? D'où l'importance "<em>And here the concepts and methods of sampling, feature extraction, and exploratory data analysis are more important than data size"</em></p>
+<h3>Structures cognitives &amp; structures sociales</h3>
+<p>Nos structures cognitives sont celles de nos structures sociales (La distinction, 1979)</p>
+<p>Pour reprendre R.MOURIEUX, <em>"Entre réalisme populaire et l'idéalisme bourgeois se situe le goût moyen des couches moyennes, fait de refus des extrêmes et de mimétisme de l'immédiat supérieur"</em> 1.https://www.persee.fr/doc/sotra_0038-0296_1980_num_22_4_1655_t1_0475_0000_2</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sf5ZGiqW7NI?si=FHGqM68HN5XPgqk6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<hr />
+<h3>Les séries de Claude Monet (1840-1926)</h3>
+<p><em>Du 22 septembre 2010 au 24 janvier 2011 - Paris, Galeries nationales du Grand Palais</em></p>
+<p>➡️ Notons aussi le rapport entre <em>expérience sensible &amp; image</em> (<strong>une image est une densité de probabilités dans un espace de plus grande dimension</strong>) Remarquez que dès le potron-minet, la lumière sur la pierre d'une façade de cathédrale reste une expérience sensible comparable à l'image - les séries de MONET ça ne fait pas de mal non plus ! 🙂</p>
+<p><em>Posté sur Linkedin du 28 mars 2025</em></p>
+        
+        <div class="tags"><span class="tag">Big Data</span><span class="tag">analyse culturelle</span><span class="tag">apprentissage automatique</span><span class="tag">structures cognitives</span><span class="tag">structures sociales</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-apprentissage automatique" class="project-full-content">
+        <h2>apprentissage automatique</h2>
+        
+        <img class="hero-image" src="img/NLP-LLM.jpg" alt="apprentissage automatique" loading="lazy">
+        
+        <h1>Apprentissage automatique</h1>
+<p>Les systèmes d'apprentissage automatique (machine learning) sont des technologies qui permettent aux ordinateurs d'apprendre à partir de données et d'améliorer leurs performances sur des tâches spécifiques sans être explicitement programmés. </p>
+<p>Voici un aperçu des concepts clés et des types de systèmes d'apprentissage automatique :</p>
+<h2>1. Types d'Apprentissage</h2>
+<pre><code>- Apprentissage supervisé : Le modèle est entraîné sur un ensemble de données étiquetées, où chaque entrée est associée à une sortie. L'objectif est de prédire la sortie pour de nouvelles données. Exemples : classification, régression.   
+- Apprentissage non supervisé : Le modèle travaille avec des données non étiquetées et cherche à identifier des structures ou des motifs. Exemples : clustering, réduction de dimensionnalité.   
+- Apprentissage par renforcement : Un agent apprend à prendre des décisions en interagissant avec un environnement et en recevant des récompenses ou des pénalités en fonction de ses actions.
+</code></pre>
+<h2>2. Algorithmes Courants</h2>
+<pre><code>- Régression linéaire : Utilisé pour prédire une variable continue.   
+- Arbres de décision : Utilisés pour la classification et la régression, ces modèles prennent des décisions basées sur des règles dérivées des données.   
+- SVM (Support Vector Machines) : Utilisé pour la classification, il cherche à trouver l'hyperplan qui sépare les classes avec le maximum de marge.   
+- Réseaux de neurones : Modèles inspirés du cerveau humain, utilisés pour des tâches complexes comme la reconnaissance d'images et le traitement du langage naturel.   
+- K-means : Un algorithme de clustering qui regroupe les données en k clusters basés sur la similarité.
+</code></pre>
+<h3>3. Étapes de Développement d'un Système d'Apprentissage Automatique</h3>
+<pre><code>- Collecte de données : Rassembler les données nécessaires pour l'entraînement et le test du modèle.   
+- Prétraitement des données : Nettoyer et préparer les données (gestion des valeurs manquantes, normalisation, etc.).  
+- Séparation des données : Diviser les données en ensembles d'entraînement et de test pour évaluer les performances du modèle.   
+- Entraînement du modèle : Utiliser l'ensemble d'entraînement pour ajuster les paramètres du modèle.   
+- Évaluation du modèle : Tester le modèle sur l'ensemble de test et utiliser des métriques (précision, rappel, F1-score, etc.) pour évaluer ses performances.   
+- Optimisation et ajustement : Affiner le modèle en ajustant les hyperparamètres ou en utilisant des techniques comme la validation croisée.   
+- Déploiement : Mettre le modèle en production pour qu'il puisse être utilisé dans des applications réelles.
+</code></pre>
+<h3>4. Applications</h3>
+<pre><code>- Vision par ordinateur : Reconnaissance d'images, détection d'objets.   
+- Traitement du langage naturel : Chatbots, traduction automatique, analyse de sentiments. 
+- Systèmes de recommandation : Recommandations de produits ou de contenu.   
+- Finance : Détection de fraudes, prévisions de marché.   
+- Santé : Diagnostic médical, analyse d'images médicales.
+</code></pre>
+<h3>5. Défis</h3>
+<pre><code>- Biais et équité : Assurer que les modèles ne reproduisent pas des biais présents dans les données.   
+- Interprétabilité : Comprendre comment et pourquoi un modèle prend des décisions.   
+- Surapprentissage : Éviter que le modèle ne s'adapte trop aux données d'entraînement, ce qui nuit à sa performance sur de nouvelles données.
+</code></pre>
+<p>Les systèmes d'apprentissage automatique sont en constante évolution et trouvent des applications dans de nombreux domaines, transformant la manière dont nous traitons et analysons les données.</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-architecture-modulaire" class="project-full-content">
+        <h2>Architecture Modulaire à Base de Contenu</h2>
+        
+        <img class="hero-image" src="img/archi-modulaire.png" alt="Architecture Modulaire à Base de Contenu" loading="lazy">
+        
+        <p><img alt="&quot;Architecture Modulaire à Base de Contenu&quot;" src="" title="/img/archi-modulaire.png" /></p>
+<h2>Architecture Modulaire à Base de Contenu</h2>
+<p>L'<strong>Architecture Modulaire à Base de Contenu</strong> (ou "Content-Driven Modular Architecture") représente une approche moderne et flexible pour concevoir des sites web et des applications. Cette méthodologie place le contenu au centre du processus de développement, en le séparant strictement de la présentation.</p>
+<p><strong>Mots-clés:</strong> développement, architecture, contentdriven, méthodologie, applications</p>
+<h2>Principes fondamentaux</h2>
+<p>Cette architecture repose sur plusieurs principes clés qui la rendent particulièrement efficace pour les sites riches en contenu comme les portfolios et les blogs :</p>
+<p><strong>Mots-clés:</strong> architecture, portfolios, principes, plusieurs</p>
+<p>Le contenu est stocké dans des fichiers indépendants (souvent au format Markdown) avec des métadonnées standardisées (frontmatter), complètement séparés du code HTML, CSS et JavaScript qui définit leur présentation. Cette séparation permet à chaque aspect d'évoluer indépendamment.</p>
+<p><strong>Mots-clés:</strong> standardisées, indépendance, présentation</p>
+<p>Les sections et composants peuvent être facilement réutilisés, réorganisés ou recombinés pour créer de nouvelles pages ou expériences. Cette flexibilité permet d'assembler rapidement différentes vues à partir des mêmes éléments de base.</p>
+<p><strong>Mots-clés:</strong> expériences, réorganisation, flexibilité</p>
+<p>Modifier un contenu n'exige pas de toucher au code HTML principal. Les rédacteurs de contenu peuvent se concentrer uniquement sur les fichiers Markdown pertinents, sans risquer d'altérer la structure ou le fonctionnement du site.</p>
+<p><strong>Mots-clés:</strong> fonctionnement, pertinents, concentrer, uniquement, rédacteurs</p>
+<p>Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier Markdown. Cette approche réduit considérablement la friction pour enrichir le site avec de nouveaux contenus.</p>
+<p><strong>Mots-clés:</strong>  contenus</p>
+<h2>Implémentation pratique</h2>
+<p>Pour les composants simples, le Markdown pur suffit généralement. Cependant, pour les composants plus complexes comme les grilles de compétences, les cartes de services, ou les processus multi-étapes, l'HTML embarqué dans Markdown offre le meilleur compromis :</p>
+<p>Cette approche hybride permet de préserver le rendu visuel des composants complexes tout en profitant pleinement de la modularité du système.</p>
+<p><strong>Mots-clés:</strong> multiétapes, compétences, composants, markdown, modularité, composants, complexes</p>
+<h2>Avantages à long terme</h2>
+<p>Au-delà des bénéfices immédiats, cette architecture offre des avantages substantiels sur le long terme :</p>
+<ul>
+<li><strong>Transitions technologiques facilitées</strong> - Le contenu peut être conservé même si le framework ou la technologie de présentation change</li>
+<li><strong>Versionning efficace</strong> - Les modifications de contenu sont clairement visibles dans les commits Git</li>
+<li><strong>Possibilités de migration accrues</strong> - Le contenu peut être facilement exporté vers d'autres systèmes</li>
+<li><strong>Optimisation du workflow</strong> - Les designers et développeurs peuvent travailler sur l'interface pendant que les rédacteurs créent le contenu</li>
+</ul>
+<p>Cette architecture représente une évolution naturelle des systèmes de gestion de contenu traditionnels, offrant davantage de flexibilité tout en conservant une structure claire et organisée.</p>
+<p><strong>Mots-clés:</strong> architecture, flexibilité</p>
+<h3>1. Séparation du contenu et de la présentation</h3>
+<p>Le contenu est stocké dans des fichiers indépendants (souvent au format Markdown) avec des métadonnées standardisées (frontmatter), complètement séparés du code HTML, CSS et JavaScript qui définit leur présentation. Cette séparation permet à chaque aspect d'évoluer indépendamment.</p>
+<p><strong>Mots-clés:</strong> indépendance, standardisés, présentation</p>
+<h3>2. Composabilité</h3>
+<p>Les sections et composants peuvent être facilement réutilisés, réorganisés ou recombinés pour créer de nouvelles pages ou expériences. Cette flexibilité permet d'assembler rapidement différentes vues à partir des mêmes éléments de base.</p>
+<p><strong>Mots-clés:</strong> flexibilité</p>
+<h3>3. Maintenabilité</h3>
+<p>Modifier un contenu n'exige pas de toucher au code HTML principal. Les rédacteurs de contenu peuvent se concentrer uniquement sur les fichiers Markdown pertinents, sans risquer d'altérer la structure ou le fonctionnement du site.</p>
+<p><strong>Mots-clés:</strong> pertinents, rédacteurs</p>
+<h3>4. Évolutivité</h3>
+<p>Ajouter une nouvelle section est aussi simple que de créer un nouveau fichier Markdown. Cette approche réduit considérablement la friction pour enrichir le site avec de nouveaux contenus.</p>
+<p><strong>Mots-clés:</strong> enrichir, contenus</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    
+            
+            <!-- Footer ajouté ici -->
+            <div class="footer">
+                <h2>Restons connectés !</h2>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou simplement échanger sur nos domaines d'intérêt communs.</p>
+                
+                <div class="social-links">
+                    <a href="https://portfolio-af-v2.netlify.app/" class="social-link" target="_blank" rel="noopener">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/alexiafontaine" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2025 - Newsletter générée automatiquement depuis mon portfolio GitHub - Alexia Fontaine tous drois réservés</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (!tab.hasAttribute('onclick')) {
+                tab.addEventListener('click', () => {
+                    // Désactiver tous les onglets et contenus
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Activer l'onglet et le contenu sélectionnés
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

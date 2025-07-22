@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Portfolio - 13/06/2025</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #4a6d8c;
+            --secondary: #2a475e;
+            --accent: #90afc5;
+            --light: #f6f9fc;
+            --dark: #333333;
+            --text: #444444;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --border: 1px solid #eaeaea;
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+    
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 20px;
+            background-image: url('img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 71, 94, 0.7);
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            scroll-margin-top: 50px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            margin: 1em 0;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image-container {
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .project-summary {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .toc {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .toc-item {
+            margin-bottom: 5px;
+        }
+        
+        .toc-item a {
+            display: block;
+            padding: 8px;
+            background-color: white;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item a:hover {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: var(--border);
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        .project-full-content {
+            padding: 40px;
+            margin-bottom: 60px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-full-content img.hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 1em 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eaeaea;
+            margin: 25px 0;
+        }
+        
+        /* Styles pour les onglets */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            color: var(--secondary);
+        }
+        
+        .tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Styles responsifs */
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .project-full-content {
+                padding: 20px;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="newsletter">Newsletter</div>
+            <div class="tab" onclick="window.location.href='archives.html'">Archives</div>
+        </div>
+    
+        <!-- Contenu de la Newsletter -->
+        <div id="newsletter" class="tab-content active">
+            
+        
+        <div class="header">
+            <div class="header-content">
+                <h1>Newsletter Portfolio</h1>
+                <p>13/06/2025</p>
+                <p>Décrypter le numérique sur 6 thématiques : découvertes, réflexions et créations de la semaine.</p>
+                <h3>Récits | Horizons numériques | Visuels</h3>
+            </div>
+        </div>
+        
+        
+        <div class="grid">
+            
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/infographie-linkedin-france.png" alt="La place de LinkedIn en France" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-infographie-linkedin-france-2025">La place de LinkedIn en France</a></h2>
+                <div class="project-description">2ème réseau social français, la France occupe la 5ème place mondiale</div>
+                <div class="project-summary">📱2ème réseau social en France mais... LinkedIn décompte moins de membres que Facebook (72,3% des français ont un compte), LinkedIn avec ses 29 millions de membres représente une audience plus restreinte mais qualifiée (professionnels actifs). C'est p...</div>
+                <div class="tags"><span class="tag">linkedin</span><span class="tag">réseau social</span><span class="tag">france</span><span class="tag">membres</span></div>
+                <a href="#project-infographie-linkedin-france-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/couch-potato-cheval-troie-Copilot.png" alt="Le binge-watching comme nouvelle forme de 'couch potato'" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-couch-potato-2025">Le binge-watching comme nouvelle forme de 'couch potato'</a></h2>
+                <div class="project-description">Comment ce terme est devenu l'expression d'une pratique culturelle médiatique</div>
+                <div class="project-summary">👾Couch potato : objet d'étude comportementale du 'binge-watching' Dans la culture numérique contemporaine, le terme de 'couch-potato' s'est transformé en une figure de l'acceptation d'un comportement culturel médiatique typique , le "binge-watching" ...</div>
+                <div class="tags"><span class="tag">Culture numérique</span><span class="tag">couch-potato</span></div>
+                <a href="#project-couch-potato-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/automatisation-editoriale-v0.png" alt="automatisation-editoriale" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-automatisation-serendipite">💡 Automatisation éditoriale et sérendipité algorithmique</a></h2>
+                <div class="project-description">Cette sérendipité algorithmique – où l’IA identifie des opportunités économiques non-anticipées par le développeur – constitue un phénomène émergent qui mérite une attention particulière dans l’analyse des interactions humain-machine contemporaines.</div>
+                <div class="project-summary">Nous parlions précédemment d'un paradoxe de l'amplification médiatique au sujet des IA (billet sur "L'interprétabilité des LLM"), créeant fascination et méfiance vis-à-vis de ces outils....</div>
+                <div class="tags"><span class="tag">serendipite</span><span class="tag">IA</span><span class="tag">newsletters</span><span class="tag">automatisation éditoriale</span><span class="tag">publication numérique</span></div>
+                <a href="#project-automatisation-serendipite" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/interpretabilite-chat.png" alt="L'interprétabilité des LLM : le sacrifice de la compréhension au profit de la performance" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-interprétabilité-modeles-2025">L'interprétabilité des LLM : le sacrifice de la compréhension au profit de la performance</a></h2>
+                <div class="project-description">L'enthousiasme pour des systèmes que l'on ne comprend pas est le paradoxe de l'amplification médiatique dont le battage a occulté la compréhension.</div>
+                <div class="tags"><span class="tag">interprétabilité</span><span class="tag">LLM</span><span class="tag">modèles</span></div>
+                <div class="project-summary"><img alt="interpretabilite-explicabilite" src="img/interpretabilite-chat.png" /></div>
+                <a href="#project-interprétabilité-modeles-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/interpretabilite-explicabilite-v0.png" alt="Interprétabilité et Explicabilité des systèmes d'IA" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-infographie-interpretabilite-explicabilite-2025">Interprétabilité et Explicabilité des systèmes d'IA</a></h2>
+                <div class="project-description">L'interprétabilité et l'explicabilité jouent un rôle fondamental dans l'IA éthique, car elles permettent de garantir la transparence, la responsabilité et la justice dans les décisions algorithmiques</div>
+                <div class="project-summary"><img alt="interpretabilite-explicabilite" src="img/interpretabilite-explicabilite-v0.png" /></div>
+                <div class="tags"><span class="tag">interpretabilite</span><span class="tag">explicabilite</span><span class="tag">IA</span></div>
+                <a href="#project-infographie-interpretabilite-explicabilite-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/automated-media.webp" alt="automated media" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-automated-media">Automated Media (2019) de Mark Andrejevic</a></h2>
+                <div class="project-description">Ce livre s'imposait avec notre projet d'automatisation éditoriale mais heureusement nous tenons plus de l'automation tool (outil d'aide) que de l'automated media (média automatisé) au sens d'Andrejevic.</div>
+                <div class="project-summary">Ce livre est un incontournable pour les étudiants et chercheurs en études critiques des médias intéressés par les intersections entre médias, technologie et économie numérique. Autant l'ouvrir à tous !</div>
+                <div class="tags"><span class="tag">automatisation mediatique</span><span class="tag">standardisation algorithmique</span><span class="tag">biais d'automatisation</span></div>
+                <a href="#project-automated-media" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        </div>
+        
+        
+    <div id="project-infographie-linkedin-france-2025" class="project-full-content">
+        <h2><a href="#">La place de LinkedIn en France</a></h2>
+        
+        <img class="hero-image" src="img/infographie-linkedin-france.png" alt="La place de LinkedIn en France" loading="lazy">
+        
+        <h3>📱2ème réseau social en France mais...</h3>
+<p>LinkedIn décompte moins de membres que Facebook (72,3% des français ont un compte), LinkedIn avec ses 29 millions de membres représente une audience plus restreinte mais qualifiée (professionnels actifs) soit <strong>la 5ème place mondiale.</strong></p>
+<p>C'est pourquoi on ne le retrouve pas dans les classements d'usage mensuel général, mais il reste incontournable dans sa niche professionnelle.</p>
+<img alt="infographie linkedin france" src="img/infographie-linkedin-france.png" />
+        
+        <div class="tags"><span class="tag">linkedin</span><span class="tag">réseau social</span><span class="tag">france</span><span class="tag">membres</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-couch-potato-2025" class="project-full-content">
+        <h2><a href="#">Le binge-watching comme nouvelle forme de 'couch potato'</a></h2>
+        
+        <img class="hero-image" src="img/couch-potato-cheval-troie-Copilot.png" alt="Le binge-watching comme nouvelle forme de 'couch potato'" loading="lazy">
+        
+        <h3>👾Couch potato : objet d'étude comportementale du 'binge-watching'</h3>
+<p>Dans la culture numérique contemporaine, le terme de 'couch-potato' s'est transformé en une figure de <strong>l'acceptation d'un comportement culturel médiatique typique</strong>, le <strong>"binge-watching"</strong> (le fait de regarder plusieurs épisodes d'une série télévisée d'affilée, souvent pendant des heures)</p>
+<p>Le terme vient du verbe anglais "to binge" qui signifie faire quelque chose de manière excessive et compulsive - on l'utilisait déjà pour parler de "binge eating" (frénésie alimentaire) ou "binge drinking" (beuverie) etc.</p>
+<h4>Origines du terme</h4>
+<p>Le terme "couch potato" a été créé le 15 juillet 1976 par Tom Iacino de Pasadena, en Californie, par jeu de mots entre "boob tuber" (amateur de télé) et "tuber" (tubercule/pomme de terre) [WordfooleryStack Exchange]. Il a été commercialisé pour la première fois le 20 avril 1977 et breveté par Robert Armstrong en 1984, What is the origin of the term "Couch Potato"? [English Language &amp; Usage Stack Exchang]</p>
+<p>Il s'agit d'un terme plutôt méprisant, représentant une personne avachie sur un canapé, entourée de snacks, avec une posture ultra détendue. Il symbolise la flemme ou simplement le plaisir de ne rien faire.</p>
+<h4>Période pré-2016: la fin de la critique de nos sociétés de consommation</h4>
+<p>En France, il devient <strong>un cheval de troie mainstream</strong> du "journalisme pensif", article de Frédéric JOIGNOT paru au Monde en 2017, où il faut admettre avec l'auteur que <strong>la critique du consumérisme a maintenant disparu de nos champs de pensée ou d'identification.</strong></p>
+<p>Même Jean BAUDRILLARD, pourtant chef de file d'une critique pointue de "l'hédonisme consumériste", est venu à son tour à manquer d'humanité. C'est un comble.</p>
+<p><img alt="" src="img/couch-potato-cheval-troie-Copilot.png" width="50%"" /></p>
+<p>Puis en ce début des années 2000, le terme 'couch potato 'est tombé en désuétude comme le remarque Laurence SCOTT, publiée dans le journal le New-Yorker, qui nous voit transformer finalement en "Apple"(2)</p>
+<p><img alt="OCP-retour" src="img/evolution-couch-potato.jpg" /></p>
+<h4>Période 2016-2020 : Le retour en grace de la patate</h4>
+<p><img alt="Une patate version Terminator, prête à dominer depuis le canapé!" src="img/couch-potato-terminator0-Copilot.png" width="50%" /></p>
+<p>En nous référant à l'évolution du terme 'couch potato' entre 2016 et 2025 sur le web, on peut analyser son usage et ses transformations.</p>
+<iframe src="https://tubular-pastelito-1a0530.netlify.app/" 
+        width="100%" 
+        height="700px" 
+        frameborder="0"
+        style="border: 1px solid #ddd; border-radius: 10px;"
+        allowfullscreen
+        loading="lazy">
+</iframe>
+
+<h4>Conclusion</h4>
+<p>La transformation du terme est notable: d'abord marginalisé voire méprisé, puis amplifié par la pandémie, enfin normalisé comme partie intégrante de <strong>la culture numérique contemporaine</strong>, <strong>le 'couch potato' est réintégré dans un paysage médiatique dominé par le 'streaming' et le 'binge-watching'</strong>.</p>
+<p>Reflet des changements technologiques et culturels, ce terme devient malgré lui le témoin de cette <strong>recherche d'ascendance</strong> des plateformes numériques avec les <em>"anciens médiums"</em> démontrant ainsi leur domination et participant à ces <strong>nouvelles formes de mémoire</strong>.</p>
+<p><img alt="" src="img/medium-marshall-mcluhan.webp" /></p>
+<h4>📜 REFERENCES</h4>
+<p>(1){{Cite news| last = Frédéric| first = Joignot| title = JEAN BAUDRILLARD. EN SOUVENIR D’UN MÉCRÉANT RADICAL DISPARU IL Y A DIX ANS| access-date = 2025-06-07| date = 2007-03-06| url = https://www.lemonde.fr/blog/fredericjoignot/2017/03/06/jean-baudrillard-le-mecreant-radical/}}</p>
+<p>(2){{Cite web| title = What Ever Happened to the Couch Potato? {{!}} The New Yorker| access-date = 2025-06-07| url = https://www.newyorker.com/tech/annals-of-technology/what-ever-happened-to-the-couch-potato}}</p>
+        
+        <div class="tags"><span class="tag">Culture numérique</span><span class="tag">couch-potato</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-automatisation-serendipite" class="project-full-content">
+    <h2><a href="#">💡 Automatisation éditoriale et sérendipité algorithmique</a></h2>
+    
+    <img class="hero-image" src="img/automatisation-editoriale-v0.png" alt="Automatisation éditoriale et sérendipité algorithmique" loading="lazy">
+    
+    <p>Nous parlions précédemment d'un paradoxe de l'amplification médiatique au sujet des IA (billet sur "L'interprétabilité des LLM"), créeant fascination et méfiance vis-à-vis de ces outils.</p>
+
+    <p>...Et bien notre petite activité sur l'automatisation des publications numériques, transformant automatiquement une newsletter HTML en série de publications LinkedIn programmées, s'est avérée une expérience surprenante, avec <strong>la suggestion d'une intelligence artificielle sur la monétisation de notre gestionnaire de publications !</strong> 😅</p>
+
+    <div style="border: 2px solid #f39c12; border-radius: 10px; padding: 20px; background: #fffbf0; margin: 20px 0;">
+        <h3>✋ Comment cette IA a-t-elle identifiée une dite "opportunité économique" ?</h3>
+        <p>Pour nous, cela relève d'interactions nouvelles entre humain et machine que nous appelons <strong>sérendipité algorithmique</strong>, mais aussi sur la création de contenu par ces outils automatisés.</p>
+    </div>
+
+    <h3>🎯 La sérendipité algorithmique</h3>
+    
+    <p>Cette <strong>sérendipité algorithmique</strong> – où l'IA identifie des opportunités économiques non-anticipées par le développeur – constitue un phénomène émergent qui mérite une attention particulière dans l'analyse des interactions humain-machine contemporaines.</p>
+
+    <p>Par cette étude de cas, nous voulons parler de <strong>la question de la reproductibilité des processus éditoriaux.</strong></p>
+
+    <h3>📝 Principe de contrôle éditorial</h3>
+    
+    <p>Nous défendons <strong>l'idée que le créateur se doit de garder le contrôle éditorial tout en déléguant les tâches répétitives et logistiques</strong> : <strong>l'automatisation porte ici sur la logistique, pas sur la création.</strong></p>
+
+    <div style="border: 2px solid #3498db; border-radius: 10px; padding: 20px; background: #f8f9fa; margin: 20px 0;">
+        <h3>🔧 Automatisation vs Création</h3>
+        <p><code>Automatisation = Logistique + Répétition + Programmation<br>
+        Création = Idéation + Originalité + Contrôle éditorial</code></p>
+        
+        <p>La distinction est fondamentale :</p>
+        <p><code>Processus éditorial│<br>
+        ├── 🎨 Création (humain)<br>
+        │   ├── Idéation<br>
+        │   ├── Rédaction<br>
+        │   └── Validation éditoriale<br>
+        
+        ├── ⚙️ Logistique (automatisation)<br>
+        │   ├── Formatage<br>
+        │   ├── Distribution<br>
+        │   └── Programmation</code></p>
+    </div>
+
+    <h3>🌟 Rien de nouveau sous le soleil</h3>
+    
+    <p>Finalement, rien de nouveau sous le soleil : si l'IA est bien l'outil (le <strong>COMMENT</strong>), il se conforme à nos attentes et non l'inverse, et pour ce faire il faut effectivement travailler à rendre cette technologie fonctionnelle (le <strong>QUOI</strong> et <strong>POURQUOI</strong>)</p>
+
+    <h3>📊 Impact sur les publications numériques</h3>
+    
+    <p>Notre expérience d'automatisation des publications LinkedIn illustre cette dynamique :</p>
+    
+    <ul>
+        <li><strong>Newsletters automatisées</strong> : Transformation HTML vers publications sociales</li>
+        <li><strong>Sérendipité inattendue</strong> : L'IA identifie des opportunités de monétisation</li>
+        <li><strong>Contrôle créatif</strong> : Le créateur garde la maîtrise du contenu</li>
+        <li><strong>Efficacité logistique</strong> : Automatisation des tâches répétitives</li>
+    </ul>
+
+    <div style="border: 2px solid #2ecc71; border-radius: 10px; padding: 20px; text-align: center; background: #f0fff4;">
+        <h3>📝 Étude de cas complète</h3>
+        <p>Le billet complet sur notre blog scientifique ARCHNUM</p>
+        <a href="https://archnum.hypotheses.org/1726" style="background: #2ecc71; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+            Lire l'étude complète →
+        </a>
+    </div>
+
+ 
+    <div class="tags">
+        <span class="tag">serendipité</span>
+        <span class="tag">newsletters</span>
+        <span class="tag">automatisation éditoriale</span>
+        <span class="tag">linkedin</span>
+        <span class="tag">publication numérique</span>
+    </div>
+    
+    <a href="#" class="btn back-to-top">Retour en haut</a>
+    
+    <div id="project-interprétabilité-modeles-2025" class="project-full-content">
+        <h2><a href="#">L'interprétabilité des LLM : le sacrifice de la compréhension au profit de la performance</a></h2>
+        
+        <img class="hero-image" src="img/interpretabilite-chat.png" alt="L'interprétabilité des LLM : le sacrifice de la compréhension au profit de la performance" loading="lazy">
+        
+        <p>Le défi de l'interprétabilité est de <strong>comprendre comment les systèmes d'IA arrivent à une réponse donnée</strong>. Puisqu'ils sont "entraînés" sur de gigantesques corpus de données plutôt que directement programmés par les humains, une grande partie du comportement des systèmes d'IA reste impénétrable même pour leurs créateurs.</p>
+<p>D'où <strong>ce paradoxe d'amplification médiatique</strong> (1) : entre célébration et ignorance, nous y voyons avec humour la marque du chat de Schrödinger qui demeure dans un état incertain tant qu'on ne l'examine pas directement.</p>
+<p><img alt="interpretabilite-explicabilite" src="img/interpretabilite-chat.png" width="50%" /></p>
+
+<p>Cette démarche d'interprétabilité prend cette même place de <strong>l'observateur</strong> en examinant ces systèmes d'apprentissage automatique (ici des LLM).</p>
+<h3>L'interprétatibilité des LLM, deux approches aujourd'hui</h3>
+<p><img alt="interprétabilité des modèles" src="img/interpretabilite-modele-moderne.png" /></p>
+<h3>🗝️ INTERPRÉTABILITÉ des modèles LLM : enjeux</h3>
+<p>Il faut comprendre cette démarche comme <strong>un investissement pour l'évolution du domaine</strong> car la responsabilité des décisions algorithmiques consitue un défi scientifique (et démocratique) majeur entre notre besoin d'explication et leur efficacité.</p>
+<p>Sans cette confiance, c'est à dire la compréhension scientifique et le cadre d'application, nous ne voyons pas vraiment qui voudrait prendre de tels risques, sauf pour du battage médiatique - appelé judicieusement "AI Hype" par certaine organisation (2)</p>
+<h4>🔄 Convergence des approches</h4>
+<p>La tendance majeure 2025 est encore cette <strong>convergence des approches</strong>, qui tend à se compléter plutôt qu'à s'opposer, avec des modèles d'évaluation intégrant nativement plus de transparence et des outils mécanistiques de plus en plus accessibles.</p>
+<p>L'objectif est d'avancer toujours plus vers une synergie entre compréhension technique et transparence utilisateur.</p>
+<h4>🔬 Domaine de recherche jeune</h4>
+<p>Le domaine est très actif au nombre de publications mais c'est un domaine encore jeune qui pose des problèmes de qualité/applicabilité.</p>
+<p><strong>Problème de qualité</strong>
+Confondre hypothèses avec conclusions a été courant dans la recherche en interprétabilité mécanistique.</p>
+<p><strong>Biais de publication</strong>
+Beaucoup de techniques d'interprétabilité sont principalement évaluées sur de petits modèles "prototypés" et petites tâches, risquant de manquer des phénomènes critiques qui n'émergent que dans des contextes plus réalistes.</p>
+<p>Les critères d'explicabilité, de transparence et de fiabilité sont nécessaires, propriétés qu'il est aujourd'hui encore difficile d'établir pour les algorithmes à base d'apprentissage en général et pour les grands modèles en particulier.</p>
+<h3>L'Ironie de notre Révolution IA</h3>
+<p>Admettons en guise de conclusion que pendant des années la performance des algorithmes primait au détriment de la compréhension, que nous nous enthousiasmons pour des systèmes que nous ne comprenons pas, et que le battage médiatique autour de l'IA s'avère souvent ridicule nous détournant du travail important qui consiste à rendre la technologie fonctionnelle (le QUOI et POURQUOI), donc autant de défis pour passer de la prouesse technique à l'utilité pratique avec fiabilité et sécurité.</p>
+<h4>Références citées</h4>
+<p>(1) La réalité derrière le battage médiatique de l'IA : une étude de l'IFS révèle un manque de préparation organisationnelle
+post consulté le 10/06/25 : https://www.actuia.com/actualite/la-realite-derriere-le-battage-mediatique-de-lia-une-etude-de-lifs-revele-un-manque-de-preparation-organisationnelle/</p>
+<p>(2) Management bought the AI hype, IFS post consulté le 10/06/25 : (https://www.ifs.com/news/corporate/ifs-ai-research)</p>
+        
+        <div class="tags"><span class="tag">interprétabilité</span><span class="tag">LLM</span><span class="tag">modèles</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-infographie-interpretabilite-explicabilite-2025" class="project-full-content">
+        <h2><a href="#">Interprétabilité et Explicabilité des systèmes d'IA</a></h2>
+        
+        <img class="hero-image" src="img/interpretabilite-explicabilite-v0.png" alt="Interprétabilité et Explicabilité des systèmes d'IA" loading="lazy">
+        <p>L'interprétabilité et l'explicabilité jouent un rôle fondamental dans l'IA éthique, car elles permettent de garantir la transparence, la responsabilité et la justice dans les décisions algorithmiques.</p>
+        <p>Voici un tableau récapitulatif des différences entre interprétabilité et explicabilité :</p>
+        <img alt="interpretabilite-explicabilite-tbl" src="img/interpretabilite-explicabilite-tbl.png"/>
+
+        <p><img alt="interpretabilite-explicabilite" src="img/interpretabilite-explicabilite-v0.png" width="50%" /></p>
+        
+        <div class="tags"><span class="tag">interpretabilite</span><span class="tag">explicabilite</span><span class="tag">IA</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-automated-media" class="project-full-content">
+    <h2><a href="#">Automated Media (2019) de Mark Andrejevic</a></h2>
+    
+    <img class="hero-image" src="img/automated-media.webp" alt="Automated Media" loading="lazy">
+    
+    <p>Ce livre s'imposait avec notre projet d'automatisation éditoriale mais finalement nous tenons plus de l'automation tool (outil d'aide) que de l'automated media (média automatisé) au sens d'Andrejevic.</p>
+
+    <p>Ce livre est un incontournable pour les étudiants et chercheurs en études critiques des médias intéressés par les intersections entre médias, technologie et économie numérique. Autant l'ouvrir à tous !</p>
+
+    <p>Cette reflexion critique porte sur <strong>la façon dont l'automatisation transforme notre rapport aux médias et à l'information, questionnant les enjeux de pouvoir et de contrôle dans une société de plus en plus automatisée.</strong></p>
+
+    <h4>🔍 Concept central</h4>
+    
+    <p>L'auteur développe le concept de <strong>"biais de l'automatisation"</strong> à travers trois logiques principales : la pré-emption, l'opérationnalisme, et ce qu'il appelle la "framelessness" (absence de cadre). Il fournit un aperçu des implications de ces développements pour le sort de l'expérience humaine.</p>
+
+    <div style="border: 2px solid #e74c3c; border-radius: 10px; padding: 20px; background: #fff5f5; margin: 20px 0;">
+        <h3>↪️ Réflexion personnelle</h3>
+        <p>Travaillant à notre tour sur un petit projet d'automatisation éditoriale, les réflexions de Mark Andrejevic nous ont nourrie dans la distance critique nécessaire pour comprendre les impacts de l'automatisation des médias et <strike>le danger de la standardisation algorithmique</strike></strong> (terme portant à confusion avec <strong>la régulation des algorithmes</strong> qui n'est pas un danger!)</p>
+    </div>
+
+    <h3>📊 Enjeux de l'automatisation médiatique</h3>
+    
+    <p><code>Automatisation médiatique = Technologie + Contrôle + Standardisation<br>
+    Biais d'automatisation = Pré-emption + Opérationnalisme + Framelessness</code></p>
+
+    <p>Les trois logiques du biais d'automatisation :</p>
+    
+    <p><code>Biais d'automatisation :<br>
+    ├── 🎯 Pré-emption<br>
+    │   └── Anticipation algorithmique<br>
+    
+    ├── ⚙️ Opérationnalisme  <br>
+    │  └── Logique utilitariste<br>
+    
+    ├── 🚫 Framelessness<br>
+    │    └── Absence de cadre critique</code></p>
+
+    <h3>🎯 Implications pour l'expérience humaine</h3>
+    
+    <p>Si ces questions de systématisation ou d'hybridation productive vous intéressent :</p>
+
+    <div style="border: 2px solid #3498db; border-radius: 10px; padding: 20px; text-align: center; background: #f8f9fa;">
+        <h3>📝 Étude de cas complète</h3>
+        <p>Le billet complet sur notre blog scientifique ARCHNUM</p>
+        <a href="https://archnum.hypotheses.org/1726" style="background: #3498db; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+            Lire l'étude de cas →
+        </a>
+    </div><br>
+
+    <p>Notre propos souligne l'importance de maintenir une <strong>distance critique</strong> face à l'automatisation médiatique, afin de mieux comprendre ses impacts sur notre rapport à l'information et aux médias.</p>
+
+    <p>➡️ En comprenant ces mécanismes, <strong>sommes-nous en capacité d'anticiper leurs implications?</strong></p>
+
+    <p>Développer une compréhension critique de l'automatisation médiatique correspond finalement à  <strong>une analyse des transformations numériques contemporaines</strong>.</p>
+
+    <h4>📜 RÉFÉRENCES</h4>
+    
+    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #6c757d;">
+        <p><strong>Andrejevic, M.</strong> (2019). <em>Automated Media</em>. Routledge. 1ère édition.</p>
+        
+        <p><strong>ResearchGate</strong> (2019, septembre). Automated Media. Publication de Mark Andrejevic. DOI : 10.4324/9780429242595. Consulté le 12 juin 2025, à l'adresse <a href="https://www.researchgate.net/publication/336060582_Automated_Media">https://www.researchgate.net/publication/336060582_Automated_Media</a></p>
+    </div>
+</div>
+        
+        <div class="tags"><span class="tag">visualisation</span><span class="tag">data</span><span class="tag">LLM</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    
+            
+            <!-- Footer ajouté ici -->
+            <div class="footer">
+                <h2>Restons connectés !</h2>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou simplement échanger sur nos domaines d'intérêt communs.</p>
+                
+                <div class="social-links">
+                    <a href="https://portfolio-af-v2.netlify.app/" class="social-link" target="_blank" rel="noopener">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/alexiafontaine" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2025 - Newsletter générée automatiquement depuis mon portfolio GitHub - Alexia Fontaine tous drois réservés</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (!tab.hasAttribute('onclick')) {
+                tab.addEventListener('click', () => {
+                    // Désactiver tous les onglets et contenus
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Activer l'onglet et le contenu sélectionnés
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Portfolio - 03/04/2025</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #4a6d8c;
+            --secondary: #2a475e;
+            --accent: #90afc5;
+            --light: #f6f9fc;
+            --dark: #333333;
+            --text: #444444;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --border: 1px solid #eaeaea;
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+    
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 20px;
+            background-image: url('img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 71, 94, 0.7);
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            scroll-margin-top: 50px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            margin: 1em 0;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image-container {
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .project-summary {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .toc {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .toc-item {
+            margin-bottom: 5px;
+        }
+        
+        .toc-item a {
+            display: block;
+            padding: 8px;
+            background-color: white;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item a:hover {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: var(--border);
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        .project-full-content {
+            padding: 40px;
+            margin-bottom: 60px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-full-content img.hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 1em 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eaeaea;
+            margin: 25px 0;
+        }
+        
+        /* Styles pour les onglets */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            color: var(--secondary);
+        }
+        
+        .tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Styles responsifs */
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .project-full-content {
+                padding: 20px;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="newsletter">Newsletter</div>
+            <div class="tab" onclick="window.location.href='archives.html'">Archives</div>
+        </div>
+    
+        <!-- Contenu de la Newsletter -->
+        <div id="newsletter" class="tab-content active">
+            
+        
+        <div class="header">
+            <div class="header-content">
+                <h1>Newsletter Portfolio</h1>
+                <p>03/04/2025</p>
+                <p>Découvrez mes derniers projets et réalisations dans cette newsletter hebdomadaire.</p>
+                <h3>Récits visuels, horizons numériques :</h3> 
+                <h3>Chaque newsletter, un voyage entre données, créativité et découvertes</h3>
+            </div>
+        </div>
+        
+        
+        <div class="grid">
+            
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/logo-v2.png" alt="approche-integree-creation" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">approche-integree-creation</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Une Approche Intégrée de Création de Contenus Image Représentative Concept Fondamental Une démarche de création qui transcende les frontières traditionnelles entre différents médias et disciplines. Principes Directeurs Synergie Multidisciplinaire Fus...</div>
+                
+                <a href="#project-approche-integree-creation" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/Photo-dAvatar-2.jpg" alt="avatar-lartet" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">avatar-lartet</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Avatar Edouard Lartet : Agent Conversationnel Historique Présentation du Projet Un agent conversationnel basé sur un personnage historique, démontrant l'application des techniques de traitement du langage naturel (NLP) pour créer des expériences inte...</div>
+                
+                <a href="#project-avatar-lartet" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/1ere-couv_1.jpg" alt="blog-scientifique" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">blog-scientifique</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Blog Scientifique : ARCHAEDYN Image Représentative Contexte du Projet Un projet de recherche archéologique innovant explorant les dynamiques territoriales sur 7 millénaires. Objectifs de Recherche Analyser l'occupation humaine Étudier les transformat...</div>
+                
+                <a href="#project-blog-scientifique" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/logo-v2.png" alt="creation-contenus" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">creation-contenus</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Création de Contenus Une Approche Multidisciplinaire Image de Référence Approche Intégrée Une démarche qui combine différentes disciplines et médias pour créer des expériences narratives riches et engageantes. Services Principaux 1. Narration Multimé...</div>
+                
+                <a href="#project-creation-contenus" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/TsptTls.png" alt="archeologie-numerique" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">archeologie-numerique</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Archéologie Numérique : Dynamiques Territoriales Présentation du Projet Un projet innovant qui transforme des données archéologiques en récit dynamique, illustrant comment le data storytelling peut révéler des insights historiques complexes. Méthodol...</div>
+                
+                <a href="#project-archeologie-numerique" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/Process_COPE.png" alt="cope-process-documentation" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">cope-process-documentation</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">title: Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
+description: author: Alexia Fontaine
+date: 2025-03-28
+type: summary
+image: /img/Process_COPE.png Processus de Publication Cross-Platform (COPE - Create Once, Publ...</div>
+                
+                <a href="#project-cope-process-documentation" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        </div>
+        
+        
+    <div id="project-approche-integree-creation" class="project-full-content">
+        <h2>approche-integree-creation</h2>
+        
+        <img class="hero-image" src="img/logo-v2.png" alt="approche-integree-creation" loading="lazy">
+        
+        <h1>Une Approche Intégrée de Création de Contenus</h1>
+<h2>Image Représentative</h2>
+<p><img alt="Création de Contenu" src="/img/logo-v2.png" /></p>
+<h2>Concept Fondamental</h2>
+<p>Une démarche de création qui transcende les frontières traditionnelles entre différents médias et disciplines.</p>
+<h2>Principes Directeurs</h2>
+<h3>Synergie Multidisciplinaire</h3>
+<ul>
+<li>Fusion de différentes disciplines</li>
+<li>Création de contenus riches et cohérents</li>
+<li>Décloisonnement des approches créatives</li>
+</ul>
+<h2>Dimensions de l'Intégration</h2>
+<h3>1. Convergence des Médias</h3>
+<ul>
+<li>Combinaison de :</li>
+<li>Texte</li>
+<li>Image</li>
+<li>Vidéo</li>
+<li>Modèles 3D</li>
+<li>Design interactif</li>
+</ul>
+<h3>2. Approche Holistique</h3>
+<ul>
+<li>Chaque média enrichit les autres</li>
+<li>Création d'expériences immersives</li>
+<li>Narration transmédia</li>
+</ul>
+<h2>Stratégies de Création</h2>
+<h3>Interdisciplinarité</h3>
+<ul>
+<li>Croisement des compétences</li>
+<li>Dialogue entre différents domaines</li>
+<li>Innovation par la diversité</li>
+</ul>
+<h3>Processus Créatif</h3>
+<ol>
+<li>Conceptualisation</li>
+<li>Exploration multisensorielle</li>
+<li>Intégration des perspectives</li>
+<li>Raffinement itératif</li>
+</ol>
+<h2>Compétences Mobilisées</h2>
+<h3>Techniques</h3>
+<ul>
+<li>Design graphique</li>
+<li>Développement web</li>
+<li>Photographie</li>
+<li>Modélisation 3D</li>
+<li>Traitement multimédia</li>
+</ul>
+<h3>Créatives</h3>
+<ul>
+<li>Storytelling</li>
+<li>Narration visuelle</li>
+<li>Design thinking</li>
+<li>Communication transmedia</li>
+</ul>
+<h2>Exemples de Projets</h2>
+<ul>
+<li>wolSia (projet IA et data-driven)</li>
+<li>Trésor d'Eauze (patrimoine numérique)</li>
+<li>Séries photographiques</li>
+<li>Projets de médiation culturelle</li>
+</ul>
+<h2>Philosophie de Création</h2>
+<blockquote>
+<p>"La créativité naît à l'intersection des disciplines, là où les frontières deviennent floues et les possibilités infinies."</p>
+</blockquote>
+<h2>Impact et Vision</h2>
+<ul>
+<li>Création de contenus innovants</li>
+<li>Expériences utilisateur immersives</li>
+<li>Narration riche et multidimensionnelle</li>
+<li>Dépassement des approches traditionnelles</li>
+</ul>
+<h2>Outils et Technologies</h2>
+<ul>
+<li>Suite Adobe</li>
+<li>Outils de modélisation 3D</li>
+<li>Plateformes de développement web</li>
+<li>Logiciels de traitement multimédia</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Une approche qui transforme la création de contenus en un écosystème dynamique et interconnecté.</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-avatar-lartet" class="project-full-content">
+        <h2>avatar-lartet</h2>
+        
+        <img class="hero-image" src="img/Photo-dAvatar-2.jpg" alt="avatar-lartet" loading="lazy">
+        
+        <h1>Avatar Edouard Lartet : Agent Conversationnel Historique</h1>
+<h2>Présentation du Projet</h2>
+<p>Un agent conversationnel basé sur un personnage historique, démontrant l'application des techniques de traitement du langage naturel (NLP) pour créer des expériences interactives et éducatives.</p>
+<h2>Objectifs</h2>
+<ul>
+<li>Créer une expérience de médiation culturelle innovante</li>
+<li>Utiliser l'IA pour rendre l'histoire accessible</li>
+<li>Permettre des interactions immersives avec un personnage historique</li>
+</ul>
+<h2>Technologies Utilisées</h2>
+<ul>
+<li>Intelligence Artificielle</li>
+<li>NLP (Traitement du Langage Naturel)</li>
+<li>Personnalisation</li>
+<li>Python</li>
+</ul>
+<h2>Capture d'Écran</h2>
+<p><img alt="Avatar Edouard Lartet" src="/img/Photo-dAvatar-2.jpg" /></p>
+<h2>Lien du Projet</h2>
+<p><a href="https://avatar-lartet.streamlit.app/">Interagir avec l'Avatar Edouard Lartet</a></p>
+<h2>Concept</h2>
+<p>Exploration des possibilités de l'IA générative dans :
+- La médiation culturelle
+- L'apprentissage personnalisé
+- La transmission de connaissances historiques</p>
+<h2>Fonctionnalités Principales</h2>
+<ul>
+<li>Conversation contextuelle basée sur l'histoire de Edouard Lartet</li>
+<li>Réponses adaptatives et personnalisées</li>
+<li>Capacité à partager des informations historiques détaillées</li>
+</ul>
+<h2>Compétences Mises en Œuvre</h2>
+<ul>
+<li>Développement d'agents conversationnels</li>
+<li>Modélisation de personnalités historiques</li>
+<li>Techniques avancées de NLP</li>
+<li>Conception d'expériences interactives éducatives</li>
+</ul>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-blog-scientifique" class="project-full-content">
+        <h2>blog-scientifique</h2>
+        
+        <img class="hero-image" src="img/1ere-couv_1.jpg" alt="blog-scientifique" loading="lazy">
+        
+        <h1>Blog Scientifique : ARCHAEDYN</h1>
+<h2>Image Représentative</h2>
+<p><img alt="Couverture ARCHAEDYN" src="/img/1ere-couv_1.jpg" /></p>
+<h2>Contexte du Projet</h2>
+<p>Un projet de recherche archéologique innovant explorant les dynamiques territoriales sur 7 millénaires.</p>
+<h2>Objectifs de Recherche</h2>
+<ul>
+<li>Analyser l'occupation humaine</li>
+<li>Étudier les transformations territoriales</li>
+<li>Comprendre l'évolution historique des espaces</li>
+</ul>
+<h2>Méthodologie de Recherche</h2>
+<h3>Approche Interdisciplinaire</h3>
+<ul>
+<li>Archéologie</li>
+<li>Cartographie historique</li>
+<li>Analyse spatiale</li>
+<li>Systèmes d'Information Géographique (SIG)</li>
+</ul>
+<h3>Techniques d'Analyse</h3>
+<ol>
+<li><strong>Analyse cartographique détaillée</strong></li>
+<li>Reconstruction des territoires historiques</li>
+<li>Étude des mutations spatiales</li>
+<li>
+<p>Cartographie comparative</p>
+</li>
+<li>
+<p><strong>Études archéologiques comparatives</strong></p>
+</li>
+<li>Analyse des vestiges</li>
+<li>Comparaison inter-sites</li>
+<li>
+<p>Reconstruction des dynamiques d'occupation</p>
+</li>
+<li>
+<p><strong>Modélisation des Données Spatiales</strong></p>
+</li>
+<li>Utilisation d'outils SIG avancés</li>
+<li>Création de modèles spatiaux</li>
+<li>Analyse des transformations territoriales</li>
+</ol>
+<h2>Compétences Mises en Œuvre</h2>
+<ul>
+<li>Recherche archéologique</li>
+<li>Analyse géospatiale</li>
+<li>Traitement de données historiques</li>
+<li>Modélisation cartographique</li>
+<li>Systèmes d'Information Géographique</li>
+</ul>
+<h2>Périodes Étudiées</h2>
+<ul>
+<li>Néolithique</li>
+<li>Périodes intermédiaires</li>
+<li>Moyen Âge</li>
+</ul>
+<h2>Impact Scientifique</h2>
+<ul>
+<li>Compréhension approfondie des dynamiques territoriales</li>
+<li>Nouvelle perspective sur l'occupation humaine</li>
+<li>Méthodologie innovante d'analyse historique</li>
+</ul>
+<h2>Lien vers la Publication</h2>
+<p><a href="https://archnum.hypotheses.org/175">Article complet sur ArchNum</a></p>
+<h2>Philosophie de Recherche</h2>
+<blockquote>
+<p>"Chaque trace, chaque vestige est un fragment d'un récit territorial plus large."</p>
+</blockquote>
+<h2>Conclusion</h2>
+<p>Un projet qui transcende la simple étude archéologique pour proposer une vision dynamique et vivante de l'histoire territoriale.</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-creation-contenus" class="project-full-content">
+        <h2>creation-contenus</h2>
+        
+        <img class="hero-image" src="img/logo-v2.png" alt="creation-contenus" loading="lazy">
+        
+        <h1>Création de Contenus</h1>
+<h2>Une Approche Multidisciplinaire</h2>
+<h3>Image de Référence</h3>
+<p><img alt="Création de Contenu" src="/img/logo-v2.png" /></p>
+<h3>Approche Intégrée</h3>
+<p>Une démarche qui combine différentes disciplines et médias pour créer des expériences narratives riches et engageantes.</p>
+<h3>Services Principaux</h3>
+<h4>1. Narration Multimédia</h4>
+<ul>
+<li>Création d'expériences combinant :</li>
+<li>Texte</li>
+<li>Image</li>
+<li>Modèles 3D</li>
+<li>Design</li>
+<li>Objectif : Raconter des histoires immersives</li>
+</ul>
+<h4>2. Documentation Créative</h4>
+<ul>
+<li>Dépassement du simple archivage</li>
+<li>Proposition d'une interprétation :</li>
+<li>Sensible</li>
+<li>Esthétique</li>
+<li>Contextuelle</li>
+</ul>
+<h4>3. Identité et Branding</h4>
+<ul>
+<li>Développement d'identités visuelles complètes</li>
+<li>Du logo à la charte éditoriale</li>
+<li>Exemple de projet : wolSia</li>
+</ul>
+<h3>Projet Phare : wolSia</h3>
+<h4>Exploration Technologique</h4>
+<ul>
+<li>IA Générative</li>
+<li>NLP (Traitement du Langage Naturel)</li>
+<li>Agents Conversationnels</li>
+<li>Data Science</li>
+</ul>
+<h4>Composantes Principales</h4>
+<ol>
+<li>Agent Conversationnel Intelligent</li>
+<li>Interaction contextuelle</li>
+<li>
+<p>Modèles de traitement du langage naturel</p>
+</li>
+<li>
+<p>Simulateur de Personnalité</p>
+</li>
+<li>Techniques d'apprentissage automatique</li>
+<li>
+<p>Génération de profils dynamiques</p>
+</li>
+<li>
+<p>Quiz Interactif</p>
+</li>
+<li>Systèmes de questions-réponses adaptatifs</li>
+<li>Ajustement en fonction des réponses</li>
+</ol>
+<h3>Technologies Clés</h3>
+<ul>
+<li>Python</li>
+<li>Streamlit</li>
+<li>Machine Learning</li>
+<li>NLP</li>
+<li>Traitement de Données</li>
+</ul>
+<h3>Applications</h3>
+<ul>
+<li>FAQ interactive intelligente</li>
+<li>Avatar Edouard Lartet</li>
+<li>Prototype de suivi documentaire</li>
+<li>Prototype de suivi pédagogique</li>
+<li>Quiz NumPy</li>
+</ul>
+<h3>Philosophie de Création</h3>
+<p>Transformer des technologies complexes en expériences utilisateur innovantes, personnalisées et engageantes.</p>
+<h3>Liens des Projets</h3>
+<ul>
+<li><a href="https://faq-desinfection.onrender.com/">FAQ Interactive</a></li>
+<li><a href="https://avatar-lartet.streamlit.app/">Avatar Lartet</a></li>
+<li><a href="https://suividoc.streamlit.app/">Suivi Documentaire</a></li>
+<li><a href="https://suivi-pedago.streamlit.app/">Suivi Pédagogique</a></li>
+<li><a href="https://quiz-numpy.streamlit.app/">Quiz NumPy</a></li>
+</ul>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-archeologie-numerique" class="project-full-content">
+        <h2>archeologie-numerique</h2>
+        
+        <img class="hero-image" src="img/TsptTls.png" alt="archeologie-numerique" loading="lazy">
+        
+        <h1>Archéologie Numérique : Dynamiques Territoriales</h1>
+<h2>Présentation du Projet</h2>
+<p>Un projet innovant qui transforme des données archéologiques en récit dynamique, illustrant comment le data storytelling peut révéler des insights historiques complexes.</p>
+<h2>Méthodologie</h2>
+<ul>
+<li>Analyse de données géospatiales historiques</li>
+<li>Cartographie interactive des dynamiques territoriales</li>
+<li>Narration contextuelle basée sur des données</li>
+</ul>
+<h2>Technologies Utilisées</h2>
+<ul>
+<li>Data Storytelling</li>
+<li>Recherche Historique</li>
+<li>Visualisation de Données</li>
+</ul>
+<h2>Capture d'Écran</h2>
+<p><img alt="Projet Archéologie Numérique" src="/img/TsptTls.png" /></p>
+<h2>Lien du Projet</h2>
+<p><a href="https://slowsia.shinyapps.io/tramTls/">Découvrir le Projet Archéologie Numérique</a></p>
+<h2>Description Détaillée</h2>
+<p>Ce projet démontre comment les données historiques peuvent être transformées en récits visuels et interactifs, offrant une nouvelle perspective sur l'évolution des territoires à travers les siècles.</p>
+<h2>Compétences Mises en Œuvre</h2>
+<ul>
+<li>Analyse de données spatiales</li>
+<li>Cartographie historique</li>
+<li>Storytelling data-driven</li>
+<li>Visualisation de données complexes</li>
+</ul>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-cope-process-documentation" class="project-full-content">
+        <h2>cope-process-documentation</h2>
+        
+        <img class="hero-image" src="img/Process_COPE.png" alt="cope-process-documentation" loading="lazy">
+        
+        <hr />
+<p>title: Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)
+description: <img alt="Infographie du Processus COPE" src="/img/Process_COPE.png" />
+author: Alexia Fontaine
+date: 2025-03-28
+type: summary
+image: /img/Process_COPE.png</p>
+<hr />
+<h1>Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)</h1>
+<p><img alt="Processus de Publication Cross-Platform (COPE - Create Once, Publish Everywhere)" src="/img/Process_COPE.png" /></p>
+<h2>1. Création du Contenu (Source Unique)</h2>
+<ul>
+<li><strong>Rédaction de documents Markdown dans le portfolio</strong></li>
+<li>Création/mise à jour des fichiers .md dans le dossier "docs" du dépôt portfolio   - Utilisation du format frontmatter YAML pour les métadonnées (titre, description, tags)   - Inclusion d'images et autres médias dans le dossier "img"</li>
+</ul>
+<h2>2. Génération Automatique de la Newsletter</h2>
+<ul>
+<li><strong>Détection des contenus récents</strong></li>
+<li>Scan des fichiers Markdown modifiés récemment   - Filtrage en fonction de la date de modification (7 derniers jours)   - Sélection des projets les plus récents (limité à 6)</li>
+<li><strong>Extraction et traitement du contenu</strong></li>
+<li>Analyse du frontmatter YAML pour extraire les métadonnées   - Conversion du Markdown en HTML   - Génération de résumés pour chaque projet (limités à 250 caractères)   - Récupération des images associées aux projets</li>
+<li><strong>Compilation en format standardisé</strong></li>
+<li>Création d'un document Markdown unifié avec tous les projets   - Génération d'un document HTML avec mise en page responsive   - Structuration avec cartes de projets, sections détaillées et table des matières   - Application d'un design cohérent (CSS personnalisé)</li>
+</ul>
+<h2>3. Publication sur GitHub Pages</h2>
+<ul>
+<li><strong>Préparation des fichiers</strong></li>
+<li>Génération des fichiers HTML/Markdown dans le dossier de sortie   - Copie des ressources requises (images)   - Création de liens symboliques vers la dernière newsletter</li>
+<li><strong>Organisation du site</strong></li>
+<li>Création d'une page d'index redirigeant vers la dernière newsletter   - Génération d'une page d'archives listant toutes les newsletters   - Ajout de fichiers de configuration (.nojekyll)</li>
+<li><strong>Déploiement</strong></li>
+<li>Création d'un commit avec les nouveaux fichiers   - Déploiement vers la branche gh-pages   - Configuration pour l'accès public</li>
+</ul>
+<h2>4. Publication sur LinkedIn</h2>
+<ul>
+<li><strong>Préparation du contenu pour LinkedIn</strong></li>
+<li>Extraction du titre et de la date de la newsletter   - Récupération des titres des projets pour créer un sommaire   - Formatage du contenu selon les bonnes pratiques LinkedIn (emojis, mise en forme)   - Ajout de hashtags pertinents</li>
+<li><strong>Gestion des doublons et limitations</strong></li>
+<li>Génération d'un hash pour identifier les contenus uniques   - Vérification pour éviter les publications en double   - Ajout d'horodatage pour rendre le contenu unique si nécessaire   - Gestion des limites de taux d'API (rate limits) avec backoff exponentiel</li>
+<li><strong>Interaction avec l'API LinkedIn</strong></li>
+<li>Authentification via token d'accès   - Construction de la requête API avec le texte et l'URL   - Gestion des erreurs et tentatives multiples   - Traitement des différents codes de réponse</li>
+</ul>
+<h2>5. Suivi et Maintenance</h2>
+<ul>
+<li><strong>Enregistrement des activités</strong></li>
+<li>Journalisation détaillée des actions (logging)   - Création d'un fichier de suivi des publications   - Commits automatiques pour tracer l'historique des publications</li>
+<li><strong>Mécanismes de déclenchement</strong></li>
+<li>Exécution planifiée hebdomadaire (tous les lundis)   - Possibilité de déclenchement manuel   - Chaînage des workflows (le second s'exécute après le premier)</li>
+<li><strong>Gestion des erreurs</strong></li>
+<li>Détection et rapport des problèmes   - Mécanismes de reprise sur erreur   - Statuts d'achèvement conditionnels</li>
+</ul>
+<p>Cette architecture COPE permet de : 1. Maintenir une source unique de vérité (fichiers Markdown) 2.</p>
+<p><strong>Mots-clés:</strong> architecture, publications, complètement, automatiser, publication</p>
+<p>Le système est également extensible pour intégrer d'autres plateformes de publication (Twitter, Medium, etc.) en suivant le même modèle modulaire.</p>
+<p><strong>Mots-clés:</strong> publication, plateformes, extensible, modulaire, également</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    
+            
+            <!-- Footer ajouté ici -->
+            <div class="footer">
+                <h2>Restons connectés !</h2>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou simplement échanger sur nos domaines d'intérêt communs.</p>
+                
+                <div class="social-links">
+                    <a href="https://portfolio-af-v2.netlify.app/" class="social-link" target="_blank" rel="noopener">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/alexiafontaine" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2025 - Newsletter générée automatiquement depuis mon portfolio GitHub - Alexia Fontaine tous drois réservés</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (!tab.hasAttribute('onclick')) {
+                tab.addEventListener('click', () => {
+                    // Désactiver tous les onglets et contenus
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Activer l'onglet et le contenu sélectionnés
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

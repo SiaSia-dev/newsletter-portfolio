@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Portfolio - 21/07/2025</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #4a6d8c;
+            --secondary: #2a475e;
+            --accent: #90afc5;
+            --light: #f6f9fc;
+            --dark: #333333;
+            --text: #444444;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --border: 1px solid #eaeaea;
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+    
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 20px;
+            background-image: url('img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 71, 94, 0.7);
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            scroll-margin-top: 50px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            margin: 1em 0;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image-container {
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .project-summary {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .toc {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .toc-item {
+            margin-bottom: 5px;
+        }
+        
+        .toc-item a {
+            display: block;
+            padding: 8px;
+            background-color: white;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item a:hover {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: var(--border);
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        .project-full-content {
+            padding: 40px;
+            margin-bottom: 60px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-full-content img.hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 1em 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eaeaea;
+            margin: 25px 0;
+        }
+        
+        /* Styles pour les onglets */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            color: var(--secondary);
+        }
+        
+        .tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Styles responsifs */
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .project-full-content {
+                padding: 20px;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="newsletter">Newsletter</div>
+            <div class="tab" onclick="window.location.href='archives.html'">Archives</div>
+        </div>
+    
+        <!-- Contenu de la Newsletter -->
+        <div id="newsletter" class="tab-content active">
+            
+        
+        <div class="header">
+            <div class="header-content">
+                <h1>Newsletter Portfolio</h1>
+                <p>21/07/2025</p>
+                <p>Décrypter le numérique sur 6 thématiques : découvertes, réflexions et créations de la semaine.</p>
+                <h3>Récits | Horizons numériques | Visuels</h3>
+            </div>
+        </div>
+        
+        
+        <div class="grid">
+            
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/usages-num.png" alt="📊 Rapport sur le référentiel des usages numériques 2025 de l'ARCEP" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-referentiel-usages-num-2025">📊 Rapport sur le référentiel des usages numériques 2025 de l'ARCEP</a></h2>
+                <div class="project-description">5ème édition de ce référentiel qui nous en apprend sur nos usages et pratiques du numériques</div>
+                <div class="project-summary">Nous assumons ce "partage de base" des données clés de ce référentiel, mais leur infographie (pdf) est claire et présente "une vision globale sur les différentes pratiques numériques" : il s'agit de données agrégées pour fournir des élements chiffrés...</div>
+                <div class="tags"><span class="tag">infographie</span><span class="tag">usages numériques</span><span class="tag">usages</span><span class="tag">numérique</span></div>
+                <a href="#project-referentiel-usages-num-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/photonics-ia.png" alt="🌐 Processeurs photoniques, technologie émergente pour traiter l'information" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-processeur-photonique-2025">🌐 Processeurs photoniques, technologie émergente pour traiter l'information</a></h2>
+                <div class="project-description">Les processeurs photoniques peuvent rivaliser à présent avec l'électronique traditionnelle pour l'IA et au-delà...</div>
+                <div class="project-summary">Un processeur basé sur la lumière Un article qui pourrait nous faire croire que nous nageons en pleine SF mais non, les processeurs à base de lumière (photons -> photonique) sont en train de rivaliser avec l'électronique moderne, voire même la dépass...</div>
+                <div class="tags"><span class="tag">actualités</span><span class="tag">photonique</span><span class="tag">processeur</span></div>
+                <a href="#project-processeur-photonique-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/metr-impact-ia-2025.png" alt="🔍'Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity'" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-metr-performance-AI-2025">🔍'Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity'</a></h2>
+                <div class="project-description">Comprendre les capacités et les impacts de l'IA dans le développement logiciel</div>
+                <div class="project-summary">METER Une étude de METR (prononcer ‘meter’), organisation issue du projet « The Audacious Project » (hébergée par TED), concernant le sujet des procédures d'évaluation préalables au déploiement des IA , envisagées ici à l'étape du développement pour ...</div>
+                <div class="tags"><span class="tag">lecture</span><span class="tag">metr</span><span class="tag">audit</span><span class="tag">performance</span><span class="tag">IA</span></div>
+                <a href="#project-metr-performance-AI-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/open-peer-review-types.png" alt="Open Peer Review, une plateforme d'évaluation des pairs ouverte" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-open-review-2025"> 💡Open Peer Review, une plateforme d'évaluation des pairs ouverte</a></h2>
+                <div class="project-description">L'évaluation par les pairs reste le mode de révision de la démarche scientifique qui développe de nouvelles approches et de solutions de recherche, regroupées dans le mouvement Open Science dont nous présentons l'une de ses applications en ligne et ses impacts.</div>
+                <div class="project-summary">Open Peer Review (OPR), un mode d'évaluation par les pairs ouvert Dans le système de publication des revues scientifiques, l'évaluation par les pairs est la démarche de validation qui permet aux éditeurs de choisir les articles à publier. Aujourd'hui...</div>
+                <div class="tags"><span class="tag">developpement web</span><span class="tag">developpement</span><span class="tag">web</span><span class="tag">plateforme</span><span class="tag">open source</span><span class="tag">open science</span><span class="tag">science ouverte</span><span class="tag">publication</span><span class="tag">evaluation</span></div>
+                <a href="#project-open-review-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/cope-diagram.png" alt="🎯 Passer du portfolio à un écosytème automatisé !" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-portfolio-github-2025">🎯 Passer du portfolio à un écosytème automatisé !</a></h2>
+                <div class="project-description">Cette refonte de notre portfolio marque une étape dans notre projet d'autmatisation</div>
+                <div class="project-summary">Du portfolio à un écosystème automatisé Un projet automatisé Lors de la refonte de notre portfolio devenu (au bout de quelque mois) un site monolithique, nous avons pu appliquer et vérifier que l'architecture modulaire permettait une évolution rapide...</div>
+                <div class="tags"><span class="tag">pedagogie</span><span class="tag">github</span><span class="tag">contenu</span><span class="tag">automatisation</span></div>
+                <a href="#project-portfolio-github-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/algo-physarum-jacob.png" alt=" 🤩 Algorithmes artistiques : Simulations interactives de physarum/organiques" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-algo-organic-2025"> 🤩 Algorithmes artistiques : Simulations interactives de physarum/organiques</a></h2>
+                <div class="project-description">Création de simulations visuelles par algorithmes. </div>
+                <div class="project-summary">Les algorithmes peuvent être artistiques ! Des simulations visuelles particulièrement esthétiques et intéressantes dans cette approche agentique : l'observation de ces comportements simulés grâce à des curseurs contrôlables rend l'expérience particul...</div>
+                <div class="tags"><span class="tag">culture numérique</span><span class="tag">numérique</span><span class="tag">culture</span><span class="tag">algorithmes</span><span class="tag">artisitique</span></div>
+                <a href="#project-algo-organic-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        </div>
+        
+        
+    <div id="project-referentiel-usages-num-2025" class="project-full-content">
+        <h2><a href="#">📊 Rapport sur le référentiel des usages numériques 2025 de l'ARCEP</a></h2>
+        
+        <img class="hero-image" src="img/usages-num.png" alt="📊 Rapport sur le référentiel des usages numériques 2025 de l'ARCEP" loading="lazy">
+        
+        <p>Nous assumons ce "partage de base" des données clés de ce référentiel, mais leur infographie (pdf) est claire et présente <em>"une vision globale sur les différentes pratiques numériques"</em> : il s'agit de données agrégées pour fournir des élements chiffrés sur notre environnement numérique selon diverses thématiques et tendances.</p>
+<p>➡️ L'<strong>ARCOM</strong> est l'Autorité publique française de régulation de la communication audiovisuelle et numérique. A ce titre, elle suit les évolutions en ligne aussi bien côté citoyen que professionnel.</p>
+<p>...Bien sûr on appréciera des analytics nous permettant de croiser ces données du <strong>référentiel des usages</strong>, à venir certainement 😊</p>
+<iframe src="https://www.arcom.fr/se-documenter/etudes-et-donnees/etudes-bilans-et-rapports-de-larcom/referentiel-des-usages-numeriques-2025"
+        title="Rapport sur le référentiel des usages numériques 2025 de l'ARCEP"
+        width="100%"
+        height="700px"
+        frameborder="0"
+        style="border: 1px solid #ddd; border-radius: 10px;"
+        allowfullscreen
+        loading="lazy">
+</iframe>
+
+<hr />
+<h3>REFERENCES</h3>
+<p>‘Usages numériques en France’, Arcep, 7 July 2025 <a href="https://www.arcep.fr/actualites/actualites-et-communiques/detail/n/usages-numeriques-en-france-070725.html">https://www.arcep.fr/actualites/actualites-et-communiques/detail/n/usages-numeriques-en-france-070725.html</a> [accessed 19 July 2025]</p>
+        
+        <div class="tags"><span class="tag">infographie</span><span class="tag">usages numériques</span><span class="tag">usages</span><span class="tag">numérique</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-processeur-photonique-2025" class="project-full-content">
+        <h2><a href="#">🌐 Processeur photonique, innovation émergente pour traiter l'information</a></h2>
+        
+        <img class="hero-image" src="img/photonics-ia.png" alt="🌐 Processeurs photoniques, technologie émergente pour traiter l'information" loading="lazy">
+        
+        <h2>Un processeur basé sur la lumière</h2>
+<p>Un article qui pourrait nous faire croire que nous nageons en pleine SF mais non, les <strong>processeurs à base de lumière</strong> (photons -&gt; photonique) sont en train de rivaliser avec l'électronique moderne, voire même la dépasser : c'est en tout cas l'engagement pris par cette levée de fonds de près de 72 millions de dollars par la société Q.ANT que nous annonce cet article du siliconANGLE !</p>
+<div style="border: 2px solid #f39c12; border-radius: 10px; padding: 20px; background: #fffbf0; margin: 20px 0;">
+<p>📢 Article siliconANGLE : <a href="https://siliconangle.com/2025/07/17/photonics-processor-maker-q-ant-raises-72m-transform-ai-computing/">Photonics processor maker Q.ANT raises $72M to transform AI computing</a></p>
+</div>
+<h2>Technologie photonique</h2>
+<p>...C'est peu dire que cette technologie est en train de changer la donne : des calculs ultra-rapides (de l'ordre d'une demi-nanoseconde) pour une plus faible consommation d'energie (le photon ne génère pas de chaleur lors de son déplacement) !</p>
+<p>Les <strong>gains de performance</strong> annoncés dans le domaine de l'IA, notamment le deep-learning, sont plus que considérables, mais là où le combat va être tout aussi révolutionnaire est bien celui qui se joue entre <strong>processeur photonique classique</strong> et <strong>processeurs photoniques quantiques</strong> utilisant des qubits.</p>
+<p>➡️ Les qubits (quantum bits) sont les unités fondamentales d'information de l'informatique quantique, équivalents aux quantiques des bits classiques. La clé de voûte d'une révolution informatique en marche...</p>
+<p>Cette poussée d'innovations techniques est une véritable locomotive et il est clair que cette <strong>technologie photonique</strong> est la véritable lame de fond de l'IA et bien plus encore.</p>
+<p>Autrement dit, les <strong>applications</strong> de cette technologie photonique vont aller des centres de données, à l'IA comme aux services de télécommunications : actuellement, nous sommes déjà entrain d'assister à <strong>l'adoption de ces processeurs photoniques pour l'intelligence artificielle</strong>.</p>
+<p>Un changement de paradigme. Non, on vous dit, une révolution.</p>
+<hr />
+<h3>REFERENCES</h3>
+<p>‘Photonics Processor Maker Q.ANT Raises $72M to Transform AI Computing’, Infra, SiliconANGLE, 17 July 2025 <a href="https://siliconangle.com/2025/07/17/photonics-processor-maker-q-ant-raises-72m-transform-ai-computing/">https://siliconangle.com/2025/07/17/photonics-processor-maker-q-ant-raises-72m-transform-ai-computing/</a> [accessed 19 July 2025]</p>
+        
+        <div class="tags"><span class="tag">actualités</span><span class="tag">photonique</span><span class="tag">processeur</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-metr-performance-AI-2025" class="project-full-content">
+        <h2><a href="#">🔍'Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity'</a></h2>
+
+        <img class="hero-image" src="img/metr-impact-ia-2025.png" alt="🔍'Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity'" loading="lazy">
+
+        <h2>METER</h2>
+<p>Une étude de METR (prononcer ‘meter’), organisation issue du projet « The Audacious Project » (hébergée par TED), concernant le sujet <strong>des procédures d'évaluation préalables au déploiement des IA</strong>, envisagées ici à l'étape du développement pour l'examen des modèles, les facteurs de risques et voire même de la gouvernance de ces projets.</p>
+<p>↪️ Révélateur de la rapide structuration de l'écosytème IA, tout le monde s'accorde sur l'importance du <strong>pilotage</strong> de ces mêmes systèmes et chacun propose sa démarche.</p>
+<p>Celle-ci a retenu notre attention à la fois pour <strong>le résultat proposé</strong> et pour la nécessité des <strong>évaluations contextuelles</strong>.</p>
+<div style="border: 2px solid #f39c12; border-radius: 10px; padding: 20px; background: #fffbf0; margin: 20px 0;">
+<p><a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">📢 METR - Juillet 2025 : Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity</a></p>
+</div>
+<h2>Un ralentissement de la productivité</h2>
+<p>Cette enquête randomisée traite de <strong>l'impact des outils IA sur la productivité</strong> auprès de développeurs expérimentés, entre janvier et juin 2025.</p>
+<p>🔥 Leur constat, celui d'un <strong>ralentissement de la productivité</strong>, est finalement cohérent avec l'adoption d'une nouvelle technologie : selon eux, <strong>19% de temps supplémentaire dans la résolution de problèmes</strong>, ce qui contredit le principal argument pour l'usage des outils IA et les prédictions des économistes (39 % plus court) ou des experts en Machine Learning (38 % plus court).</p>
+<h2>Résultats et perspectives</h2>
+<p>Nous comprenons grâce à leur méthdologie qu'il ne peut absolument pas y avoir, d'une part, d'outil "IA universel". Comprendre les <strong>capacités des modèles</strong> reste l'un des principaux enjeux de ces évaluations. Il faut donc prendre en compte, d'autre part, dans la rentabilité de ces outils IA leur <strong>contexte d'usages</strong> comme la pratique du développeur à ce sujet, l'envergure et le niveau d'exigence sur les normes de qualité du projet.</p>
+<p>La liste des facteurs favorisants le ralentissement de la productivité explicite la notion d'<strong>appropiation</strong> de ces outils IA qui demandent <strong>une période d'adaptation</strong>.</p>
+<h4>🤔 Est-ce que cette période va être un frein ou un accélérateur de leur intégration dans nos modes d'organisation ?</h4>
+<hr />
+<h3>REFERENCES</h3>
+<p>‘Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity’, METR Blog, 10 July 2025 <a href="https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/">https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/</a> [accessed 19 July 2025]</p>
+        
+        <div class="tags"><span class="tag">lecture</span><span class="tag">metr</span><span class="tag">audit</span><span class="tag">performance</span><span class="tag">IA</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-open-review-2025" class="project-full-content">
+        <h2><a href="#">Open Peer Review, une plateforme d'évaluation des pairs ouverte</a></h2>
+
+        <img class="hero-image" src="img/open-peer-review-types.png" alt="Open Peer Review, une plateforme d'évaluation des pairs ouverte" loading="lazy">
+
+        <h2>💡Open Peer Review (OPR), un mode d'évaluation par les pairs ouvert</h2>
+<p>Dans le système de publication des revues scientifiques, <strong>l'évaluation par les pairs</strong> est la démarche de validation qui permet aux éditeurs de choisir les articles à publier.</p>
+<p>Aujourd'hui, ce processus est de plus en plus décrié pour de multiples raisons : délai trop long, biais systématiques, peu de reconnaissance pour les relecteurs ; favorisant ainsi l'émergence de nouvelles approches comme <strong>la révision ouverte (Open Review)</strong>.</p>
+<p>Celle-ci appartient au mouvement mondial plus vaste de <strong>l'Open Science</strong> qui tend à rendre les processus de recherche et leurs données produites <em>accessibles à tous et dans tous les niveaux de la société... [considérés] comme un "bien commun".</em> (Wikipedia)</p>
+<p>📢 Présentation de l'Open Peer Review <a href="https://youtu.be/aEMLEZ-FKIc">ici</a></p>
+<p>Au lieu de sélectionner des relecteurs, il est possible sous réserve que l'article soit librement accessible de déposer une évaluation ouverte à tous, de pouvoir accéder à leurs rapports et éventuellement de divulguer leur identité là où, dans le processus traditionnel, celle-ci demeure anonyme, procédant d'une lecture en simple ou en double aveugle.</p>
+<p>↪️ C'est une forme de <strong>processus qualité</strong> qui doit garantir ce principe d'échanges et de débat intellectuel dans <strong>la transmission des savoirs</strong>.</p>
+<p>Raison pour laquelle les interactions entre auteurs et relecteurs peuvent être directs, quand traditionnellement un éditeur sert d'intermédiaire, avec aussi des possibilités de commenter les prépublications ou les post-publications, éventuellement sur des plateformes ouvertes où révision et publication sont gérées par deux entités différentes.</p>
+<p><img alt="Types Open Peer Review" src="img/open-peer-review-types.png" /></p>
+<p>⚠️ Les modalités de l'OPR sont donc très diverses et s'ancrent dans les nouvelles pratiques de recherche qui intègrent <strong>des processus informatiques à l'aide de flux de travail</strong>.</p>
+<p>Ces changements sont considérables, témoignant à la fois du changement profond qu'ont amené <strong>la démocratisation des outils de communication liés à l'avènement du Web</strong> et de ces nouvelles <strong>compétences en littératie numérique</strong>.</p>
+<h2>Architecture de l'OpenReview, plateforme de publication OPR</h2>
+<p>L'architecture globale est celle du Client-Serveur : OpenReview utilise une interface web couplée à une API REST.</p>
+<p>C'est donc <strong>une plateforme web moderne classique</strong> avec une architecture client-serveur RESTful, et non un système distribué peer-to-peer !</p>
+<p>Il n'y a donc <strong>pas de communication directe entre reviewers</strong>, tous les clients communiquent avec <strong>un serveur central</strong>, le stockage des données est centralisé sur les serveurs d'OpenReview, avec un protocole HTTP/HTTPS standard.</p>
+<h3>Infrastucture technique</h3>
+<p>OpenReview est construit sur une architecture web moderne, utilisant des technologies telles que :</p>
+<img src="img/open-review-archi.png" alt="OpenReview Architecture" />
+<p>Il faut comprendre qu'Open Review est un exemple d'application de ce principe de l'OPR, d'autres plateformes suivent ce modèle comme :</p>
+<ul>
+<li>F1000Research</li>
+<li>PeerJ</li>
+<li>eLife</li>
+<li>PubPeer (post-publication)</li>
+</ul>
+<p>↪️ Chacune développe pour ses besoins son mode d'évaluation et nous avons choisi de présenter <strong>Open Review</strong> car on y retrouve des <strong>conférences ML/AI</strong>.</p>
+<h2>Les défis de la Science Ouverte</h2>
+<p>Cette nouvelle approche du <strong>processus de révision scientifique</strong> a pour but de rendre la démarche <strong>transparente</strong> et <strong>accessible</strong>, contrairement au système traditionnel où les révisions sont anonymes et confidentielles.</p>
+<p>Après un peu plus d'une décennie, les évaluations sur ce mode de révision mettent en lumière <strong>les impacts de cette démocratisation du savoir</strong>.</p>
+<p>Les avantages sont bien là :</p>
+<ul>
+<li><strong>Transparence</strong> : Tout le processus est visible</li>
+<li><strong>Qualité</strong> : Les reviewers font des critiques plus constructives</li>
+<li><strong>Apprentissage</strong> : Les jeunes chercheurs peuvent apprendre du processus</li>
+<li><strong>Reconnaissance</strong> : Le travail de révision est valorisé</li>
+<li><strong>Collaboration</strong> : Participation et interaction ouverte</li>
+</ul>
+<p>Et les inconvénients aussi :</p>
+<ul>
+<li><strong>Coûts de révision élevés</strong> appelés APC (Article Processing Charges) marginalisant les chercheurs les moins dotés en ressources</li>
+<li><strong>Défis d'équité dans la réutilisation des données</strong> (les barrières d'infrastructures, de ressources et les compétences techniques)</li>
+<li><strong>Risques éthiques de ré-identification dans le partage de données</strong> (données anonymisées re-identifiées par le croisement avec d'autres sources de données, réutilisation des données pour d'autres objectifs sans acquérir le consentement des participants originaux, ou encore la question du colonialisme des données et comment elles sont utilisées)</li>
+</ul>
+<p>Ce système de Science Ouverte remet en lumière des problèmes déjà connus au-delà de la simple accessibilité technique, mais pour <strong>considérer les dimensions éthiques et sociales du partage et de la réutilisation des données</strong> : les défis sont de taille, on considère à tort ces questions comme des "problèmes de scientifiques".</p>
+<p>On peut alors comprendre la farouche opposition de certains avec lesquels nous avons déjà eu l'occasion d'échanger (lors d'un groupe de réflexion sur le sujet à Montpellier), et même si certaines réticences sont justifiées comme <strong>la protection des participants</strong> (confidentialité, autonomie, non-malfaisance), il ne faudrait ni l'ignorer ni compromettre <strong>l'ouverture scientifique</strong>.</p>
+<p>➡️ Accepter de voir pour qui ce type de système remet en question leur position habituelle et/ou traditionnelle permettra dans un premier temps de rassurer chacun sur ses prérogatives qui demandent à être revues dans le contexte actuel ; sans préjudicier de <strong>l'accessibilité de la recherche</strong> ou empêcher <strong>la libre circulation des savoirs</strong>.</p>
+<p>Mais s'opposer à ces nouvelles pratiques de flux de travail ressemblerait à refuser l'utilisation du microscope pour prôner la supériorité d'une observation directe, débat d'un autre temps, car ce changement d'échelle est (là encore) une réalité : le <strong>partage des données</strong> est devenu pratiquement une norme (et pas uniquement dans le monde académique) avec toute l'infrastructure et les compétences nécessaires, évidemment pas à n'importe quelle condition, et les <strong>nouvelles technologies</strong> (IA, réseaux sociaux, base de données publiques etc.) ont accru certains <strong>risques</strong>.</p>
+<h3>La question est donc de savoir développer des cadres éthiques robustes pour ce partage de données, et non plus d'être dans des considérations "pour" ou "contre" puisque nous y participons déjà (avec ou sans notre consentement 😅).</h3>
+<hr />
+<h3>REFERENCES</h3>
+<p>Klebel, Thomas, and others, ‘The Academic Impact of Open Science: A Scoping Review’, preprint, OSF, 1 March 2025, doi:10.31235/osf.io/ptjub_v2
+‘L’explicabilité de l’IA : Un Problème Renouvelé Par Le Succès Du Deep Learning [1/3] | Linc’, n.d. <a href="https://linc.cnil.fr/lexplicabilite-de-lia-un-probleme-renouvele-par-le-succes-du-deep-learning-13">https://linc.cnil.fr/lexplicabilite-de-lia-un-probleme-renouvele-par-le-succes-du-deep-learning-13</a> [accessed 19 July 2025]</p>
+<p>‘OpenReview’, n.d. <a href="https://openreview.net/about">https://openreview.net/about</a> [accessed 20 July 2025]</p>
+<p>‘Pros and Cons of Open Peer Review’, Nature Neuroscience, 2.3 (1999), pp. 197–98, doi:10.1038/6295</p>
+<p>Ross-Hellauer, Tony, ‘What Is Open Peer Review? A Systematic Review’, 6:588, preprint, F1000Research, 31 August 2017, doi:10.12688/f1000research.11369.2</p>
+        
+        <div class="tags"><span class="tag">developpement web</span><span class="tag">developpement</span><span class="tag">web</span><span class="tag">plateforme</span><span class="tag">open source</span><span class="tag">open science</span><span class="tag">science ouverte</span><span class="tag">publication</span><span class="tag">evaluation</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-portfolio-github-2025" class="project-full-content">
+        <h2><a href="#">🎯 Passer du portfolio à un écosytème automatisé !</a></h2>
+        
+        <img class="hero-image" src="img/cope-diagram.png" alt="🎯 Passer du portfolio à un écosytème automatisé !" loading="lazy">
+        
+        <h2>Du portfolio à un écosystème automatisé</h2>
+<h3>Un projet automatisé</h3>
+<p>Lors de la refonte de notre portfolio devenu (au bout de quelque mois) un site monolithique, nous avons pu appliquer et vérifier que l'architecture modulaire permettait une évolution rapide et sans impact sur notre <strong>workflow de publication</strong>.</p>
+<p><a href="https://archnum.hypotheses.org/1786">📌 Lien vers blog scientifique : architecture modulaire</a></p>
+<p>De cette manière, nous conservons à la fois :</p>
+<ul>
+<li>Le contenu tandis que la forme évolue</li>
+<li>Une archive propre grâce aux commit Git</li>
+<li>La possibilité de migrer sur d'autres plateformes sans perte</li>
+</ul>
+<p>A cela s'ajoute les différents référentiels crées pour ce flux de travail. Notre approche visait plusieurs points :</p>
+<ul>
+<li><strong>Séparation claire</strong> : Contenu / Automation / Publication</li>
+<li><strong>Versioning</strong> : Historique Git sur chaque partie</li>
+<li><strong>GitHub Pages</strong> : Hébergement gratuit des newsletters</li>
+<li><strong>Modularité</strong> : Chaque repo a sa fonction</li>
+</ul>
+<h3>Workflow Complet</h3>
+<p>```code
+Portfolio (MD) → GitHub Issues → Validation → Newsletter HTML → LinkedIn → Archives
+````</p>
+<p>De cette manière, nous avons pu développer des outils pour nous faciliter la gestion de contenu et de publication en ligne, dans l'idée d'assurer cette présence numérique :</p>
+<p>📝🔄 <strong>Newsletter Generator</strong> : Portfolio MD → Newsletter HTML (Github)</p>
+<p>✅ <strong>Content Validator</strong> : GitHub Issues pour validation (Github)</p>
+<p>📰 <strong>LinkedIn Manager</strong> : Newsletter → Posts LinkedIn (Gestionnaire de publication automatisé)</p>
+<p>Mais notre dépôt GitHub PORTFOLIO n'est pas une API au sens technique du terme. Voici pourquoi :</p>
+<h3>Ce qu'est une API</h3>
+<p>Une <strong>API (Application Programming Interface)</strong> est une interface qui permet à des applications de communiquer entre elles via des protocoles standardisés (HTTP, REST, GraphQL, etc.). Elle expose des endpoints avec des méthodes définies (GET, POST, PUT, DELETE) et retourne généralement des données structurées (JSON, XML).</p>
+<h3>Ce que fait mon dépôt PORTFOLIO</h3>
+<p>D'après mon workflow, mon dépôt PORTFOLIO est plutôt :</p>
+<ul>
+<li>Un <strong>dépôt de données/contenu</strong> qui stocke les informations de mes projets</li>
+<li>Une <strong>source de données</strong> que mon script Python lit directement via le système de fichiers Git</li>
+</ul>
+<p>Dans mon cas, GitHub est utilisé comme un système de stockage de fichiers que mon générateur de newsletter consomme, ce qui est une approche tout à fait valide mais différente d'une API traditionnelle.</p>
+
+<p>Pour l'instant, l'architecture répond parfaitement à nos besoins car nous avons pu :</p>
+<ul>
+<li>Améliorer le site vitrine avec les newsletter (API Github)</li>
+<li>Enrichir d'une visualisation de données dynamiques (avec D3.js) pour une analyse thématique des contenus par catégories de newseltter</li>
+<li>Automatiser des tâches de planification, d'éditorialisation et de publication avec des scripts Python (prototype de gestionnaire automatisé avec Streamlit)</li>
+</ul>
+<p>Il y a donc à envisager plutôt l'ajout :</p>
+<ul>
+<li>Des analytics croisées</li>
+<li>Des widgets interactifs</li>
+</ul>
+<p>Et l'API sera utile si besoin de :</p>
+<ul>
+<li>Centraliser la logique métier</li>
+<li>Systèmes externes (app mobiles consomment mes données, autres sites qui affichent projets ou services tiers )</li>
+<li>Cache/performance (pour éviter de re-parser les .md)</li>
+</ul>
+<h3>Résultats et perspectives</h3>
+<p>🤖 Plutôt sceptique dans son application à notre échelle, nous acceptons aujourd'hui le fait que nous serons tous impliqués, de plus en plus, dans ce type de <strong>processus</strong>, à travers ces <strong>flux de travail automatisés</strong>.</p>
+<p>🔧 <strong>Prototyper</strong> n'est pas non plus un signe de sous-niveau : cette <strong>démarche</strong> permet de partir réellement des besoins pour obtenir ce qui nous convient et voir si cela fonctionne. Elle participe comme <strong>levier de transformation digitale</strong> dans l'organisation du travail.</p>
+<p>↪️ Passer par une solution payante (et beaucoup plus aboutie) est une option toujours utile quand elle est adaptée aux besoins.</p>
+<p>↪️Dans notre cas, cela nous aurait amputée de toute la démarche de compréhension et d'apprentissage qui nous semble nécessaire à l'adoption de nouveaux outils.</p>
+<p>⚠️ La <strong>formation</strong> et <strong>l'enseignement</strong> sont toujours des <strong>leviers de transformation majeurs</strong>, des priorités urgentes. Plus personne ne se pose ici le pourquoi mais bien le comment !</p>
+<p>Cela ne fait pas de nous une experte (?!) mais se sentir concernée pas des outils qui modèlent considérablement nos modes de vie et nos manières de penser sont, au même titre que notre alimentation, des préoccupations majeures.</p>
+        
+        <div class="tags"><span class="tag">pedagogie</span><span class="tag">github</span><span class="tag">contenu</span><span class="tag">automatisation</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-algo-organic-2025" class="project-full-content">
+        <h2><a href="#"> 🤩 Algorithmes artistiques : Simulations interactives de physarum/organiques</a></h2>
+        
+        <img class="hero-image" src="img/algo-physarum-jacob.png" alt=" 🤩 Algorithmes artistiques : Simulations interactives de physarum/organiques" loading="lazy">
+        
+        <h2>Les algorithmes peuvent être artistiques !</h2>
+<p>Des <strong>simulations visuelles</strong> particulièrement esthétiques et intéressantes dans cette approche agentique : l'observation de ces comportements simulés grâce à des curseurs contrôlables rend l'expérience particulièrement hypnotique.</p>
+<p>Les explications et références données, notamment celles sur le travail de <strong>Jeff Jones</strong> (auteur de cet algorithme sur la forme de ces motifs , foncer voir son travail!), permettent de rentrer dans cet univers plutôt étrange, voire quelque peu <em>"unheimlich"</em> : cette <strong>dissonnance cognitive</strong> n'est pas marquée car nous y voyons malgré tout une forme vivante (algorithme inspiré du Pysarum, le magnifique  blob) nous permettant d'appréhender <strong>une de ces nombreuses réalités spatiales</strong>.</p>
+<p>➡️ Merci à Etienne JACOB pour ce travail et à @gmie du réseau PIAILLE (MASTODON) pour ce joli partage.</p>
+<iframe src="https://bleuje.com/physarum-explanation/"
+        title="Algorithms for making interesting organic simulations"
+        width="100%"
+        height="700px"
+        frameborder="0"
+        style="border: 1px solid #ddd; border-radius: 10px;"
+        allowfullscreen
+        loading="lazy">
+</iframe>
+
+<hr />
+<h3>REFERENCES</h3>
+<p>‘Algorithms for Making Interesting Organic Simulations’, n.d. <a href="https://bleuje.com/physarum-explanation/">https://bleuje.com/physarum-explanation/</a> [accessed 19 July 2025]
+Ghosh, Sourangshu, ‘Mathematical Foundations of Deep Learning’, preprint, Engineering Archive, 7 April 2025, doi:10.31224/4355</p>
+<p>Jones, Jeff, ‘Characteristics of pattern formation and evolution in approximations of physarum transport networks’, Artificial Life, 16.2 (2010), doi:10.1162/artl.2010.16.2.16202</p>
+        
+        <div class="tags"><span class="tag">culture numérique</span><span class="tag">numérique</span><span class="tag">culture</span><span class="tag">algorithmes</span><span class="tag">artisitique</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    
+            
+            <!-- Footer ajouté ici -->
+            <div class="footer">
+                <h2>Restons connectés !</h2>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou simplement échanger sur nos domaines d'intérêt communs.</p>
+                
+                <div class="social-links">
+                    <a href="https://portfolio-af-v2.netlify.app/" class="social-link" target="_blank" rel="noopener">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/alexiafontaine" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2025 - Newsletter générée automatiquement depuis mon portfolio GitHub - Alexia Fontaine tous drois réservés</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (!tab.hasAttribute('onclick')) {
+                tab.addEventListener('click', () => {
+                    // Désactiver tous les onglets et contenus
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Activer l'onglet et le contenu sélectionnés
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

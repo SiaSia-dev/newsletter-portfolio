@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Portfolio - 07/04/2025</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #4a6d8c;
+            --secondary: #2a475e;
+            --accent: #90afc5;
+            --light: #f6f9fc;
+            --dark: #333333;
+            --text: #444444;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --border: 1px solid #eaeaea;
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+    
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 20px;
+            background-image: url('img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 71, 94, 0.7);
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            scroll-margin-top: 50px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            margin: 1em 0;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image-container {
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .project-summary {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .toc {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .toc-item {
+            margin-bottom: 5px;
+        }
+        
+        .toc-item a {
+            display: block;
+            padding: 8px;
+            background-color: white;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item a:hover {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: var(--border);
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        .project-full-content {
+            padding: 40px;
+            margin-bottom: 60px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-full-content img.hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 1em 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eaeaea;
+            margin: 25px 0;
+        }
+        
+        /* Styles pour les onglets */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            color: var(--secondary);
+        }
+        
+        .tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Styles responsifs */
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .project-full-content {
+                padding: 20px;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="newsletter">Newsletter</div>
+            <div class="tab" onclick="window.location.href='archives.html'">Archives</div>
+        </div>
+    
+        <!-- Contenu de la Newsletter -->
+        <div id="newsletter" class="tab-content active">
+            
+        
+        <div class="header">
+            <div class="header-content">
+                <h1>Newsletter Portfolio</h1>
+                <p>07/04/2025</p>
+                <p>Découvrez mes derniers projets et réalisations dans cette newsletter hebdomadaire.</p>
+                <h3>Récits visuels, horizons numériques :</h3> 
+                <h3>Chaque newsletter, un voyage entre données, créativité et découvertes</h3>
+            </div>
+        </div>
+        
+        
+        <div class="grid">
+            
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/Slowsia.jpg" alt="math-humanities-article" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">math-humanities-article</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Créer des ponts entre mathématiques et sciences humaines : un dialogue dynamique Introduction La relation entre mathématiques et sciences humaines a longtemps été perçue comme antagoniste, les deux domaines étant souvent présentés comme des pôles opp...</div>
+                
+                <a href="#project-math-humanities-article" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/Slowsia.jpg" alt="système-suivi-classement-documentaire" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">système-suivi-classement-documentaire</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Système de Suivi et Classement Documentaire Contexte du Projet Ce projet présente une solution de gestion documentaire développée en Python, démontrant une approche moderne et flexible de l'organisation et du suivi de documents. Fonctionnalités Clés ...</div>
+                
+                <a href="#project-système-suivi-classement-documentaire" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/Slowsia.jpg" alt="optimisation-générateur-Newsletter" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">optimisation-générateur-Newsletter</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Optimisation du Générateur de Newsletter Multiplateforme Contexte Dans le cadre du projet de portfolio numérique, nous avons développé un système automatisé de génération de newsletter qui s'adapte à différentes plateformes, notamment LinkedIn. Objec...</div>
+                
+                <a href="#project-optimisation-générateur-Newsletter" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/Slowsia.jpg" alt="photographie-photogrammetrie" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">photographie-photogrammetrie</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Photographie et Photogrammétrie : Deux Approches de l'Image La photographie et la photogrammétrie sont deux techniques différentes liées à l'image : La photographie est l'art et la technique de capturer des images fixes à l'aide d'un appareil photogr...</div>
+                
+                <a href="#project-photographie-photogrammetrie" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/Slowsia.jpg" alt="photogrammetrie" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">photogrammetrie</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Photogrammétrie : Art de la Modélisation 3D Essence de la Technique Une méthode de création de modèles 3D précis à partir de photographies, préservant la géométrie et les textures des objets. Processus Détaillé 1. Acquisition des Images Stratégies de...</div>
+                
+                <a href="#project-photogrammetrie" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/NLP-LLM.jpg" alt="evolution-nlp-llm-article" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title">evolution-nlp-llm-article</h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Visualisation de l'évolution des techniques NLP et LLM Introduction Nous avons travaillé sur la visualisation de l'évolution des techniques de Traitement du Langage Naturel (NLP) et des Grands Modèles de Langage (LLM) à travers le temps. À partir d'u...</div>
+                
+                <a href="#project-evolution-nlp-llm-article" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        </div>
+        
+        
+    <div id="project-math-humanities-article" class="project-full-content">
+        <h2>math-humanities-article</h2>
+        
+        <img class="hero-image" src="img/Slowsia.jpg" alt="math-humanities-article" loading="lazy">
+        
+        <h1>Créer des ponts entre mathématiques et sciences humaines : un dialogue dynamique</h1>
+<h2>Introduction</h2>
+<p>La relation entre mathématiques et sciences humaines a longtemps été perçue comme antagoniste, les deux domaines étant souvent présentés comme des pôles opposés de la recherche intellectuelle. Pourtant, cette dichotomie est de plus en plus remise en question par des approches innovantes qui révèlent comment ces champs apparemment disparates peuvent s'enrichir mutuellement.</p>
+<h2>La cartographie de la connaissance</h2>
+<p>À l'intersection de ces domaines émerge ce que l'on pourrait appeler une "Cartographie Dynamique Systémique" (CDS) - une approche qui transforme les représentations statiques en récits vivants. Cette méthode considère les territoires non pas simplement comme des espaces à observer, mais comme des sujets à comprendre :</p>
+<ul>
+<li>Les territoires deviennent des organismes</li>
+<li>Les données dialoguent entre elles</li>
+<li>Les interactions forment le cœur de la compréhension</li>
+</ul>
+<h2>Data storytelling : au-delà des chiffres</h2>
+<p>Un exemple puissant de cette intégration est le data storytelling, qui transforme des statistiques brutes en récits significatifs. Prenons l'exemple d'un jeu de données sur l'archéologie de Paris :</p>
+<p><strong>Distribution des découvertes archéologiques par période historique :</strong>
+- Antiquité : 778 découvertes
+- Moyen Âge : 639 découvertes
+- Temps modernes : 430 découvertes</p>
+<p>Au-delà de ces chiffres bruts se trouvent des insights plus profonds :
+1. Paris n'a pratiquement aucune trace préhistorique, suggérant soit un développement tardif, soit un effacement par l'urbanisation
+2. La concentration massive de découvertes antiques et médiévales révèle des couches urbaines successives, chaque période construisant littéralement sur les traces des précédentes</p>
+<h2>Modélisation mathématique en sciences humaines</h2>
+<p>Le véritable pont entre mathématiques et sciences humaines émerge dans la projection probabiliste - une méthode combinant l'analyse de données historiques avec la modélisation statistique pour suggérer de potentielles découvertes futures.</p>
+<p>Cette approche illustre comment les fonctions mathématiques servent les sciences humaines :
+- Conversion des réalités qualitatives en données
+- Création de systèmes de représentation
+- Révélation de patterns cachés
+- Projection de possibilités futures</p>
+<p>La formule mathématique n'est pas une fin en soi mais un moyen - un langage qui éclaire plutôt que de remplacer l'interprétation humaine.</p>
+<h2>Un territoire mathématique</h2>
+<p>Dans ce nouveau paradigme, une carte devient plus qu'une image statique. Grâce à la modélisation mathématique, nous pouvons transformer la cartographie :</p>
+<p>| Carte traditionnelle | Cartographie mathématique |
+|-----------------|--------------------------|
+| Image statique | Système dynamique |
+| Représentation passive | Récit interactif |
+| Informations limitées | Narration multidimensionnelle |</p>
+<p>Le territoire n'est plus un objet à observer mais un sujet capable d'évolution. Les interstices mathématiques deviennent des espaces où :
+- Les données interagissent
+- Les potentiels émergent
+- Les transformations s'inventent</p>
+<h2>Conclusion : un nouveau dialogue</h2>
+<p>Les mathématiques et les sciences humaines sont loin d'être antagonistes. Elles forment plutôt un duo complémentaire puissant :</p>
+<p><strong>Les mathématiques apportent :</strong>
+- Un langage précis
+- Des outils d'analyse rigoureux
+- La capacité à modéliser des phénomènes complexes</p>
+<p><strong>Les sciences humaines contribuent :</strong>
+- Le contexte
+- La profondeur interprétative
+- La compréhension des nuances humaines</p>
+<p>La clé réside dans l'interdisciplinarité. Comme le suggérerait Edgar Morin, nous avons besoin d'une "pensée complexe" - dépassant les frontières disciplinaires vers une compréhension holistique. Les mathématiques n'écrivent pas l'histoire, elles l'éclairent, tandis que les sciences humaines apportent le sens et le contexte qui donnent leur signification aux chiffres.</p>
+<p>Dans ce dialogue permanent, nous découvrons non pas une opposition mais une opportunité - un nouveau langage pour comprendre notre monde dans toute sa précision quantitative et sa profondeur qualitative.</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-système-suivi-classement-documentaire" class="project-full-content">
+        <h2>système-suivi-classement-documentaire</h2>
+        
+        <img class="hero-image" src="img/Slowsia.jpg" alt="système-suivi-classement-documentaire" loading="lazy">
+        
+        <h1>Système de Suivi et Classement Documentaire</h1>
+<h2>Contexte du Projet</h2>
+<p>Ce projet présente une solution de gestion documentaire développée en Python, démontrant une approche moderne et flexible de l'organisation et du suivi de documents.</p>
+<h2>Fonctionnalités Clés</h2>
+<h3>1. Génération Automatique de Métadonnées</h3>
+<p>Le cœur de l'application réside dans sa capacité à générer automatiquement des tags intelligents :</p>
+<ul>
+<li>Analyse contextuelle des documents</li>
+<li>Catégorisation dynamique</li>
+<li>Extraction de mots-clés pertinents</li>
+</ul>
+<p>```python
+def generate_tags(category, description):
+    # Génération intelligente de tags basés sur la catégorie et le contenu
+    tags = set(random.sample(CATEGORY_TAGS.get(category, []), 3))</p>
+<pre><code># Enrichissement contextuel
+for keyword, related_tags in description_keywords.items():
+    if keyword in description.lower():
+        tags.update(random.sample(related_tags, min(2, len(related_tags))))
+
+return ','.join(list(tags)[:5])
+</code></pre>
+<p>```</p>
+<h3>2. Visualisation Avancée</h3>
+<p>Utilisation de Plotly pour des visualisations interactives :</p>
+<ul>
+<li>Graphique en donut des catégories de documents</li>
+<li>Analyse des statuts documentaires</li>
+<li>Exploration des tags les plus fréquents</li>
+</ul>
+<h3>3. Architecture Flexible</h3>
+<ul>
+<li>Approche modulaire</li>
+<li>Chargement dynamique des documents</li>
+<li>Possibilité d'évolution vers des solutions de base de données plus complexes</li>
+</ul>
+<h2>Technologies Utilisées</h2>
+<ul>
+<li><strong>Python</strong></li>
+<li><strong>Streamlit</strong> : Interface utilisateur web</li>
+<li><strong>Pandas</strong> : Manipulation de données</li>
+<li><strong>Plotly</strong> : Visualisations interactives</li>
+</ul>
+<h2>Principes Techniques</h2>
+<ol>
+<li>Génération contextuelle de métadonnées</li>
+<li>Catégorisation dynamique</li>
+<li>Visualisation interactive</li>
+<li>Flexibilité d'adaptation</li>
+</ol>
+<h2>Exemple de Génération de Tags</h2>
+<p>Un document "Rapport financier 2023" pourrait générer des tags comme :</p>
+<ul>
+<li>administration</li>
+<li>finances</li>
+<li>comptabilité</li>
+<li>budget</li>
+<li>2023</li>
+</ul>
+<h2>Perspectives d'Évolution</h2>
+<ul>
+<li>Intégration de bases de données avancées</li>
+<li>Authentification utilisateur</li>
+<li>Moteur de recherche plus sophistiqué</li>
+<li>Analyse prédictive des documents</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Ce projet illustre une approche moderne de gestion documentaire, combinant intelligence artificielle "légère", visualisation de données et flexibilité architecturale.</p>
+<h2>Lien du Projet</h2>
+<p><a href="https://suividoc.streamlit.app/">Explorer l'Application de Suivi Documentaire</a></p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-optimisation-générateur-Newsletter" class="project-full-content">
+        <h2>optimisation-générateur-Newsletter</h2>
+        
+        <img class="hero-image" src="img/Slowsia.jpg" alt="optimisation-générateur-Newsletter" loading="lazy">
+        
+        <h1>Optimisation du Générateur de Newsletter Multiplateforme</h1>
+<h2>Contexte</h2>
+<p>Dans le cadre du projet de portfolio numérique, nous avons développé un système automatisé de génération de newsletter qui s'adapte à différentes plateformes, notamment LinkedIn.</p>
+<h2>Objectifs Principaux</h2>
+<ul>
+<li>Automatiser la création de contenus</li>
+<li>Générer des publications adaptées à différents canaux</li>
+<li>Préserver la richesse et la structure des projets</li>
+</ul>
+<h2>Améliorations Clés</h2>
+<h3>1. Conversion HTML vers Markdown LinkedIn</h3>
+<ul>
+<li>Extraction intelligente des projets à partir du HTML</li>
+<li>Conservation de la structure des sections</li>
+<li>Gestion dynamique des emojis</li>
+<li>Préservation des liens hypertextes</li>
+</ul>
+<h3>2. Mise en Page Dynamique</h3>
+<ul>
+<li>Utilisation d'emojis thématiques</li>
+<li>Structuration flexible des contenus</li>
+<li>Gestion des différents types de contenus (paragraphes, listes)</li>
+</ul>
+<h3>3. Personnalisation des Publications</h3>
+<ul>
+<li>Génération de titres accrocheurs</li>
+<li>Extraction automatique de résumés</li>
+<li>Création de hashtags pertinents</li>
+</ul>
+<h2>Fonctionnalités Techniques</h2>
+<h3>Parsing HTML</h3>
+<ul>
+<li>Utilisation de BeautifulSoup pour l'extraction de contenu</li>
+<li>Analyse structurée des éléments HTML</li>
+<li>Conversion intelligente en Markdown</li>
+</ul>
+<h3>Gestion des Projets</h3>
+<ul>
+<li>Extraction des métadonnées</li>
+<li>Récupération dynamique des images</li>
+<li>Génération de résumés contextuels</li>
+</ul>
+<h2>Bénéfices</h2>
+<ul>
+<li>Publication automatique et cohérente</li>
+<li>Gain de temps dans la création de contenu</li>
+<li>Adaptabilité à différentes plateformes</li>
+<li>Conservation de la richesse éditoriale</li>
+</ul>
+<h2>Perspectives d'Amélioration</h2>
+<ul>
+<li>Intégration d'API de publication</li>
+<li>Personnalisation avancée des contenus</li>
+<li>Analyse des performances des publications</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Un système de génération de newsletter qui allie technologie et créativité, transformant la diffusion de contenu numérique.</p>
+<hr />
+<p>Projet développé par Alexia Fontaine - 2025</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-photographie-photogrammetrie" class="project-full-content">
+        <h2>photographie-photogrammetrie</h2>
+        
+        <img class="hero-image" src="img/Slowsia.jpg" alt="photographie-photogrammetrie" loading="lazy">
+        
+        <h1>Photographie et Photogrammétrie : Deux Approches de l'Image</h1>
+<p>La photographie et la photogrammétrie sont deux techniques différentes liées à l'image :</p>
+<ul>
+<li>
+<p>La <strong>photographie</strong> est l'art et la technique de capturer des images fixes à l'aide d'un appareil photographique. Elle vise principalement à représenter visuellement des scènes, des personnes, des objets.</p>
+</li>
+<li>
+<p>La <strong>photogrammétrie</strong> est une technique scientifique qui consiste à effectuer des mesures et des relevés précis à partir de photographies. Elle est souvent utilisée dans des domaines comme la cartographie, l'architecture, l'archéologie et la topographie pour créer des modèles 3D ou des plans détaillés.</p>
+</li>
+</ul>
+<h2>Points Communs et Différences</h2>
+<p>Bien que ces deux techniques utilisent la photographie comme base, leurs objectifs et approches diffèrent fondamentalement :</p>
+<ul>
+<li><strong>Photographie</strong> : Expression artistique et documentaire</li>
+<li><strong>Photogrammétrie</strong> : Précision scientifique et technique de mesure</li>
+</ul>
+<p>Chaque approche répond à des besoins distincts mais complémentaires dans la capture et l'interprétation visuelle du monde.</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-photogrammetrie" class="project-full-content">
+        <h2>photogrammetrie</h2>
+        
+        <img class="hero-image" src="img/Slowsia.jpg" alt="photogrammetrie" loading="lazy">
+        
+        <h1>Photogrammétrie : Art de la Modélisation 3D</h1>
+<h2>Essence de la Technique</h2>
+<p>Une méthode de création de modèles 3D précis à partir de photographies, préservant la géométrie et les textures des objets.</p>
+<h2>Processus Détaillé</h2>
+<h3>1. Acquisition des Images</h3>
+<h4>Stratégies de Capture</h4>
+<ul>
+<li>Prises de vue multi-angles</li>
+<li>Attention méticuleuse à l'éclairage</li>
+<li>Couverture complète de l'objet</li>
+<li>Techniques de superposition</li>
+</ul>
+<h4>Considérations Techniques</h4>
+<ul>
+<li>Résolution des images</li>
+<li>Uniformité de l'éclairage</li>
+<li>Recouvrement des prises de vue</li>
+<li>Qualité optique</li>
+</ul>
+<h3>2. Traitement Informatique</h3>
+<h4>Étapes de Reconstruction</h4>
+<ol>
+<li>Alignement précis des photos</li>
+<li>Détection des points communs</li>
+<li>Génération d'un nuage de points dense</li>
+<li>Création du maillage 3D</li>
+<li>Application des textures</li>
+</ol>
+<h4>Technologies Utilisées</h4>
+<ul>
+<li>Logiciels spécialisés</li>
+<li>Algorithmes de reconstruction</li>
+<li>Traitement d'image avancé</li>
+<li>Intelligence artificielle</li>
+</ul>
+<h3>3. Optimisation et Partage</h3>
+<h4>Processus de Finalisation</h4>
+<ul>
+<li>Nettoyage du modèle</li>
+<li>Simplification du maillage</li>
+<li>Optimisation des textures</li>
+<li>Export dans différents formats</li>
+</ul>
+<h2>Applications</h2>
+<h3>Domaines de Valorisation</h3>
+<ul>
+<li>Patrimoine culturel</li>
+<li>Archéologie</li>
+<li>Conservation de collections</li>
+<li>Médiation culturelle</li>
+<li>Recherche scientifique</li>
+</ul>
+<h2>Exemples de Réalisations</h2>
+<ul>
+<li>Slit Gong (objet ethnologique)</li>
+<li>Bague à sceau</li>
+<li>Bague aux camées</li>
+<li>Objets archéologiques du Trésor d'Eauze</li>
+</ul>
+<h2>Outils et Logiciels</h2>
+<ul>
+<li>Agisoft Metashape</li>
+<li>Reality Capture</li>
+<li>Blender</li>
+<li>Capture photogrammétrique avancée</li>
+</ul>
+<h2>Philosophie de la Préservation</h2>
+<blockquote>
+<p>"Chaque objet a une histoire. La photogrammétrie permet de la capturer avec précision et sensibilité."</p>
+</blockquote>
+<h2>Compétences Techniques</h2>
+<ul>
+<li>Photographie documentaire</li>
+<li>Traitement d'image</li>
+<li>Modélisation 3D</li>
+<li>Conservation numérique</li>
+<li>Médiation culturelle</li>
+</ul>
+<h2>Impact</h2>
+<ul>
+<li>Préservation numérique</li>
+<li>Documentation détaillée</li>
+<li>Accessibilité du patrimoine</li>
+<li>Recherche interdisciplinaire</li>
+</ul>
+<h2>Défis et Innovation</h2>
+<ul>
+<li>Précision technique</li>
+<li>Capture de la complexité</li>
+<li>Respect de l'intégrité de l'objet</li>
+<li>Innovation constante</li>
+</ul>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-evolution-nlp-llm-article" class="project-full-content">
+        <h2>evolution-nlp-llm-article</h2>
+        
+        <img class="hero-image" src="img/NLP-LLM.jpg" alt="evolution-nlp-llm-article" loading="lazy">
+        
+        <h1>Visualisation de l'évolution des techniques NLP et LLM</h1>
+<h2>Introduction</h2>
+<p>Nous avons travaillé sur la visualisation de l'évolution des techniques de Traitement du Langage Naturel (NLP) et des Grands Modèles de Langage (LLM) à travers le temps. À partir d'un fichier DOT initial décrivant la relation entre différentes technologies, nous avons créé plusieurs visualisations pour représenter cette évolution de manière claire et informative.</p>
+<h2>Étapes du processus</h2>
+<ol>
+<li>
+<p><strong>Conversion initiale du fichier DOT en diagramme Mermaid</strong><br />
+   Nous avons d'abord transformé la structure DOT en un diagramme Mermaid qui préservait l'organisation horizontale des éléments.</p>
+</li>
+<li>
+<p><strong>Création d'une version SVG horizontale</strong><br />
+   Ensuite, nous avons développé une version SVG du diagramme qui offrait plus de contrôle sur le style et la présentation des éléments.</p>
+</li>
+<li>
+<p><strong>Adaptation à un format vertical</strong><br />
+   À la demande d'une orientation verticale, nous avons réorganisé le diagramme SVG pour qu'il se développe de haut en bas.</p>
+</li>
+<li>
+<p><strong>Création d'un dendrogramme chronologique</strong><br />
+   Finalement, nous avons conçu un dendrogramme qui intègre une chronologie, permettant de visualiser l'évolution temporelle des différentes techniques.</p>
+</li>
+</ol>
+<h2>Visualisation finale</h2>
+<p>Notre visualisation finale prend la forme d'un dendrogramme chronologique qui:</p>
+<ul>
+<li>Représente le temps sur un axe vertical, de 1950 à 2020</li>
+<li>Organise les techniques par catégories fonctionnelles</li>
+<li>Différencie par couleur les technologies spécifiques au NLP, aux LLM, ou communes aux deux</li>
+<li>Montre clairement la progression et l'évolution des techniques au fil du temps</li>
+</ul>
+<p>Cette chronologie met en évidence plusieurs tendances importantes:</p>
+<ul>
+<li>Les premières techniques (années 1950-1990) étaient principalement axées sur le NLP fondamental</li>
+<li>Les années 2000 ont vu l'émergence de techniques plus sophistiquées de modélisation et d'analyse</li>
+<li>L'arrivée des Transformers en 2017 marque un tournant majeur vers les LLM</li>
+<li>La période récente (2019-2020) est dominée par les modèles dérivés des Transformers</li>
+<li>Les dernières avancées incluent des techniques d'augmentation comme RAG et RLHF</li>
+</ul>
+<p><img alt="Chronologie des techniques NLP et LLM" src="/img/NLP-LLM.jpg" /></p>
+<h2>Conclusion</h2>
+<p>Cette visualisation permet de mieux comprendre l'évolution des technologies du langage et offre une perspective claire sur la progression des techniques NLP vers les modèles LLM modernes. Elle illustre comment les avancées successives ont construit les fondations sur lesquelles reposent les capacités impressionnantes des systèmes d'IA linguistique actuels.</p>
+<p>Le passage des techniques basées sur les comptages statistiques simples (BoW, TF-IDF) vers des représentations vectorielles (Word2Vec, GloVe), puis vers des architectures neuronales complexes (RNN, LSTM) et finalement aux Transformers, montre une progression fascinante qui a révolutionné notre capacité à traiter et générer du langage naturel.</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    
+            
+            <!-- Footer ajouté ici -->
+            <div class="footer">
+                <h2>Restons connectés !</h2>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou simplement échanger sur nos domaines d'intérêt communs.</p>
+                
+                <div class="social-links">
+                    <a href="https://portfolio-af-v2.netlify.app/" class="social-link" target="_blank" rel="noopener">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/alexiafontaine" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2025 - Newsletter générée automatiquement depuis mon portfolio GitHub - Alexia Fontaine tous drois réservés</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (!tab.hasAttribute('onclick')) {
+                tab.addEventListener('click', () => {
+                    // Désactiver tous les onglets et contenus
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Activer l'onglet et le contenu sélectionnés
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Portfolio - 30/06/2025</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        :root {
+            --primary: #4a6d8c;
+            --secondary: #2a475e;
+            --accent: #90afc5;
+            --light: #f6f9fc;
+            --dark: #333333;
+            --text: #444444;
+            --shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            --border: 1px solid #eaeaea;
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--light);
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+        }
+    
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 20px;
+            background-image: url('img/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius);
+            position: relative;
+            color: white;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(42, 71, 94, 0.7);
+            border-radius: var(--radius);
+            z-index: 1;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .header h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            scroll-margin-top: 50px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            margin: 1em 0;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-image-container {
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-description {
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .project-summary {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        
+        .toc {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .toc-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .toc-list {
+            list-style-type: none;
+            margin-left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+        
+        .toc-item {
+            margin-bottom: 5px;
+        }
+        
+        .toc-item a {
+            display: block;
+            padding: 8px;
+            background-color: white;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item a:hover {
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        
+        .tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tag:hover {
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        .back-to-top {
+            display: inline-block;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: var(--border);
+            margin-top: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+        }
+        
+        .social-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 30px;
+        }
+        
+        .project-full-content {
+            padding: 40px;
+            margin-bottom: 60px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .project-full-content img.hero-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            margin-bottom: 30px;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 1em 0;
+            font-style: italic;
+            color: var(--text);
+        }
+        
+        ul, ol {
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: var(--accent);
+            color: white;
+        }
+        
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        pre code {
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eaeaea;
+            margin: 25px 0;
+        }
+        
+        /* Styles pour les onglets */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab:hover {
+            color: var(--secondary);
+        }
+        
+        .tab.active {
+            color: var(--secondary);
+            border-bottom-color: var(--secondary);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Styles responsifs */
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .project-full-content {
+                padding: 20px;
+            }
+            
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" data-tab="newsletter">Newsletter</div>
+            <div class="tab" onclick="window.location.href='archives.html'">Archives</div>
+        </div>
+    
+        <!-- Contenu de la Newsletter -->
+        <div id="newsletter" class="tab-content active">
+            
+        
+        <div class="header">
+            <div class="header-content">
+                <h1>Newsletter Portfolio</h1>
+                <p>30/06/2025</p>
+                <p>Décrypter le numérique sur 6 thématiques : découvertes, réflexions et créations de la semaine.</p>
+                <h3>Récits | Horizons numériques | Visuels</h3>
+            </div>
+        </div>
+        
+        
+        <div class="grid">
+            
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/ollama-logo-tete.png" alt="🦙🤖 Ollama, un petit LLM en local" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-resume-LLM_20025">🦙🤖 Ollama, un petit LLM en local</a></h2>
+                <div class="project-description">j'ai ajouté la fonctionnalité 'résumé' à mon petit gestionnaire de publications LinkedIn.</div>
+                <div class="project-summary">📱Développer sa présence en ligne Face au constat que nos présences sur les réseaux sociaux constituent aujourd'hui une compétence de littératie numérique au même titre qu'un enjeu de gestion de son identité numérique ,  la question finale demeure enc...</div>
+                <div class="tags"><span class="tag">LLM</span><span class="tag">automatisation</span><span class="tag">newsletters</span><span class="tag">linkedin</span></div>
+                <a href="#project-resume-LLM_20025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/culture-num.png" alt="Qu'est-ce que la culture numérique?" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-culture-numerique">Qu'est-ce que la culture numérique?</a></h2>
+                <div class="project-description"></div>
+                <div class="project-summary">Qu'est-ce que la culture numérique? La culture numérique désigne l'ensemble des connaissances, compétences, pratiques et valeurs liées à l'usage des technologies numériques dans notre société. Elle englobe plusieurs dimensions qui sont liées entre el...</div>
+                
+                <a href="#project-culture-numerique" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/condition-humaine-magritte-2025.webp" alt="Contexte & conscience dans les biais algorithmiques" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-lecture-IA-biais-2025">Contexte & conscience dans les biais algorithmiques</a></h2>
+                <div class="project-description">Notre compréhension du monde est entrain d'être modifiée par cette représentation qu'en font les algorithmes.</div>
+                <div class="project-summary">Dans ce billet, nous posons qu' un algorithme est la représentation partagée d'une pensée mathématique , et en ce sens, il s'agit d'une situation de communication. De ce point de vue, sans contexte , on peut facilement comprendre comment une situatio...</div>
+                <div class="tags"><span class="tag">biais</span><span class="tag">IA</span><span class="tag">algorithme</span><span class="tag">représentation</span><span class="tag">situation</span><span class="tag">contexte</span><span class="tag">conscience</span></div>
+                <a href="#project-lecture-IA-biais-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/penurie-data-scientist-automatisation.png" alt="Est-ce la pénurie des Data Scientists pousse vers l'automatisation ?" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-automatisation-IPA-2025">Est-ce la pénurie des Data Scientists pousse vers l'automatisation ?</a></h2>
+                <div class="project-description">Plus qu'une question de l'oeuf ou de la poule, comment cette démocratisation de l'analyse passe d'un enjeu technique à celui de culturel et organisationnel ?</div>
+                <div class="project-summary">Est-ce que la pénurie de data scientists a crée un contexte économique favorable au développement d'outils d'automatisation ? La prédiction américaine Notre interrogation commence en lisant cette prédiction  datant de 2017 du cabinet américain GARTNE...</div>
+                <div class="tags"><span class="tag">data science</span><span class="tag">automatisation</span><span class="tag">gouvernance des données</span><span class="tag">technologies facilitatrices</span></div>
+                <a href="#project-automatisation-IPA-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/stochastic-parrots.png" alt="Les défis éthiques de l'IA générative moderne." loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-biais-IA-2025">Les défis éthiques de l'IA générative moderne.</a></h2>
+                <div class="project-description">Les biais en apprentissage automatique représentent un défi majeur qui peut compromettre la fiabilité et l'équité des systèmes d'IA.</div>
+                <div class="project-summary">Les dangers des "Stochastic Parrots" Les travaux de Timnit GEBRU font partis de ces lanceurs d'alerte sur les dérives des algorithmes d'apprentissage automatique . Ancienne salariée de chez GOOGLE avec Maragaret MITCHELL, elles ont co-dirigé l'équipe...</div>
+                <div class="tags"><span class="tag">biais</span><span class="tag">apprentissage-automatique</span><span class="tag">IA</span></div>
+                <a href="#project-biais-IA-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        <div class="project-card">
+            <div class="project-image-container">
+                <img class="project-image" src="img/infog-Biais-GEBRU.png" alt="Biais en apprentissage automatique" loading="lazy">
+            </div>
+            <div class="project-content">
+                <h2 class="project-title"><a href="#project-infographie-biais-2025">Biais en apprentissage automatique</a></h2>
+                <div class="project-description">infographie sur les biais relatifs aux systèmes IA</div>
+                <div class="project-summary">Une infographie basée sur la pensée de Timnit Gebru spécialiste des biais algorithmiques, nous citons ses travaux majeurs : Gender Shades Buolamwini, J., & Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Clas...</div>
+                <div class="tags"><span class="tag">biais</span><span class="tag">IA</span></div>
+                <a href="#project-infographie-biais-2025" class="btn">En savoir plus</a>
+            </div>
+        </div>
+        
+        </div>
+        
+        
+    <div id="project-resume-LLM_20025" class="project-full-content">
+        <h2><a href="#">🦙🤖 Ollama, un petit LLM en local</a></h2>
+        
+        <img class="hero-image" src="img/ollama-logo.png" alt="🦙🤖 Ollama, un petit LLM en local" loading="lazy">
+        
+        <h2>📱Développer sa présence en ligne</h2>
+<p>Face au constat que nos présences sur les réseaux sociaux constituent aujourd'hui une compétence de <strong>littératie numérique</strong> au même titre qu'un enjeu <strong>de gestion de son identité numérique</strong>,  la question finale demeure encore et toujours de <strong>savoir comment gérer tout cela ?!</strong></p>
+<p>Notre projet personnel d'<strong>automatiser nos publications LinkedIn</strong> partait de ce questionnement et du temps que l'on pouvait y passer : à notre avis, trop pour ce qu'il en est, du fait de la <strong>captation de notre attention</strong> sur ces plateformes, de l'investissement sur notre <strong>image professsionnelle</strong> qui demande des compétences nouvelles, mais aussi en termes de <strong>coûts</strong>, si l'on veut utiliser des services payants ou comptabiliser le temps investi.</p>
+<p>Ainsi, depuis une newsletter hebdomadaire HTML publiée en ligne, nous avons eu l'idée d'en <strong>extraire les contenus comme série de posts programmés</strong> sur notre compte LinkedIn tout au long de la semaine.</p>
+<p>Rien de très nouveau si ce n'est que cette automatisation permet d'exécuter des <strong>actions concrètes</strong>.</p>
+<h2>La différence entre "analyser" et "faire"</h2>
+<p>Nous pensons que nous sommes dans cette tendance des outils de création d'interfaces vers des plateformes d'automatisation intelligente où <strong>l'IA peut réellement "faire" le travail, pas seulement l'analyser</strong>.</p>
+<p>Toute proportion gardée, à notre échelle, ce basculement s'observe clairement même sur un petit projet où l'on peut monter <strong>sa propre logique d'automatisation</strong>.</p>
+<p>Et comme nous l'a suggéré un agent conversationnel qui a bien pris en compte la probabilité contextuelle du sujet (!), notre objectif sera de transformer cette application en <strong>microservice autonome</strong>.</p>
+<h2>Ollama, un LLM local</h2>
+<p>Nous avions testé, dans un premier temps, des librairires Python connues dans le traitement du langage naturel mais les capacités génératives des LLM sont nettement plus performantes pour notre tâche de resumé.</p>
+<p>Le traitement s'effectue sur des données non-structurées sans preprocessing complexe et pas de datasets d'entraînement. Pour des taches de compréhension textuelle, il n'y a plus à douter de l'efficacité des LLM.</p>
+<p>Les moins sont que comme tous les LLM, ils sont moins prévisibles, la latence, la consommation de mémoire et d'énergie sont plus importantes : la <strong>supervision humaine</strong> s'impose comme un gage de <strong>fiabilité</strong> et de <strong>responsabilité</strong>.</p>
+<h2>La nécessité de garder le contrôle sur son contenu</h2>
+<p>Notre tâche est simple : réduire le contenu de notre newsletter HTML pour l'adapter au format de publication des posts sur LinkedIn.</p>
+<p>Finalement, il s'agit d'appliquer des <strong>templates</strong> que nous avons prédéfinis selon les catégories de notre Newsletter : Actualités, Pédagogie, Développement web, Culture numérique, Infographie et Lecture.</p>
+<p>Ainsi chaque résumé est "stylisé" selon sa catégorie avec en plus une accroche et ses émojis rattachés à sa classe.</p>
+<p><strong>On garde la main sur son contenu, car on gagne du temps</strong> : appliqué sur notre post de vendredi dernier, nous reconnaissons volontiers que cela a été un effort en moins de ne pas avoir à se replonger dans un billet qui remontait à la semaine dernière !</p>
+<h2>Conclusion</h2>
+<p>A ce stade de notre projet, <strong>le temps investi est clairement sur les contenus de notre Newsletter</strong> : notre chaîne de publication est structurée de l'écriture à la publication du contenu.</p>
+<p>Certains pourraient dire que la <strong>frontière</strong> entre contenu authentique et synthétique s'estompe dangereusement, mais dans ce cas le résumé est déjà une tromperie! 😅</p>
+<p>Par notre démarche, <strong>nous écrivons comme nous l'entendons</strong> dans un format <strong>markdown</strong> qui se convertit ensuite facilement en d'autres, nous pouvons assurer notre <strong>veille</strong> par cette Newsletter en HTML, garder le contrôle sur nos contenus sans nous soucier du format de publication sur les réseaux sociaux, et le tout stocké dans un dossier sur notre ordinateur (et bien sûr sur un dépôt en ligne).</p>
+<p>Nous développons <strong>un outil à notre échelle</strong> qui répond d'abord à nos besoins, tout en étant intégré au système global et globalisé des publications numériques en ligne.</p>
+<p>Il faut penser et déployer sur toutes ces <strong>échelles</strong> à la fois, en privilégier une plus qu'une autre devient actuellement signe d'une inadapation où l'on retrouve en première ligne les questions de <strong>la littératie numérique</strong> et de <strong>l'accessibilité</strong>.</p>
+        
+        <div class="tags"><span class="tag">LLM</span><span class="tag">automatisation</span><span class="tag">newsletters</span><span class="tag">linkedin</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-culture-numerique" class="project-full-content">
+        <h2><a href="#">Qu'est-ce que la culture numérique?</a></h2>
+        
+        <img class="hero-image" src="img/culture-num.png" alt="Qu'est-ce que la culture numérique?" loading="lazy">
+        
+        <h2>Qu'est-ce que la culture numérique?</h2>
+<p>La culture numérique désigne l'ensemble des connaissances, compétences, pratiques et valeurs liées à <strong>l'usage des technologies numériques</strong> dans notre société. Elle englobe plusieurs dimensions qui sont liées entre elles.</p>
+<p>Au niveau des <strong>compétences techniques</strong>, elle inclut la maîtrise des outils informatiques, la navigation sur internet, l'utilisation des réseaux sociaux, la création de contenus numériques, et la compréhension des mécanismes de base du fonctionnement des systèmes informatiques.</p>
+<p>La dimension <strong>cognitive</strong> comprend la capacité à rechercher, évaluer et traiter l'information en ligne, à développer un esprit critique face aux contenus numériques, et à comprendre les enjeux de la désinformation et des algorithmes.</p>
+<p>L'aspect <strong>social et communicationnel</strong> concerne les codes et pratiques de communication en ligne, l'usage des plateformes collaboratives, la gestion de son identité numérique, et la compréhension des dynamiques communautaires virtuelles.</p>
+<p>La culture numérique implique aussi une <strong>conscience éthique et citoyenne</strong> : comprendre les enjeux de protection des données personnelles, de vie privée, de propriété intellectuelle, et développer une réflexion sur l'impact sociétal du numérique.</p>
+<p>Elle se manifeste enfin par une <strong>capacité d'adaptation</strong> aux évolutions technologiques constantes et par le développement d'une approche créative et innovante dans l'usage des outils numériques.</p>
+<p>Cette culture n'est pas innée mais s'acquiert et se développe tout au long de la vie, constituant aujourd'hui un enjeu majeur d'éducation et d'inclusion sociale.</p>
+<h2>Culture numérique et litteratie numérique</h2>
+<p>Ces deux concepts sont complémentaires mais la <strong>culture numérique</strong> privilégie une perspective <strong>anthropologique et sociale</strong>, tandis que la <strong>littératie numérique</strong> se concentre sur les <strong>compétences pratiques et cognitives</strong> nécessaires pour utiliser efficacement les outils numériques : c'est une approche <strong>fonctionnelle</strong> qui vise <strong>l'autonomie</strong> dans l'usage des technologies.</p>
+<h3>Tableau comparatif : Culture numérique vs Littératie numérique</h3>
+<p><img alt="Tableau comparatif : Culture numérique vs Littératie numérique" src="img/litteratie-culture-num.png" /></p>
+<p>Source : <a href="https://www.cairn.info/revue-francaise-de-pedagogie-2019-1-page-7.htm">Culture numérique et littératie numérique</a></p>
+<h2>Synthèse</h2>
+<p>La <strong>littératie numérique</strong> répond à la question : <em>"Comment utiliser efficacement le numérique ?"</em></p>
+<p>La <strong>culture numérique</strong> répond à la question : <em>"Comment le numérique transforme-t-il notre société et comment nous y situer ?"</em></p>
+<h2>Conclusion</h2>
+<p>Ces deux approches sont complémentaires et nécessaires pour <strong>une éducation numérique complète qui forme des citoyens à la fois compétents et critiques.</strong></p>
+<p>La littératie numérique fournit les fondations techniques nécessaires, quand la culture numérique apporte la dimension réflexive et critique indispensable pour naviguer dans notre société numérisée.</p>
+        
+        
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-lecture-IA-biais-2025" class="project-full-content">
+        <h2><a href="#">Contexte & conscience dans les biais algorithmiques</a></h2>
+        
+        <img class="hero-image" src="img/condition-humaine-magritte-2025.webp" alt="Contexte & conscience dans les biais algorithmiques" loading="lazy">
+        
+        <p>Dans ce billet, nous posons qu'<strong>un algorithme est la représentation partagée d'une pensée mathématique</strong>, et en ce sens, il s'agit d'une <strong>situation de communication.</strong></p>
+<p>De ce point de vue, sans <strong>contexte</strong>, on peut facilement comprendre comment une situation de <strong>communication</strong> peut recouvrir une multitude d'<strong>interprétations</strong> selon la <strong>conscience</strong> de ceux qui observent mais aussi selon ceux qui font cette situation (...du vaudeville en puissance!😄)</p>
+<p>Cette <strong>ambiguïté interprétative</strong> pourrait prêter à rire si ces représentations comme les <strong>biais algorithmiques</strong> dans les modèles de langage (LLM) n'avaient pas <strong>d'impacts réels</strong> conduisant à des résultats inéquitables, discriminatoires ou incorrects pour certains groupes ou situations.</p>
+<p>En effet, ce processus statistique dit stochastique pondère des milliers de possibilités selon leur probabilité contextuelle. Il peut donc influencer ce que nous pensons.</p>
+<p>A travers ces quelques ressources (nous n'avons absolument pas la prétention à l'exhaustivité tant le sujet nous dépasse, mais refus d'une totalisation unifiée), nous posons des jalons de réflexions sur cette situation de <strong>la continuité, l'authenticité, la reproductibilité d'une pensée.</strong></p>
+<p>Le tableau de René Magritte <strong>La Condition humaine (1933)</strong> ouvre ce questionnement où il s'en expliquait à André Breton en écrivant :</p>
+<p>« On peut supposer que derrière le tableau le spectacle soit différent de ce que l’on voit, mais l’essentiel était de supprimer la différence qu’il y avait entre une vue que l’on voit de l’extérieur et l’intérieur d’une chambre." (Sylvester D., Magritte, Paris, Actes Sud, 2009, p. 386.)</p>
+<p><a href="https://dl.acm.org/doi/10.1145/3442188.3445922">On the Dangers of Stochastic Parrots | Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</a></p>
+<p><a href="https://youtu.be/WGE_Q47HaJ0?si=mamPwUYS0zBev2wB">Podcast : This Is Not A Pipe Podcast</a>, au sujet du livre de Ed Finn, What Algorithms Want: Imagination in the Age of Computing, MIT Press, 2017.</p>
+<p><a href="https://www.youtube.com/@Lettres-Arts-Langage-Philo-CdF/videos">Implications philosophiques de l'IA - Claudine Tiercelin (2024-2025)</a></p>
+<img src="img/condition-humaine-magritte-2025.webp" alt="La Condition humaine de René Magritte" style="width: 100%; max-width: 600px; margin: 20px 0;" loading="lazy">
+<p>La Condition humaine de René Magritte</p>
+        <div class="tags"><span class="tag">biais</span><span class="tag">IA</span><span class="tag">algorithme</span><span class="tag">représentation</span><span class="tag">situation</span><span class="tag">contexte</span><span class="tag">conscience</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-automatisation-IPA-2025" class="project-full-content">
+        <h2><a href="#">Est-ce la pénurie des Data Scientists pousse vers l'automatisation ?</a></h2>
+        
+        <img class="hero-image" src="img/penurie-data-scientist-automatisation.png" alt="Est-ce la pénurie des Data Scientists pousse vers l'automatisation ?" loading="lazy">
+        
+        <p><strong>Est-ce que la pénurie de data scientists a crée un contexte économique favorable au développement d'outils d'automatisation ?</strong></p>
+<h2>La prédiction américaine</h2>
+<p>Notre interrogation commence en lisant cette prédiction  datant de 2017 du cabinet américain GARTNER qui annonçait que <strong>40% des tâches de Data Science seront automatisées à l'horizon 2030</strong>
+[cabinet américain GARTNER (source indirecte) - "Predicts 2017: Analytics Strategy and Technology", mais notons que la prédiction originale était : 40% des tâches de data science seraient automatisées d'ici 2020 (pas 2030)]</p>
+<p>L'idée défendue était que face à <strong>la démocratisation des outils de l'analytique</strong>, un utilisateur averti et éclairé peut créer ou générer des modèles sans pour autant avoir ni les compétences ou une fonction dans le domaine des statistiques et de l'analyse de données.</p>
+<p>Selon Gartner encore, cette démocratisation de la data science résiderait dans l'automatisation qui permet donc à des <strong>profils moins spécialisés de manipuler des données</strong>, sans pour autant remettre en cause le savoir-faire d'un Data Scientist.</p>
+<p>On est bien dans du <strong>marketing de contenu</strong> par cet exemple, car ils ont su parfaitement <strong>cerner ce phénomène de démocratisation des données par un storytelling maîtrisé,</strong> et partagé tout aussi bien par des cabinets comme McKinsey, Deloitte, BCG etc.</p>
+<p>Avec leur méthode respective, <strong>tous reconnaissent un besoin de démocratisation de la data science, avec l'automatisation comme un des moyens d'y parvenir.</strong></p>
+<h2>Les technologies facilitatrices</h2>
+<p>Prenons l'exemple des <strong>outils No-Code / Low-Code</strong> et toute la pléthore de <strong>plateformes d'analytiques avancées</strong> comme Power BI pour ne citer que l'une des plus populaires.</p>
+<p>Qui aujourd'hui remet en cause leur usage ?</p>
+<p><em>...Oui nous avons suivi ces commentaires désamparés (vers 2019) sur des archives de blogs de ces Data Scientist se sentant réduits à du "Excel amélioré", au lieu d'utiliser leur compétences en data science.</em></p>
+<p>On peut comprendre leur frustration, mais au prix d'un Data Scientist pour (peut-être) des tâches de BI de base, est-ce que cela se justifie ?</p>
+<p>Et actuellement, force est de constater que <strong>la réduction des coûts de l'analytique</strong> est un cadre de travail.</p>
+<p>↪️ Car plus besoin de savoir coder pour faire des "drag and drop", des data pipleines ainsi que des modèles pré-construits avec des outils tels que Dataiku par exemple !</p>
+<p>Et <strong>la technique de l'intelligence artificielle</strong> n'est pas venue remettre en question cette nouvelle pratique de l'automatisation (démocratisante 😅).</p>
+<p>↪️ Voyez vos interfaces intuitives et vos outils analytiques en self-service qui vous connectent aux insights en temps réel grâce aux capacités des métadonnées et de l'IA !</p>
+<p>Au final, ces outils n'empêchent pas ce travail d'être (bien) fait, puisque ces non-techniciens amènent généralement leur propre expertise mais sans les compétences techniques du Data Scientist : ces profils ne peuvent pas les remplacer.</p>
+<p>...Alors où est le problème, s'il y en un ?</p>
+<h2>L'alignement entre Automatisation et Démocratisation</h2>
+<p>Nous voyons 2 faits qui caractérisent cette situation dans un contexte plus global qu'est <strong>l'IPA (Intelligent Process Automation = Automatisation Intelligente des Processus)</strong></p>
+<ul>
+<li>Une pénurie confirmée de Data Scientists : 250k data scientists manquants d'ici 2024</li>
+<li>Un marché AutoML (Automated Machine Learning) en explosion : CAGR 40-50% (= Taux de Croissance Annuel Composé), mais avec une adoption récente en cours, limitée par d'autres facteurs (sensibilisation, formation, gouvernance)</li>
+</ul>
+<p>Ces concepts d'<strong>automatisation</strong> (en tant que gestion des tâches techniques complexes) et <strong>démocratisation</strong> (pour l'accès aux outils analytiques) ont tendance à se chevaucher et la distinction n'est pas toujurs aisée car elle pointe la <strong>prise de décision</strong> accordée et donc la <strong>responsabilité</strong> engagée.</p>
+<hr />
+<h3>Références - Sources vérifiables</h3>
+<p>✅ Croissance Marché AutoML (6 Rapports Convergents)</p>
+<ol>
+<li>P&amp;S Intelligence (2024)</li>
+</ol>
+<p>Titre : "Automated Machine Learning (AutoML) Market Report"
+URL : https://www.psmarketresearch.com/market-analysis/automated-machine-learning-market
+Données : 866,3 millions USD (2023), CAGR 52,8% (2024-2030)
+Citation dans mes recherches : Document index 56-1</p>
+<ol>
+<li>Grand View Research (2024)</li>
+</ol>
+<p>Titre : "Automated Machine Learning Market Size Report, 2030"
+URL : https://www.grandviewresearch.com/industry-analysis/automated-machine-learning-market-report
+Données : 2,658.9 millions USD (2023) → 21,969.7 millions USD (2030), CAGR 42,2%
+Citation dans mes recherches : Document index 57-1</p>
+<ol>
+<li>Zion Market Research (2024)</li>
+</ol>
+<p>Titre : "Automated Machine Learning (AutoML) Market Size, Share, Growth 2032"
+URL : https://www.zionmarketresearch.com/report/automated-machine-learning-automl-market
+Données : 2,54 milliards USD (2023) → 58,95 milliards USD (2032), CAGR 41,82%
+Citation dans mes recherches : Document index 58-1</p>
+<ol>
+<li>ResearchAndMarkets.com (Juillet 2024)</li>
+</ol>
+<p>Titre : "Global Automated Machine Learning (AutoML) Business Analysis Report 2024-2030"
+Source : Globe Newswire
+URL : https://www.globenewswire.com/news-release/2024/07/15/2912882/28124/en/Global-Automated-Machine-Learning-AutoML-Business-Analysis-Report-2024-2030
+Données : 1,1 milliard USD (2023) → 10,9 milliards USD (2030), CAGR 39,3%
+Citation dans mes recherches : Document index 59-1</p>
+<ol>
+<li>Market.us (Mars 2025)</li>
+</ol>
+<p>Titre : "Automated Machine Learning Market Size | CAGR at 48.30%"
+URL : https://market.us/report/automated-machine-learning-market/
+Données : 4,5 milliards USD (2024) → 231,54 milliards USD (2034), CAGR 48,30%
+Citation dans mes recherches : Document index 62-1</p>
+<ol>
+<li>Global Market Insights (2024)</li>
+</ol>
+<p>Titre : "Automated Machine Learning Market Size, Growth Analysis 2032"
+URL : https://www.gminsights.com/industry-analysis/automated-machine-learning-market
+Données : 1,4 milliard USD (2023), CAGR 30%+ (2024-2032)
+Citation dans mes recherches : Document index 63-1</p>
+<p>✅ Pénurie Data Scientists
+1. Adastra Corporation (2024)</p>
+<p>Titre : "Data Professionals Market Survey Forecast 2024"
+Données : 76% des professionnels de la data aux États-Unis confirment que la pénurie de talents en data science va continuer tout au long de 2024
+Source secondaire : Fortune Business Insights AutoML report
+Citation dans mes recherches : Document index 65-1</p>
+<ol>
+<li>Indeed (Octobre 2022)</li>
+</ol>
+<p>Type : Données salariales
+Données : Salaires moyens des data scientists : près de 145 000 USD aux États-Unis
+Source secondaire : TechTarget definition "Citizen Data Scientist"
+Citation dans mes recherches : Document index 41-1</p>
+        
+        <div class="tags"><span class="tag">data science</span><span class="tag">automatisation</span><span class="tag">gouvernance des données</span><span class="tag">technologies facilitatrices</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-biais-IA-2025" class="project-full-content">
+        <h2><a href="#">Les défis éthiques de l'IA générative moderne.</a></h2>
+        
+        <img class="hero-image" src="img/stochastic-parrots.png" alt="Les défis éthiques de l'IA générative moderne." loading="lazy">
+        
+        <h2>Les dangers des "Stochastic Parrots"</h2>
+<p>Les travaux de Timnit GEBRU font partis de ces lanceurs d'alerte sur <strong>les dérives des algorithmes d'apprentissage automatique</strong>.</p>
+<p>Ancienne salariée de chez GOOGLE avec Maragaret MITCHELL, elles ont co-dirigé l'équipe IA éthique de 2018 à 2021 alertant sur les conséquences des biais induits dans les algorithmes.</p>
+<p>Renvoyées suite aux révélations sur les inégalités dans les équipes de développement pour M.MITCHELL et à un article devenu célèbre par T.GEBRU, co-écrit avec Emily Bender et Angelina McMillan-Major, où elles introduisent le concept de "perroquet stochastique" pour décrire les grands modèles de langage.</p>
+<p>L'article présente quatre risques principaux des grands modèles de langage : coûts environnementaux et financiers, opacité menant à des biais dangereux inconnus, potentiel de tromperie, et incapacité à comprendre les concepts sous-jacents.</p>
+<p>Ces femmes sont des figures de proue sur <strong>l'IA ethique</strong> et l'actualité brûlante de ce sujet s'explique par les défis que porte cette technologie dans un domaine complexe et évolutif.</p>
+<h2>Les défis éthiques de l'IA générative moderne</h2>
+<p><strong>Tout pose problème dans l'IA générative</strong>, mais plus personne ne remet en question son <strong>intégration</strong> : il faudra développer cette technologie de manière <strong>éthique</strong>, <strong>inclusive</strong> et <strong>transparente.</strong></p>
+<p>➡️ Synthèse de ces enjeux (générée par une IA 😅) :</p>
+<hr />
+<p><strong>Biais et représentation</strong>
+L'IA générative hérite des biais présents dans ses données d'entraînement - textes internet, images, conversations - qui reflètent les inégalités sociétales. Elle peut ainsi perpétuer ou amplifier des stéréotypes sur le genre, la race, la culture, créant des contenus discriminatoires ou excluant certaines communautés.</p>
+<p><strong>Désinformation et manipulation</strong>
+La capacité à générer du texte, des images et même des vidéos ultra-réalistes pose des risques majeurs : deepfakes, fausses informations indétectables, manipulation de l'opinion publique. La frontière entre contenu authentique et synthétique s'estompe dangereusement.</p>
+<p><strong>Droits d'auteur et propriété intellectuelle</strong>
+Les modèles sont entraînés sur des œuvres protégées sans consentement explicite des créateurs. Quand l'IA génère du contenu "inspiré" d'œuvres existantes, qui détient les droits ? Les artistes, écrivains, développeurs voient leur travail potentiellement dévalorisé.</p>
+<p><strong>Impact environnemental</strong>
+L'entraînement et l'utilisation de ces modèles consomment des quantités colossales d'énergie. Chaque requête a une empreinte carbone non négligeable, soulevant des questions sur la durabilité de cette technologie.</p>
+<p><strong>Conditions de travail</strong>
+Derrière l'IA "propre" se cachent souvent des travailleurs exploités - modérateurs de contenu exposés à des images traumatisantes, annotateurs sous-payés dans des pays en développement. L'industrie externalise ses coûts humains.</p>
+<p><strong>Concentration du pouvoir</strong>
+Quelques entreprises technologiques contrôlent le développement de l'IA générative, créant des monopoles de fait sur l'accès à ces outils transformateurs. Cette concentration pose des questions démocratiques fondamentales.</p>
+<p><strong>Responsabilité et transparence</strong>
+Comment attribuer la responsabilité quand une IA génère du contenu problématique ? Les "boîtes noires" algorithmiques rendent difficile la compréhension et la régulation de ces systèmes.</p>
+<hr />
+<p>On comprend d'autant mieux pourquoi il y a <strong>urgence</strong> à se tenir informer et à se former sur les modèles de langage !</p>
+<p>Les applications d'IA à fort impact social (santé, justice, police, emploi, RH, médias et information etc.) sont celles qui affectent directement la vie des individus et peuvent avoir des conséquences majeures sur leur bien-être, leurs droits et leurs opportunités.</p>
+        
+        <div class="tags"><span class="tag">biais</span><span class="tag">apprentissage-automatique</span><span class="tag">IA</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    <div id="project-infographie-biais-2025" class="project-full-content">
+        <h2><a href="#">Biais en apprentissage automatique</a></h2>
+        
+        <img class="hero-image" src="img/infog-Biais-GEBRU.png" alt="Biais en apprentissage automatique" loading="lazy">
+        
+        <p>Une infographie basée sur la pensée de <strong>Timnit Gebru</strong> spécialiste des biais algorithmiques, nous citons ses travaux majeurs :</p>
+<p>Gender Shades Buolamwini, J., &amp; Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. Proceedings of Machine Learning Research, 81:1–15. ➤ <a href="https://www.media.mit.edu/publications/gender-shades-intersectional-accuracy-disparities-in-commercial-gender-classification/">Lire l’article sur le site du MIT Media Lab ➤ Projet Gender Shades – Algorithmic Justice League</a></p>
+<p>Datasheets for Datasets Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., &amp; Crawford, K. (2018). Datasheets for Datasets. arXiv preprint arXiv:1803.09010. ➤<a href="https://ai.stanford.edu/~tgebru/papers/datasheets.pdf">Version PDF sur arXiv ➤ Version hébergée par </a></p>
+<p>On the Dangers of Stochastic Parrots Bender, E. M., Gebru, T., McMillan-Major, A., &amp; Shmitchell, S. (2021). On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT ’21). <a href="https://archive.org/details/stochastic-parrots-3442188.3445922">➤ Texte complet sur Internet Archive</a><a href = "https://s10251.pcdn.co/pdf/2021-bender-parrots.pdf">➤ Version PDF directe</a></p>
+<img src="img/infog-Biais-GEBRU.png" alt="Infographie sur les biais en apprentissage automatique" loading="lazy" width="50%">       
+        <div class="tags"><span class="tag">biais</span><span class="tag">IA</span></div>
+        
+        <a href="#" class="btn back-to-top">Retour en haut</a>
+    </div>
+    
+    
+            
+            <!-- Footer ajouté ici -->
+            <div class="footer">
+                <h2>Restons connectés !</h2>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou simplement échanger sur nos domaines d'intérêt communs.</p>
+                
+                <div class="social-links">
+                    <a href="https://portfolio-af-v2.netlify.app/" class="social-link" target="_blank" rel="noopener">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/alexiafontaine" class="social-link" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2025 - Newsletter générée automatiquement depuis mon portfolio GitHub - Alexia Fontaine tous drois réservés</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            if (!tab.hasAttribute('onclick')) {
+                tab.addEventListener('click', () => {
+                    // Désactiver tous les onglets et contenus
+                    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Activer l'onglet et le contenu sélectionnés
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.tab).classList.add('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
